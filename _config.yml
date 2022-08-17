@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: PANAUDIT
+title: PANDAUDIT
 
 # Your name to show in the footer
 author: Nev
@@ -20,11 +20,11 @@ author: Nev
 ###############################################
 
 #navbar-links:
-# About Me: "aboutme"
-# Resources:
-#  - Beautiful Jekyll: "https://beautifuljekyll.com"
-#  - Learn markdown: "https://www.markdowntutorial.com/"
-# Author's home: "https://deanattali.com"
+ About Me: "aboutme"
+ Resources:
+  - Beautiful Jekyll: "https://beautifuljekyll.com"
+  - Learn markdown: "https://www.markdowntutorial.com/"
+ Author's home: "https://deanattali.com"
 
 ################
 # --- Logo --- #
