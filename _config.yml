@@ -22,7 +22,7 @@ author: Nev
 navbar-links:
  About Me: "aboutme"
  Resources:
-  - Finviz: "https://www.finviz.com"
+  - Finviz: <a href="www.finviz.com" target="_blank">Opens in new tab</a>
   - Beautiful Jekyll: "https://beautifuljekyll.com"
   - Learn markdown: "https://www.markdowntutorial.com/"
  # Author's home: "https://deanattali.com"
