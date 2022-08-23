@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Aug 23 12:23:02 2022
-
-@author: nplatchk
-"""
 import pandas as pd
 #Convert old legacy system balances ending with '-' to negative values
 mask = df['Amount'].str.endswith('-')
