@@ -22,7 +22,10 @@ author: Nev
 navbar-links:
  About Me: "aboutme"
  Resources:
+  
+  - Visual Capitalist: "https://money.visualcapitalist.com"
   - Finviz: "https://www.finviz.com" 
+  - Pandas Sheet: "https://towardsdatascience.com/pandas-cheat-sheet-for-data-preprocessing-cd1bcd607426"
   - Beautiful Jekyll: "https://beautifuljekyll.com"
   - Learn markdown: "https://www.markdowntutorial.com/"
  # Author's home: "https://deanattali.com"
