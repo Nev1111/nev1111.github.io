@@ -1,4 +1,3 @@
-Locate rows with nans
+# Locate rows with nans
 
-```df_nan=df[df.isna().any(axis=1)]
-```
+`df_nan=df[df.isna().any(axis=1)]`
