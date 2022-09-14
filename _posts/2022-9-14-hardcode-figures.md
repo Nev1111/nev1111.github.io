@@ -5,8 +5,14 @@ apprach?
 
 Below is a smaple Data Frame with some random generated values
 
-df_original =pd.DataFrame( np.random.default_rng().uniform(low=10000,high=1000000,size=[2,10]))
+```df_original =pd.DataFrame( np.random.default_rng().uniform(low=10000,high=1000000,size=[2,10]))```
 
-#let's divide each of the values by 100 and then round the result to the nearest integer
+![Original dataframe](C:\Users\nplatchk\Desktop\df_original)
 
-df=(df_original.values/100).round().astype(int)
+let's divide each of the values by 100 and then round the result to the nearest integer
+
+```df=(df_original.values/100).round().astype(int)```
+
+![Resulting dataframe](C:\Users\nplatchk\Desktop\df)
+
+Now copy and paste, no formulas!
