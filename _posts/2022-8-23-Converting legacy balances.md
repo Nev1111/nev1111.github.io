@@ -1,5 +1,9 @@
-# Convert old legacy system balances ending with '-' to negative values
-
+---
+layout: post
+title: Formatting legacy system negative balances
+subtitle:Convert old legacy system balances ending with '-' OR 'CR' to negative values
+tags: [legacy, negative amount, accounting]
+---
 Here's a way to convert a figure from an old legacy file (ex. 5,009-) 
 
 `import pandas as pd`
