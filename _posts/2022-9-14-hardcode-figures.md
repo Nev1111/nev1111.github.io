@@ -1,7 +1,5 @@
-Suppose we have a table in excel with some random amounts and suppose you'd want to divide these
-amounts by let's say 100 but you want the result to appear as a "hardcoded" value instead of a formula
-It would be time consuming and extremely inefficient to have to type each of the values.  What's a better
-apprach?
+Suppose we have a table in excel with some random amounts and we want to do something with these amounts (ex: divide by 100). This is easily accomplished through Excel by just typing in "=amount/100" but in the world of financial reporting and investment accounting, 
+it is often the case when formulas cause discrepancies in total values (they're off by some amount).  This is especially true if decimals are involved. It would be time consuming and extremely inefficient to have to type each of the values in the cells one by one.  So what's a better approach?
 
 Below is a smaple Data Frame with some random generated values
 
