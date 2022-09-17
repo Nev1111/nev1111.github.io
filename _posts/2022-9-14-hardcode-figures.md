@@ -1,3 +1,10 @@
+---
+layout: post
+title: Getting rid of formulas/Hardcoding figures in Excel
+subtitle: Making sure totals are exact amounts
+tags: [pandas, Excel, totals, formulas, hardcoded]
+---
+
 Suppose we have a table in excel with some random amounts and we want to do something with these amounts (ex: divide by 100). This is easily accomplished through Excel by just typing in "=amount/100" but in the world of financial reporting and investment accounting, 
 it is often the case when formulas cause discrepancies in total values (they're off by some amount).  This is especially true if decimals are involved. It would be time consuming and extremely inefficient to have to type each of the values in the cells one by one.  So what's a better approach?
 
