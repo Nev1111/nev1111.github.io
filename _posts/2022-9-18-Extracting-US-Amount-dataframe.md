@@ -4,6 +4,7 @@ title: Amount in US dollars/cents extracted from a string
 subtitle: US dollar amount extracted into a separate column of a dataframe
 tags: [pandas, US dollars, regex,dataframe,extract]
 ---
+
 ![](https://imgur.com/2yhAks8)
 
 
