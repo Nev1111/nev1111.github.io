@@ -2,7 +2,7 @@
 layout: post
 title: Amount in US dollars/cents extracted from a string
 subtitle: US dollar amount extracted into a separate column of a dataframe
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/PandAudit background transparent.png
 tags: [pandas, US dollars, regex,dataframe,extract]
 ---
 
