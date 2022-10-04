@@ -6,10 +6,6 @@ thumbnail-img: /assets/img/PandAudit background transparent.png
 tags: [pandas, US dollars, regex,dataframe,extract]
 ---
 
-![](https://imgur.com/2yhAks8)
-
-
-
 
 Extract an amount (US dollars dominated) into a separate column of a dataframe using regex
 
