@@ -17,9 +17,6 @@ import pandas as pd
 ```
 
 
-```python
-df1=pd.read_excel('C:/Users/NPlatchk/Downloads/addresses.xlsx', sheet_name='Sheet7')
-```
 
 
 ```python
@@ -99,9 +96,7 @@ df1
 
 
 
-```python
-df2=pd.read_excel('C:/Users/NPlatchk/Downloads/addresses.xlsx', sheet_name='Sheet6')
-```
+
 
 
 ```python
