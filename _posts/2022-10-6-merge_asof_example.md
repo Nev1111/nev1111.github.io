@@ -1,3 +1,11 @@
+---
+layout: post
+title: Merge_asof pandas example
+subtitle: Merge/Join tables on the closest date in time
+thumbnail-img: /assets/img/PandAudit background transparent.png
+tags: [pandas, merge, merge_asof, dataframe, closest match]
+---
+
 In this post, we domonstrate the pandas "merge_asof" function
 
 
