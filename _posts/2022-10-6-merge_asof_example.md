@@ -897,6 +897,8 @@ And we get the expected results.  Note: this merge can also be performed by find
 
 [pandas.merge_asof](https://pandas.pydata.org/pandas-docs/dev/reference/api/pandas.merge_asof.html)
 
+Also, to download anaconda along with its packages (python, and everything else you would need), go to this site, follow installation instructions:
+[Download Anaconda link](https://anaconda.org/conda-forge/openai)
 
 ```python
 
