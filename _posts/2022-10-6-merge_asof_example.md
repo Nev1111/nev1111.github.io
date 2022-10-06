@@ -9,10 +9,6 @@ tags: [pandas, merge, merge_asof, dataframe, closest match]
 In this post, we domonstrate the pandas "merge_asof" function
 
 
-```python
-
-```
-
 Consider these two dataframes as examples.  The goal is to merge the first dataframe(df1) which contains names and IDs of certain individuals, to the second dataframe (df2), which contains historical addresses of these same individuals.  So, we want to perform a “merge” but as you can see the second dataframe has one or more addresses listed for each of the persons.  The expected outcome would be to match each person from the first dataframe with a corresponding address from the historical data contained in the second dataframe, that is closest to a given cutoff date.  This cutoff date can vary, it can be today, last year, etc…
 
 
