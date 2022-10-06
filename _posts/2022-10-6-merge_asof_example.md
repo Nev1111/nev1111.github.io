@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Merge_asof pandas example
-subtitle: Merge/Join tables on the closest date in time
+title: Merge/Join tables on the closest date in timeMerge_asof pandas example
+subtitle: `Merge_asof` pandas example
 thumbnail-img: /assets/img/PandAudit background transparent.png
 tags: [pandas, merge, merge_asof, dataframe, closest match]
 ---
