@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Getting rid of formulas/Hardcoding figures in Excel
-subtitle: Making sure totals are exact amounts
+title: Hardcoding figures in Excel
+subtitle: Making sure totals are exact amounts/get rid of formulas in excel
+
 tags: [pandas, Excel, totals, formulas, hardcoded]
 ---
 
