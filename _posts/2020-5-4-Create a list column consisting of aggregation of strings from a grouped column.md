@@ -1,5 +1,10 @@
-### Create a column in a dataframe that contains an unique list of the items under the 'source' column
-
+---
+layout: post
+title: Unique ID assigned to a group
+subtitle: Create a column in a dataframe that contains an unique list of the items under the 'source' column
+thumbnail-img: /assets/img/PandAudit background transparent.png
+tags: [pandas, unique ID,dataframe,assign]
+---
 
 ```python
 import pandas as pd
