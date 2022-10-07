@@ -1,4 +1,10 @@
-### Assign an id that is unique to each element in a group
+---
+layout: post
+title: Assign unique ID to a group in a dataframe
+subtitle: Assign an id that is unique to each element in a group
+thumbnail-img: /assets/img/PandAudit background transparent.png
+tags: [pandas, Excel, unique, unique ID, group, dataframe]
+---
 
 ```python
 import pandas as pd
