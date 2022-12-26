@@ -1,5 +1,4 @@
-"As of merge" (match on less than, greater than, nearest elements between two data sets)
-While it is popular to join datasets using a "left" or a "right" join, the examples below illustrate how to perform a merge based on the "nearest" or the "closest" matching key value, as opposed to the exact equal key. Consider the following data sets as an example:
+"Instead of using a "left" or "right" join, it is possible to merge two datasets based on the "nearest" or "closest" matching key values. This approach is known as a "merge on less than," "merge on greater than," or "merge on nearest elements" and is illustrated in the following example data sets:"
 
 
 
@@ -34,7 +33,7 @@ print (data_set_B)
     5           9 2012-03-09
     
 
-The goal is to merge the values contained in data_set_A with values contained in data_set_B over the column that they share in common, 'key_column'.  The resulting dataset should contain all rows contained in data_set_A and only those rows from data_set_B that correspond to the values in data_set_A, but if there is no exact match, we want to select the last row in data_set_B whose 'key_column' is less than the 'key_column' value in data_set_A,  knows as a "backward" search.
+The objective of this merge operation is to combine the values from data_set_A with those from data_set_B, using the shared column 'key_column' as the reference. The resulting dataset should include all rows from data_set_A and only those rows from data_set_B that match the values in data_set_A. If there is no exact match, the merge should use the last row in data_set_B whose 'key_column' value is less than the 'key_column' value in data_set_A, which is known as a "backward" search.
 
 
 ```python
@@ -57,10 +56,9 @@ print(resulting_data_set)
     4          10 2020-03-03 2012-03-09
     
 
-As expected, the first row had an exact match in its 'key_column', '1', so the dates 2015-01-01 and 2013-01-24 were matched up. The next row, with a value of '5' under the 'key_column' in data_set_A did not have a matching value in data_set_B, so the closest value in data_set_B with a 'key_column' value less than '5' is the row with a 'key_column' value of '4' and a corresponding date value 2009-01-09.
+In the given scenario, the first row in data_set_A has an exact match in data_set_B for the 'key_column' value of '1', so the dates 2015-01-01 and 2013-01-24 are paired. However, the second row in data_set_A has a 'key_column' value of '5' which does not have a matching value in data_set_B. In this case, the closest value in data_set_B with a 'key_column' value less than '5' is the row with a 'key_column' value of '4' and a corresponding date value of 2009-01-09.
 
-This type of a merge can also be performed on a 'forward' basis, where the first row of the second data set is selected whose values contained in the 'key_column' are greater than or equal to the values in the 'key_column' in the first data set.
-Note: The default direction for this type of search is 'backward', if the merge is to be performed on a 'forward' basis, the 'direction' parameter 'forward' needs to be added to the 'merge_asof' command.  See example below.
+This type of merge can also be performed in the opposite direction, where the first row in data_set_B is selected whose 'key_column' value is greater than or equal to the value in the 'key_column' of data_set_A. By default, this type of search is performed in the "backward" direction, but the 'direction' parameter can be set to 'forward' to specify that the search should be performed in the opposite direction.
 
 
 ```python
