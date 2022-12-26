@@ -8,7 +8,7 @@ tags: [pandas, groupby, sequential ID, dataframe, common elements]
 
 
 
-Let's say I have a DataFrame with some elements. What this post will show is how to group these elements and then assign a sequential ID to each of the groups. Assume you would want the ID to start with one and then increase by 1.
+This post will demonstrate how to group elements in a DataFrame and assign a sequential ID to each group, starting with one and increasing by one for each group.
 
 So here is a sample DataFrame:
 
