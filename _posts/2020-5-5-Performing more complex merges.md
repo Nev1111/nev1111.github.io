@@ -9,7 +9,6 @@ tags: [pandas, as_of merge, regex,dataframe, merge_as_of,  pd.merge_asof()]
 "Instead of using a "left" or "right" join, it is possible to merge two datasets based on the "nearest" or "closest" matching key values. This approach is known as a "merge on less than," "merge on greater than," or "merge on nearest elements" and is illustrated in the following example data sets:"
 
 
-
 ```python
 #Create the sample dataframes 
 import pandas as pd
