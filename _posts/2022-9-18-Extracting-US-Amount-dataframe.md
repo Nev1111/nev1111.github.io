@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Amount in US dollars/cents extracted from a string
-subtitle: US dollar amount extracted into a separate column of a dataframe
+subtitle: A method for extracting US dollar amounts into a separate column of a dataframe.
 thumbnail-img: /assets/img/PandAudit background transparent.png
 tags: [pandas, US dollars, regex,dataframe,extract]
 ---
