@@ -6,7 +6,7 @@ subtitle: Convert old legacy system balances ending with '-' OR 'CR' to negative
 tags: [pandas, Excel, totals, formulas, hardcoded]
 ---
 
-Here's a way to convert a figure from an old legacy file (ex. 5,009-)
+Here is a method for converting a figure from an old, legacy file, such as "5,009-".
 
 
 ```python
