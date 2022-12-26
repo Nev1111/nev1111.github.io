@@ -7,8 +7,15 @@ tags: [pandas, US dollars, regex,dataframe,extract]
 ---
 
 
-Extract an amount (US dollars dominated) into a separate column of a dataframe using regex
+If you have an unstructured file with messy strings containing amounts, and you want to extract just the amounts, you might consider the following approach:
 
+First, you will need to identify the patterns in the strings that indicate the presence of an amount. For example, you might look for strings that contain a currency symbol, such as "$" or "€", or strings that contain numbers followed by a unit of measurement, such as "kg" or "lbs".
+
+Once you have identified the patterns that indicate the presence of an amount, you can use regular expressions or string manipulation techniques to extract the amounts from the strings. This may involve using functions such as re.search or re.findall in Python, or using string functions such as split or replace to extract the amounts.
+
+After extracting the amounts, you may want to convert them to a numeric data type, such as float or integer, in order to perform calculations with them. You can do this using functions such as int() or float(), depending on the data type you desire.
+
+Finally, you can store the extracted and converted amounts in a new column in your DataFrame, or use them for further analysis or processing as needed.
 
 ```python
 import pandas as pd
