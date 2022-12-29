@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Unique ID assigned to a group
-subtitle: Create a column in a dataframe that contains an unique list of the items under the 'source' column
+title: Unique list of items contained in a dataframe column
+subtitle: Create a new column in the dataframe that contains a list of unique items from the 'source' column.
 thumbnail-img: /assets/img/PandAudit background transparent.png
 tags: [pandas, unique ID,dataframe,assign]
 ---
