@@ -1,3 +1,11 @@
+---
+layout: post
+title: Macola TB to excel
+subtitle: Convert Macola's TB to excel workable format
+thumbnail-img: /assets/img/PandAudit background transparent.png
+tags: [Macola, Excel, dataframe]
+---
+
 Convert trial balance report from a legacy system to excel
 
 
