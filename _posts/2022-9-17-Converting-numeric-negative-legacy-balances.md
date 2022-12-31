@@ -6,6 +6,8 @@ subtitle: Convert old legacy system balances ending with '-' OR 'CR' to negative
 tags: [pandas, Excel, totals, formulas, hardcoded]
 ---
 
+This post is about formatting negative balances in a legacy system so that they can be easily processed in a modern system. The post provides a method using the pandas library in Python to convert old legacy system balances, which may be formatted with a '-' or 'CR' suffix, to negative values. The method involves reading the legacy system values into a pandas dataframe, creating a mask to identify rows with negative balances, and then using the mask to replace the '-' or 'CR' suffix with a negative symbol. The resulting values are then formatted by removing any commas and converting them to float data type. The final dataframe contains the correctly formatted negative values.
+
 Here is a method for converting a figure from an old, legacy file, such as "5,009-".
 
 
