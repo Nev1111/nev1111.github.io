@@ -1,5 +1,5 @@
 Removing rows with empty values (nan)
-This code appears to be written in Python and it is performing the following operations on a Pandas DataFrame called df:
+This code is performing the following operations on a Pandas DataFrame called df:
 
 It is identifying rows in the DataFrame that contain empty (NaN) values using the isna() function.
 
