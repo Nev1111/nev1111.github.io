@@ -5,6 +5,17 @@ subtitle: Assign an id that is unique to each element in a group
 thumbnail-img: /assets/img/PandAudit background transparent.png
 tags: [pandas, Excel, unique, unique ID, group, dataframe]
 ---
+The purpose of this code is to group the elements in the 'A' column of a Pandas DataFrame and assign a sequential ID to each group. The ID is assigned starting with one and increasing by one for each group.
+
+To do this, the code first imports the pandas library and creates a DataFrame dataset with a single column 'A' containing a series of values.
+
+Then, it adds a new column called 'group_ID' to the DataFrame by using the groupby() method to group the elements in the 'A' column, and the ngroup() method to assign a group number to each element. The group numbers start at zero, so the code adds one to each group number to get the desired sequential IDs starting with one.
+
+Finally, the code displays the resulting DataFrame with the group_ID column added.
+
+This code would be useful for grouping common elements in a DataFrame and assigning a sequential ID to each group, which could be useful for further analysis or visualization of the data.
+
+
 
 ```python
 import pandas as pd
