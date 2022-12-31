@@ -6,7 +6,20 @@ thumbnail-img: /assets/img/PandAudit background transparent.png
 tags: [pandas, merge, merge_asof, dataframe, closest match]
 ---
 
-In this post, we demonstrate how to use the pandas "merge_asof" function to merge two dataframes, df1 and df2, where df1 contains names and IDs for certain individuals and df2 contains historical addresses for those same individuals. The goal is to match each person in df1 with a corresponding address in df2 that is closest to a specified cutoff date. This cutoff date can be any date, such as today or last year, and is used to determine which address from the historical data in df2 is the most relevant to use in the merge.ar, etc…
+In this post, we demonstrate how to use the merge_asof() function in the Pandas library to merge two dataframes, df1 and df2, where df1 contains names and IDs for certain individuals and df2 contains historical addresses for those same individuals. The goal is to match each person in df1 with a corresponding address in df2 that is closest to a specified cutoff date.
+
+The cutoff date can be any date, such as today or last year, and is used to determine which address from the historical data in df2 is the most relevant to use in the merge. For example, if the cutoff date is January 1, 2022, and an individual has three historical addresses, the address that is closest in time (and not exceeding) the cutoff date will be used in the merge.
+
+To begin, the code imports the Pandas library and creates two dataframes: df1, which contains names and IDs for individuals, and df2, which contains historical addresses for those same individuals.
+
+Next, the code converts the 'Effective Date' column in df2 to a datetime format using the to_datetime() function.
+
+Then, the code sorts the rows of df2 by the 'Effective Date' column in ascending order using the sort_values() function. This is important because the merge_asof() function expects the data to be sorted in order to properly match rows based on the cutoff date.
+
+Finally, the code uses the merge_asof() function to merge df1 and df2 based on the 'ID' column and the cutoff date. The merge_asof() function returns a new dataframe that includes the matching rows from both df1 and df2, along with any additional columns that are specified in the function.
+
+Overall, this code demonstrates how to use the merge_asof() function in Pandas to merge two dataframes based on the closest date in time. [Further explained below]
+
 
 
 ```python
