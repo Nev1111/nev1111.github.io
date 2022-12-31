@@ -7,6 +7,8 @@
 
 This post is about processing a trial balance file from the Macola legacy system and converting it into a workable format in Excel. The trial balance is in the form of a text file that is pasted into an Excel sheet, and the goal is to split the data into separate columns and drop unnecessary lines. The code reads the Excel file from a saved location, transforms the data into separate columns, and removes duplicates. It also converts certain balances ending with "CR" to negative values, and sums each column to ensure that the balances are correct. Finally, the code maps classifications to the accounts using a library classifications Excel file provided by the Financial Reporting unit.
 
+[This is an extension to a previous post which converts the trial balance from Macola but does not group accounts by classification descriptions]
+
 
 <style type="text/css">
     pre { line-height: 125%; }
