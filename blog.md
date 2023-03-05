@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Pandadut WELCOME
+title: Pandadut 
 subtitle: Logic and structure in a world of data infintity
 ---
 
+PROJECTS
