@@ -20,8 +20,8 @@ author: Nev
 ###############################################
 
 navbar-links:
- Blog: "blog.md"
- Pandaudit: "pandaudit.md"
+ Blog: "blog"
+ Pandaudit: "pandaudit"
  About Me: "aboutme"
  Resources:
   
