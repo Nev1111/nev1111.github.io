@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About me
+title: About us
 subtitle: Logic and structure in a world of data infintity
 ---
 Our team, consisting of Certified Public Accountants (CPAs), was introduced to Python and its data analytics libraries (such as Pandas, Numpy, matplotlib, etc.) during the early days of our audit careers. We were amazed at how much more quickly we could accomplish certain tasks using Python compared to conventional tools like Excel spreadsheets. Currently, as financial reporters working alongside the accounting investments unit of an organization, we use Python daily for nearly every data manipulation task.
