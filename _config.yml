@@ -21,7 +21,7 @@ author: Nev
 
 navbar-links:
  Blog: "blog"
- Pandaudit: "/"
+ # Pandaudit: "/"
  About us: "aboutme"
  Resources:
   
