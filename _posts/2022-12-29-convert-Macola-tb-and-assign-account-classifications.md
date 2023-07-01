@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>2022-12-29-convert-Macola-tb-and-assign-account-classifications</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>2022-12-29-convert-legacy-system-trial-balance-report-and-assign-account-classifications</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 This post is about processing a trial balance file from the Macola legacy system and converting it into a workable format in Excel. The trial balance is in the form of a text file that is pasted into an Excel sheet, and the goal is to split the data into separate columns and drop unnecessary lines. The code reads the Excel file from a saved location, transforms the data into separate columns, and removes duplicates. It also converts certain balances ending with "CR" to negative values, and sums each column to ensure that the balances are correct. Finally, the code maps classifications to the accounts using a library classifications Excel file provided by the Financial Reporting unit.
 
