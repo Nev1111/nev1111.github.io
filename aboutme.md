@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About us
-subtitle: Logic and structure in a world of data infintity
+subtitle: Logic and structure in a world of infinite data
 ---
 
 Welcome to our team's blog! We are a group of Certified Public Accountants (CPAs) who share a common passion for data and a collective curiosity about the stories it can reveal. When we first encountered rows and columns of data, we realized there was a wealth of insights waiting to be discovered.
