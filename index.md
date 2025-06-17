@@ -10,3 +10,15 @@ At PandAudit, we are dedicated to advancing data management for finance professi
 If you have any questions or need further assistance, feel free to contact us at PandAudit. We're here to help you optimize your financial data management and decision-making processes.
 
 [🧪 Try a Pandas Demo](demo.md)
+
+---
+
+## 📚 Explore PandAudit
+
+- 📊 [Excel to Pandas Cheatsheet](/cheatsheet/)
+- 🧪 [Try a Live Pandas Demo](/demo/)
+- 📣 [Read Success Stories](/stories/)
+
+---
+
+📈 From spreadsheets to scripts — PandAudit helps you evolve.
