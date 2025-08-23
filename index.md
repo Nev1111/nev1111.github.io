@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: page
 title: Welcome to PandAudit Detective Agency
 subtitle: Where accounting mysteries meet Python solutions
 ---
