@@ -307,7 +307,7 @@ plugins:
 navigation:
   - text: Home
     url: /
-  - text: Demo
+  - text: Case Files
     url: /demo/
   - text: Cheatsheet
     url: /cheatsheet/
