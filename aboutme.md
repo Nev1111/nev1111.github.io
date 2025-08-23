@@ -10,7 +10,7 @@ We're not your typical accounting consultants. We're data detectives who believe
 
 ---
 
-## The Origin Story 🕵️‍♀️
+## The Origin Story 🐼
 
 It started with a simple question: **Why are accounting tutorials so boring?**
 
@@ -120,7 +120,7 @@ Plus, who doesn't love a wise, approachable panda as a programming mentor?
 
 Creating quality educational content takes time and coffee. If our mysteries have helped solve your real-world problems, consider supporting our detective work:
 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="pandaudit" data-color="#FFDD00" data-emoji="🔍"  data-font="Cookie" data-text="Fund the next mystery" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="pandaudit" data-color="#FFDD00" data-emoji="🐼"  data-font="Cookie" data-text="Fund the next mystery" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
 
 ---
 

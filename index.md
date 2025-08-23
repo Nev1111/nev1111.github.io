@@ -4,7 +4,7 @@ title: Welcome to PandAudit Detective Agency
 subtitle: Where accounting mysteries meet Python solutions
 ---
 
-## 🕵️ Welcome to PandAudit Detective Agency
+## 🐼 Welcome to PandAudit Detective Agency
 
 We're data detectives who believe every spreadsheet tells a story, every discrepancy hides a clue, and every "impossible" data problem has a Python solution waiting to be discovered.
 
@@ -53,4 +53,4 @@ Have a data mystery that stumped your team? Found an interesting pattern in your
 
 ---
 
-*Every great detective started as a curious beginner. What's your data mystery?* 🔍
+*Every great detective started as a curious beginner. What's your data mystery?* 🐼

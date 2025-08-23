@@ -4,7 +4,7 @@ title: The Detective's Notebook
 subtitle: Behind-the-scenes thoughts on accounting mysteries and Python adventures
 ---
 
-## Welcome to The Detective's Notebook 🕵️
+## Welcome to The Detective's Notebook 🐼
 
 While our [Mystery Series](/mysteries) takes you through step-by-step adventures with Masha & Panda, this is where we share the stories behind the stories - quick insights, real-world encounters, and thoughts on the evolving world of accounting automation.
 
@@ -84,4 +84,4 @@ Drop us a line - your real-world mystery might become Masha & Panda's next adven
 
 If our mysteries have helped solve your real-world problems, consider fueling our next investigation:
 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="pandaudit" data-color="#FFDD00" data-emoji="🔍"  data-font="Cookie" data-text="Buy the detectives coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="pandaudit" data-color="#FFDD00" data-emoji="🐼"  data-font="Cookie" data-text="Buy the detectives coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
