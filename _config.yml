@@ -307,8 +307,6 @@ plugins:
 navigation:
   - text: Home
     url: /
-  - text: Demo
-    url: /demo/
   - text: Cheatsheet
     url: /cheatsheet/
   - text: Stories

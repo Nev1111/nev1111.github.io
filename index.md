@@ -26,7 +26,6 @@ Ready to become a data detective? Here's where to begin:
 
 ### 📚 **For New Detectives**
 - **[Meet the Agency](/aboutme)** - Learn our origin story and mission
-- **[Try a Demo](/demo)** - Get hands-on with pandas in your browser
 - **[Read the Detective's Notebook](/blog)** - Behind-the-scenes insights
 
 ### 🔍 **For Experienced Investigators** 
