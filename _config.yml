@@ -20,10 +20,10 @@ author: Nev
 ###############################################
 
 navbar-links:
- Blog: "blog"
+ Detective's Notebook: "blog"
  Mysteries: "mysteries"
  # Pandaudit: "/"
- About us: "aboutme"
+ About the Agency: "aboutme"
  Resources:
 
   - Visual Capitalist: "https://money.visualcapitalist.com"
