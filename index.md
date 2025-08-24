@@ -8,7 +8,7 @@ subtitle: Where accounting mysteries meet Python solutions
 
 We're data detectives who believe every spreadsheet tells a story, every discrepancy hides a clue, and every "impossible" data problem has a Python solution waiting to be discovered.
 
-### 🎯 **What Makes Us Different**
+###  **What Makes Us Different**
 
 **We Don't Just Teach Code - We Solve Real Problems**
 
@@ -20,22 +20,22 @@ When you're troubleshooting real data at 4 PM on a Friday, you'll remember Masha
 
 ---
 
-## 🚀 **Start Your Investigation**
+##  **Start Your Investigation**
 
 Ready to become a data detective? Here's where to begin:
 
-### 📚 **For New Detectives**
+###  **For New Detectives**
 - **[Meet the Agency](/aboutme)** - Learn our origin story and mission
 - **[Read the Detective's Notebook](/blog)** - Behind-the-scenes insights
 
-### 🔍 **For Experienced Investigators** 
+###  **For Experienced Investigators** 
 - **[Dive into Mysteries](/mysteries)** - Full detective stories with character dialogue
 - **[Check the Cheatsheet](/cheatsheet)** - Quick reference for pandas techniques
 - **[Browse Success Stories](/stories)** - Real-world applications
 
 ---
 
-## 💡 **Why "PandAudit"?**
+##  **Why "PandAudit"?**
 
 The name combines our two passions:
 - **"Panda"** - The powerful Python pandas library that makes data analysis accessible
@@ -45,7 +45,7 @@ Plus, who doesn't love a wise, approachable panda as a programming mentor?
 
 ---
 
-## 📧 **Join Our Investigation**
+##  **Join Our Investigation**
 
 Have a data mystery that stumped your team? Found an interesting pattern in your accounting data? We love hearing about real scenarios that could become our next adventure.
 
