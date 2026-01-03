@@ -1,56 +1,83 @@
 ---
 layout: default
-title: Welcome to PandAudit Detective Agency
-subtitle: Where accounting mysteries meet Python solutions
+title: Python Data Analytics for Finance & Accounting
+subtitle: Practical tutorials on pandas, Python libraries, and automation for accounting professionals
 ---
 
-## Welcome to PandAudit Detective Agency
+## Transform Your Finance & Accounting Career with Python
 
-We're data detectives who believe every spreadsheet tells a story, every discrepancy hides a clue, and every "impossible" data problem has a Python solution waiting to be discovered.
-
-###  **What Makes Us Different**
-
-**We Don't Just Teach Code - We Solve Real Problems**
-
-Instead of boring tutorials, we create engaging detective stories featuring **Masha**  (the pattern-spotting analyst) and **Panda**  (the wise technical guide). Every mystery comes from actual accounting scenarios we've encountered.
-
-**We Make Learning Stick Through Stories**
-
-When you're troubleshooting real data at 4 PM on a Friday, you'll remember Masha's frustration with manual processes and Panda's clever solutions. Stories create memory hooks that syntax examples can't match.
+The accounting and finance profession is evolving rapidly. Professionals who master data analytics tools like Python are positioning themselves for the future. PandAudit provides practical, hands-on tutorials to help you develop these critical skills.
 
 ---
 
-##  **Start Your Investigation**
+## Why Python for Finance & Accounting?
 
-Ready to become a data detective? Here's where to begin:
+**Automation of Repetitive Tasks**
+- Eliminate manual data entry and reconciliation
+- Automate report generation and financial close processes
+- Build custom tools for your specific workflows
 
-###  **For New Detectives**
-- **[Meet the Agency](/aboutme)** - Learn our origin story and mission
-- **[Read the Detective's Notebook](/blog)** - Behind-the-scenes insights
+**Advanced Data Analysis**
+- Handle large datasets that Excel can't manage
+- Perform complex financial modeling and forecasting
+- Create sophisticated visualizations for stakeholder reporting
 
-###  **For Experienced Investigators** 
-- **[Dive into Mysteries](/mysteries)** - Full detective stories with character dialogue
-- **[Check the Cheatsheet](/cheatsheet)** - Quick reference for pandas techniques
-- **[Browse Success Stories](/stories)** - Real-world applications
-
----
-
-##  **Why "PandAudit"?**
-
-The name combines our two passions:
-- **"Panda"** - The powerful Python pandas library that makes data analysis accessible
-- **"Audit"** - The investigative mindset that treats every data inconsistency as a mystery to solve
-
-Plus, who doesn't love a wise, approachable panda as a programming mentor?
+**Career Advancement**
+- Meet the growing demand for data-savvy accountants
+- Command higher salaries with technical skills
+- Future-proof your career as automation increases
 
 ---
 
-##  **Join Our Investigation**
+## Essential Python Libraries for Accounting
 
-Have a data mystery that stumped your team? Found an interesting pattern in your accounting data? We love hearing about real scenarios that could become our next adventure.
+### **pandas** - Data Manipulation & Analysis
+The cornerstone library for working with financial data, Excel files, and databases.
 
-**Email us**: hello@pandaudit.com
+### **numpy** - Numerical Computing
+Perform fast calculations on large datasets, essential for financial modeling.
+
+### **matplotlib & seaborn** - Data Visualization
+Create professional charts and graphs for financial reporting.
+
+### **openpyxl & xlsxwriter** - Excel Integration
+Read, write, and format Excel files programmatically.
+
+### **sqlalchemy** - Database Connectivity
+Connect to accounting systems and databases for automated data extraction.
 
 ---
 
-*Every great detective started as a curious beginner. What's your data mystery?* 🐼
+## Get Started
+
+### **[Read the Blog](/blog)**
+Step-by-step tutorials covering everything from pandas basics to advanced automation workflows.
+
+### **[Join Our Discord Community](https://discord.gg/hDQKM6ar)**
+Connect with other accounting professionals learning Python. Share challenges, get help, and collaborate on projects.
+
+### **[Quick Reference Cheatsheet](/cheatsheet)**
+Common pandas operations for accounting tasks - bookmark for quick access.
+
+---
+
+## What You'll Learn
+
+- **Data Import & Export**: Read from Excel, CSV, databases, and accounting systems
+- **Data Cleaning**: Handle missing values, duplicates, and formatting issues
+- **Analysis & Transformation**: Group, pivot, merge, and aggregate financial data
+- **Automation**: Build scripts to automate monthly close, reconciliations, and reporting
+- **Visualization**: Create compelling financial charts and dashboards
+- **Real-World Applications**: Practical examples from actual accounting scenarios
+
+---
+
+## Ready to Start?
+
+Whether you're a complete beginner or looking to level up your Python skills, our tutorials are designed for busy accounting professionals.
+
+**[Explore Tutorials](/blog)** | **[Join Discord](https://discord.gg/hDQKM6ar)** | **[Contact Us](mailto:hello@pandaudit.com)**
+
+---
+
+*The future of accounting requires data analytics skills. Start building yours today.* 🐼
