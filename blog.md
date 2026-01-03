@@ -1,41 +1,42 @@
 ---
 layout: home
-title: Tutorials
-subtitle: Practical Python guides for accounting professionals
+title: Industry Insights
+subtitle: Trends, tools, and ideas shaping the future of accounting
 ---
 
-Welcome to the PandAudit tutorial library! Here you'll find step-by-step guides covering everything from pandas basics to advanced automation workflows.
+Welcome to the PandAudit blog - a space for exploring how data analytics, automation, and new technologies are transforming finance and accounting.
 
-## Tutorial Categories
+## What You'll Find Here
 
-**Getting Started with pandas**
-- Data import/export (Excel, CSV, databases)
-- DataFrames basics and operations
-- Data cleaning and preparation
+**Industry Trends & Analysis**
+- How automation is reshaping accounting roles
+- The rise of analytics in financial decision-making
+- What skills will matter in the next 5 years
 
-**Automation & Workflows**
-- Automating monthly close processes
-- Building reconciliation scripts
-- Batch processing financial reports
+**Tools & Technology**
+- pandas and Python for accounting work
+- Modern data visualization platforms
+- Cloud accounting and API integrations
+- AI applications in finance
 
-**Analysis & Visualization**
-- Financial statement analysis
-- Trend analysis and forecasting
-- Creating charts and dashboards
+**Career & Professional Development**
+- Navigating the shift from compliance to advisory
+- Building relevant technical skills
+- Where the opportunities are heading
 
-**Advanced Topics**
-- Database connectivity
-- API integration
-- Building custom accounting tools
+**Real-World Insights**
+- What's actually working in practice
+- Lessons from implementing automation
+- Success stories and cautionary tales
 
 ---
 
 ## Join the Community
 
-Have questions about a tutorial? Want to share your own automation success story? Join our Discord community where accounting professionals help each other learn Python.
+Have your own insights to share? Questions about where the profession is headed? Join our Discord community where accounting professionals discuss industry trends and share experiences.
 
 **[Join Discord](https://discord.gg/hDQKM6ar)**
 
 ---
 
-Browse the posts below to get started!
+Browse the latest posts below:
