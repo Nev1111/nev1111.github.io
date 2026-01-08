@@ -1,0 +1,121 @@
+<nav class="UnderlineNav-body border-bottom" style="background: #EAEAEA;">
+  <div class="container-xl p-responsive">
+    <div class="d-flex flex-justify-between flex-items-center py-3">
+      <!-- Logo and Title -->
+      <div class="d-flex flex-items-center">
+        <a href="{{ site.baseurl }}/" class="d-flex flex-items-center text-bold f3" style="color: #404040; text-decoration: none;">
+          {% if site.avatar %}
+          <img src="{{ site.avatar | relative_url }}" 
+               alt="{{ site.title }}" 
+               class="rounded-circle mr-2" 
+               style="width: 40px; height: 40px;">
+          {% endif %}
+          {{ site.title }}
+        </a>
+      </div>
+      
+      <!-- Navigation Links (Desktop) -->
+      <div class="d-none d-lg-flex flex-items-center gap-4">
+        <a href="{{ site.baseurl }}/" 
+           class="UnderlineNav-item {% if page.url == '/' %}selected{% endif %}" 
+           style="color: #404040;">
+          Home
+        </a>
+        <a href="{{ site.baseurl }}/blog" 
+           class="UnderlineNav-item {% if page.url contains '/blog' %}selected{% endif %}" 
+           style="color: #404040;">
+          Insights
+        </a>
+        <a href="{{ site.baseurl }}/stories" 
+           class="UnderlineNav-item {% if page.url contains '/stories' %}selected{% endif %}" 
+           style="color: #404040;">
+          Stories
+        </a>
+        <a href="{{ site.baseurl }}/cheatsheet" 
+           class="UnderlineNav-item {% if page.url contains '/cheatsheet' %}selected{% endif %}" 
+           style="color: #404040;">
+          Cheatsheet
+        </a>
+        <a href="{{ site.baseurl }}/aboutme" 
+           class="UnderlineNav-item {% if page.url contains '/aboutme' %}selected{% endif %}" 
+           style="color: #404040;">
+          About
+        </a>
+        
+        <!-- Discord Link -->
+        <a href="https://discord.gg/{{ site.social-network-links.discord }}" 
+           class="btn btn-sm btn-primary" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style="background: #5865F2; border-color: #5865F2;">
+          <i class="fab fa-discord mr-1"></i>
+          Discord
+        </a>
+        
+        <!-- RSS Link -->
+        <a href="{{ site.baseurl }}/feed.xml" 
+           class="text-gray" 
+           title="RSS Feed">
+          <i class="fas fa-rss"></i>
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button class="btn d-lg-none" 
+              type="button" 
+              onclick="toggleMobileMenu()" 
+              aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="d-lg-none" style="display: none;">
+      <div class="border-top pt-3 pb-3">
+        <a href="{{ site.baseurl }}/" 
+           class="d-block py-2" 
+           style="color: #404040;">
+          Home
+        </a>
+        <a href="{{ site.baseurl }}/blog" 
+           class="d-block py-2" 
+           style="color: #404040;">
+          Insights
+        </a>
+        <a href="{{ site.baseurl }}/stories" 
+           class="d-block py-2" 
+           style="color: #404040;">
+          Stories
+        </a>
+        <a href="{{ site.baseurl }}/cheatsheet" 
+           class="d-block py-2" 
+           style="color: #404040;">
+          Cheatsheet
+        </a>
+        <a href="{{ site.baseurl }}/aboutme" 
+           class="d-block py-2" 
+           style="color: #404040;">
+          About
+        </a>
+        <a href="https://discord.gg/{{ site.social-network-links.discord }}" 
+           class="d-block py-2" 
+           target="_blank" 
+           style="color: #5865F2;">
+          <i class="fab fa-discord mr-2"></i>
+          Discord Community
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobile-menu');
+  if (menu.style.display === 'none' || menu.style.display === '') {
+    menu.style.display = 'block';
+  } else {
+    menu.style.display = 'none';
+  }
+}
+</script>

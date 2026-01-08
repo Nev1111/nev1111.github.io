@@ -1,0 +1,100 @@
+name: Discord New Post Notification
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - '_posts/**'
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2  # Fetch last 2 commits to compare
+      
+      - name: Get changed files
+        id: changed-files
+        run: |
+          # Get list of new or modified files in _posts/
+          CHANGED_FILES=$(git diff --name-status HEAD^ HEAD | grep "^[AM].*_posts/.*\.\(md\|html\)$" | awk '{print $2}')
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+      
+      - name: Parse post metadata and send to Discord
+        if: steps.changed-files.outputs.files != ''
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          # Loop through each changed post file
+          echo "${{ steps.changed-files.outputs.files }}" | while read -r file; do
+            if [ -n "$file" ]; then
+              echo "Processing: $file"
+              
+              # Extract title (first line with "title:")
+              TITLE=$(grep "^title:" "$file" | head -1 | sed 's/^title: *"\?\(.*\)"\?$/\1/' | sed 's/"//g')
+              
+              # Extract subtitle/description
+              SUBTITLE=$(grep "^subtitle:" "$file" | head -1 | sed 's/^subtitle: *"\?\(.*\)"\?$/\1/' | sed 's/"//g')
+              
+              # Extract tags
+              TAGS=$(grep "^tags:" "$file" | head -1 | sed 's/^tags: *\[\(.*\)\]$/\1/' | sed 's/, */ #/g')
+              
+              # Generate post URL (convert filename to URL)
+              FILENAME=$(basename "$file")
+              # Remove date prefix and .md/.html extension
+              SLUG=$(echo "$FILENAME" | sed 's/^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-//' | sed 's/\.\(md\|html\)$//')
+              POST_URL="https://pandaudit.com/${FILENAME%.md*}"
+              
+              # Create Discord embed JSON
+              JSON_PAYLOAD=$(cat <<DISCORD_JSON
+          {
+            "content": "🎉 **New Blog Post Published!** 🎉",
+            "embeds": [{
+              "title": "$TITLE",
+              "description": "$SUBTITLE",
+              "url": "$POST_URL",
+              "color": 51455,
+              "fields": [
+                {
+                  "name": "📚 Topics",
+                  "value": "#$TAGS",
+                  "inline": false
+                },
+                {
+                  "name": "🔗 Read Now",
+                  "value": "[Click here to read the full post!]($POST_URL)",
+                  "inline": false
+                }
+              ],
+              "footer": {
+                "text": "PANDAUDIT - Python for Finance & Accounting",
+                "icon_url": "https://pandaudit.com/assets/img/avatar-icon.png"
+              },
+              "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            }]
+          }
+          DISCORD_JSON
+              )
+              
+              # Send to Discord
+              if [ -n "$DISCORD_WEBHOOK" ]; then
+                curl -H "Content-Type: application/json" \
+                     -d "$JSON_PAYLOAD" \
+                     "$DISCORD_WEBHOOK"
+                echo "✅ Sent notification for: $TITLE"
+              else
+                echo "⚠️ DISCORD_WEBHOOK_URL secret not set. Skipping Discord notification."
+                echo "📋 Would have sent: $TITLE"
+              fi
+              
+              # Wait a bit between posts to avoid rate limiting
+              sleep 2
+            fi
+          done

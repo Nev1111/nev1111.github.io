@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: primer_post
 title: The as of merge - python [pandas]
 subtitle: Merging datasets on the nearest or closest mathing value
 thumbnail-img: /assets/img/PandAudit background transparent.png

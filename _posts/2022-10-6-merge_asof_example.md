@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: primer_post
 title: Merge/Join tables on the closest date in time
 subtitle: Merge_asof pandas example
 thumbnail-img: /assets/img/PandAudit background transparent.png

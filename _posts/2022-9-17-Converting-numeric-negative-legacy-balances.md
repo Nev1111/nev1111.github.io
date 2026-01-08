@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: primer_post
 title: Formatting legacy system negative balances
 thumbnail-img: /assets/img/PandAudit background transparent.png
 subtitle: Convert old legacy system balances ending with '-' OR 'CR' to negative values

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: primer_post
 title: Amount in US dollars/cents extracted from a string
 subtitle: A method for extracting US dollar amounts into a separate column of a dataframe.
 thumbnail-img: /assets/img/PandAudit background transparent.png

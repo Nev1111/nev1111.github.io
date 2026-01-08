@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: primer_post
 title: Unique list of items contained in a dataframe column
 subtitle: Create a new column in the dataframe that contains a list of unique items from the 'source' column.
 thumbnail-img: /assets/img/PandAudit background transparent.png
