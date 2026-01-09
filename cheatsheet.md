@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Detective's Quick Reference
-subtitle: Essential pandas commands for accounting investigations
+title: Data Analytics Quick Reference
+subtitle: Essential commands for accounting data analysis with Python & pandas
 permalink: /cheatsheet/
 ---
 
-# 🔍 Detective's Quick Reference
+# 🔍 Data Analytics Quick Reference
 
-*Essential pandas commands every accounting detective needs to know*
+*Your go-to guide for data analytics in accounting - featuring pandas/Python implementations*
 
 ---
 

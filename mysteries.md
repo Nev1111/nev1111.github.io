@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Masha & Panda Mysteries
-subtitle: Learn Python & pandas through accounting detective stories
+subtitle: Learn data analytics through accounting detective stories
 ---
 
-Welcome to the **Masha & Panda Mystery Series** - where real accounting challenges become engaging detective stories that teach you Python and pandas skills!
+Welcome to the **Masha & Panda Mystery Series** - where real accounting challenges become engaging detective stories that teach you practical data analytics skills!
 
 ## Meet the Characters
 
@@ -44,10 +44,10 @@ Each mystery follows the same engaging format:
 
 1. **The Case** - A real accounting scenario that sets up the problem
 2. **Investigation** - Follow the detective work with Masha & Panda commentary  
-3. **The Solution** - Complete Python/pandas code that solves the mystery
-4. **Key Learning Points** - Takeaways you can apply immediately
+3. **The Solution** - Complete code walkthrough showing how to solve the problem
+4. **Key Learning Points** - Data analytics concepts and techniques you can apply immediately
 
-All mysteries are based on real accounting scenarios, so you'll learn techniques you can actually use in your work!
+All mysteries are based on real accounting scenarios. You'll learn practical data transformation and analysis techniques through engaging storytelling, with Python/pandas implementations showing one way to solve each challenge.
 
 ---
 
