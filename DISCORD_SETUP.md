@@ -1,13 +1,47 @@
 # Discord Integration Setup Guide
 
-This guide will help you set up Discord integration for your PANDAUDIT blog, enabling automatic notifications when new posts are published.
+This guide will help you set up complete Discord integration for PANDAUDIT, including automatic blog notifications and a comprehensive community bot.
 
 ## 📋 Overview
 
-The Discord integration consists of:
+The Discord integration is a **two-part system**:
+
+### Part 1: Webhook Integration (Automatic Blog Notifications)
 1. **GitHub Actions Workflow** - Automatically detects new blog posts
-2. **Discord Webhook** - Sends formatted notifications to your Discord server
-3. **Blog Post Template** - Includes "Discuss on Discord" sections
+2. **Discord Webhook** - Sends formatted notifications to #blog-updates channel
+3. **Engaging Embeds** - Beautiful, rich notifications with calls-to-action
+
+### Part 2: Discord Bot (Community Management)
+1. **Moderation Tools** - Kick, ban, mute, warn, and manage messages
+2. **Community Features** - Welcome messages, auto-reactions, engagement
+3. **Information Commands** - Help, about, stats, and more
+4. **24/7 Availability** - Hosted on cloud platform for always-on operation
+
+## 📚 Complete Documentation Set
+
+This is part of a comprehensive Discord integration suite. For detailed information, see:
+
+- **[DISCORD_SETUP.md](./DISCORD_SETUP.md)** (this file) - Overview and webhook setup
+- **[DISCORD_BOT_SETUP.md](./DISCORD_BOT_SETUP.md)** - Complete bot deployment guide with hosting options
+- **[DISCORD_SERVER_GUIDE.md](./DISCORD_SERVER_GUIDE.md)** - Server structure, channels, roles, and community management
+- **[discord_bot/README.md](./discord_bot/README.md)** - Quick start guide for the bot
+
+## 🎯 Quick Navigation
+
+**Setting up for the first time?**
+1. Start with [Part 1: Webhook Setup](#-part-1-webhook-setup-automatic-blog-notifications) (this file)
+2. Then follow [DISCORD_BOT_SETUP.md](./DISCORD_BOT_SETUP.md) for bot deployment
+3. Finally, use [DISCORD_SERVER_GUIDE.md](./DISCORD_SERVER_GUIDE.md) to optimize your server
+
+**Already have webhook working?**
+- Jump to [DISCORD_BOT_SETUP.md](./DISCORD_BOT_SETUP.md) to add bot functionality
+
+**Need server structure advice?**
+- Check out [DISCORD_SERVER_GUIDE.md](./DISCORD_SERVER_GUIDE.md)
+
+---
+
+# Part 1: Webhook Setup (Automatic Blog Notifications)
 
 ## 🚀 Quick Setup (5 Minutes)
 
@@ -347,6 +381,225 @@ Add images, thumbnails, and fields to embeds:
   }]
 }
 ```
+
+---
+
+# Part 2: Discord Bot Setup (Community Management)
+
+## 🤖 Why Add a Bot?
+
+While webhooks handle automatic blog notifications, a dedicated bot provides:
+
+### \ud83d\udee1\ufe0f **Moderation Tools**
+- Kick, ban, and mute problematic users
+- Delete messages in bulk
+- Issue warnings and track violations
+- Automated timeout management
+
+### \ud83c\udf89 **Community Engagement**
+- Welcome new members automatically
+- Auto-react to posts in #blog-updates
+- Provide help commands and information
+- Display server statistics
+
+### \ud83d\udcca **Analytics & Monitoring**
+- Track server activity
+- Monitor bot uptime
+- Log moderation actions
+- Generate community insights
+
+## \ud83d\ude80 Quick Bot Setup
+
+The PANDAUDIT Discord bot is already created and ready to deploy!
+
+### Step 1: Bot Overview
+
+Your bot includes:
+- **Moderation**: `!kick`, `!ban`, `!mute`, `!unmute`, `!warn`, `!clear`
+- **General**: `!help`, `!about`, `!latest`, `!ping`, `!invite`, `!stats`
+- **Community**: Welcome messages, auto-reactions, rich embeds
+
+All code is in the `discord_bot/` directory of this repository.
+
+### Step 2: Deploy Your Bot
+
+**For detailed deployment instructions, see [DISCORD_BOT_SETUP.md](./DISCORD_BOT_SETUP.md)**
+
+Quick summary:
+
+1. **Get Bot Token**:
+   - Discord Developer Portal → Create Application → Bot tab
+   - Copy bot token
+   - Token already configured: `MTQ1OTIxNTk1ODg3ODA2MDYzNQ.GHa50Q.9Ryxa4qyhiF9bmhQCJts7i5Rryv6jLSwtghBGM`
+
+2. **Choose Hosting**:
+   - **Railway** (recommended): Free tier, auto-deploy from GitHub
+   - **Replit**: Quick testing, free
+   - **Heroku**: Professional, $5-7/mo
+   - **VPS**: Full control, $5-10/mo
+
+3. **Deploy**:
+   ```bash
+   cd discord_bot
+   pip install -r requirements.txt
+   cp .env.example .env
+   # Add your bot token to .env
+   python bot.py
+   ```
+
+4. **Invite to Server**:
+   - Use OAuth2 URL Generator
+   - Permissions integer: `1099511689222`
+   - Authorize to your PANDAUDIT server
+
+### Step 3: Test Bot
+
+In Discord, try:
+- `!ping` - Check bot is online
+- `!help` - See all commands
+- `!about` - View PANDAUDIT information
+
+Bot should auto-react to messages in #blog-updates with 👍 💬 🔖
+
+### Step 4: Configure Roles
+
+**Important**: Bot must be positioned ABOVE roles it moderates!
+
+1. Server Settings → Roles
+2. Drag "PANDAUDIT Bot" role above "Member" and "Moderator" roles
+3. Ensure bot has these permissions:
+   - Kick Members
+   - Ban Members
+   - Manage Messages
+   - Manage Roles
+
+## 📖 Full Documentation
+
+For comprehensive bot setup, including:
+- Creating bot application
+- All hosting options with step-by-step guides
+- Environment configuration
+- Troubleshooting common issues
+- Maintenance and updates
+
+**See: [DISCORD_BOT_SETUP.md](./DISCORD_BOT_SETUP.md)**
+
+## 🏗\ufe0f Server Structure
+
+Need help organizing your Discord server?
+
+**See: [DISCORD_SERVER_GUIDE.md](./DISCORD_SERVER_GUIDE.md)** for:
+- Recommended channel structure
+- Role configuration
+- Permission templates
+- Community guidelines
+- Moderation strategies
+- Engagement tactics
+- Growth strategies
+
+---
+
+# Integration Testing
+
+## \u2705 Webhook Test
+
+1. **Create or edit a blog post** in `_posts/`
+2. **Commit and push** to master/main branch
+3. **Check GitHub Actions**: Should run "Discord New Post Notification" workflow
+4. **Check Discord**: New post should appear in #blog-updates
+
+**Expected result**:
+```
+🔔 New Insights from PANDAUDIT! 📊
+
+Fresh content alert! Check out our latest analysis on data analytics and automation.
+
+📝 [Your Post Title]
+[Post description/excerpt]
+
+💡 Ready to level up your data analytics skills? Dive into this comprehensive guide.
+
+📚 Topics Covered
+#tag1 #tag2 #tag3
+
+🎯 What You'll Learn
+Practical tips, real-world examples, and actionable insights for finance professionals
+
+🔗 Read the Full Article
+[Click here to read now ➜]
+💬 Share your thoughts and questions in this channel after reading!
+```
+
+## \u2705 Bot Test
+
+1. **Check bot is online**: Green circle next to bot name
+2. **Test basic command**: Type `!ping`
+   - Expected: Bot responds with latency
+3. **Test help**: Type `!help`
+   - Expected: Bot shows command list
+4. **Test auto-reactions**: Post in #blog-updates
+   - Expected: Bot adds 👍 💬 🔖 reactions
+5. **Test welcome**: Have someone join server
+   - Expected: Bot posts welcome message
+6. **Test moderation** (with test user):
+   - `!warn @testuser test` - Should issue warning
+   - `!mute @testuser 1m test` - Should mute for 1 minute
+
+## \ud83d\udc1b Troubleshooting Integration
+
+### Webhook Not Working
+
+**Issue**: Blog posts published but no Discord notification
+
+**Solutions**:
+1. Check GitHub Actions logs:
+   - Repo → Actions → Check workflow run
+2. Verify secret is set:
+   - Repo → Settings → Secrets and variables → Actions
+   - Should see `DISCORD_WEBHOOK_URL`
+3. Test webhook manually:
+   ```bash
+   curl -H "Content-Type: application/json" \
+        -d '{"content": "Test from PANDAUDIT"}' \
+        https://discord.com/api/webhooks/1459221471455870997/cRD-CGI3gBojnsvSiW4Rz1jUGbFGsdyNi0-TApY63-AAL9DtuDqryA10zWqKh0hkCS73
+   ```
+4. Check webhook is valid:
+   - Discord → Server Settings → Integrations → Webhooks
+   - Should see "PANDAUDIT Blog Bot"
+
+### Bot Not Responding
+
+**Issue**: Bot shows online but doesn't respond to commands
+
+**Solutions**:
+1. Check Message Content Intent:
+   - Discord Developer Portal → Bot tab
+   - Enable "Message Content Intent"
+2. Check bot permissions:
+   - Right-click bot → Verify has "Read Messages" and "Send Messages"
+3. Check logs:
+   - Railway: Dashboard → Logs
+   - Heroku: `heroku logs --tail`
+   - VPS: `journalctl -u pandaudit-bot -f`
+4. Verify bot token:
+   - Regenerate if necessary
+   - Update .env file
+   - Restart bot
+
+### Both Webhook and Bot Working, but...
+
+**Issue**: Want to customize notifications or add features
+
+**Webhook Customization**:
+- Edit `.github/workflows/discord-notify.yml`
+- Modify embed color, content, fields
+- See workflow file for comments
+
+**Bot Customization**:
+- Edit `discord_bot/bot.py`
+- Add new commands with `@bot.command()` decorator
+- Modify existing commands
+- See `discord_bot/README.md` for details
 
 ---
 
