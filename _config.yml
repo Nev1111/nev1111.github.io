@@ -20,8 +20,12 @@ author: Nev
 ###############################################
 
 navbar-links:
- Insights: "blog"
+ Blog: "blog"
  Cheatsheet: "cheatsheet"
+ Learn:
+  - Mystery Series: "mysteries"
+  - Success Stories: "stories"
+ Community: "community"
  About: "aboutme"
  Resources:
   - pandas Documentation: "https://pandas.pydata.org/docs/"
@@ -269,9 +273,6 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
-  - DISCORD_BOT_SETUP.md
-  - DISCORD_SERVER_GUIDE.md
-  - DISCORD_SETUP.md
   - CONTRIBUTING.md
   - MARKETING_GUIDE.md
   - mystery-template-guide.md
@@ -286,10 +287,4 @@ plugins:
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 
-navigation:
-  - text: Home
-    url: /
-  - text: Cheatsheet
-    url: /cheatsheet/
-  - text: Stories
-    url: /stories/
+
