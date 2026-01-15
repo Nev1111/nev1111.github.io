@@ -1,5 +1,5 @@
 ---
-layout: primer_post
+layout: post
 title: Amount in US dollars/cents extracted from a string
 subtitle: A method for extracting US dollar amounts into a separate column of a dataframe.
 thumbnail-img: /assets/img/PandAudit background transparent.png
@@ -41,53 +41,53 @@ df
 
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+ .dataframe tbody tr th:only-of-type {
+ vertical-align: middle;
+ }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+ .dataframe tbody tr th {
+ vertical-align: top;
+ }
 
-    .dataframe thead th {
-        text-align: right;
-    }
+ .dataframe thead th {
+ text-align: right;
+ }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Description</th>
-      <th>Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>A</td>
-      <td>trx .11</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>B</td>
-      <td>balance 536,002.63</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>C</td>
-      <td>adj 85.85</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>D</td>
-      <td>manual adj 0.00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>E</td>
-      <td>fx va vb 55.63</td>
-    </tr>
-  </tbody>
+ <thead>
+ <tr style="text-align: right;">
+ <th></th>
+ <th>Description</th>
+ <th>Amount</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <th>0</th>
+ <td>A</td>
+ <td>trx .11</td>
+ </tr>
+ <tr>
+ <th>1</th>
+ <td>B</td>
+ <td>balance 536,002.63</td>
+ </tr>
+ <tr>
+ <th>2</th>
+ <td>C</td>
+ <td>adj 85.85</td>
+ </tr>
+ <tr>
+ <th>3</th>
+ <td>D</td>
+ <td>manual adj 0.00</td>
+ </tr>
+ <tr>
+ <th>4</th>
+ <td>E</td>
+ <td>fx va vb 55.63</td>
+ </tr>
+ </tbody>
 </table>
 </div>
 
@@ -113,59 +113,59 @@ df
 
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+ .dataframe tbody tr th:only-of-type {
+ vertical-align: middle;
+ }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+ .dataframe tbody tr th {
+ vertical-align: top;
+ }
 
-    .dataframe thead th {
-        text-align: right;
-    }
+ .dataframe thead th {
+ text-align: right;
+ }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Description</th>
-      <th>Amount</th>
-      <th>Amount_extract</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>A</td>
-      <td>trx .11</td>
-      <td>.11</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>B</td>
-      <td>balance 536,002.63</td>
-      <td>536,002.63</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>C</td>
-      <td>adj 85.85</td>
-      <td>85.85</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>D</td>
-      <td>manual adj 0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>E</td>
-      <td>fx va vb 55.63</td>
-      <td>55.63</td>
-    </tr>
-  </tbody>
+ <thead>
+ <tr style="text-align: right;">
+ <th></th>
+ <th>Description</th>
+ <th>Amount</th>
+ <th>Amount_extract</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <th>0</th>
+ <td>A</td>
+ <td>trx .11</td>
+ <td>.11</td>
+ </tr>
+ <tr>
+ <th>1</th>
+ <td>B</td>
+ <td>balance 536,002.63</td>
+ <td>536,002.63</td>
+ </tr>
+ <tr>
+ <th>2</th>
+ <td>C</td>
+ <td>adj 85.85</td>
+ <td>85.85</td>
+ </tr>
+ <tr>
+ <th>3</th>
+ <td>D</td>
+ <td>manual adj 0.00</td>
+ <td>0.00</td>
+ </tr>
+ <tr>
+ <th>4</th>
+ <td>E</td>
+ <td>fx va vb 55.63</td>
+ <td>55.63</td>
+ </tr>
+ </tbody>
 </table>
 </div>
 

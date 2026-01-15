@@ -49,23 +49,23 @@ from datetime import datetime
 
 # Portfolio holdings (when we bought stocks)
 portfolio = pd.DataFrame({
-    'Stock_ID': [1, 5, 10, 9, 7],
-    'Stock_Symbol': ['AAPL', 'MSFT', 'GOOGL', 'TSLA', 'AMZN'],
-    'Purchase_Date': ['2023-03-15', '2023-07-22', '2023-11-03', '2023-06-08', '2023-02-21'],
-    'Shares': [100, 50, 25, 75, 30]
+ 'Stock_ID': [1, 5, 10, 9, 7],
+ 'Stock_Symbol': ['AAPL', 'MSFT', 'GOOGL', 'TSLA', 'AMZN'],
+ 'Purchase_Date': ['2023-03-15', '2023-07-22', '2023-11-03', '2023-06-08', '2023-02-21'],
+ 'Shares': [100, 50, 25, 75, 30]
 })
 
 # Market price history (daily prices, but with gaps)
 price_history = pd.DataFrame({
-    'Stock_ID': [1, 1, 5, 5, 7, 7, 9, 9, 10, 10],
-    'Price_Date': [
-        '2023-03-14', '2023-03-17',  # AAPL: missing 3/15, 3/16
-        '2023-07-21', '2023-07-24',  # MSFT: missing 7/22, 7/23  
-        '2023-02-20', '2023-02-23',  # AMZN: missing 2/21, 2/22
-        '2023-06-07', '2023-06-09',  # TSLA: missing 6/8
-        '2023-11-02', '2023-11-06'   # GOOGL: missing 11/3, 11/4, 11/5
-    ],
-    'Price': [145.50, 147.20, 335.80, 338.90, 94.75, 96.30, 245.60, 248.10, 2750.00, 2780.50]
+ 'Stock_ID': [1, 1, 5, 5, 7, 7, 9, 9, 10, 10],
+ 'Price_Date': [
+ '2023-03-14', '2023-03-17', # AAPL: missing 3/15, 3/16
+ '2023-07-21', '2023-07-24', # MSFT: missing 7/22, 7/23 
+ '2023-02-20', '2023-02-23', # AMZN: missing 2/21, 2/22
+ '2023-06-07', '2023-06-09', # TSLA: missing 6/8
+ '2023-11-02', '2023-11-06' # GOOGL: missing 11/3, 11/4, 11/5
+ ],
+ 'Price': [145.50, 147.20, 335.80, 338.90, 94.75, 96.30, 245.60, 248.10, 2750.00, 2780.50]
 })
 
 print("Portfolio Holdings:")
@@ -92,12 +92,12 @@ print()
 # Step 3: Use merge_asof to find the most recent price for each purchase
 # This finds the latest price that was available on or before the purchase date
 valued_portfolio = pd.merge_asof(
-    portfolio,                    # Left dataframe (what we want to value)
-    price_history,               # Right dataframe (price history)
-    left_on='Purchase_Date',     # Date column in portfolio
-    right_on='Price_Date',       # Date column in prices
-    by='Stock_ID',               # Match within the same stock
-    direction='backward'         # Find most recent price before/on purchase date
+ portfolio, # Left dataframe (what we want to value)
+ price_history, # Right dataframe (price history)
+ left_on='Purchase_Date', # Date column in portfolio
+ right_on='Price_Date', # Date column in prices
+ by='Stock_ID', # Match within the same stock
+ direction='backward' # Find most recent price before/on purchase date
 )
 
 print("Portfolio with matched prices:")
@@ -115,9 +115,9 @@ print()
 # Step 5: Show the matching logic in detail
 print("Detailed Matching Analysis:")
 for _, row in valued_portfolio.iterrows():
-    print(f"{row['Stock_Symbol']}: Purchased on {row['Purchase_Date'].strftime('%Y-%m-%d')}, "
-          f"valued using price from {row['Price_Date'].strftime('%Y-%m-%d')} "
-          f"({row['Days_Between']} days earlier) at ${row['Price']:.2f}")
+ print(f"{row['Stock_Symbol']}: Purchased on {row['Purchase_Date'].strftime('%Y-%m-%d')}, "
+ f"valued using price from {row['Price_Date'].strftime('%Y-%m-%d')} "
+ f"({row['Days_Between']} days earlier) at ${row['Price']:.2f}")
 print()
 
 # Step 6: Portfolio summary
@@ -125,20 +125,20 @@ total_value = valued_portfolio['Position_Value'].sum()
 avg_price_lag = valued_portfolio['Days_Between'].mean()
 
 summary = pd.DataFrame({
-    'Metric': [
-        'Total Positions',
-        'Total Portfolio Value',
-        'Average Price Lag (days)',
-        'Largest Position Value',
-        'Positions with Same-Day Pricing'
-    ],
-    'Value': [
-        len(valued_portfolio),
-        f"${total_value:,.2f}",
-        f"{avg_price_lag:.1f}",
-        f"${valued_portfolio['Position_Value'].max():,.2f}",
-        (valued_portfolio['Days_Between'] == 0).sum()
-    ]
+ 'Metric': [
+ 'Total Positions',
+ 'Total Portfolio Value',
+ 'Average Price Lag (days)',
+ 'Largest Position Value',
+ 'Positions with Same-Day Pricing'
+ ],
+ 'Value': [
+ len(valued_portfolio),
+ f"${total_value:,.2f}",
+ f"{avg_price_lag:.1f}",
+ f"${valued_portfolio['Position_Value'].max():,.2f}",
+ (valued_portfolio['Days_Between'] == 0).sum()
+ ]
 })
 
 print("Portfolio Valuation Summary:")
@@ -150,31 +150,31 @@ print("Comparison of different merge directions:")
 
 # Backward search (most recent price before purchase)
 backward_merge = pd.merge_asof(
-    portfolio, price_history,
-    left_on='Purchase_Date', right_on='Price_Date',
-    by='Stock_ID', direction='backward'
+ portfolio, price_history,
+ left_on='Purchase_Date', right_on='Price_Date',
+ by='Stock_ID', direction='backward'
 )
 
-# Forward search (earliest price after purchase)  
+# Forward search (earliest price after purchase) 
 forward_merge = pd.merge_asof(
-    portfolio, price_history,
-    left_on='Purchase_Date', right_on='Price_Date', 
-    by='Stock_ID', direction='forward'
+ portfolio, price_history,
+ left_on='Purchase_Date', right_on='Price_Date', 
+ by='Stock_ID', direction='forward'
 )
 
 # Nearest search (closest price in either direction)
 nearest_merge = pd.merge_asof(
-    portfolio, price_history,
-    left_on='Purchase_Date', right_on='Price_Date',
-    by='Stock_ID', direction='nearest'
+ portfolio, price_history,
+ left_on='Purchase_Date', right_on='Price_Date',
+ by='Stock_ID', direction='nearest'
 )
 
 comparison = pd.DataFrame({
-    'Stock': portfolio['Stock_Symbol'],
-    'Purchase_Date': portfolio['Purchase_Date'],
-    'Backward_Price': backward_merge['Price'],
-    'Forward_Price': forward_merge['Price'], 
-    'Nearest_Price': nearest_merge['Price']
+ 'Stock': portfolio['Stock_Symbol'],
+ 'Purchase_Date': portfolio['Purchase_Date'],
+ 'Backward_Price': backward_merge['Price'],
+ 'Forward_Price': forward_merge['Price'], 
+ 'Nearest_Price': nearest_merge['Price']
 })
 
 print("Different merge_asof directions:")

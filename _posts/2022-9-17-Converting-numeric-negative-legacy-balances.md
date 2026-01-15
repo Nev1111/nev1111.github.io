@@ -1,5 +1,5 @@
 ---
-layout: primer_post
+layout: post
 title: Formatting legacy system negative balances
 thumbnail-img: /assets/img/PandAudit background transparent.png
 subtitle: Convert old legacy system balances ending with '-' OR 'CR' to negative values
@@ -30,47 +30,47 @@ df
 
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+ .dataframe tbody tr th:only-of-type {
+ vertical-align: middle;
+ }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+ .dataframe tbody tr th {
+ vertical-align: top;
+ }
 
-    .dataframe thead th {
-        text-align: right;
-    }
+ .dataframe thead th {
+ text-align: right;
+ }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5,009-</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>69.35-</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>8,959-</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>8,953.23</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>10,520</td>
-    </tr>
-  </tbody>
+ <thead>
+ <tr style="text-align: right;">
+ <th></th>
+ <th>Amount</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <th>0</th>
+ <td>5,009-</td>
+ </tr>
+ <tr>
+ <th>1</th>
+ <td>69.35-</td>
+ </tr>
+ <tr>
+ <th>2</th>
+ <td>8,959-</td>
+ </tr>
+ <tr>
+ <th>3</th>
+ <td>8,953.23</td>
+ </tr>
+ <tr>
+ <th>4</th>
+ <td>10,520</td>
+ </tr>
+ </tbody>
 </table>
 </div>
 
@@ -106,47 +106,47 @@ df
 
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+ .dataframe tbody tr th:only-of-type {
+ vertical-align: middle;
+ }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+ .dataframe tbody tr th {
+ vertical-align: top;
+ }
 
-    .dataframe thead th {
-        text-align: right;
-    }
+ .dataframe thead th {
+ text-align: right;
+ }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>-5009.00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>-69.35</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>-8959.00</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>8953.23</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>10520.00</td>
-    </tr>
-  </tbody>
+ <thead>
+ <tr style="text-align: right;">
+ <th></th>
+ <th>Amount</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <th>0</th>
+ <td>-5009.00</td>
+ </tr>
+ <tr>
+ <th>1</th>
+ <td>-69.35</td>
+ </tr>
+ <tr>
+ <th>2</th>
+ <td>-8959.00</td>
+ </tr>
+ <tr>
+ <th>3</th>
+ <td>8953.23</td>
+ </tr>
+ <tr>
+ <th>4</th>
+ <td>10520.00</td>
+ </tr>
+ </tbody>
 </table>
 </div>
 

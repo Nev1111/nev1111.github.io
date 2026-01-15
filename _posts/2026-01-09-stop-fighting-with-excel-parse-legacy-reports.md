@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "🔥 Stop Fighting With Excel: Parse Legacy Reports Like a Pro"
+layout: post
+title: "Stop Fighting With Excel: Parse Legacy Reports Like a Pro"
 subtitle: "Does your accounting system export unformatted text files? Transform messy reports into clean data in seconds!"
 tags: [python, excel, pandas, automation, accounting, text-parsing, data-cleaning]
 comments: true
@@ -13,12 +13,12 @@ Picture this: It's month-end, and you need to process the trial balance. Your le
 
 ```
 Account Report - December 2025
-0123456-10-001234    Cash Operating Fund
-  12/15/2025    Transaction 1    5,234.56
-  12/20/2025    Transaction 2    1,234.56 CR
-0123457-10-001235    Accounts Receivable  
-  12/10/2025    Transaction 3    15,234.00
-  12/25/2025    Transaction 4    2,500.00 CR
+0123456-10-001234 Cash Operating Fund
+ 12/15/2025 Transaction 1 5,234.56
+ 12/20/2025 Transaction 2 1,234.56 CR
+0123457-10-001235 Accounts Receivable 
+ 12/10/2025 Transaction 3 15,234.00
+ 12/25/2025 Transaction 4 2,500.00 CR
 ```
 
 You know what comes next: **hours of manual Excel torture**. Copy-paste account numbers down, split columns, remove extra spaces, add formulas that break when the format changes next month...
@@ -32,20 +32,20 @@ You know what comes next: **hours of manual Excel torture**. Copy-paste account 
 ### What Most People Try:
 
 1. **Import the text file** → Ends up in one column
-2. **Text-to-Columns** → Breaks because spacing is inconsistent  
+2. **Text-to-Columns** → Breaks because spacing is inconsistent 
 3. **Add helper columns** with formulas like:
-   ```excel
-   =IF(LEN(TRIM(A2))>0, IF(ISNUMBER(LEFT(A2,1)+0), LEFT(A2,20), ""), "")
-   ```
+ ```excel
+ =IF(LEN(TRIM(A2))>0, IF(ISNUMBER(LEFT(A2,1)+0), LEFT(A2,20), ""), "")
+ ```
 4. **Copy account numbers down** manually or with complex IF statements
 5. **Split dates and amounts** with MID(), LEFT(), RIGHT() formulas
-6. **Fix next month** when the format changes 😭
+6. **Fix next month** when the format changes 
 
 ### Why This Approach Sucks:
 - ⏰ **Time**: 1-2 hours per report
-- 💔 **Breaks**: Every time the format changes slightly
-- 🐛 **Errors**: Easy to miss rows or copy wrong
-- 😤 **Frustrating**: Repetitive mind-numbing work
+- **Breaks**: Every time the format changes slightly
+- **Errors**: Easy to miss rows or copy wrong
+- **Frustrating**: Repetitive mind-numbing work
 
 ---
 
@@ -61,7 +61,7 @@ df = pd.read_table('trial_balance.txt', header=None, names=['description'])
 
 # Extract account number and description in ONE LINE using regex
 df[['Account_num', 'Account_desc']] = df['description'].str.extract(
-    r'(\d{7}\-\d{2}\-\d{6})\s+(.*)'
+ r'(\d{7}\-\d{2}\-\d{6})\s+(.*)'
 )
 
 # Extract dates (MM/DD/YYYY format)
@@ -84,7 +84,7 @@ print(df_clean.head())
 #### 1️⃣ **The Extract Pattern**
 ```python
 df[['Account_num', 'Account_desc']] = df['description'].str.extract(
-    r'(\d{7}\-\d{2}\-\d{6})\s+(.)'
+ r'(\d{7}\-\d{2}\-\d{6})\s+(.)'
 )
 ```
 - `\d{7}` = 7 digits
@@ -111,17 +111,17 @@ df['Account_num'] = df['Account_num'].ffill()
 ### ⏰ Time Comparison:
 - **Excel Method**: 1-2 hours
 - **Python Method**: 30 seconds
-- **Time Saved**: ~97% 🎉
+- **Time Saved**: ~97% 
 
-### 🎯 Accuracy:
+### - Accuracy:
 - **Excel**: Prone to copy-paste errors
 - **Python**: Same perfect result every time
 
-### 🔄 Maintainability:
+### Maintainability:
 - **Excel**: Breaks when format changes
 - **Python**: Adjust one regex pattern, done
 
-### 📊 Scale:
+### Scale:
 - **Excel**: Slow with 10,000+ rows
 - **Python**: Handles millions of rows easily
 
@@ -143,7 +143,7 @@ tb['description'] = tb['description'].fillna(" ")
 
 # Extract account numbers and descriptions
 tb[['Account_num', 'Account_desc']] = tb['description'].str.extract(
-    r'(\d{7}\-\d{2}\-\d{6})\s+(.*)'
+ r'(\d{7}\-\d{2}\-\d{6})\s+(.*)'
 )
 
 # Extract dates
@@ -160,16 +160,16 @@ tb_clean = tb[tb['Month'].notna()].copy()
 # Export to Excel for further analysis
 tb_clean.to_excel('trial_balance_clean.xlsx', index=False)
 
-print(f"✅ Processed {len(tb_clean):,} transactions")
-print(f"📊 Accounts found: {tb_clean['Account_num'].nunique()}")
-print(f"💾 Saved to: trial_balance_clean.xlsx")
+print(f" Processed {len(tb_clean):,} transactions")
+print(f" Accounts found: {tb_clean['Account_num'].nunique()}")
+print(f" Saved to: trial_balance_clean.xlsx")
 ```
 
 **Output:**
 ```
-✅ Processed 1,247 transactions
-📊 Accounts found: 156
-💾 Saved to: trial_balance_clean.xlsx
+ Processed 1,247 transactions
+ Accounts found: 156
+ Saved to: trial_balance_clean.xlsx
 ```
 
 ---
@@ -180,34 +180,34 @@ What if your accounting system has multiple report formats? Easy—create a func
 
 ```python
 def parse_trial_balance(file_path, account_pattern, date_pattern):
-    """Parse trial balance with configurable patterns"""
-    df = pd.read_table(file_path, header=None, names=['description'])
-    df['description'] = df['description'].fillna(" ")
-    
-    # Extract using provided patterns
-    df[['Account_num', 'Account_desc']] = df['description'].str.extract(account_pattern)
-    df['Date'] = df['description'].str.extract(date_pattern)
-    
-    # Forward fill
-    for col in ['Account_num', 'Account_desc', 'Date']:
-        df[col] = df[col].ffill()
-    
-    # Clean up
-    df_clean = df[df['Date'].notna()].copy()
-    
-    return df_clean
+ """Parse trial balance with configurable patterns"""
+ df = pd.read_table(file_path, header=None, names=['description'])
+ df['description'] = df['description'].fillna(" ")
+ 
+ # Extract using provided patterns
+ df[['Account_num', 'Account_desc']] = df['description'].str.extract(account_pattern)
+ df['Date'] = df['description'].str.extract(date_pattern)
+ 
+ # Forward fill
+ for col in ['Account_num', 'Account_desc', 'Date']:
+ df[col] = df[col].ffill()
+ 
+ # Clean up
+ df_clean = df[df['Date'].notna()].copy()
+ 
+ return df_clean
 
 # Use for different formats:
 tb_format_a = parse_trial_balance(
-    'report_a.txt',
-    r'(\d{7}\-\d{2}\-\d{6})\s+(.*)',
-    r"([0-9]{2}\/[0-9]{2}\/[0-9]{4})"
+ 'report_a.txt',
+ r'(\d{7}\-\d{2}\-\d{6})\s+(.*)',
+ r"([0-9]{2}\/[0-9]{2}\/[0-9]{4})"
 )
 
 tb_format_b = parse_trial_balance(
-    'report_b.txt', 
-    r'(\d{4}\-\d{4})\s+(.*)',  # Different account format
-    r"([0-9]{4}\-[0-9]{2}\-[0-9]{2})"  # Different date format
+ 'report_b.txt', 
+ r'(\d{4}\-\d{4})\s+(.*)', # Different account format
+ r"([0-9]{4}\-[0-9]{2}\-[0-9]{2})" # Different date format
 )
 ```
 
@@ -226,7 +226,7 @@ Export your trial balance or account report as a `.txt` file.
 ### Step 3: Run the Script
 Copy the code above, adjust the regex patterns to match your account number format, and run it!
 
-### Step 4: Never Manually Parse Reports Again 🎊
+### Step 4: Never Manually Parse Reports Again 
 
 ---
 
@@ -247,21 +247,21 @@ Here are regex patterns for common account number formats:
 
 ## The Bottom Line
 
-✅ **What You Get:**
+ **What You Get:**
 - Parse any text-based accounting report automatically
 - Transform unstructured data to clean tables in seconds
 - Never manually copy-paste account numbers again
 - Reusable code that works every month
 
-✅ **Time Saved:**  
+ **Time Saved:** 
 - **Per report**: 1-2 hours → 30 seconds
 - **Per year** (12 reports): ~20 hours saved
 - **Per career**: Hundreds of hours freed up for actual analysis
 
-✅ **Bonus Benefits:**
-- Impress your boss with lightning-fast turnarounds ⚡
-- Eliminate manual errors 🎯
-- Focus on analysis instead of data wrangling 🧠
+ **Bonus Benefits:**
+- Impress your boss with lightning-fast turnarounds 
+- Eliminate manual errors -
+- Focus on analysis instead of data wrangling 
 
 ---
 
@@ -273,7 +273,7 @@ Once you've parsed your report, you probably need to:
 - Create pivot tables → [Read this post]()
 - Merge with classification libraries → [Read this post]()
 
-Stay tuned for the full series! 🚀
+Stay tuned for the full series! 
 
 ---
 

@@ -1,56 +1,56 @@
 name: Discord Blog Notification
 
 on:
-  push:
-    branches: [ master ]
-    paths:
-      - '_posts/**'
+ push:
+ branches: [ master ]
+ paths:
+ - '_posts/**'
 
 jobs:
-  notify:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
+ notify:
+ runs-on: ubuntu-latest
+ steps:
+ - name: Checkout
+ uses: actions/checkout@v3
+ with:
+ fetch-depth: 2
 
-      - name: Get changed files
-        id: changed-files
-        run: |
-          echo "files=$(git diff --name-only HEAD^ HEAD | grep '^_posts/' | head -1)" >> $GITHUB_OUTPUT
+ - name: Get changed files
+ id: changed-files
+ run: |
+ echo "files=$(git diff --name-only HEAD^ HEAD | grep '^_posts/' | head -1)" >> $GITHUB_OUTPUT
 
-      - name: Extract post info
-        if: steps.changed-files.outputs.files != ''
-        id: post-info
-        run: |
-          POST_FILE="${{ steps.changed-files.outputs.files }}"
-          if [ -f "$POST_FILE" ]; then
-            TITLE=$(grep -m 1 '^title:' "$POST_FILE" | sed 's/title: *//;s/"//g')
-            EXCERPT=$(grep -m 1 '^excerpt:' "$POST_FILE" | sed 's/excerpt: *//;s/"//g')
-            FILENAME=$(basename "$POST_FILE" .md)
-            DATE=$(echo "$FILENAME" | grep -oE '^[0-9]{4}-[0-9]{2}-[0-9]{2}')
-            SLUG=$(echo "$FILENAME" | sed "s/^$DATE-//")
-            URL="https://pandaudit.com/$SLUG/"
-            
-            echo "title=$TITLE" >> $GITHUB_OUTPUT
-            echo "excerpt=$EXCERPT" >> $GITHUB_OUTPUT
-            echo "url=$URL" >> $GITHUB_OUTPUT
-          fi
+ - name: Extract post info
+ if: steps.changed-files.outputs.files != ''
+ id: post-info
+ run: |
+ POST_FILE="${{ steps.changed-files.outputs.files }}"
+ if [ -f "$POST_FILE" ]; then
+ TITLE=$(grep -m 1 '^title:' "$POST_FILE" | sed 's/title: *//;s/"//g')
+ EXCERPT=$(grep -m 1 '^excerpt:' "$POST_FILE" | sed 's/excerpt: *//;s/"//g')
+ FILENAME=$(basename "$POST_FILE" .md)
+ DATE=$(echo "$FILENAME" | grep -oE '^[0-9]{4}-[0-9]{2}-[0-9]{2}')
+ SLUG=$(echo "$FILENAME" | sed "s/^$DATE-//")
+ URL="https://pandaudit.com/$SLUG/"
+ 
+ echo "title=$TITLE" >> $GITHUB_OUTPUT
+ echo "excerpt=$EXCERPT" >> $GITHUB_OUTPUT
+ echo "url=$URL" >> $GITHUB_OUTPUT
+ fi
 
-      - name: Send Discord notification
-        if: steps.post-info.outputs.title != ''
-        run: |
-          curl -H "Content-Type: application/json" \
-               -d "{
-                 \"embeds\": [{
-                   \"title\": \"📊 New Blog Post: ${{ steps.post-info.outputs.title }}\",
-                   \"description\": \"${{ steps.post-info.outputs.excerpt }}\",
-                   \"url\": \"${{ steps.post-info.outputs.url }}\",
-                   \"color\": 5814783,
-                   \"footer\": {
-                     \"text\": \"💬 Click to read and discuss!\"
-                   }
-                 }]
-               }" \
-               https://discord.com/api/webhooks/1459221471455870997/cRD-CGI3gBojnsvSiW4Rz1jUGbFGsdyNi0-TApY63-AAL9DtuDqryA10zWqKh0hkCS73
+ - name: Send Discord notification
+ if: steps.post-info.outputs.title != ''
+ run: |
+ curl -H "Content-Type: application/json" \
+ -d "{
+ \"embeds\": [{
+ \"title\": \" New Blog Post: ${{ steps.post-info.outputs.title }}\",
+ \"description\": \"${{ steps.post-info.outputs.excerpt }}\",
+ \"url\": \"${{ steps.post-info.outputs.url }}\",
+ \"color\": 5814783,
+ \"footer\": {
+ \"text\": \"- Click to read and discuss!\"
+ }
+ }]
+ }" \
+ https://discord.com/api/webhooks/1459221471455870997/cRD-CGI3gBojnsvSiW4Rz1jUGbFGsdyNi0-TApY63-AAL9DtuDqryA10zWqKh0hkCS73

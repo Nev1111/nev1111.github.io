@@ -41,7 +41,7 @@ Here's how to solve this mystery with Python and pandas:
 ## Key Learning Points
 
 - {{Learning point 1}}
-- {{Learning point 2}}  
+- {{Learning point 2}} 
 - {{Learning point 3}}
 
 ---

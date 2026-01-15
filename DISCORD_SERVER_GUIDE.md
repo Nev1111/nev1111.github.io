@@ -2,22 +2,22 @@
 
 Comprehensive guide for setting up and managing your PANDAUDIT Discord community server.
 
-##  Table of Contents
+## Table of Contents
 
-1. [Overview](#-overview)
-2. [Server Creation](#-server-creation)
-3. [Channel Structure](#-channel-structure)
-4. [Role Configuration](#-role-configuration)
-5. [Permissions Setup](#-permissions-setup)
-6. [Community Guidelines](#-community-guidelines)
-7. [Moderation Strategy](#-moderation-strategy)
-8. [Engagement Tactics](#-engagement-tactics)
-9. [Server Optimization](#-server-optimization)
-10. [Growth Strategies](#-growth-strategies)
+1. [Overview](#overview)
+2. [Server Creation](#server-creation)
+3. [Channel Structure](#channel-structure)
+4. [Role Configuration](#role-configuration)
+5. [Permissions Setup](#permissions-setup)
+6. [Community Guidelines](#community-guidelines)
+7. [Moderation Strategy](#moderation-strategy)
+8. [Engagement Tactics](#engagement-tactics)
+9. [Server Optimization](#server-optimization)
+10. [Growth Strategies](#growth-strategies)
 
 ---
 
-##  Overview
+## Overview
 
 ### Purpose
 The PANDAUDIT Discord server is a community hub for:
@@ -43,57 +43,57 @@ The PANDAUDIT Discord server is a community hub for:
 
 ---
 
-##  Server Creation
+## Server Creation
 
 ### Step 1: Create Server
 
 1. **Open Discord**
-   - Desktop app or web version
-   - Make sure you're logged in
+ - Desktop app or web version
+ - Make sure you're logged in
 
 2. **Create Server**
-   - Click **"+"** button on left sidebar
-   - Select **"Create My Own"**
-   - Choose **"For a club or community"**
+ - Click **"+"** button on left sidebar
+ - Select **"Create My Own"**
+ - Choose **"For a club or community"**
 
 3. **Server Name and Icon**
-   - **Name**: `PANDAUDIT Community` or `PANDAUDIT - Data Analytics & Automation`
-   - **Icon**: Upload PANDAUDIT logo
-   - Click **"Create"**
+ - **Name**: `PANDAUDIT Community` or `PANDAUDIT - Data Analytics & Automation`
+ - **Icon**: Upload PANDAUDIT logo
+ - Click **"Create"**
 
 ### Step 2: Server Settings
 
 1. **Go to Server Settings**
-   - Right-click server name → **"Server Settings"**
+ - Right-click server name → **"Server Settings"**
 
 2. **Overview Tab**
-   - **Server Name**: PANDAUDIT Community
-   - **Server Description**: "A community of finance professionals exploring data analytics, automation, and modern tools. Connect, learn, and share your journey!"
-   - **Server Icon**: Upload high-quality PANDAUDIT logo
-   - **Server Banner** (boost level 2+): Optional branded banner
+ - **Server Name**: PANDAUDIT Community
+ - **Server Description**: "A community of finance professionals exploring data analytics, automation, and modern tools. Connect, learn, and share your journey!"
+ - **Server Icon**: Upload high-quality PANDAUDIT logo
+ - **Server Banner** (boost level 2+): Optional branded banner
 
 3. **Moderation Tab**
-   - **Verification Level**: Medium (must have verified email)
-   - **Explicit Content Filter**: Scan media from all members
-   - **DM Settings**: Disabled (to prevent spam)
+ - **Verification Level**: Medium (must have verified email)
+ - **Explicit Content Filter**: Scan media from all members
+ - **DM Settings**: Disabled (to prevent spam)
 
 4. **Community Tab**
-   - **Enable Community**: Toggle ON
-   - This enables:
-     - Welcome Screen
-     - Discovery
-     - Announcement Channels
-     - Rules
-   - Set **Rules Channel**: #rules (we'll create this)
-   - Set **Updates Channel**: #announcements
+ - **Enable Community**: Toggle ON
+ - This enables:
+ - Welcome Screen
+ - Discovery
+ - Announcement Channels
+ - Rules
+ - Set **Rules Channel**: #rules (we'll create this)
+ - Set **Updates Channel**: #announcements
 
 5. **Discovery** (optional, for public servers)
-   - If you want server discoverable on Discord
-   - Add description, tags, invite link
+ - If you want server discoverable on Discord
+ - Add description, tags, invite link
 
 ---
 
-##  Channel Structure
+## Channel Structure
 
 ### Recommended Channel Organization
 
@@ -101,57 +101,57 @@ Here's the ideal channel structure for PANDAUDIT community:
 
 ```
  WELCOME & INFO
-   welcome
-   rules
-   announcements
-   roles
+ welcome
+ rules
+ announcements
+ roles
 
  COMMUNITY
-   general
-   introductions
-   wins-and-milestones
-   random
+ general
+ introductions
+ wins-and-milestones
+ random
 
  CONTENT & LEARNING
-   blog-updates
-   data-analytics
-   automation
-   python-discussion
-   excel-and-powerbi
+ blog-updates
+ data-analytics
+ automation
+ python-discussion
+ excel-and-powerbi
 
  HELP & SUPPORT
-   help-and-questions
-   code-troubleshooting
-   resources
+ help-and-questions
+ code-troubleshooting
+ resources
 
  SHOWCASE
-   showcase
-   project-ideas
-   collaboration
+ showcase
+ project-ideas
+ collaboration
 
  MODERATION (hidden from members)
-   mod-chat
-   mod-logs
-   reports
+ mod-chat
+ mod-logs
+ reports
 
  VOICE (optional)
-   General Voice
-   Study/Co-working
-   Lounge
+ General Voice
+ Study/Co-working
+ Lounge
 ```
 
 ### Detailed Channel Setup
 
-####  WELCOME & INFO Category
+#### WELCOME & INFO Category
 
 **1. #welcome**
 - **Purpose**: Greet new members
 - **Permissions**: Read-only for @everyone, bot can post
 - **Setup**:
-  1. Create channel: **"welcome"**
-  2. Topic: "Welcome to PANDAUDIT!  Introduce yourself in #introductions"
-  3. Set read-only permissions
-  4. Pin welcome message:
+ 1. Create channel: **"welcome"**
+ 2. Topic: "Welcome to PANDAUDIT! Introduce yourself in #introductions"
+ 3. Set read-only permissions
+ 4. Pin welcome message:
 
 ```markdown
 **Welcome to PANDAUDIT Community!** 
@@ -178,32 +178,32 @@ Happy learning!
 **2. #rules**
 - **Purpose**: Server rules and guidelines
 - **Permissions**: Read-only for @everyone
-- **Content**: See [Community Guidelines](#-community-guidelines) section
+- **Content**: See [Community Guidelines](#community-guidelines) section
 
 **3. #announcements**
 - **Purpose**: Important server updates
 - **Permissions**: Only admins/mods can post, @everyone can read
 - **Setup**:
-  1. Create channel
-  2. Topic: " Official announcements from the PANDAUDIT team"
-  3. Enable "Announcement Channel" (for cross-posting)
+ 1. Create channel
+ 2. Topic: " Official announcements from the PANDAUDIT team"
+ 3. Enable "Announcement Channel" (for cross-posting)
 
 **4. #roles**
 - **Purpose**: Self-assignable roles for interests
 - **Permissions**: Read-only, bot can post
-- **Content**: Role selection message (see [Role Configuration](#-role-configuration))
+- **Content**: Role selection message (see [Role Configuration](#role-configuration))
 
 ---
 
-####  COMMUNITY Category
+#### COMMUNITY Category
 
 **1. #general**
 - **Purpose**: General discussion about data analytics, finance, etc.
 - **Permissions**: @everyone can read/send messages
 - **Topic**: " General chat about data analytics, automation, finance, and more!"
 - **Setup**:
-  - Slowmode: 3 seconds (prevents spam)
-  - No NSFW content
+ - Slowmode: 3 seconds (prevents spam)
+ - No NSFW content
 
 **2. #introductions**
 - **Purpose**: Members introduce themselves
@@ -226,7 +226,7 @@ Don't be shy! We're all here to learn and grow together.
 **3. #wins-and-milestones**
 - **Purpose**: Celebrate achievements, breakthroughs, promotions
 - **Topic**: " Share your wins! Automated a process? Finished a project? Got promoted? Celebrate here!"
-- **Setup**: Consider adding auto-reactions (  )
+- **Setup**: Consider adding auto-reactions ( )
 
 **4. #random**
 - **Purpose**: Off-topic, casual conversation
@@ -234,17 +234,17 @@ Don't be shy! We're all here to learn and grow together.
 
 ---
 
-####  CONTENT & LEARNING Category
+#### CONTENT & LEARNING Category
 
-**1. #blog-updates**  **IMPORTANT**
+**1. #blog-updates** **IMPORTANT**
 - **Purpose**: Automatic notifications when new blog posts published
 - **Permissions**: Read-only for @everyone, webhook can post
 - **Topic**: " Fresh content from pandaudit.com! New posts appear here automatically."
 - **Setup**:
-  1. Create channel
-  2. This is where GitHub Actions webhook posts
-  3. Bot auto-reacts to posts here (  )
-  4. Encourage discussion with prompts
+ 1. Create channel
+ 2. This is where GitHub Actions webhook posts
+ 3. Bot auto-reacts to posts here ( )
+ 4. Encourage discussion with prompts
 
 **2. #data-analytics**
 - **Purpose**: Discussions about data analytics, visualization, reporting
@@ -264,14 +264,14 @@ Don't be shy! We're all here to learn and grow together.
 
 ---
 
-####  HELP & SUPPORT Category
+#### HELP & SUPPORT Category
 
 **1. #help-and-questions**
 - **Purpose**: Ask questions, get help
 - **Topic**: " Ask questions about data analytics, Python, automation, or finance workflows!"
 - **Setup**:
-  - Slowmode: 5 seconds
-  - Pin "How to ask good questions" guide:
+ - Slowmode: 5 seconds
+ - Pin "How to ask good questions" guide:
 
 ```markdown
 **How to Ask Good Questions** 
@@ -281,20 +281,20 @@ To get the best help:
 1. **Be specific**: Instead of "Python doesn't work", say "I'm getting a KeyError when trying to merge dataframes"
 
 2. **Share context**:
-   • What are you trying to achieve?
-   • What have you tried?
-   • What error are you getting?
+ • What are you trying to achieve?
+ • What have you tried?
+ • What error are you getting?
 
 3. **Include code** (use code blocks):
-   \```python
-   # Your code here
-   \```
+ \```python
+ # Your code here
+ \```
 
 4. **Share error messages**: Copy full error text
 
 5. **Be patient**: Community members help in their free time
 
-6. **Say thanks!**: React with  or reply when helped
+6. **Say thanks!**: React with or reply when helped
 
 **Great question example**:
 > "I'm trying to merge two Excel files using pandas. I have a 'customer_id' column in both files, but I'm getting a KeyError. Here's my code: [code]. The error says: [error]. I've tried [attempted solutions]. Any ideas?"
@@ -314,7 +314,7 @@ Happy learning!
 
 ---
 
-####  SHOWCASE Category
+#### SHOWCASE Category
 
 **1. #showcase**
 - **Purpose**: Share completed projects, automations, analyses
@@ -331,7 +331,7 @@ Happy learning!
 
 ---
 
-####  MODERATION Category (Mods Only)
+#### MODERATION Category (Mods Only)
 
 **1. #mod-chat**
 - **Permissions**: Only @Admin and @Moderator can see
@@ -348,7 +348,7 @@ Happy learning!
 
 ---
 
-####  VOICE Category (Optional)
+#### VOICE Category (Optional)
 
 **1. General Voice**
 - **Purpose**: Casual voice chat
@@ -362,15 +362,15 @@ Happy learning!
 
 ---
 
-##  Role Configuration
+## Role Configuration
 
 ### Role Hierarchy (Top to Bottom)
 
 ```
-1.  Server Owner (you)
-2.  Admin
+1. Server Owner (you)
+2. Admin
 3. - Moderator
-4.  PANDAUDIT Bot (bot role)
+4. PANDAUDIT Bot (bot role)
 5. - Active Contributor
 6. - Member
 7. @everyone (default)
@@ -401,11 +401,11 @@ Go to Server Settings → Roles → Create Role
 - Name: **Moderator**
 - Color: Yellow (#F1C40F)
 - Permissions:
-  - Manage Messages
-  - Kick Members
-  - Ban Members
-  - Mute Members (Timeout)
-  - View Audit Log
+ - Manage Messages
+ - Kick Members
+ - Ban Members
+ - Mute Members (Timeout)
+ - View Audit Log
 - Display separately: Yes
 - Mentionable: Yes
 
@@ -477,75 +477,75 @@ C. **Use PANDAUDIT Bot** (if you extend it):
 
 ---
 
-##  Permissions Setup
+## Permissions Setup
 
 ### Channel Permission Templates
 
 **Read-Only Channels** (#welcome, #rules, #announcements):
 - @everyone:
-  -  View Channel
-  -  Read Message History
-  -  Send Messages
-  -  Add Reactions
+ - View Channel
+ - Read Message History
+ - Send Messages
+ - Add Reactions
 - @Admin, @Moderator:
-  -  All permissions
+ - All permissions
 - @PANDAUDIT Bot:
-  -  View Channel
-  -  Send Messages
-  -  Embed Links
-  -  Add Reactions
+ - View Channel
+ - Send Messages
+ - Embed Links
+ - Add Reactions
 
 **General Channels** (#general, #introductions, etc.):
 - @everyone:
-  -  View Channel
-  -  Send Messages
-  -  Embed Links
-  -  Attach Files
-  -  Add Reactions
-  -  Use External Emojis
-  -  Mention @everyone
-  -  Manage Messages
+ - View Channel
+ - Send Messages
+ - Embed Links
+ - Attach Files
+ - Add Reactions
+ - Use External Emojis
+ - Mention @everyone
+ - Manage Messages
 - @Moderator:
-  -  All above + Manage Messages
+ - All above + Manage Messages
 
 **Mod-Only Channels** (#mod-chat, #mod-logs, #reports):
 - @everyone:
-  -  View Channel (hidden)
+ - View Channel (hidden)
 - @Moderator, @Admin:
-  -  View Channel
-  -  Send Messages
-  -  All permissions
+ - View Channel
+ - Send Messages
+ - All permissions
 
 **Voice Channels**:
 - @everyone:
-  -  View Channel
-  -  Connect
-  -  Speak
-  -  Mute Members
-  -  Deafen Members
+ - View Channel
+ - Connect
+ - Speak
+ - Mute Members
+ - Deafen Members
 - @Moderator:
-  -  All above + Mute/Deafen Members
+ - All above + Mute/Deafen Members
 
 ### Server-Wide Permission Settings
 
 **@everyone Role Permissions**:
--  View Channels
--  Send Messages
--  Read Message History
--  Add Reactions
--  Connect (voice)
--  Speak (voice)
--  Administrator
--  Manage Server
--  Manage Roles
--  Manage Channels
--  Kick Members
--  Ban Members
--  Mention @everyone
+- View Channels
+- Send Messages
+- Read Message History
+- Add Reactions
+- Connect (voice)
+- Speak (voice)
+- Administrator
+- Manage Server
+- Manage Roles
+- Manage Channels
+- Kick Members
+- Ban Members
+- Mention @everyone
 
 ---
 
-##  Community Guidelines
+## Community Guidelines
 
 Create this in #rules channel:
 
@@ -624,7 +624,7 @@ Let's build an amazing community together!
 
 ---
 
-##  Moderation Strategy
+## Moderation Strategy
 
 ### Moderation Team
 
@@ -662,16 +662,16 @@ Let's build an amazing community together!
 
 1. User reports issue → Goes to #reports
 2. Moderator investigates:
-   - Review message history
-   - Check user's past behavior
-   - Consider context
+ - Review message history
+ - Check user's past behavior
+ - Consider context
 3. Take action:
-   - Warn, mute, kick, or ban
-   - Log action in #mod-logs
-   - DM user explaining action (if appropriate)
+ - Warn, mute, kick, or ban
+ - Log action in #mod-logs
+ - DM user explaining action (if appropriate)
 4. Follow up:
-   - Thank reporter (if not anonymous)
-   - Monitor situation
+ - Thank reporter (if not anonymous)
+ - Monitor situation
 
 **3. Mod Communication**
 
@@ -695,22 +695,22 @@ Train all mods on these commands.
 
 ---
 
-##  Engagement Tactics
+## Engagement Tactics
 
 ### Daily Activities
 
 **1. Morning Check-In**
 - Post in #general:
-  ```
-  Good morning, data analysts! 
-  What are you working on today?
-  ```
+ ```
+ Good morning, data analysts! 
+ What are you working on today?
+ ```
 
 **2. Question of the Day**
 - Post engaging questions:
-  - "What's your biggest Excel pain point?"
-  - "What data analytics skill do you want to learn next?"
-  - "Share one automation that saved you time this week"
+ - "What's your biggest Excel pain point?"
+ - "What data analytics skill do you want to learn next?"
+ - "Share one automation that saved you time this week"
 
 **3. Resource Sharing**
 - Share helpful articles in #resources
@@ -720,35 +720,35 @@ Train all mods on these commands.
 
 **1. Weekly Challenges** ( Every Monday)
 - Post in #general:
-  ```markdown
-  ** Weekly Challenge #[number]**
-  
-  **Challenge**: [Description of challenge]
-  Example: "Create a pivot table using pandas that shows monthly sales by region"
-  
-  **Requirements**:
-  • [Requirement 1]
-  • [Requirement 2]
-  
-  **Submission**:
-  Post your solution in #showcase by Sunday!
-  
-  **Prize**: Featured in next week's community spotlight 
-  ```
+ ```markdown
+ ** Weekly Challenge #[number]**
+ 
+ **Challenge**: [Description of challenge]
+ Example: "Create a pivot table using pandas that shows monthly sales by region"
+ 
+ **Requirements**:
+ • [Requirement 1]
+ • [Requirement 2]
+ 
+ **Submission**:
+ Post your solution in #showcase by Sunday!
+ 
+ **Prize**: Featured in next week's community spotlight 
+ ```
 
 **2. Feature Friday** (Every Friday)
 - Spotlight a community member in #announcements:
-  ```markdown
-  ** Feature Friday: @[Username]**
-  
-  This week we're highlighting @[Username] for [reason]!
-  
-   **Project**: [Brief description]
-   **Impact**: [What they achieved]
-   **Shoutout**: [Why they're awesome]
-  
-  Great work, @[Username]! Keep inspiring the community! 
-  ```
+ ```markdown
+ ** Feature Friday: @[Username]**
+ 
+ This week we're highlighting @[Username] for [reason]!
+ 
+ **Project**: [Brief description]
+ **Impact**: [What they achieved]
+ **Shoutout**: [Why they're awesome]
+ 
+ Great work, @[Username]! Keep inspiring the community! 
+ ```
 
 **3. Tutorial Tuesday** (Every Tuesday)
 - Share a mini-tutorial or tip
@@ -758,24 +758,24 @@ Train all mods on these commands.
 
 **1. Monthly Recap** (First Monday)
 - Summarize:
-  - Top discussions
-  - New members
-  - Best projects shared
-  - Community milestones
-  - Upcoming events
+ - Top discussions
+ - New members
+ - Best projects shared
+ - Community milestones
+ - Upcoming events
 
 **2. AMA (Ask Me Anything)** (Once per month)
 - Host Q&A session
 - Can be:
-  - Your own AMA
-  - Guest expert AMA
-  - Community member AMA
+ - Your own AMA
+ - Guest expert AMA
+ - Community member AMA
 
 **3. Community Survey** (Quarterly)
 - Ask for feedback:
-  - What content do you want more of?
-  - How can we improve the server?
-  - What topics should we cover?
+ - What content do you want more of?
+ - How can we improve the server?
+ - What topics should we cover?
 
 ### Event Ideas
 
@@ -793,9 +793,9 @@ Train all mods on these commands.
 - Live training sessions
 - Record and share afterwards
 - Topics:
-  - "Intro to pandas for Accountants"
-  - "Automating Excel with Python"
-  - "Building Dashboards with Plotly"
+ - "Intro to pandas for Accountants"
+ - "Automating Excel with Python"
+ - "Building Dashboards with Plotly"
 
 **4. Hackathons** (Quarterly)
 - 24-48 hour coding challenge
@@ -804,30 +804,30 @@ Train all mods on these commands.
 
 ---
 
-##  Server Optimization
+## Server Optimization
 
 ### Welcome Screen Setup
 
 1. **Server Settings → Welcome Screen**
 2. **Enable Welcome Screen**: Toggle ON
 3. **Welcome Channels**: Select:
-   - #rules
-   - #introductions
-   - #help-and-questions
-   - #blog-updates
+ - #rules
+ - #introductions
+ - #help-and-questions
+ - #blog-updates
 4. **Welcome Message**:
-   ```
-   Welcome to PANDAUDIT Community! 
-   
-   Connect with finance professionals exploring data analytics and automation.
-   
-   • Read #rules first
-   • Introduce yourself in #introductions
-   • Ask questions in #help-and-questions
-   • Check out our blog posts in #blog-updates
-   
-   Type !help to see bot commands!
-   ```
+ ```
+ Welcome to PANDAUDIT Community! 
+ 
+ Connect with finance professionals exploring data analytics and automation.
+ 
+ • Read #rules first
+ • Introduce yourself in #introductions
+ • Ask questions in #help-and-questions
+ • Check out our blog posts in #blog-updates
+ 
+ Type !help to see bot commands!
+ ```
 
 ### Server Boosts (If You Have Them)
 
@@ -849,21 +849,21 @@ Train all mods on these commands.
 ### Bots to Consider Adding
 
 1. **PANDAUDIT Bot** ( Already have)
-   - Moderation, community features
+ - Moderation, community features
 
 2. **Reaction Roles Bot**
-   - Self-assignable roles
-   - Examples: Reaction Roles, YAGPDB
+ - Self-assignable roles
+ - Examples: Reaction Roles, YAGPDB
 
 3. **MEE6 or Carl-bot** (Optional)
-   - Leveling system
-   - Auto-moderation
-   - Custom commands
+ - Leveling system
+ - Auto-moderation
+ - Custom commands
 
 4. **Dyno** (Optional)
-   - Advanced moderation
-   - Auto-mod
-   - Custom commands
+ - Advanced moderation
+ - Auto-mod
+ - Custom commands
 
 **Recommendation**: Start with just PANDAUDIT Bot + Reaction Roles. Add more only if needed.
 
@@ -880,127 +880,127 @@ Upload: Server Settings → Emoji → Upload
 
 ---
 
-##  Growth Strategies
+## Growth Strategies
 
 ### Getting Your First 50 Members
 
 1. **Invite Personal Network**
-   - Colleagues
-   - LinkedIn connections
-   - Twitter followers
-   - Email list (if you have one)
+ - Colleagues
+ - LinkedIn connections
+ - Twitter followers
+ - Email list (if you have one)
 
 2. **Promote on Website**
-   - Add Discord widget to pandaudit.com
-   - Include in navigation menu
-   - Add to footer
-   - Blog post call-to-actions
+ - Add Discord widget to pandaudit.com
+ - Include in navigation menu
+ - Add to footer
+ - Blog post call-to-actions
 
 3. **Social Media Promotion**
-   - Share invite link on:
-     - LinkedIn
-     - Twitter/X
-     - Reddit (r/accounting, r/datascience, r/python)
-     - Facebook groups
-   - Create graphics announcing the community
+ - Share invite link on:
+ - LinkedIn
+ - Twitter/X
+ - Reddit (r/accounting, r/datascience, r/python)
+ - Facebook groups
+ - Create graphics announcing the community
 
 4. **Blog Post Integration**
-   - End each blog post with:
-     ```
-      Discuss this post on Discord: [link]
-     Join our community of finance professionals exploring data analytics!
-     ```
+ - End each blog post with:
+ ```
+ Discuss this post on Discord: [link]
+ Join our community of finance professionals exploring data analytics!
+ ```
 
 5. **Email Signature**
-   - Add: "Join our Discord community: discord.gg/yourlink"
+ - Add: "Join our Discord community: discord.gg/yourlink"
 
 ### Scaling to 500+ Members
 
 1. **Consistent Content**
-   - Regular blog posts automatically shared to Discord
-   - Daily engagement in channels
-   - Weekly challenges and events
+ - Regular blog posts automatically shared to Discord
+ - Daily engagement in channels
+ - Weekly challenges and events
 
 2. **Value Proposition**
-   - Focus on providing value:
-     - Help with questions
-     - Share resources
-     - Create tutorials
-     - Spotlight members
+ - Focus on providing value:
+ - Help with questions
+ - Share resources
+ - Create tutorials
+ - Spotlight members
 
 3. **Partner with Influencers**
-   - Reach out to:
-     - Finance YouTubers
-     - Accounting podcasters
-     - Data analytics bloggers
-   - Offer:
-     - Guest blog posts
-     - AMA sessions
-     - Cross-promotion
+ - Reach out to:
+ - Finance YouTubers
+ - Accounting podcasters
+ - Data analytics bloggers
+ - Offer:
+ - Guest blog posts
+ - AMA sessions
+ - Cross-promotion
 
 4. **SEO and Discovery**
-   - Enable Discord Server Discovery (if eligible)
-   - Add relevant tags
-   - Maintain high engagement rate
+ - Enable Discord Server Discovery (if eligible)
+ - Add relevant tags
+ - Maintain high engagement rate
 
 5. **Paid Promotion** (Optional)
-   - Discord server listing sites
-   - Facebook/Instagram ads
-   - Reddit promoted posts
+ - Discord server listing sites
+ - Facebook/Instagram ads
+ - Reddit promoted posts
 
 ### Retention Strategies
 
 1. **Onboarding**
-   - Welcome new members personally
-   - Encourage introductions
-   - Guide them to relevant channels
+ - Welcome new members personally
+ - Encourage introductions
+ - Guide them to relevant channels
 
 2. **Recognition**
-   - Spotlight active members
-   - Create "Active Contributor" role
-   - Thank helpful members publicly
+ - Spotlight active members
+ - Create "Active Contributor" role
+ - Thank helpful members publicly
 
 3. **Exclusive Content**
-   - Discord-only content
-   - Early access to blog posts
-   - Exclusive tutorials/workshops
+ - Discord-only content
+ - Early access to blog posts
+ - Exclusive tutorials/workshops
 
 4. **Community Events**
-   - Regular events (see [Engagement Tactics](#-engagement-tactics))
-   - Build calendar of recurring events
-   - Make it predictable
+ - Regular events (see [Engagement Tactics](#engagement-tactics))
+ - Build calendar of recurring events
+ - Make it predictable
 
 5. **Listen and Adapt**
-   - Regular surveys
-   - Ask for feedback
-   - Implement suggestions
-   - Show members you're listening
+ - Regular surveys
+ - Ask for feedback
+ - Implement suggestions
+ - Show members you're listening
 
 ---
 
-##  Success Metrics
+## Success Metrics
 
 ### Track These Monthly
 
 1. **Member Count**
-   - Total members
-   - New members this month
-   - Member retention rate
+ - Total members
+ - New members this month
+ - Member retention rate
 
 2. **Engagement**
-   - Total messages sent
-   - Active members (sent at least 1 message)
-   - Most active channels
+ - Total messages sent
+ - Active members (sent at least 1 message)
+ - Most active channels
 
 3. **Content Performance**
-   - Reactions on #blog-updates posts
-   - Questions asked in #help-and-questions
-   - Projects shared in #showcase
+ - Reactions on #blog-updates posts
+ - Questions asked in #help-and-questions
+ - Projects shared in #showcase
 
 4. **Events**
-   - Event attendance
-   - Participation in challenges
-   - Feedback scores
+ - Event attendance
+ - Participation in challenges
+ - Feedback scores
 
 ### Discord Analytics
 
@@ -1014,7 +1014,7 @@ Access: Server Settings → Server Insights (requires Community enabled)
 
 ---
 
-##  Launch Checklist
+## Launch Checklist
 
 Before officially launching your server:
 
@@ -1045,7 +1045,7 @@ Before officially launching your server:
 
 ---
 
-##  Resources
+## Resources
 
 ### Discord Resources
 - [Discord Community Guidelines](https://discord.com/guidelines)
@@ -1063,7 +1063,7 @@ Before officially launching your server:
 
 ---
 
-##  Final Tips
+## Final Tips
 
 1. **Start Small**: Don't worry about having every channel perfect. Start lean and grow.
 

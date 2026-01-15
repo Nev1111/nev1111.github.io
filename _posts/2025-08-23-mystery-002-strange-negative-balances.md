@@ -46,7 +46,7 @@ import pandas as pd
 
 # Sample data showing the legacy formatting issue
 df = pd.DataFrame({
-    'Amount': ['5,009-', '69.35-', '8,959-', '8,953.23', '10,520', '1,200CR', '500-']
+ 'Amount': ['5,009-', '69.35-', '8,959-', '8,953.23', '10,520', '1,200CR', '500-']
 })
 
 print("Original legacy data:")
@@ -88,13 +88,13 @@ print("Sum of all amounts:", df['Amount'].sum())
 
 # Create a summary report
 summary = pd.DataFrame({
-    'Metric': ['Total Entries', 'Negative Entries', 'Positive Entries', 'Net Amount'],
-    'Value': [
-        len(df),
-        (df['Amount'] < 0).sum(),
-        (df['Amount'] > 0).sum(),
-        df['Amount'].sum()
-    ]
+ 'Metric': ['Total Entries', 'Negative Entries', 'Positive Entries', 'Net Amount'],
+ 'Value': [
+ len(df),
+ (df['Amount'] < 0).sum(),
+ (df['Amount'] > 0).sum(),
+ df['Amount'].sum()
+ ]
 })
 
 print("\nLegacy Import Summary:")

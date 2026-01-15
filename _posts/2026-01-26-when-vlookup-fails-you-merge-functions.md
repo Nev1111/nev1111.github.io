@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "💔 When VLOOKUP Fails You: A Love Letter to Merge Functions"
+layout: post
+title: "When VLOOKUP Fails You: A Love Letter to Merge Functions"
 subtitle: "VLOOKUP has been lying to you. Here's what you should be using instead."
 tags: [python, pandas, merge, vlookup, excel, data-integration]
 comments: true
@@ -37,7 +37,7 @@ Simple, right? Just some VLOOKUPs?
 ### Attempt #1: Classic VLOOKUP
 
 ```excel
-=VLOOKUP(A2, HR_Data!$A:$F, 3, FALSE)  # Get Title
+=VLOOKUP(A2, HR_Data!$A:$F, 3, FALSE) # Get Title
 =VLOOKUP(A2, Benefits!$A:$D, 2, FALSE) # Get Plan Code
 ```
 
@@ -53,14 +53,14 @@ Simple, right? Just some VLOOKUPs?
 
 **Scenario:** I need employee **Title** (column B) but want to look up by **Employee ID** (column D).
 
-**Excel Says:** "Reorganize your entire spreadsheet, peasant." 🤦
+**Excel Says:** "Reorganize your entire spreadsheet, peasant." 
 
 ```excel
 # This DOESN'T work (lookup column is to the right)
-=VLOOKUP(D2, A:B, 2, FALSE)  # ❌ ERROR
+=VLOOKUP(D2, A:B, 2, FALSE) # ERROR
 
 # You must use INDEX-MATCH instead
-=INDEX(B:B, MATCH(D2, D:D, 0))  # 🤯 What is this sorcery?!
+=INDEX(B:B, MATCH(D2, D:D, 0)) # What is this sorcery?!
 ```
 
 ---
@@ -75,7 +75,7 @@ Simple, right? Just some VLOOKUPs?
 
 **What Happens Next Month:** Someone adds a column at position 15.
 
-**Your Formula:** Still looks at column 20... which is now **PHONE NUMBER** instead of Title. 📞
+**Your Formula:** Still looks at column 20... which is now **PHONE NUMBER** instead of Title. 
 
 **Your Report:** Shows phone numbers as job titles.
 
@@ -93,7 +93,7 @@ Simple, right? Just some VLOOKUPs?
 
 **What You Need:** ALL matches.
 
-**VLOOKUP Says:** "Nope. That's not my job." 🤷
+**VLOOKUP Says:** "Nope. That's not my job." 
 
 ---
 
@@ -132,11 +132,11 @@ Simple, right? Just some VLOOKUPs?
 **VLOOKUP Error:** `#N/A`
 
 **What It Means:**
-- Lookup value not found? ❓
-- Typo in the range? ❓
-- Data type mismatch? ❓
-- Leading/trailing spaces? ❓
-- The phase of the moon is wrong? ❓
+- Lookup value not found? 
+- Typo in the range? 
+- Data type mismatch? 
+- Leading/trailing spaces? 
+- The phase of the moon is wrong? 
 
 **Helpful Error Message:** "¯\\_(ツ)_/¯"
 
@@ -145,11 +145,11 @@ Simple, right? Just some VLOOKUPs?
 ### Sin #7: FALSE vs 0 Confusion
 
 ```excel
-=VLOOKUP(A2, Data!$A:$Z, 5, FALSE)  # Exact match
-=VLOOKUP(A2, Data!$A:$Z, 5, TRUE)   # Approximate match
-=VLOOKUP(A2, Data!$A:$Z, 5, 0)      # Same as FALSE
-=VLOOKUP(A2, Data!$A:$Z, 5, 1)      # Same as TRUE
-=VLOOKUP(A2, Data!$A:$Z, 5)         # Defaults to TRUE!
+=VLOOKUP(A2, Data!$A:$Z, 5, FALSE) # Exact match
+=VLOOKUP(A2, Data!$A:$Z, 5, TRUE) # Approximate match
+=VLOOKUP(A2, Data!$A:$Z, 5, 0) # Same as FALSE
+=VLOOKUP(A2, Data!$A:$Z, 5, 1) # Same as TRUE
+=VLOOKUP(A2, Data!$A:$Z, 5) # Defaults to TRUE!
 ```
 
 **One time** I forgot the `FALSE` parameter.
@@ -160,7 +160,7 @@ Simple, right? Just some VLOOKUPs?
 
 **Consequence:** Wrong salary data in the report.
 
-**Fun:** Explaining this to HR. 😬
+**Fun:** Explaining this to HR. 
 
 ---
 
@@ -176,12 +176,12 @@ benefits = pd.read_excel('benefits.xlsx')
 
 # Merge all three tables in TWO LINES
 result = payroll.merge(hr, on='Employee_ID', how='left') \
-                .merge(benefits, on='Employee_ID', how='left')
+ .merge(benefits, on='Employee_ID', how='left')
 
 # Done. That's it.
 ```
 
-**Time:** 2 seconds ⚡
+**Time:** 2 seconds 
 
 **Errors:** Zero
 
@@ -200,15 +200,15 @@ result = payroll.merge(hr, on='Employee_ID', how='left') \
 ```python
 # Lookup column can be ANYWHERE in either table
 df1 = pd.DataFrame({
-    'Name': ['Alice', 'Bob', 'Charlie'],
-    'Employee_ID': [101, 102, 103],
-    'Department': ['Sales', 'IT', 'HR']
+ 'Name': ['Alice', 'Bob', 'Charlie'],
+ 'Employee_ID': [101, 102, 103],
+ 'Department': ['Sales', 'IT', 'HR']
 })
 
 df2 = pd.DataFrame({
-    'Title': ['Manager', 'Engineer', 'Director'],
-    'Employee_ID': [101, 102, 103],
-    'Salary': [75000, 85000, 95000]
+ 'Title': ['Manager', 'Engineer', 'Director'],
+ 'Employee_ID': [101, 102, 103],
+ 'Salary': [75000, 85000, 95000]
 })
 
 # Merge on Employee_ID (works even though it's not first column)
@@ -217,7 +217,7 @@ merged = df1.merge(df2, on='Employee_ID')
 # Result: All columns from both tables, matched by Employee_ID
 ```
 
-**No column reordering needed!** 🎉
+**No column reordering needed!** 
 
 ---
 
@@ -228,14 +228,14 @@ merged = df1.merge(df2, on='Employee_ID')
 # HR system calls it 'Employee_Number'
 
 result = payroll.merge(
-    hr,
-    left_on='EMP_ID',
-    right_on='Employee_Number',
-    how='left'
+ hr,
+ left_on='EMP_ID',
+ right_on='Employee_Number',
+ how='left'
 )
 ```
 
-**VLOOKUP equivalent:** "First, rename all your columns to match. Good luck!" 😤
+**VLOOKUP equivalent:** "First, rename all your columns to match. Good luck!" 
 
 ---
 
@@ -244,13 +244,13 @@ result = payroll.merge(
 ```python
 # Match on BOTH Employee_ID AND Department
 result = df1.merge(
-    df2,
-    on=['Employee_ID', 'Department'],
-    how='left'
+ df2,
+ on=['Employee_ID', 'Department'],
+ how='left'
 )
 ```
 
-**Excel equivalent:** Concatenate helper columns, then VLOOKUP. *Shoot me now.* 🔫
+**Excel equivalent:** Concatenate helper columns, then VLOOKUP. *Shoot me now.* 
 
 ---
 
@@ -273,7 +273,7 @@ result = payroll.merge(hr, on='Employee_ID', how='outer', indicator=True)
 # Creates '_merge' column: 'both', 'left_only', 'right_only'
 ```
 
-**VLOOKUP:** "I return #N/A and you can deal with it." 🤷
+**VLOOKUP:** "I return #N/A and you can deal with it." 
 
 ---
 
@@ -281,32 +281,32 @@ result = payroll.merge(hr, on='Employee_ID', how='outer', indicator=True)
 
 **Scenario:** Employee has 3 benefit plans.
 
-**VLOOKUP:** Returns only the first plan. Other two? Gone. 👋
+**VLOOKUP:** Returns only the first plan. Other two? Gone. 
 
-**Merge:** Creates 3 rows (one for each plan). All data preserved. ✅
+**Merge:** Creates 3 rows (one for each plan). All data preserved. 
 
 ```python
 employees = pd.DataFrame({
-    'Employee_ID': [101, 102],
-    'Name': ['Alice', 'Bob']
+ 'Employee_ID': [101, 102],
+ 'Name': ['Alice', 'Bob']
 })
 
 benefits = pd.DataFrame({
-    'Employee_ID': [101, 101, 101, 102],
-    'Plan': ['Medical', 'Dental', 'Vision', 'Medical']
+ 'Employee_ID': [101, 101, 101, 102],
+ 'Plan': ['Medical', 'Dental', 'Vision', 'Medical']
 })
 
 result = employees.merge(benefits, on='Employee_ID')
 
 # Result:
-#   Employee_ID  Name    Plan
-#   101          Alice   Medical
-#   101          Alice   Dental
-#   101          Alice   Vision
-#   102          Bob     Medical
+# Employee_ID Name Plan
+# 101 Alice Medical
+# 101 Alice Dental
+# 101 Alice Vision
+# 102 Bob Medical
 ```
 
-**All data preserved. No information lost.** 🎊
+**All data preserved. No information lost.** 
 
 ---
 
@@ -316,10 +316,10 @@ result = employees.merge(benefits, on='Employee_ID')
 
 ```excel
 Sheet1: Payroll_Data
-=VLOOKUP(A2, HR!$A:$Z, 12, FALSE)  # Get Title
-=VLOOKUP(A2, HR!$A:$Z, 15, FALSE)  # Get Hire_Date
-=VLOOKUP(A2, Benefits!$A:$D, 2, FALSE)  # Get Plan_Code
-=VLOOKUP(A2, Benefits!$A:$D, 3, FALSE)  # Get Cost
+=VLOOKUP(A2, HR!$A:$Z, 12, FALSE) # Get Title
+=VLOOKUP(A2, HR!$A:$Z, 15, FALSE) # Get Hire_Date
+=VLOOKUP(A2, Benefits!$A:$D, 2, FALSE) # Get Plan_Code
+=VLOOKUP(A2, Benefits!$A:$D, 3, FALSE) # Get Cost
 ```
 
 **Steps:**
@@ -356,14 +356,14 @@ benefits['Employee_ID'] = benefits['Employee_ID'].astype(str).str.strip()
 
 # Merge all three tables
 result = payroll.merge(
-    hr[['Employee_ID', 'Title', 'Hire_Date']], 
-    on='Employee_ID', 
-    how='left',
-    indicator=True  # Flag unmatched records
+ hr[['Employee_ID', 'Title', 'Hire_Date']], 
+ on='Employee_ID', 
+ how='left',
+ indicator=True # Flag unmatched records
 ).merge(
-    benefits[['Employee_ID', 'Plan_Code', 'Cost']], 
-    on='Employee_ID', 
-    how='left'
+ benefits[['Employee_ID', 'Plan_Code', 'Cost']], 
+ on='Employee_ID', 
+ how='left'
 )
 
 # Check for unmatched records
@@ -374,11 +374,11 @@ print(f"Unmatched records: {len(unmatched)}")
 result.to_excel('Q4_employee_data.xlsx', index=False)
 
 if len(unmatched) > 0:
-    unmatched.to_excel('unmatched_employees.xlsx', index=False)
-    print("⚠️ Review unmatched_employees.xlsx for data quality issues")
+ unmatched.to_excel('unmatched_employees.xlsx', index=False)
+ print("Warning: Review unmatched_employees.xlsx for data quality issues")
 ```
 
-**Time: 15 seconds** ⚡
+**Time: 15 seconds** 
 
 **Errors: Clearly identified in separate file**
 
@@ -444,9 +444,9 @@ result = payroll.merge(hr, on='Employee_ID', how='outer', indicator=True)
 
 # Check results
 print(result['_merge'].value_counts())
-# both: In both systems ✅
-# left_only: In payroll but not HR ⚠️
-# right_only: In HR but not payroll ⚠️
+# both: In both systems 
+# left_only: In payroll but not HR Warning:
+# right_only: In HR but not payroll Warning:
 ```
 
 **Result Size:** Larger than either table (union)
@@ -457,10 +457,10 @@ print(result['_merge'].value_counts())
 
 ```python
 result = payroll.merge(
-    hr, 
-    on='Employee_ID', 
-    how='outer', 
-    indicator=True
+ hr, 
+ on='Employee_ID', 
+ how='outer', 
+ indicator=True
 )
 
 # Check data quality
@@ -468,12 +468,12 @@ data_quality_report = result['_merge'].value_counts()
 print(data_quality_report)
 
 # Output:
-# both          4,823  ✅ Good
-# left_only        47  ⚠️ In payroll but not HR (terminated employees?)
-# right_only       12  🚨 In HR but not payroll (NEW HIRES NOT IN SYSTEM!)
+# both 4,823 Good
+# left_only 47 Warning: In payroll but not HR (terminated employees?)
+# right_only 12 In HR but not payroll (NEW HIRES NOT IN SYSTEM!)
 ```
 
-**This one feature has saved me from so many payroll disasters.** 💰
+**This one feature has saved me from so many payroll disasters.** 
 
 ---
 
@@ -488,13 +488,13 @@ print(data_quality_report)
 **Example:**
 ```python
 df1 = pd.DataFrame({
-    'Employee_ID': [101, 101],  # Duplicate!
-    'Name': ['Alice', 'Alice']
+ 'Employee_ID': [101, 101], # Duplicate!
+ 'Name': ['Alice', 'Alice']
 })
 
 df2 = pd.DataFrame({
-    'Employee_ID': [101, 101],  # Also duplicate!
-    'Title': ['Manager', 'Director']
+ 'Employee_ID': [101, 101], # Also duplicate!
+ 'Title': ['Manager', 'Director']
 })
 
 result = df1.merge(df2, on='Employee_ID')
@@ -516,8 +516,8 @@ result = df1_dedup.merge(df2_dedup, on='Employee_ID')
 
 ```python
 # Won't match!
-payroll['Employee_ID'] = 101  # int
-hr['Employee_ID'] = '101'  # str
+payroll['Employee_ID'] = 101 # int
+hr['Employee_ID'] = '101' # str
 ```
 
 **Solution:** Standardize data types
@@ -533,8 +533,8 @@ hr['Employee_ID'] = hr['Employee_ID'].astype(str)
 **Problem:** Leading/trailing spaces prevent matches
 
 ```python
-payroll['Employee_ID'] = '101 '  # Trailing space
-hr['Employee_ID'] = '101'  # No space
+payroll['Employee_ID'] = '101 ' # Trailing space
+hr['Employee_ID'] = '101' # No space
 # Won't match!
 ```
 
@@ -549,20 +549,20 @@ hr['Employee_ID'] = hr['Employee_ID'].str.strip()
 ## The Bottom Line
 
 ### VLOOKUP:
-- ❌ Limited (lookup column must be first)
-- ❌ Fragile (column numbers break)
-- ❌ Slow (recalculates constantly)
-- ❌ Single match only
-- ❌ Poor error messages
-- ❌ Can't merge multiple tables efficiently
+- Limited (lookup column must be first)
+- Fragile (column numbers break)
+- Slow (recalculates constantly)
+- Single match only
+- Poor error messages
+- Can't merge multiple tables efficiently
 
 ### Merge:
-- ✅ Flexible (any column, any position)
-- ✅ Robust (uses column names)
-- ✅ Fast (instant on large datasets)
-- ✅ Handles multiple matches
-- ✅ Clear indicators for unmatched data
-- ✅ Merge multiple tables in one operation
+- Flexible (any column, any position)
+- Robust (uses column names)
+- Fast (instant on large datasets)
+- Handles multiple matches
+- Clear indicators for unmatched data
+- Merge multiple tables in one operation
 
 ---
 
@@ -572,7 +572,7 @@ Next time you reach for VLOOKUP, ask yourself:
 
 **"Is this really the best tool for the job?"**
 
-Spoiler: It's not. 😉
+Spoiler: It's not. 
 
 Give `merge()` a try. Your future self will thank you.
 
@@ -582,15 +582,15 @@ Give `merge()` a try. Your future self will thank you.
 
 Want the complete working example? [Download from GitHub](https://github.com/nev1111/blog-code-examples)
 
-Have a VLOOKUP nightmare story? Share it in the comments! Misery loves company. 😅
+Have a VLOOKUP nightmare story? Share it in the comments! Misery loves company. 
 
 ---
 
-## Join the Discussion on Discord! 💬
+## Join the Discussion on Discord! -
 
 Struggling with data merges? Have questions about join types? **Join our Discord community!**
 
-👉 **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
+ **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
 
 ---
 

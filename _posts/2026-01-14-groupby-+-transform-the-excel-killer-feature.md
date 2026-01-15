@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "🔄 Groupby + Transform: The Excel Killer Feature"
+layout: post
+title: "Groupby + Transform: The Excel Killer Feature"
 subtitle: "Calculate running totals within groups. In Excel: nightmare. In Python: one line."
 tags: ['python', 'pandas', 'groupby', 'transform', 'running-totals', 'excel']
 comments: true
@@ -16,10 +16,10 @@ You need cumulative amounts for each member. In Excel:
 ```
 
 **Problems:**
-- 😫 Slow on 10,000+ rows
-- 💥 Breaks if rows reordered
-- 🐛 Hard to audit
-- 😵 Complex to understand
+- Slow on 10,000+ rows
+- Breaks if rows reordered
+- Hard to audit
+- Complex to understand
 
 ---
 
@@ -30,7 +30,7 @@ You need cumulative amounts for each member. In Excel:
 df['cumulative'] = df.groupby('Member_ID')['Amount'].transform('cumsum')
 ```
 
-That's it. Done. 🎉
+That's it. Done. 
 
 ---
 
@@ -41,9 +41,9 @@ import pandas as pd
 
 # Sample data
 data = {
-    'Member_ID': ['A001', 'A001', 'A001', 'B002', 'B002', 'C003'],
-    'Date': ['2025-01', '2025-02', '2025-03', '2025-01', '2025-02', '2025-01'],
-    'Amount': [100, 150, 200, 300, 250, 500]
+ 'Member_ID': ['A001', 'A001', 'A001', 'B002', 'B002', 'C003'],
+ 'Date': ['2025-01', '2025-02', '2025-03', '2025-01', '2025-02', '2025-01'],
+ 'Amount': [100, 150, 200, 300, 250, 500]
 }
 
 df = pd.DataFrame(data)
@@ -62,16 +62,16 @@ print(df)
 
 **Output:**
 ```
-  Member_ID    Date  Amount  Cumulative  Member_Total  Pct_of_Total
-0      A001  2025-01     100         100           450          22.2
-1      A001  2025-02     150         250           450          33.3
-2      A001  2025-03     200         450           450          44.4
-3      B002  2025-01     300         300           550          54.5
-4      B002  2025-02     250         550           550          45.5
-5      C003  2025-01     500         500           500         100.0
+ Member_ID Date Amount Cumulative Member_Total Pct_of_Total
+0 A001 2025-01 100 100 450 22.2
+1 A001 2025-02 150 250 450 33.3
+2 A001 2025-03 200 450 450 44.4
+3 B002 2025-01 300 300 550 54.5
+4 B002 2025-02 250 550 550 45.5
+5 C003 2025-01 500 500 500 100.0
 ```
 
-Beautiful! 🎨
+Beautiful! 
 
 ---
 
@@ -80,21 +80,21 @@ Beautiful! 🎨
 ### Rank Within Group
 ```python
 df['Rank'] = df.groupby('Member_ID')['Amount'].transform(
-    lambda x: x.rank(method='dense', ascending=False)
+ lambda x: x.rank(method='dense', ascending=False)
 )
 ```
 
 ### Z-Score Normalization
 ```python
 df['Z_Score'] = df.groupby('Category')['Amount'].transform(
-    lambda x: (x - x.mean()) / x.std()
+ lambda x: (x - x.mean()) / x.std()
 )
 ```
 
 ### Moving Average (3-period)
 ```python
 df['Moving_Avg'] = df.groupby('Account')['Amount'].transform(
-    lambda x: x.rolling(3, min_periods=1).mean()
+ lambda x: x.rolling(3, min_periods=1).mean()
 )
 ```
 
@@ -113,7 +113,7 @@ df['Occurrence_Num'] = df.groupby('Member_ID').cumcount() + 1
 | 10,000 | 30 sec | 0.2 sec |
 | 100,000 | Crashes | 1 sec |
 
-**100x faster!** ⚡
+**100x faster!** 
 
 ---
 
@@ -136,12 +136,12 @@ df.to_excel('data_with_cumulative.xlsx', index=False)
 
 ## The Bottom Line
 
-✅ One line replaces complex SUMIFS formulas  
-✅ 100x faster than Excel  
-✅ Works with any aggregation (sum, mean, rank, etc.)  
-✅ Doesn't break when rows reorder  
+ One line replaces complex SUMIFS formulas 
+ 100x faster than Excel 
+ Works with any aggregation (sum, mean, rank, etc.) 
+ Doesn't break when rows reorder 
 
-**Mind = Blown** 🤯
+**Mind = Blown** 
 
 ---
 

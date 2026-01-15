@@ -4,142 +4,142 @@ layout: primer_base
 
 <!-- Hero Section -->
 <div class="bg-gradient-to-b from-blue-light to-white py-6">
-  <div class="container-xl p-responsive text-center">
-    <div class="col-12 col-lg-8 mx-auto py-6">
-      <img src="{{ '/assets/img/avatar-icon.png' | relative_url }}" 
-           alt="PANDAUDIT" 
-           class="rounded-circle mb-4" 
-           style="width: 120px; height: 120px;">
-      <h1 class="f00-light lh-condensed mb-3">{{ site.title }}</h1>
-      <p class="f2-light text-gray mb-4">
-        Data Analytics & Automation for Finance & Accounting Professionals
-      </p>
-      <p class="f3 text-gray mb-4">
-        Transform manual processes into automated workflows using modern data analytics tools. 
-        Real-world solutions from government pension fund accounting.
-      </p>
-      <div class="d-flex flex-justify-center gap-3">
-        <a href="#latest-posts" class="btn btn-primary btn-large">
-          <i class="fas fa-rocket mr-2"></i>
-          Start Learning
-        </a>
-        <a href="https://discord.gg/{{ site.social-network-links.discord }}" 
-           class="btn btn-outline btn-large" 
-           target="_blank">
-          <i class="fab fa-discord mr-2"></i>
-          Join Discord
-        </a>
-      </div>
-    </div>
-  </div>
+ <div class="container-xl p-responsive text-center">
+ <div class="col-12 col-lg-8 mx-auto py-6">
+ <img src="{{ '/assets/img/avatar-icon.png' | relative_url }}" 
+ alt="PANDAUDIT" 
+ class="rounded-circle mb-4" 
+ style="width: 120px; height: 120px;">
+ <h1 class="f00-light lh-condensed mb-3">{{ site.title }}</h1>
+ <p class="f2-light text-gray mb-4">
+ Data Analytics & Automation for Finance & Accounting Professionals
+ </p>
+ <p class="f3 text-gray mb-4">
+ Transform manual processes into automated workflows using modern data analytics tools. 
+ Real-world solutions from government pension fund accounting.
+ </p>
+ <div class="d-flex flex-justify-center gap-3">
+ <a href="#latest-posts" class="btn btn-primary btn-large">
+ <i class="fas fa-rocket mr-2"></i>
+ Start Learning
+ </a>
+ <a href="https://discord.gg/{{ site.social-network-links.discord }}" 
+ class="btn btn-outline btn-large" 
+ target="_blank">
+ <i class="fab fa-discord mr-2"></i>
+ Join Discord
+ </a>
+ </div>
+ </div>
+ </div>
 </div>
 
 <!-- Featured Categories -->
 <div class="container-xl p-responsive py-6">
-  <div class="col-12 col-lg-10 mx-auto">
-    <h2 class="f1-light mb-4 text-center">What You'll Learn</h2>
-    <div class="d-flex flex-wrap gap-4 mb-6">
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="Box h-100">
-          <div class="Box-body text-center p-4">
-            <div class="f1 mb-3">🔥</div>
-            <h3 class="f3 mb-2">Process Automation</h3>
-            <p class="text-gray">
-              Transform manual workflows into efficient, automated processes. 
-              Parse legacy reports, handle complex data formats, 
-              and eliminate repetitive tasks.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="Box h-100">
-          <div class="Box-body text-center p-4">
-            <div class="f1 mb-3">🔗</div>
-            <h3 class="f3 mb-2">Data Integration & Quality</h3>
-            <p class="text-gray">
-              Connect disparate data sources, ensure data accuracy, 
-              and build reliable reporting pipelines across systems.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="Box h-100">
-          <div class="Box-body text-center p-4">
-            <div class="f1 mb-3">🚀</div>
-            <h3 class="f3 mb-2">Advanced Analytics</h3>
-            <p class="text-gray">
-              Apply data transformation techniques, perform complex analyses, 
-              and extract meaningful insights from your financial data.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="col-12 col-lg-10 mx-auto">
+ <h2 class="f1-light mb-4 text-center">What You'll Learn</h2>
+ <div class="d-flex flex-wrap gap-4 mb-6">
+ <div class="col-12 col-md-6 col-lg-4">
+ <div class="Box h-100">
+ <div class="Box-body text-center p-4">
+ <div class="f1 mb-3"></div>
+ <h3 class="f3 mb-2">Process Automation</h3>
+ <p class="text-gray">
+ Transform manual workflows into efficient, automated processes. 
+ Parse legacy reports, handle complex data formats, 
+ and eliminate repetitive tasks.
+ </p>
+ </div>
+ </div>
+ </div>
+ <div class="col-12 col-md-6 col-lg-4">
+ <div class="Box h-100">
+ <div class="Box-body text-center p-4">
+ <div class="f1 mb-3"></div>
+ <h3 class="f3 mb-2">Data Integration & Quality</h3>
+ <p class="text-gray">
+ Connect disparate data sources, ensure data accuracy, 
+ and build reliable reporting pipelines across systems.
+ </p>
+ </div>
+ </div>
+ </div>
+ <div class="col-12 col-md-6 col-lg-4">
+ <div class="Box h-100">
+ <div class="Box-body text-center p-4">
+ <div class="f1 mb-3"></div>
+ <h3 class="f3 mb-2">Advanced Analytics</h3>
+ <p class="text-gray">
+ Apply data transformation techniques, perform complex analyses, 
+ and extract meaningful insights from your financial data.
+ </p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
 </div>
 
 <!-- Latest Posts -->
 <div id="latest-posts" class="bg-gray-light py-6">
-  <div class="container-xl p-responsive">
-    <div class="col-12 col-lg-10 mx-auto">
-      <h2 class="f1-light mb-4">Latest Posts</h2>
-      <div class="d-flex flex-column gap-4">
-        {% assign sorted_posts = site.posts | where_exp: "post", "post.layout != 'mystery'" | sort: 'date' | reverse %}
-        {% for post in sorted_posts limit:10 %}
-        <div class="Box">
-          <div class="Box-body p-4">
-            <h3 class="f3 lh-condensed mb-2">
-              <a href="{{ post.url }}" class="text-bold">{{ post.title }}</a>
-            </h3>
-            {% if post.subtitle %}
-            <p class="text-gray mb-3">{{ post.subtitle }}</p>
-            {% else %}
-            <p class="text-gray mb-3">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            {% endif %}
-            <div class="d-flex flex-wrap flex-items-center text-small text-gray">
-              <div class="mr-4">
-                <i class="fas fa-calendar-alt mr-1"></i>
-                {{ post.date | date: "%B %d, %Y" }}
-              </div>
-              {% if post.tags %}
-              <div class="d-flex flex-wrap gap-1">
-                {% for tag in post.tags limit:3 %}
-                <span class="Label Label--secondary Label--small">{{ tag }}</span>
-                {% endfor %}
-              </div>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="text-center mt-5">
-        <a href="{{ site.baseurl }}/blog" class="btn btn-outline btn-large">
-          View All Posts
-          <i class="fas fa-arrow-right ml-2"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+ <div class="container-xl p-responsive">
+ <div class="col-12 col-lg-10 mx-auto">
+ <h2 class="f1-light mb-4">Latest Posts</h2>
+ <div class="d-flex flex-column gap-4">
+ {% assign sorted_posts = site.posts | where_exp: "post", "post.layout != 'mystery'" | sort: 'date' | reverse %}
+ {% for post in sorted_posts limit:10 %}
+ <div class="Box">
+ <div class="Box-body p-4">
+ <h3 class="f3 lh-condensed mb-2">
+ <a href="{{ post.url }}" class="text-bold">{{ post.title }}</a>
+ </h3>
+ {% if post.subtitle %}
+ <p class="text-gray mb-3">{{ post.subtitle }}</p>
+ {% else %}
+ <p class="text-gray mb-3">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+ {% endif %}
+ <div class="d-flex flex-wrap flex-items-center text-small text-gray">
+ <div class="mr-4">
+ <i class="fas fa-calendar-alt mr-1"></i>
+ {{ post.date | date: "%B %d, %Y" }}
+ </div>
+ {% if post.tags %}
+ <div class="d-flex flex-wrap gap-1">
+ {% for tag in post.tags limit:3 %}
+ <span class="Label Label--secondary Label--small">{{ tag }}</span>
+ {% endfor %}
+ </div>
+ {% endif %}
+ </div>
+ </div>
+ </div>
+ {% endfor %}
+ </div>
+ <div class="text-center mt-5">
+ <a href="{{ site.baseurl }}/blog" class="btn btn-outline btn-large">
+ View All Posts
+ <i class="fas fa-arrow-right ml-2"></i>
+ </a>
+ </div>
+ </div>
+ </div>
 </div>
 
 <!-- Newsletter/Community CTA -->
 <div class="container-xl p-responsive py-6">
-  <div class="col-12 col-lg-8 mx-auto">
-    <div class="Box Box--blue text-center p-5">
-      <h2 class="f2-light mb-3">Join the Community</h2>
-      <p class="f4 mb-4">
-        Connect with finance and accounting professionals exploring automation and data analytics. 
-        Get help, share insights, and stay updated!
-      </p>
-      <a href="https://discord.gg/{{ site.social-network-links.discord }}" 
-         class="btn btn-primary btn-large" 
-         target="_blank">
-        <i class="fab fa-discord mr-2"></i>
-        Join Discord Community
-      </a>
-    </div>
-  </div>
+ <div class="col-12 col-lg-8 mx-auto">
+ <div class="Box Box--blue text-center p-5">
+ <h2 class="f2-light mb-3">Join the Community</h2>
+ <p class="f4 mb-4">
+ Connect with finance and accounting professionals exploring automation and data analytics. 
+ Get help, share insights, and stay updated!
+ </p>
+ <a href="https://discord.gg/{{ site.social-network-links.discord }}" 
+ class="btn btn-primary btn-large" 
+ target="_blank">
+ <i class="fab fa-discord mr-2"></i>
+ Join Discord Community
+ </a>
+ </div>
+ </div>
 </div>

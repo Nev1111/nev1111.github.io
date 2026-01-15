@@ -18,9 +18,9 @@ PANDAUDIT is a blog and community for **finance and accounting professionals** w
 
 #### Why PANDAUDIT is Different
 
-- **Real-World Focus** - Actual government pension fund code, not toy examples  
-- **Accounting-First** - Written by accountants, for accountants  
-- **Immediate ROI** - Save hours this week, not after a 6-month course  
+- **Real-World Focus** - Actual government pension fund code, not toy examples 
+- **Accounting-First** - Written by accountants, for accountants 
+- **Immediate ROI** - Save hours this week, not after a 6-month course 
 - **Community Support** - Discord for help from fellow finance professionals
 
 ---
@@ -67,27 +67,27 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to:
 ### Site Structure
 
 ```
-├── _posts/              # Blog posts (Markdown)
-├── _layouts/            # Page templates
-│   ├── primer_base.html
-│   ├── primer_home.html
-│   ├── primer_post.html
-│   └── primer_default.html
-├── _includes/           # Reusable components
-│   ├── primer_nav.html
-│   └── primer_footer.html
+├── _posts/ # Blog posts (Markdown)
+├── _layouts/ # Page templates
+│ ├── primer_base.html
+│ ├── primer_home.html
+│ ├── primer_post.html
+│ └── primer_default.html
+├── _includes/ # Reusable components
+│ ├── primer_nav.html
+│ └── primer_footer.html
 ├── assets/
-│   ├── css/            # Custom styles
-│   └── img/            # Images
+│ ├── css/ # Custom styles
+│ └── img/ # Images
 ├── .github/
-│   └── workflows/      # GitHub Actions
-│       └── discord-notify.yml
-├── _config.yml         # Site configuration
-├── blog.html           # Blog listing page
-├── index.md            # Homepage
-├── aboutme.md          # About page
-├── cheatsheet.md       # Python cheat sheet
-└── stories.md          # Mystery stories
+│ └── workflows/ # GitHub Actions
+│ └── discord-notify.yml
+├── _config.yml # Site configuration
+├── blog.html # Blog listing page
+├── index.md # Homepage
+├── aboutme.md # About page
+├── cheatsheet.md # Python cheat sheet
+└── stories.md # Mystery stories
 ```
 
 ---

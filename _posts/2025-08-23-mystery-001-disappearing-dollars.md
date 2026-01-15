@@ -47,8 +47,8 @@ import numpy as np
 
 # Sample data showing the rounding issue
 transactions = pd.DataFrame({
-    'transaction_id': ['INV001', 'INV002', 'INV003', 'PAY001'],
-    'amount': [100.555, 200.446, 150.667, 75.337]
+ 'transaction_id': ['INV001', 'INV002', 'INV003', 'PAY001'],
+ 'amount': [100.555, 200.446, 150.667, 75.337]
 })
 
 print("Original transaction amounts:")
@@ -64,7 +64,7 @@ print(transactions[['transaction_id', 'amount', 'rounded_individual']])
 print(f"Total after individual rounding: ${individual_rounded_sum:.2f}")
 print()
 
-# Method 2: Sum first, then round (general ledger approach)  
+# Method 2: Sum first, then round (general ledger approach) 
 raw_sum = transactions['amount'].sum()
 sum_then_round = round(raw_sum, 2)
 
@@ -83,8 +83,8 @@ print()
 
 # Create validation report for documentation
 validation_report = pd.DataFrame({
-    'Calculation_Method': ['Individual Round First', 'Sum Then Round', 'Difference'],
-    'Amount': [individual_rounded_sum, sum_then_round, difference]
+ 'Calculation_Method': ['Individual Round First', 'Sum Then Round', 'Difference'],
+ 'Amount': [individual_rounded_sum, sum_then_round, difference]
 })
 
 print("Validation Report for Management:")
@@ -94,7 +94,7 @@ print(validation_report.to_string(index=False))
 ## Key Learning Points
 
 - **Different rounding methods create legitimate differences**: When systems round at different stages, small discrepancies are expected and normal
-- **Verify calculation methodology before assuming errors**: Understanding how your systems work prevents unnecessary investigation time  
+- **Verify calculation methodology before assuming errors**: Understanding how your systems work prevents unnecessary investigation time 
 - **Use Python to test theories quickly**: Rather than manual checking, data analysis can reveal systematic differences immediately
 - **Document system behaviors for the team**: Recording these discoveries helps colleagues avoid the same time-consuming investigations
 - **Precision vs. display**: Internal calculations often use more precision than what's displayed, leading to rounding differences

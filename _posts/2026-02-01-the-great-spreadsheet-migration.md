@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "🚀 The Great Spreadsheet Migration: Moving 20 Years of Data"
+layout: post
+title: "The Great Spreadsheet Migration: Moving 20 Years of Data"
 subtitle: "How we escaped Excel hell and lived to tell the tale"
 tags: [python, pandas, migration, data-consolidation, automation, success-story]
 comments: true
@@ -19,11 +19,11 @@ author: PANDAUDIT Team
 
 **CFO:** "Excel. About 2,400 different files."
 
-**Everyone:** *collective groan* 😱
+**Everyone:** *collective groan* 
 
 **CFO:** "Budget for migration: $50,000 for consultants."
 
-**Me (internal monologue):** *Or... I could learn Python and do it myself...* 🤔
+**Me (internal monologue):** *Or... I could learn Python and do it myself...* 
 
 ---
 
@@ -39,10 +39,10 @@ author: PANDAUDIT Team
 - Employer remittances (monthly, 1995-2024)
 
 **File Formats:**
-- 📦 `.xls` (Excel 97-2003) → 1,200 files
-- 📄 `.xlsx` (Excel 2007+) → 1,000 files
-- 📃 `.xlsb` (Binary) → 150 files
-- 📝 `.csv` (supposedly) → 50 files (actually pipe-delimited 🙄)
+- `.xls` (Excel 97-2003) → 1,200 files
+- `.xlsx` (Excel 2007+) → 1,000 files
+- `.xlsb` (Binary) → 150 files
+- `.csv` (supposedly) → 50 files (actually pipe-delimited )
 
 **File Naming Conventions:**
 - `Trial Balance 01-2024.xlsx`
@@ -52,7 +52,7 @@ author: PANDAUDIT Team
 - `TB 202401.xls`
 - `trial balance january 2024 (2).xlsx`
 
-**Translation:** No consistent naming. Complete chaos. 🔥
+**Translation:** No consistent naming. Complete chaos. 
 
 **Data Structure:**
 - Different column names across years
@@ -61,7 +61,7 @@ author: PANDAUDIT Team
 - Some duplicates (which version is correct? *¯\\_(ツ)_/¯*)
 - Formulas instead of values
 - Hidden sheets with "backup data"
-- Merged cells 🤦
+- Merged cells 
 - Colors indicating... something (documentation lost)
 
 ---
@@ -93,7 +93,7 @@ author: PANDAUDIT Team
 
 **CFO:** "You have 1 week."
 
-**Me:** *gulp* 😅
+**Me:** *gulp* 
 
 ---
 
@@ -111,25 +111,25 @@ base_path = Path('/data/historical')
 excel_files = []
 
 for ext in ['*.xls', '*.xlsx', '*.xlsb']:
-    excel_files.extend(base_path.rglob(ext))
+ excel_files.extend(base_path.rglob(ext))
 
 print(f"Found {len(excel_files)} Excel files")
 
 # Create inventory
 inventory = pd.DataFrame({
-    'File_Path': [str(f) for f in excel_files],
-    'File_Name': [f.name for f in excel_files],
-    'File_Size_MB': [f.stat().st_size / 1024 / 1024 for f in excel_files],
-    'Modified_Date': [pd.Timestamp.fromtimestamp(f.stat().st_mtime) for f in excel_files]
+ 'File_Path': [str(f) for f in excel_files],
+ 'File_Name': [f.name for f in excel_files],
+ 'File_Size_MB': [f.stat().st_size / 1024 / 1024 for f in excel_files],
+ 'Modified_Date': [pd.Timestamp.fromtimestamp(f.stat().st_mtime) for f in excel_files]
 })
 
 # Detect file type from name
 inventory['File_Type'] = inventory['File_Name'].apply(lambda x: 
-    'Trial_Balance' if 'TB' in x.upper() or 'TRIAL' in x.upper() else
-    'Investments' if 'INV' in x.upper() else
-    'Contributions' if 'CONTRIB' in x.upper() else
-    'Benefits' if 'BEN' in x.upper() else
-    'Unknown'
+ 'Trial_Balance' if 'TB' in x.upper() or 'TRIAL' in x.upper() else
+ 'Investments' if 'INV' in x.upper() else
+ 'Contributions' if 'CONTRIB' in x.upper() else
+ 'Benefits' if 'BEN' in x.upper() else
+ 'Unknown'
 )
 
 inventory.to_excel('file_inventory.xlsx', index=False)
@@ -142,14 +142,14 @@ print(inventory['File_Type'].value_counts())
 Found 2,413 Excel files
 
 File_Type
-Trial_Balance    1,247
-Investments        687
-Contributions      289
-Benefits           156
-Unknown             34
+Trial_Balance 1,247
+Investments 687
+Contributions 289
+Benefits 156
+Unknown 34
 ```
 
-**Time:** 5 minutes ⚡
+**Time:** 5 minutes 
 
 ---
 
@@ -163,12 +163,12 @@ sample_files = inventory.sample(100)
 
 sheet_names = []
 for file_path in sample_files['File_Path']:
-    try:
-        wb = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
-        sheet_names.extend(wb.sheetnames)
-        wb.close()
-    except:
-        pass
+ try:
+ wb = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
+ sheet_names.extend(wb.sheetnames)
+ wb.close()
+ except:
+ pass
 
 # Count most common sheet names
 from collections import Counter
@@ -176,20 +176,20 @@ sheet_counts = Counter(sheet_names)
 
 print("Most common sheet names:")
 for name, count in sheet_counts.most_common(20):
-    print(f"  {name}: {count}")
+ print(f" {name}: {count}")
 ```
 
 **Output:**
 ```
 Most common sheet names:
-  Sheet1: 234
-  Data: 187
-  Trial Balance: 156
-  TB: 98
-  2024: 67
-  Summary: 45
-  Detail: 34
-  ...
+ Sheet1: 234
+ Data: 187
+ Trial Balance: 156
+ TB: 98
+ 2024: 67
+ Summary: 45
+ Detail: 34
+ ...
 ```
 
 **Insight:** Try "Data" first, then "Trial Balance", then first sheet.
@@ -206,50 +206,50 @@ import warnings
 warnings.filterwarnings('ignore')
 
 def read_excel_robust(file_path):
-    """
-    Reads an Excel file, trying multiple strategies
-    Returns: DataFrame or None
-    """
-    # Strategy 1: Try common sheet names
-    common_sheets = ['Data', 'Trial Balance', 'TB', 'Detail', 'Sheet1']
-    
-    for sheet in common_sheets:
-        try:
-            df = pd.read_excel(file_path, sheet_name=sheet)
-            if len(df) > 0:  # Not empty
-                return df, sheet
-        except:
-            pass
-    
-    # Strategy 2: Try first sheet
-    try:
-        df = pd.read_excel(file_path, sheet_name=0)
-        if len(df) > 0:
-            return df, 'First_Sheet'
-    except:
-        pass
-    
-    # Strategy 3: Try reading as CSV (for .csv mislabeled as .xls)
-    try:
-        df = pd.read_csv(file_path, encoding='latin-1')
-        if len(df) > 0:
-            return df, 'CSV'
-    except:
-        pass
-    
-    return None, None
+ """
+ Reads an Excel file, trying multiple strategies
+ Returns: DataFrame or None
+ """
+ # Strategy 1: Try common sheet names
+ common_sheets = ['Data', 'Trial Balance', 'TB', 'Detail', 'Sheet1']
+ 
+ for sheet in common_sheets:
+ try:
+ df = pd.read_excel(file_path, sheet_name=sheet)
+ if len(df) > 0: # Not empty
+ return df, sheet
+ except:
+ pass
+ 
+ # Strategy 2: Try first sheet
+ try:
+ df = pd.read_excel(file_path, sheet_name=0)
+ if len(df) > 0:
+ return df, 'First_Sheet'
+ except:
+ pass
+ 
+ # Strategy 3: Try reading as CSV (for .csv mislabeled as .xls)
+ try:
+ df = pd.read_csv(file_path, encoding='latin-1')
+ if len(df) > 0:
+ return df, 'CSV'
+ except:
+ pass
+ 
+ return None, None
 
 # Test on sample
 results = []
 for file_path in inventory['File_Path'].head(100):
-    df, sheet = read_excel_robust(file_path)
-    results.append({
-        'File': file_path,
-        'Success': df is not None,
-        'Sheet': sheet,
-        'Rows': len(df) if df is not None else 0,
-        'Columns': len(df.columns) if df is not None else 0
-    })
+ df, sheet = read_excel_robust(file_path)
+ results.append({
+ 'File': file_path,
+ 'Success': df is not None,
+ 'Sheet': sheet,
+ 'Rows': len(df) if df is not None else 0,
+ 'Columns': len(df.columns) if df is not None else 0
+ })
 
 results_df = pd.DataFrame(results)
 print(f"Success rate: {results_df['Success'].mean()*100:.1f}%")
@@ -260,7 +260,7 @@ print(f"Success rate: {results_df['Success'].mean()*100:.1f}%")
 Success rate: 94.2%
 ```
 
-**Not bad! Fix the 5.8% failures manually.** ✅
+**Not bad! Fix the 5.8% failures manually.** 
 
 ---
 
@@ -268,9 +268,9 @@ Success rate: 94.2%
 
 ### The Problem
 
-**1995 files:** `Acct_Num`, `Description`, `Debit`, `Credit`  
-**2005 files:** `Account Number`, `Account Description`, `Debit Amount`, `Credit Amount`  
-**2015 files:** `Account`, `Desc`, `DR`, `CR`  
+**1995 files:** `Acct_Num`, `Description`, `Debit`, `Credit` 
+**2005 files:** `Account Number`, `Account Description`, `Debit Amount`, `Credit Amount` 
+**2015 files:** `Account`, `Desc`, `DR`, `CR` 
 **2024 files:** `GL_Account`, `GL_Description`, `Debit_Amt`, `Credit_Amt`
 
 **Goal:** Map all variations to standard column names
@@ -284,43 +284,43 @@ from fuzzywuzzy import fuzz
 
 # Standard column names
 standard_columns = {
-    'Account_Number': ['account', 'acct', 'gl_account', 'account_num', 'account number'],
-    'Description': ['desc', 'description', 'account_desc', 'account description', 'name'],
-    'Debit': ['debit', 'dr', 'debit_amt', 'debit amount', 'debit_amount'],
-    'Credit': ['credit', 'cr', 'credit_amt', 'credit amount', 'credit_amount'],
-    'Date': ['date', 'transaction_date', 'trans_date', 'posting_date'],
-    'Amount': ['amount', 'amt', 'balance', 'value']
+ 'Account_Number': ['account', 'acct', 'gl_account', 'account_num', 'account number'],
+ 'Description': ['desc', 'description', 'account_desc', 'account description', 'name'],
+ 'Debit': ['debit', 'dr', 'debit_amt', 'debit amount', 'debit_amount'],
+ 'Credit': ['credit', 'cr', 'credit_amt', 'credit amount', 'credit_amount'],
+ 'Date': ['date', 'transaction_date', 'trans_date', 'posting_date'],
+ 'Amount': ['amount', 'amt', 'balance', 'value']
 }
 
 def standardize_columns(df):
-    """Map column names to standard names using fuzzy matching"""
-    column_mapping = {}
-    
-    for col in df.columns:
-        col_lower = str(col).lower().strip()
-        
-        # Try exact match first
-        for standard, variations in standard_columns.items():
-            if col_lower in variations:
-                column_mapping[col] = standard
-                break
-        
-        # Try fuzzy match (80% threshold)
-        if col not in column_mapping:
-            best_match = None
-            best_score = 0
-            
-            for standard, variations in standard_columns.items():
-                for variation in variations:
-                    score = fuzz.ratio(col_lower, variation)
-                    if score > best_score and score > 80:
-                        best_score = score
-                        best_match = standard
-            
-            if best_match:
-                column_mapping[col] = best_match
-    
-    return df.rename(columns=column_mapping)
+ """Map column names to standard names using fuzzy matching"""
+ column_mapping = {}
+ 
+ for col in df.columns:
+ col_lower = str(col).lower().strip()
+ 
+ # Try exact match first
+ for standard, variations in standard_columns.items():
+ if col_lower in variations:
+ column_mapping[col] = standard
+ break
+ 
+ # Try fuzzy match (80% threshold)
+ if col not in column_mapping:
+ best_match = None
+ best_score = 0
+ 
+ for standard, variations in standard_columns.items():
+ for variation in variations:
+ score = fuzz.ratio(col_lower, variation)
+ if score > best_score and score > 80:
+ best_score = score
+ best_match = standard
+ 
+ if best_match:
+ column_mapping[col] = best_match
+ 
+ return df.rename(columns=column_mapping)
 
 # Test
 test_df = pd.DataFrame(columns=['Acct_Num', 'Desc', 'DR', 'CR'])
@@ -329,7 +329,7 @@ print(standardized.columns.tolist())
 # Output: ['Account_Number', 'Description', 'Debit', 'Credit']
 ```
 
-**Success!** 🎉
+**Success!** 
 
 ---
 
@@ -337,67 +337,67 @@ print(standardized.columns.tolist())
 
 ```python
 import pandas as pd
-from tqdm import tqdm  # Progress bar
+from tqdm import tqdm # Progress bar
 
 def process_all_files(file_type='Trial_Balance'):
-    """Process all files of a given type"""
-    # Filter inventory
-    files = inventory[inventory['File_Type'] == file_type].copy()
-    
-    print(f"Processing {len(files)} {file_type} files...")
-    
-    all_data = []
-    failed_files = []
-    
-    for idx, row in tqdm(files.iterrows(), total=len(files)):
-        try:
-            # Read file
-            df, sheet = read_excel_robust(row['File_Path'])
-            
-            if df is None:
-                failed_files.append(row['File_Name'])
-                continue
-            
-            # Standardize columns
-            df = standardize_columns(df)
-            
-            # Add metadata
-            df['Source_File'] = row['File_Name']
-            df['Source_Sheet'] = sheet
-            df['File_Modified_Date'] = row['Modified_Date']
-            
-            # Extract date from filename (if possible)
-            # Pattern: "TB_01_2024" or "Trial Balance January 2024"
-            import re
-            date_match = re.search(r'(\d{1,2})[_\s-]?(\d{4})', row['File_Name'])
-            if date_match:
-                month, year = date_match.groups()
-                df['Report_Month'] = int(month)
-                df['Report_Year'] = int(year)
-            
-            all_data.append(df)
-            
-        except Exception as e:
-            failed_files.append(f"{row['File_Name']}: {str(e)}")
-    
-    # Consolidate
-    if all_data:
-        combined = pd.concat(all_data, ignore_index=True)
-        print(f"\nConsolidated {len(combined):,} rows from {len(all_data)} files")
-        print(f"Failed: {len(failed_files)} files")
-        
-        # Export
-        combined.to_parquet(f'{file_type}_consolidated.parquet')  # Faster than Excel!
-        
-        if failed_files:
-            pd.DataFrame({'Failed_Files': failed_files}).to_excel(
-                f'{file_type}_failed.xlsx', index=False
-            )
-        
-        return combined
-    else:
-        print("No data extracted!")
-        return None
+ """Process all files of a given type"""
+ # Filter inventory
+ files = inventory[inventory['File_Type'] == file_type].copy()
+ 
+ print(f"Processing {len(files)} {file_type} files...")
+ 
+ all_data = []
+ failed_files = []
+ 
+ for idx, row in tqdm(files.iterrows(), total=len(files)):
+ try:
+ # Read file
+ df, sheet = read_excel_robust(row['File_Path'])
+ 
+ if df is None:
+ failed_files.append(row['File_Name'])
+ continue
+ 
+ # Standardize columns
+ df = standardize_columns(df)
+ 
+ # Add metadata
+ df['Source_File'] = row['File_Name']
+ df['Source_Sheet'] = sheet
+ df['File_Modified_Date'] = row['Modified_Date']
+ 
+ # Extract date from filename (if possible)
+ # Pattern: "TB_01_2024" or "Trial Balance January 2024"
+ import re
+ date_match = re.search(r'(\d{1,2})[_\s-]?(\d{4})', row['File_Name'])
+ if date_match:
+ month, year = date_match.groups()
+ df['Report_Month'] = int(month)
+ df['Report_Year'] = int(year)
+ 
+ all_data.append(df)
+ 
+ except Exception as e:
+ failed_files.append(f"{row['File_Name']}: {str(e)}")
+ 
+ # Consolidate
+ if all_data:
+ combined = pd.concat(all_data, ignore_index=True)
+ print(f"\nConsolidated {len(combined):,} rows from {len(all_data)} files")
+ print(f"Failed: {len(failed_files)} files")
+ 
+ # Export
+ combined.to_parquet(f'{file_type}_consolidated.parquet') # Faster than Excel!
+ 
+ if failed_files:
+ pd.DataFrame({'Failed_Files': failed_files}).to_excel(
+ f'{file_type}_failed.xlsx', index=False
+ )
+ 
+ return combined
+ else:
+ print("No data extracted!")
+ return None
 
 # Process all trial balances
 tb_data = process_all_files('Trial_Balance')
@@ -412,7 +412,7 @@ Consolidated 2,847,392 rows from 1,198 files
 Failed: 49 files
 ```
 
-**Time:** 12 minutes (for 1,247 files!) ⚡
+**Time:** 12 minutes (for 1,247 files!) 
 
 **Manually review 49 failed files (corrupt, password-protected, etc.)**
 
@@ -427,15 +427,15 @@ Failed: 49 files
 expected_months = pd.date_range(start='1995-01', end='2024-12', freq='MS')
 actual_months = tb_data.groupby(['Report_Year', 'Report_Month']).size().reset_index()
 actual_months['Period'] = pd.to_datetime(
-    actual_months['Report_Year'].astype(str) + '-' + 
-    actual_months['Report_Month'].astype(str).str.zfill(2) + '-01'
+ actual_months['Report_Year'].astype(str) + '-' + 
+ actual_months['Report_Month'].astype(str).str.zfill(2) + '-01'
 )
 
 missing_months = set(expected_months) - set(actual_months['Period'])
 
 print(f"Missing months: {len(missing_months)}")
 if missing_months:
-    print(sorted(missing_months))
+ print(sorted(missing_months))
 ```
 
 ---
@@ -447,14 +447,14 @@ if missing_months:
 duplicates = actual_months[actual_months.duplicated(subset=['Report_Year', 'Report_Month'], keep=False)]
 
 if len(duplicates) > 0:
-    print(f"Duplicate months found: {len(duplicates)}")
-    print(duplicates[['Report_Year', 'Report_Month', 'Source_File']].head(20))
-    
-    # Keep most recent file (by modified date)
-    tb_data = tb_data.sort_values('File_Modified_Date').drop_duplicates(
-        subset=['Report_Year', 'Report_Month', 'Account_Number'],
-        keep='last'
-    )
+ print(f"Duplicate months found: {len(duplicates)}")
+ print(duplicates[['Report_Year', 'Report_Month', 'Source_File']].head(20))
+ 
+ # Keep most recent file (by modified date)
+ tb_data = tb_data.sort_values('File_Modified_Date').drop_duplicates(
+ subset=['Report_Year', 'Report_Month', 'Account_Number'],
+ keep='last'
+ )
 ```
 
 ---
@@ -464,18 +464,18 @@ if len(duplicates) > 0:
 ```python
 # Verify debits = credits for each month
 validation = tb_data.groupby(['Report_Year', 'Report_Month']).agg({
-    'Debit': 'sum',
-    'Credit': 'sum'
+ 'Debit': 'sum',
+ 'Credit': 'sum'
 }).reset_index()
 
 validation['Difference'] = validation['Debit'] - validation['Credit']
-validation['Balances'] = abs(validation['Difference']) < 0.01  # Allow $0.01 rounding
+validation['Balances'] = abs(validation['Difference']) < 0.01 # Allow $0.01 rounding
 
 print(f"Months in balance: {validation['Balances'].sum()} / {len(validation)}")
 
 if not validation['Balances'].all():
-    print("\nMonths out of balance:")
-    print(validation[~validation['Balances']])
+ print("\nMonths out of balance:")
+ print(validation[~validation['Balances']])
 ```
 
 **Output:**
@@ -483,9 +483,9 @@ if not validation['Balances'].all():
 Months in balance: 358 / 360
 
 Months out of balance:
-   Report_Year  Report_Month      Debit     Credit  Difference
-45        1998             6  1,234,567  1,234,569       -2.00
-67        2001             2  2,456,789  2,456,790       -1.00
+ Report_Year Report_Month Debit Credit Difference
+45 1998 6 1,234,567 1,234,569 -2.00
+67 2001 2 2,456,789 2,456,790 -1.00
 ```
 
 **Action:** Investigate 2 months manually (likely data entry errors in source)
@@ -501,18 +501,18 @@ Months out of balance:
 ```python
 # Transform to target format
 tb_export = tb_data[[
-    'Report_Year',
-    'Report_Month',
-    'Account_Number',
-    'Description',
-    'Debit',
-    'Credit'
+ 'Report_Year',
+ 'Report_Month',
+ 'Account_Number',
+ 'Description',
+ 'Debit',
+ 'Credit'
 ]].copy()
 
 # Create period field (YYYYMM)
 tb_export['Period'] = (
-    tb_export['Report_Year'].astype(str) + 
-    tb_export['Report_Month'].astype(str).str.zfill(2)
+ tb_export['Report_Year'].astype(str) + 
+ tb_export['Report_Month'].astype(str).str.zfill(2)
 )
 
 # Format amounts (2 decimal places, no commas)
@@ -521,19 +521,19 @@ tb_export['Credit'] = tb_export['Credit'].round(2)
 
 # Reorder columns
 tb_export = tb_export[[
-    'Period',
-    'Account_Number',
-    'Description',
-    'Debit',
-    'Credit'
+ 'Period',
+ 'Account_Number',
+ 'Description',
+ 'Debit',
+ 'Credit'
 ]]
 
 # Export as pipe-delimited CSV
 tb_export.to_csv(
-    'trial_balance_MIGRATION.csv',
-    sep='|',
-    index=False,
-    header=True
+ 'trial_balance_MIGRATION.csv',
+ sep='|',
+ index=False,
+ header=True
 )
 
 print(f"Exported {len(tb_export):,} rows to trial_balance_MIGRATION.csv")
@@ -572,7 +572,7 @@ File size: 187.3 MB
 
 **CFO:** *long pause* "You saved us $50,000 and 7 months. I'm giving you a bonus. And a promotion. And I want you to train the whole team."
 
-**Me:** *tries not to cry* 🥹
+**Me:** *tries not to cry* 
 
 ---
 
@@ -580,22 +580,22 @@ File size: 187.3 MB
 
 ### Before Python:
 - ⏰ **Estimated Time:** 8 months
-- 💰 **Estimated Cost:** $50,000
-- 🐛 **Risk:** High (manual = errors)
-- 😓 **Stress:** Off the charts
+- **Estimated Cost:** $50,000
+- **Risk:** High (manual = errors)
+- **Stress:** Off the charts
 
 ### After Python:
 - ⏰ **Actual Time:** 1 week
-- 💰 **Actual Cost:** $50 (online course)
-- ✅ **Accuracy:** 99.4% automated (6 files needed manual fix)
-- 😊 **Stress:** Manageable
+- **Actual Cost:** $50 (online course)
+- **Accuracy:** 99.4% automated (6 files needed manual fix)
+- **Stress:** Manageable
 
 ### Metrics:
 - **Files Processed:** 2,413
 - **Rows Consolidated:** 7,241,039
 - **Time Saved:** 32 weeks
 - **Money Saved:** $50,000
-- **ROI:** 100,000% 💥
+- **ROI:** 100,000% 
 
 ---
 
@@ -671,7 +671,7 @@ export_to_new_system.py
 - Cost: $50
 - Errors: 6 files out of 2,413 (0.25%)
 
-**Winner:** Automation 🏆
+**Winner:** Automation 
 
 ---
 
@@ -709,7 +709,7 @@ We found:
 - 18 completely empty files
 - 6 files from wrong time period (FY2013 file in FY2014 folder)
 
-**Automated validation caught all of these.** ✅
+**Automated validation caught all of these.** 
 
 ---
 
@@ -749,7 +749,7 @@ We found:
 - Team automated 30+ processes
 - Finance department recognized as "most efficient" in org
 - CFO presented our work at industry conference
-- I got another promotion 🚀
+- I got another promotion 
 
 ---
 
@@ -757,14 +757,14 @@ We found:
 
 Facing a data migration project?
 
-**Don't panic. You've got this.** 💪
+**Don't panic. You've got this.** 
 
-**Step 1:** Inventory your files  
-**Step 2:** Build a robust reader  
-**Step 3:** Standardize column names  
-**Step 4:** Consolidate  
-**Step 5:** Validate  
-**Step 6:** Export  
+**Step 1:** Inventory your files 
+**Step 2:** Build a robust reader 
+**Step 3:** Standardize column names 
+**Step 4:** Consolidate 
+**Step 5:** Validate 
+**Step 6:** Export 
 
 **Time Investment:** 1-2 weeks
 
@@ -780,12 +780,12 @@ Have your own migration success story? Share it in the comments!
 
 ---
 
-## Join the Discussion on Discord! 💬
+## Join the Discussion on Discord! -
 
 Facing a data migration challenge? **Join our Discord** and get help from people who've been there!
 
-👉 **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
+ **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
 
 ---
 
-*"The best time to learn Python was 5 years ago. The second best time is today." 🚀*
+*"The best time to learn Python was 5 years ago. The second best time is today." *

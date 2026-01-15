@@ -17,8 +17,8 @@ Hear from finance and accounting professionals who have transformed their workfl
 >
 > **— Alicia, CPA** | Staff Accountant, Regional Firm
 
-**Challenge:** Manual bank reconciliation with thousands of transactions monthly  
-**Solution:** Automated matching algorithm with exception reporting  
+**Challenge:** Manual bank reconciliation with thousands of transactions monthly 
+**Solution:** Automated matching algorithm with exception reporting 
 **Result:** 97% time savings, zero errors
 
 ---
@@ -29,8 +29,8 @@ Hear from finance and accounting professionals who have transformed their workfl
 >
 > **— Reggie** | Internal Auditor, Healthcare
 
-**Challenge:** Sample-based testing missing edge cases  
-**Solution:** Full population analysis with automated anomaly detection  
+**Challenge:** Sample-based testing missing edge cases 
+**Solution:** Full population analysis with automated anomaly detection 
 **Result:** 300% increase in findings, 40% reduction in audit time
 
 ---
@@ -41,8 +41,8 @@ Hear from finance and accounting professionals who have transformed their workfl
 >
 > **— Maria** | Controller, Manufacturing
 
-**Challenge:** Manual, error-prone month-end close process  
-**Solution:** Automated recurring entries and reconciliation workflows  
+**Challenge:** Manual, error-prone month-end close process 
+**Solution:** Automated recurring entries and reconciliation workflows 
 **Result:** 60% faster close, improved accuracy, staff redeployed to analysis
 
 ---
