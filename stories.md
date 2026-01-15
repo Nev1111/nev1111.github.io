@@ -5,13 +5,13 @@ subtitle: Real results from finance and accounting professionals
 permalink: /stories/
 ---
 
-## Real Impact from Data Analytics & Automation
+### Real Impact from Data Analytics and Automation
 
 Hear from finance and accounting professionals who have transformed their workflows using data analytics and automation techniques.
 
 ---
 
-### 💼 Reconciliation Automation
+#### Reconciliation Automation
 
 > "What used to take 3 hours of manual work now takes 5 minutes. I automated our monthly bank reconciliation process, and it's been running flawlessly for 8 months."
 >
@@ -23,7 +23,7 @@ Hear from finance and accounting professionals who have transformed their workfl
 
 ---
 
-### 🔍 Audit Efficiency
+#### Audit Efficiency
 
 > "Data analytics completely changed how I approach audits. I can now analyze entire populations instead of samples, and I find issues that would have been impossible to catch manually."
 >
@@ -35,7 +35,7 @@ Hear from finance and accounting professionals who have transformed their workfl
 
 ---
 
-### 📊 Financial Reporting Transformation
+#### Financial Reporting Transformation
 
 > "We eliminated 90% of our manual journal entries by automating recurring transactions. Month-end close went from 10 days to 4 days."
 >
@@ -47,9 +47,9 @@ Hear from finance and accounting professionals who have transformed their workfl
 
 ---
 
-## Share Your Story
+### Share Your Story
 
-Have you transformed a workflow with data analytics or automation? We'd love to hear about it!
+Have you transformed a workflow with data analytics or automation? We would love to hear about it.
 
 **Email us at**: [hello@pandaudit.com](mailto:hello@pandaudit.com)
 

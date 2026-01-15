@@ -2,7 +2,7 @@
 
 This guide will help you set up complete Discord integration for PANDAUDIT, including automatic blog notifications and a comprehensive community bot.
 
-## 📋 Overview
+##  Overview
 
 The Discord integration is a **two-part system**:
 
@@ -17,7 +17,7 @@ The Discord integration is a **two-part system**:
 3. **Information Commands** - Help, about, stats, and more
 4. **24/7 Availability** - Hosted on cloud platform for always-on operation
 
-## 📚 Complete Documentation Set
+##  Complete Documentation Set
 
 This is part of a comprehensive Discord integration suite. For detailed information, see:
 
@@ -26,7 +26,7 @@ This is part of a comprehensive Discord integration suite. For detailed informat
 - **[DISCORD_SERVER_GUIDE.md](./DISCORD_SERVER_GUIDE.md)** - Server structure, channels, roles, and community management
 - **[discord_bot/README.md](./discord_bot/README.md)** - Quick start guide for the bot
 
-## 🎯 Quick Navigation
+##  Quick Navigation
 
 **Setting up for the first time?**
 1. Start with [Part 1: Webhook Setup](#-part-1-webhook-setup-automatic-blog-notifications) (this file)
@@ -43,7 +43,7 @@ This is part of a comprehensive Discord integration suite. For detailed informat
 
 # Part 1: Webhook Setup (Automatic Blog Notifications)
 
-## 🚀 Quick Setup (5 Minutes)
+##  Quick Setup (5 Minutes)
 
 ### Step 1: Create Discord Server (if you don't have one)
 
@@ -58,17 +58,17 @@ This is part of a comprehensive Discord integration suite. For detailed informat
 
 Create the following channels in your server:
 
-- 📢 **#announcements** - Blog post notifications (read-only for members)
-- 💬 **#general** - General discussion
-- 🙋 **#help** - Python and coding help
-- 🎯 **#showcase** - Members share their automation wins
-- 📚 **#resources** - Helpful links and materials
-- 🐛 **#bugs-and-issues** - Report problems
+-  **#announcements** - Blog post notifications (read-only for members)
+-  **#general** - General discussion
+-  **#help** - Python and coding help
+-  **#showcase** - Members share their automation wins
+-  **#resources** - Helpful links and materials
+-  **#bugs-and-issues** - Report problems
 
 **Optional channels:**
-- 📊 **#excel-hell** - Excel horror stories
-- 🤝 **#introductions** - New member introductions
-- 🎉 **#wins** - Celebrate successes
+-  **#excel-hell** - Excel horror stories
+-  **#introductions** - New member introductions
+-  **#wins** - Celebrate successes
 
 ### Step 3: Create Discord Webhook
 
@@ -82,7 +82,7 @@ Create the following channels in your server:
    - **Avatar:** Upload your PANDAUDIT logo (optional)
 6. Click **Copy Webhook URL** - **SAVE THIS!** You'll need it in the next step
 
-**⚠️ IMPORTANT:** Keep your webhook URL secret! Anyone with this URL can post to your Discord channel.
+** IMPORTANT:** Keep your webhook URL secret! Anyone with this URL can post to your Discord channel.
 
 ### Step 4: Add Webhook to GitHub Secrets
 
@@ -106,13 +106,13 @@ Create the following channels in your server:
    ```
 3. Go to **Actions** tab in your GitHub repository
 4. Watch the "Discord New Post Notification" workflow run
-5. Check your Discord `#announcements` channel - you should see a notification! 🎉
+5. Check your Discord `#announcements` channel - you should see a notification! 
 
 If it doesn't work, see the **Troubleshooting** section below.
 
 ---
 
-## 🎨 Customizing Discord Notifications
+##  Customizing Discord Notifications
 
 ### Change Notification Style
 
@@ -139,9 +139,9 @@ To mention `@everyone` or a role when a post is published:
 
 ```yaml
 # In the JSON_PAYLOAD, change the "content" field:
-"content": "@everyone 🎉 **New Blog Post Published!** 🎉",
+"content": "@everyone  **New Blog Post Published!** ",
 # OR
-"content": "<@&ROLE_ID> 🎉 **New Blog Post Published!** 🎉",
+"content": "<@&ROLE_ID>  **New Blog Post Published!** ",
 ```
 
 **To get Role ID:**
@@ -163,7 +163,7 @@ fi
 
 ---
 
-## 💬 Setting Up Discussion Features
+##  Setting Up Discussion Features
 
 ### Enable Discord Forum Threads (Recommended)
 
@@ -192,7 +192,7 @@ fi
 
 ---
 
-## 🔐 Security Best Practices
+##  Security Best Practices
 
 ### Protect Your Webhook
 
@@ -217,28 +217,28 @@ In Discord, you can:
 
 ---
 
-## 🎯 Community Engagement Strategies
+##  Community Engagement Strategies
 
 ### Welcome New Members
 
 Create a welcome message template in `#introductions`:
 
 ```
-Welcome to PANDAUDIT Community! 👋
+Welcome to PANDAUDIT Community! 
 
 We're a community of finance & accounting professionals learning Python to automate Excel workflows.
 
-🚀 **Get Started:**
+ **Get Started:**
 - Check out the latest posts: https://pandaudit.com/blog
 - Ask questions in #help
 - Share your automation wins in #showcase
 
-💡 **Guidelines:**
+ **Guidelines:**
 - Be respectful and helpful
 - No spam or self-promotion
 - Share code snippets when asking for help
 
-Happy automating! 🎉
+Happy automating! 
 ```
 
 ### Weekly Challenges
@@ -247,14 +247,14 @@ Post weekly challenges in `#general`:
 
 **Example:**
 ```
-📊 Weekly Challenge: Automate a Pivot Table
+ Weekly Challenge: Automate a Pivot Table
 
 This week's challenge: Take an Excel file with monthly sales data and create a pivot table using pandas.
 
-📅 Deadline: Sunday
-🎁 Prize: Featured in next week's showcase post!
+ Deadline: Sunday
+ Prize: Featured in next week's showcase post!
 
-Post your solution in this thread! 👇
+Post your solution in this thread! 
 ```
 
 ### Highlight Member Solutions
@@ -274,7 +274,7 @@ Schedule weekly "office hours" in voice channels:
 
 ---
 
-## 📊 Monitoring Engagement
+##  Monitoring Engagement
 
 ### Discord Analytics
 
@@ -294,7 +294,7 @@ Monitor notification delivery:
 
 ---
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Notifications Not Appearing
 
@@ -337,7 +337,7 @@ GitHub Actions can have delays during high load periods. Typical delay: 1-5 minu
 
 ---
 
-## 🎨 Advanced Customization
+##  Advanced Customization
 
 ### Custom Bot (Alternative to Webhooks)
 
@@ -386,7 +386,7 @@ Add images, thumbnails, and fields to embeds:
 
 # Part 2: Discord Bot Setup (Community Management)
 
-## 🤖 Why Add a Bot?
+##  Why Add a Bot?
 
 While webhooks handle automatic blog notifications, a dedicated bot provides:
 
@@ -459,7 +459,7 @@ In Discord, try:
 - `!help` - See all commands
 - `!about` - View PANDAUDIT information
 
-Bot should auto-react to messages in #blog-updates with 👍 💬 🔖
+Bot should auto-react to messages in #blog-updates with   
 
 ### Step 4: Configure Roles
 
@@ -473,7 +473,7 @@ Bot should auto-react to messages in #blog-updates with 👍 💬 🔖
    - Manage Messages
    - Manage Roles
 
-## 📖 Full Documentation
+##  Full Documentation
 
 For comprehensive bot setup, including:
 - Creating bot application
@@ -484,7 +484,7 @@ For comprehensive bot setup, including:
 
 **See: [DISCORD_BOT_SETUP.md](./DISCORD_BOT_SETUP.md)**
 
-## 🏗\ufe0f Server Structure
+## \ufe0f Server Structure
 
 Need help organizing your Discord server?
 
@@ -510,24 +510,24 @@ Need help organizing your Discord server?
 
 **Expected result**:
 ```
-🔔 New Insights from PANDAUDIT! 📊
+ New Insights from PANDAUDIT! 
 
 Fresh content alert! Check out our latest analysis on data analytics and automation.
 
-📝 [Your Post Title]
+ [Your Post Title]
 [Post description/excerpt]
 
-💡 Ready to level up your data analytics skills? Dive into this comprehensive guide.
+ Ready to level up your data analytics skills? Dive into this comprehensive guide.
 
-📚 Topics Covered
+ Topics Covered
 #tag1 #tag2 #tag3
 
-🎯 What You'll Learn
+ What You'll Learn
 Practical tips, real-world examples, and actionable insights for finance professionals
 
-🔗 Read the Full Article
-[Click here to read now ➜]
-💬 Share your thoughts and questions in this channel after reading!
+ Read the Full Article
+[Click here to read now ]
+ Share your thoughts and questions in this channel after reading!
 ```
 
 ## \u2705 Bot Test
@@ -538,7 +538,7 @@ Practical tips, real-world examples, and actionable insights for finance profess
 3. **Test help**: Type `!help`
    - Expected: Bot shows command list
 4. **Test auto-reactions**: Post in #blog-updates
-   - Expected: Bot adds 👍 💬 🔖 reactions
+   - Expected: Bot adds    reactions
 5. **Test welcome**: Have someone join server
    - Expected: Bot posts welcome message
 6. **Test moderation** (with test user):
@@ -603,7 +603,7 @@ Practical tips, real-world examples, and actionable insights for finance profess
 
 ---
 
-## 📚 Resources
+##  Resources
 
 ### Official Documentation
 
@@ -619,7 +619,7 @@ Practical tips, real-world examples, and actionable insights for finance profess
 
 ---
 
-## 🙋 Need Help?
+##  Need Help?
 
 ### Common Questions
 
@@ -627,7 +627,7 @@ Practical tips, real-world examples, and actionable insights for finance profess
 A: Yes! Create multiple webhooks (one per channel) and modify the workflow to send to multiple URLs.
 
 **Q: How do I add emoji to notifications?**  
-A: Use Unicode emoji directly in JSON: `"content": "🎉 New Post!"` or Discord custom emoji: `:custom_emoji_name:`
+A: Use Unicode emoji directly in JSON: `"content": " New Post!"` or Discord custom emoji: `:custom_emoji_name:`
 
 **Q: Can I edit notifications after posting?**  
 A: Yes, with a bot (not webhooks). Bots can edit/delete their own messages.
@@ -643,7 +643,7 @@ A: The workflow only triggers on new/modified files. Editing old posts won't tri
 
 ---
 
-## ✅ Checklist
+##  Checklist
 
 Use this checklist to ensure everything is set up correctly:
 
@@ -660,6 +660,6 @@ Use this checklist to ensure everything is set up correctly:
 
 ---
 
-**🎉 Congratulations!** Your Discord integration is now live. Every time you publish a new blog post, your community will be notified automatically.
+** Congratulations!** Your Discord integration is now live. Every time you publish a new blog post, your community will be notified automatically.
 
-Happy community building! 🚀
+Happy community building! 

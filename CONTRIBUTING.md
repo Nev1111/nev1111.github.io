@@ -4,7 +4,7 @@ Thank you for your interest in contributing to PANDAUDIT! We welcome contributio
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 1. [Ways to Contribute](#ways-to-contribute)
 2. [Writing Blog Posts](#writing-blog-posts)
@@ -14,7 +14,7 @@ Thank you for your interest in contributing to PANDAUDIT! We welcome contributio
 
 ---
 
-## 🤝 Ways to Contribute
+##  Ways to Contribute
 
 ### 1. Write Guest Blog Posts
 
@@ -47,7 +47,7 @@ Used code from PANDAUDIT and saved hours? Share your story!
 
 ---
 
-## ✍️ Writing Blog Posts
+##  Writing Blog Posts
 
 ### Post Format
 
@@ -140,22 +140,22 @@ Ask a question to encourage comments and engagement.
 ### Writing Guidelines
 
 **DO:**
-- ✅ Start with a relatable problem
-- ✅ Use real-world examples (sanitize sensitive data)
-- ✅ Include complete, working code
-- ✅ Add comments explaining *why*, not just *what*
-- ✅ Show before/after comparisons (Excel vs Python)
-- ✅ Include time savings or ROI
-- ✅ Link to related posts
-- ✅ End with a question or call-to-action
+-  Start with a relatable problem
+-  Use real-world examples (sanitize sensitive data)
+-  Include complete, working code
+-  Add comments explaining *why*, not just *what*
+-  Show before/after comparisons (Excel vs Python)
+-  Include time savings or ROI
+-  Link to related posts
+-  End with a question or call-to-action
 
 **DON'T:**
-- ❌ Assume readers know programming jargon
-- ❌ Show code without explanation
-- ❌ Use overly complex examples for beginners
-- ❌ Skip error handling in production code
-- ❌ Forget to cite external resources
-- ❌ Include real company/client data (even if public)
+-  Assume readers know programming jargon
+-  Show code without explanation
+-  Use overly complex examples for beginners
+-  Skip error handling in production code
+-  Forget to cite external resources
+-  Include real company/client data (even if public)
 
 ### Code Standards
 
@@ -202,7 +202,7 @@ def calculate_annual_amount(payment, frequency):
 
 ---
 
-## 📝 Submission Process
+##  Submission Process
 
 ### For Blog Posts
 
@@ -299,7 +299,7 @@ Open GitHub Issue with:
 
 ---
 
-## 🎨 Design Guidelines
+##  Design Guidelines
 
 ### Visual Elements
 
@@ -321,7 +321,7 @@ Open GitHub Issue with:
 
 ---
 
-## 👥 Community Guidelines
+##  Community Guidelines
 
 ### Code of Conduct
 
@@ -333,11 +333,11 @@ Open GitHub Issue with:
 
 ### What's Not Allowed
 
-- ❌ Spam or self-promotion (unless in designated areas)
-- ❌ Harassment or discriminatory behavior
-- ❌ Sharing proprietary/confidential information
-- ❌ Plagiarism
-- ❌ Off-topic discussions
+-  Spam or self-promotion (unless in designated areas)
+-  Harassment or discriminatory behavior
+-  Sharing proprietary/confidential information
+-  Plagiarism
+-  Off-topic discussions
 
 ### Moderation
 
@@ -349,7 +349,7 @@ Moderators have final say. Contact hello@pandaudit.com to appeal.
 
 ---
 
-## 🎁 Recognition
+##  Recognition
 
 ### For Contributors
 
@@ -370,7 +370,7 @@ Moderators have final say. Contact hello@pandaudit.com to appeal.
 
 ---
 
-## 📧 Questions?
+##  Questions?
 
 **Not sure if your idea fits?** Reach out!
 
@@ -382,7 +382,7 @@ We're friendly and want to help you contribute!
 
 ---
 
-## ✅ Contributor Checklist
+##  Contributor Checklist
 
 Before submitting, ensure:
 
@@ -399,7 +399,7 @@ Before submitting, ensure:
 
 ---
 
-**Thank you for contributing to PANDAUDIT!** 🎉
+**Thank you for contributing to PANDAUDIT!** 
 
 Together, we're helping accountants and finance professionals escape Excel hell and embrace Python automation.
 

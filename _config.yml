@@ -269,6 +269,15 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
+  - DISCORD_BOT_SETUP.md
+  - DISCORD_SERVER_GUIDE.md
+  - DISCORD_SETUP.md
+  - CONTRIBUTING.md
+  - MARKETING_GUIDE.md
+  - mystery-template-guide.md
+  - mystery-ideas.md
+  - content-creation-workflow.md
+  - 2022-12-29-Macola-tb-with-account-classifiacaions.md
 
 plugins:
   - jekyll-paginate

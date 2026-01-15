@@ -2,7 +2,7 @@
 
 Complete guide to setting up, configuring, and hosting the PANDAUDIT Discord bot.
 
-## 📚 Table of Contents
+##  Table of Contents
 
 1. [Overview](#-overview)
 2. [Prerequisites](#-prerequisites)
@@ -16,7 +16,7 @@ Complete guide to setting up, configuring, and hosting the PANDAUDIT Discord bot
 
 ---
 
-## 📊 Overview
+##  Overview
 
 The PANDAUDIT Discord bot is a comprehensive community management tool featuring:
 
@@ -34,7 +34,7 @@ The PANDAUDIT Discord bot is a comprehensive community management tool featuring
 
 ---
 
-## 📦 Prerequisites
+##  Prerequisites
 
 ### System Requirements
 - **Python**: 3.8 or higher
@@ -57,7 +57,7 @@ The PANDAUDIT Discord bot is a comprehensive community management tool featuring
 
 ---
 
-## 🚀 Initial Setup
+##  Initial Setup
 
 ### Step 1: Create Discord Bot Application
 
@@ -88,12 +88,12 @@ The PANDAUDIT Discord bot is a comprehensive community management tool featuring
 
 6. **Enable Privileged Gateway Intents**
    
-   ⚠️ **CRITICAL**: These must be enabled or bot won't work!
+    **CRITICAL**: These must be enabled or bot won't work!
    
    Scroll down to **"Privileged Gateway Intents"**:
-   - ✅ **Server Members Intent** - Toggle ON
-   - ✅ **Presence Intent** - Toggle OFF (not needed)
-   - ✅ **Message Content Intent** - Toggle ON
+   -  **Server Members Intent** - Toggle ON
+   -  **Presence Intent** - Toggle OFF (not needed)
+   -  **Message Content Intent** - Toggle ON
    
    Click **"Save Changes"**
 
@@ -101,7 +101,7 @@ The PANDAUDIT Discord bot is a comprehensive community management tool featuring
    - Click **"Reset Token"** (if first time) or **"View Token"**
    - Click **"Copy"**
    - **SAVE THIS TOKEN SECURELY** - You'll need it later
-   - ⚠️ **NEVER share this token publicly!**
+   -  **NEVER share this token publicly!**
 
 ### Step 2: Set Up Bot Permissions
 
@@ -110,30 +110,30 @@ The PANDAUDIT Discord bot is a comprehensive community management tool featuring
    - Click **"URL Generator"**
 
 2. **Select Scopes**
-   - ✅ `bot`
-   - ✅ `applications.commands` (for future slash commands)
+   -  `bot`
+   -  `applications.commands` (for future slash commands)
 
 3. **Select Bot Permissions**
    
    **General Permissions:**
-   - ✅ Read Messages/View Channels
-   - ✅ Send Messages
-   - ✅ Send Messages in Threads
-   - ✅ Embed Links
-   - ✅ Attach Files
-   - ✅ Read Message History
-   - ✅ Add Reactions
+   -  Read Messages/View Channels
+   -  Send Messages
+   -  Send Messages in Threads
+   -  Embed Links
+   -  Attach Files
+   -  Read Message History
+   -  Add Reactions
    
    **Moderation Permissions:**
-   - ✅ Manage Messages (for !clear command)
-   - ✅ Kick Members (for !kick command)
-   - ✅ Ban Members (for !ban command)
-   - ✅ Manage Roles (for !mute command)
-   - ✅ Manage Channels (to set muted role permissions)
+   -  Manage Messages (for !clear command)
+   -  Kick Members (for !kick command)
+   -  Ban Members (for !ban command)
+   -  Manage Roles (for !mute command)
+   -  Manage Channels (to set muted role permissions)
    
    **Permission Integer**: `1099511689222`
    
-   > 💡 **Tip**: You can paste this integer directly instead of clicking checkboxes
+   >  **Tip**: You can paste this integer directly instead of clicking checkboxes
 
 4. **Copy Generated URL**
    - Scroll down
@@ -163,7 +163,7 @@ The PANDAUDIT Discord bot is a comprehensive community management tool featuring
 
 ### Step 4: Configure Bot Role Position
 
-⚠️ **IMPORTANT**: Bot can only moderate users with roles BELOW its own role!
+ **IMPORTANT**: Bot can only moderate users with roles BELOW its own role!
 
 1. **Go to Server Settings → Roles**
    - Right-click server name → **"Server Settings"**
@@ -184,7 +184,7 @@ The PANDAUDIT Discord bot is a comprehensive community management tool featuring
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 ### Step 1: Download Bot Files
 
@@ -275,32 +275,32 @@ python bot.py
 
 ---
 
-## ☁️ Hosting Options
+##  Hosting Options
 
 Comparison of hosting platforms:
 
 | Platform | Cost | Difficulty | Uptime | Best For |
 |----------|------|------------|--------|----------|
-| **Replit** | Free | ⭐ Easy | 80% | Quick testing |
-| **Railway** | Free tier | ⭐⭐ Medium | 99.9% | **Recommended** |
-| **Heroku** | $7/mo | ⭐⭐ Medium | 99.9% | Professional |
-| **VPS** | $5-10/mo | ⭐⭐⭐ Hard | 99.9% | Full control |
-| **Local** | Free | ⭐ Easy | 50% | Development only |
+| **Replit** | Free |  Easy | 80% | Quick testing |
+| **Railway** | Free tier |  Medium | 99.9% | **Recommended** |
+| **Heroku** | $7/mo |  Medium | 99.9% | Professional |
+| **VPS** | $5-10/mo |  Hard | 99.9% | Full control |
+| **Local** | Free |  Easy | 50% | Development only |
 
-**Recommendation**: 🏆 **Railway** - Best balance of ease, reliability, and cost.
+**Recommendation**:  **Railway** - Best balance of ease, reliability, and cost.
 
 ---
 
-## 🛠️ Deployment Guide
+##  Deployment Guide
 
 ### Option 1: Railway (Recommended)
 
 **Why Railway?**
-- ✅ Free $5 credit per month (enough for small bot)
-- ✅ Always online (24/7 uptime)
-- ✅ Automatic deployments from GitHub
-- ✅ Easy environment variable management
-- ✅ Simple setup, no credit card required initially
+-  Free $5 credit per month (enough for small bot)
+-  Always online (24/7 uptime)
+-  Automatic deployments from GitHub
+-  Easy environment variable management
+-  Simple setup, no credit card required initially
 
 **Step-by-Step:**
 
@@ -652,7 +652,7 @@ systemctl restart pandaudit-bot
 
 ---
 
-## ✅ Testing
+##  Testing
 
 ### Basic Tests
 
@@ -680,7 +680,7 @@ systemctl restart pandaudit-bot
 
 ### Moderation Tests
 
-⚠️ **Create a test user or use an alternate account**
+ **Create a test user or use an alternate account**
 
 1. **Clear Test**
    ```
@@ -714,7 +714,7 @@ systemctl restart pandaudit-bot
 
 2. **Auto-Reaction Test**
    - Post a message in #blog-updates channel
-   - Expected: Bot adds reactions (👍 💬 🔖)
+   - Expected: Bot adds reactions (  )
 
 3. **Stats Test**
    ```
@@ -737,7 +737,7 @@ Expected: Bot responds to all commands without crashing
 
 ---
 
-## 🔧 Maintenance
+##  Maintenance
 
 ### Regular Tasks
 
@@ -815,7 +815,7 @@ scp root@your_server:/home/pandaudit/bot.log ./bot_log_backup
 
 ---
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Bot Won't Start
 
@@ -981,7 +981,7 @@ tail -f /home/pandaudit/bot_error.log
 
 ---
 
-## 📚 Additional Resources
+##  Additional Resources
 
 ### Documentation
 - [discord.py Documentation](https://discordpy.readthedocs.io/)
@@ -1003,7 +1003,7 @@ tail -f /home/pandaudit/bot_error.log
 
 ---
 
-## ❤️ Support
+##  Support
 
 Need help?
 
@@ -1015,7 +1015,7 @@ Need help?
 
 ---
 
-## ✅ Success Checklist
+##  Success Checklist
 
 Before considering your bot deployment complete:
 
@@ -1038,8 +1038,8 @@ Before considering your bot deployment complete:
 
 ---
 
-**🎉 Congratulations!** Your PANDAUDIT Discord bot is now live and ready to engage your community.
+** Congratulations!** Your PANDAUDIT Discord bot is now live and ready to engage your community.
 
 For ongoing support and updates, visit [pandaudit.com](https://pandaudit.com) or check the [GitHub repository](https://github.com/nev1111/nev1111.github.io).
 
-Happy community building! 🤖
+Happy community building! 

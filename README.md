@@ -1,4 +1,4 @@
-# PANDAUDIT - Python Data Analytics for Finance & Accounting
+# PANDAUDIT - Python Data Analytics for Finance and Accounting
 
 [![GitHub Pages](https://img.shields.io/badge/Live-pandaudit.com-blue)](https://pandaudit.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -8,41 +8,41 @@
 
 ---
 
-## 🎯 What is PANDAUDIT?
+### What is PANDAUDIT?
 
-PANDAUDIT is a blog and community for **finance & accounting professionals** who want to:
+PANDAUDIT is a blog and community for **finance and accounting professionals** who want to:
 - Automate repetitive Excel tasks
 - Learn Python without a computer science degree
 - Save hours every week on manual data processing
 - Advance their careers with modern data skills
 
-### Why PANDAUDIT is Different
+#### Why PANDAUDIT is Different
 
-✅ **Real-World Focus** - Actual government pension fund code, not toy examples  
-✅ **Accounting-First** - Written by accountants, for accountants  
-✅ **Immediate ROI** - Save hours *this week*, not after a 6-month course  
-✅ **Community Support** - Discord for help from fellow finance professionals
+- **Real-World Focus** - Actual government pension fund code, not toy examples  
+- **Accounting-First** - Written by accountants, for accountants  
+- **Immediate ROI** - Save hours this week, not after a 6-month course  
+- **Community Support** - Discord for help from fellow finance professionals
 
 ---
 
-## 📚 Popular Topics
+### Popular Topics
 
 - **From Excel Hell to Python Heaven** - Parse legacy reports, handle credit/debit notation, automate pivots
-- **Data Integration & Quality** - Master data mapping, multi-year consolidation, SQL integration
+- **Data Integration and Quality** - Master data mapping, multi-year consolidation, SQL integration
 - **Advanced Techniques** - Groupby transforms, data reshaping, duplicate handling
 - **Complete Workflows** - End-to-end automation examples
 
 ---
 
-## 🚀 Getting Started
+### Getting Started
 
-### For Readers
+#### For Readers
 
 1. **Browse the Blog:** [pandaudit.com/blog](https://pandaudit.com/blog)
 2. **Join Discord:** [discord.gg/hDQKM6ar](https://discord.gg/hDQKM6ar)
 3. **Subscribe:** Get new posts via [RSS](/feed.xml)
 
-### For Contributors
+#### For Contributors
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to:
 - Submit new blog posts
@@ -51,7 +51,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to:
 
 ---
 
-## 🛠️ Technology Stack
+### Technology Stack
 
 **Frontend:**
 - [Primer CSS](https://primer.style/) - GitHub's design system
@@ -64,7 +64,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to:
 
 ---
 
-## 📖 Site Structure
+### Site Structure
 
 ```
 ├── _posts/              # Blog posts (Markdown)
@@ -92,7 +92,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to:
 
 ---
 
-## 🎨 Design System
+### Design System
 
 PANDAUDIT uses [Primer CSS](https://primer.style/) for a clean, professional look.
 
@@ -104,9 +104,9 @@ PANDAUDIT uses [Primer CSS](https://primer.style/) for a clean, professional loo
 
 ---
 
-## 📝 Writing Blog Posts
+### Writing Blog Posts
 
-### Create a New Post
+#### Create a New Post
 
 1. Create file in `_posts/` with format: `YYYY-MM-DD-title-slug.md`
 2. Add front matter:
@@ -131,12 +131,12 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed writing guidelines.
 
 ---
 
-## 🔔 Discord Integration
+### Discord Integration
 
-Automatic notifications for new blog posts!
+Automatic notifications for new blog posts.
 
 **Setup:**
-1. Create Discord webhook (Server Settings → Integrations → Webhooks)
+1. Create Discord webhook (Server Settings, Integrations, Webhooks)
 2. Add webhook URL to GitHub Secrets as `DISCORD_WEBHOOK_URL`
 3. Push new post to `master` branch
 4. GitHub Actions triggers and posts to Discord automatically
@@ -145,7 +145,7 @@ See [DISCORD_SETUP.md](DISCORD_SETUP.md) for complete setup guide.
 
 ---
 
-## 📊 Marketing & Growth
+### Marketing and Growth
 
 Want to grow your audience? See [MARKETING_GUIDE.md](MARKETING_GUIDE.md) for:
 - Social media strategies (LinkedIn, Reddit, Twitter)
@@ -156,15 +156,15 @@ Want to grow your audience? See [MARKETING_GUIDE.md](MARKETING_GUIDE.md) for:
 
 ---
 
-## 🏗️ Local Development
+### Local Development
 
-### Prerequisites
+#### Prerequisites
 
 - Ruby 2.7+
 - Bundler
 - Jekyll
 
-### Setup
+#### Setup
 
 ```bash
 # Clone repository
@@ -185,7 +185,7 @@ http://localhost:4000
 
 ---
 
-## 🚢 Deployment
+### Deployment
 
 Site is automatically deployed via GitHub Pages when you push to `master` branch.
 
@@ -196,15 +196,15 @@ Site is automatically deployed via GitHub Pages when you push to `master` branch
 
 ---
 
-## 📜 License
+### License
 
 This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
-**Content License:** Blog posts and content are © 2024 PANDAUDIT. Code examples in posts are MIT licensed.
+**Content License:** Blog posts and content are copyright 2024 PANDAUDIT. Code examples in posts are MIT licensed.
 
 ---
 
-## 🤝 Contributing
+### Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 - Writing guidelines
@@ -214,7 +214,7 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 
 ---
 
-## 📧 Contact
+### Contact
 
 - **Website:** [pandaudit.com](https://pandaudit.com)
 - **Email:** hello@pandaudit.com
@@ -224,7 +224,7 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 
 ---
 
-## 🙏 Acknowledgments
+### Acknowledgments
 
 - **Primer CSS** by GitHub - Beautiful, accessible design system
 - **Jekyll** - Static site generator
@@ -234,15 +234,15 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 
 ---
 
-## 📈 Stats
+### Stats
 
 - **Blog Posts:** 28+ (and growing)
 - **Topics Covered:** Excel automation, pandas, data wrangling, fiscal calculations, reporting
-- **Community:** Join our growing Discord community!
+- **Community:** Join our growing Discord community
 
 ---
 
-## 🗺️ Roadmap
+### Roadmap
 
 **Q1 2026:**
 - [x] Migrate to Primer CSS design system
@@ -258,15 +258,15 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 - [ ] Community showcase section
 
 **Q3 2026:**
-- [ ] Webinars & workshops
+- [ ] Webinars and workshops
 - [ ] Corporate training program
 - [ ] Mobile-optimized experience
 - [ ] Multi-language support
 
 ---
 
-**⭐ Star this repo if you find it helpful!**
+**Star this repo if you find it helpful!**
 
-**💬 Join the community and start automating your workflows today!**
+**Join the community and start automating your workflows today!**
 
-[Visit PANDAUDIT →](https://pandaudit.com)
+[Visit PANDAUDIT](https://pandaudit.com)
