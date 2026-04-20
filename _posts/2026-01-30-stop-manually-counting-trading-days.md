@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "⏱️ 5-Minute Fix: Stop Manually Counting Trading Days"
+layout: post
+title: "5-Minute Fix: Stop Manually Counting Trading Days"
 subtitle: "Calculating investment holding periods in Python (the easy way)"
 tags: [python, pandas, trading-days, business-days, finance, quick-tip]
 comments: true
@@ -23,7 +23,7 @@ author: PANDAUDIT Team
 
 **Manager:** "Yes. All of them. For the past 7 years."
 
-**Me:** *internal screaming* 😱
+**Me:** *internal screaming* 
 
 ---
 
@@ -39,7 +39,7 @@ author: PANDAUDIT Team
 
 **What It Doesn't Do:** Exclude stock market holidays
 
-**Result:** Off by 9-10 days per year ❌
+**Result:** Off by 9-10 days per year 
 
 ---
 
@@ -58,17 +58,17 @@ author: PANDAUDIT Team
 6. **Pray nothing breaks**
 
 **Problems:**
-- 📅 Holiday dates change every year (e.g., Thanksgiving = 4th Thursday in November)
-- 🚨 If a holiday falls on Saturday, market closes on Friday
-- 🔄 If a holiday falls on Sunday, market closes on Monday
-- 🐛 One typo in the holiday list = wrong counts for ALL transactions
-- 📊 Different markets = different holidays (NYSE ≠ NASDAQ ≠ London ≠ Tokyo)
+- Holiday dates change every year (e.g., Thanksgiving = 4th Thursday in November)
+- If a holiday falls on Saturday, market closes on Friday
+- If a holiday falls on Sunday, market closes on Monday
+- One typo in the holiday list = wrong counts for ALL transactions
+- Different markets = different holidays (NYSE ≠ NASDAQ ≠ London ≠ Tokyo)
 
 **Time to build:** 2-3 hours
 
 **Maintenance:** Every year (add new holidays)
 
-**Reliability:** Low 😬
+**Reliability:** Low 
 
 ---
 
@@ -76,7 +76,7 @@ author: PANDAUDIT Team
 
 **For 500 transactions?**
 
-**No thanks.** 🙅
+**No thanks.** 
 
 ---
 
@@ -92,19 +92,19 @@ df['Sell_Date'] = pd.to_datetime(df['Sell_Date'])
 
 # Count trading days (NYSE calendar)
 df['Trading_Days'] = df.apply(
-    lambda row: len(pd.bdate_range(
-        start=row['Buy_Date'],
-        end=row['Sell_Date'],
-        freq='C',  # Custom business day (US stock market)
-        holidays=pd.tseries.holiday.USFederalHolidayCalendar().holidays(
-            start=row['Buy_Date'],
-            end=row['Sell_Date']
-        )
-    )),
-    axis=1
+ lambda row: len(pd.bdate_range(
+ start=row['Buy_Date'],
+ end=row['Sell_Date'],
+ freq='C', # Custom business day (US stock market)
+ holidays=pd.tseries.holiday.USFederalHolidayCalendar().holidays(
+ start=row['Buy_Date'],
+ end=row['Sell_Date']
+ )
+ )),
+ axis=1
 )
 
-# Done! 🎉
+# Done! 
 ```
 
 **Wait, it gets better...**
@@ -126,15 +126,15 @@ df['Sell_Date'] = pd.to_datetime(df['Sell_Date'])
 from pandas.tseries.holiday import USFederalHolidayCalendar
 cal = USFederalHolidayCalendar()
 holidays = cal.holidays(
-    start=df['Buy_Date'].min(),
-    end=df['Sell_Date'].max()
+ start=df['Buy_Date'].min(),
+ end=df['Sell_Date'].max()
 )
 
 # Count trading days
 df['Trading_Days'] = np.busday_count(
-    df['Buy_Date'].values.astype('datetime64[D]'),
-    df['Sell_Date'].values.astype('datetime64[D]'),
-    holidays=holidays.values.astype('datetime64[D]')
+ df['Buy_Date'].values.astype('datetime64[D]'),
+ df['Sell_Date'].values.astype('datetime64[D]'),
+ holidays=holidays.values.astype('datetime64[D]')
 )
 
 print(df[['Security', 'Buy_Date', 'Sell_Date', 'Trading_Days']])
@@ -142,17 +142,17 @@ print(df[['Security', 'Buy_Date', 'Sell_Date', 'Trading_Days']])
 
 **Result:**
 ```
-  Security    Buy_Date   Sell_Date  Trading_Days
-0  AAPL     2024-01-05  2024-03-15          51
-1  MSFT     2024-02-12  2024-06-28          100
-2  GOOGL    2023-11-20  2024-01-25          46
+ Security Buy_Date Sell_Date Trading_Days
+0 AAPL 2024-01-05 2024-03-15 51
+1 MSFT 2024-02-12 2024-06-28 100
+2 GOOGL 2023-11-20 2024-01-25 46
 ```
 
-**Time:** 5 seconds ⚡
+**Time:** 5 seconds 
 
-**Accuracy:** Perfect (uses official holiday calendar) ✅
+**Accuracy:** Perfect (uses official holiday calendar) 
 
-**Maintenance:** Zero (calendar updates automatically) 🎉
+**Maintenance:** Zero (calendar updates automatically) 
 
 ---
 
@@ -175,8 +175,8 @@ cal = USFederalHolidayCalendar()
 
 ```python
 holidays = cal.holidays(
-    start='2023-01-01',
-    end='2025-12-31'
+ start='2023-01-01',
+ end='2025-12-31'
 )
 
 print(holidays)
@@ -185,24 +185,24 @@ print(holidays)
 **Output:**
 ```
 DatetimeIndex([
-    '2023-01-02',  # New Year's Day (observed - fell on Sunday)
-    '2023-01-16',  # Martin Luther King Jr. Day
-    '2023-02-20',  # Presidents Day
-    '2023-05-29',  # Memorial Day
-    '2023-06-19',  # Juneteenth
-    '2023-07-04',  # Independence Day
-    '2023-09-04',  # Labor Day
-    '2023-11-23',  # Thanksgiving
-    '2023-12-25',  # Christmas
-    '2024-01-01',  # New Year's Day
-    ...
+ '2023-01-02', # New Year's Day (observed - fell on Sunday)
+ '2023-01-16', # Martin Luther King Jr. Day
+ '2023-02-20', # Presidents Day
+ '2023-05-29', # Memorial Day
+ '2023-06-19', # Juneteenth
+ '2023-07-04', # Independence Day
+ '2023-09-04', # Labor Day
+ '2023-11-23', # Thanksgiving
+ '2023-12-25', # Christmas
+ '2024-01-01', # New Year's Day
+ ...
 ])
 ```
 
 **Automatically handles:**
-- ✅ Holidays that fall on weekends (observance rules)
-- ✅ Floating holidays (e.g., Thanksgiving = 4th Thursday in November)
-- ✅ Multi-year ranges
+- Holidays that fall on weekends (observance rules)
+- Floating holidays (e.g., Thanksgiving = 4th Thursday in November)
+- Multi-year ranges
 
 ---
 
@@ -213,12 +213,12 @@ import numpy as np
 
 # Count business days between two dates
 trading_days = np.busday_count(
-    '2024-01-05',  # Start date
-    '2024-03-15',  # End date
-    holidays=['2024-01-15', '2024-02-19']  # Holidays to exclude
+ '2024-01-05', # Start date
+ '2024-03-15', # End date
+ holidays=['2024-01-15', '2024-02-19'] # Holidays to exclude
 )
 
-print(trading_days)  # 51
+print(trading_days) # 51
 ```
 
 ---
@@ -243,26 +243,26 @@ The **US Federal Holiday Calendar** is close but not exact for stock markets.
 
 ```python
 from pandas.tseries.holiday import (
-    Holiday,
-    USFederalHolidayCalendar,
-    GoodFriday,
-    nearest_workday
+ Holiday,
+ USFederalHolidayCalendar,
+ GoodFriday,
+ nearest_workday
 )
 
 class NYSECalendar(USFederalHolidayCalendar):
-    """NYSE Stock Market Holiday Calendar"""
-    rules = [
-        Holiday('New Year\'s Day', month=1, day=1, observance=nearest_workday),
-        Holiday('Martin Luther King Jr. Day', month=1, day=1, offset=pd.DateOffset(weekday=MO(3))),
-        Holiday('Presidents Day', month=2, day=1, offset=pd.DateOffset(weekday=MO(3))),
-        GoodFriday,  # Unique to stock market!
-        Holiday('Memorial Day', month=5, day=31, offset=pd.DateOffset(weekday=MO(-1))),
-        Holiday('Juneteenth', month=6, day=19, observance=nearest_workday),
-        Holiday('Independence Day', month=7, day=4, observance=nearest_workday),
-        Holiday('Labor Day', month=9, day=1, offset=pd.DateOffset(weekday=MO(1))),
-        Holiday('Thanksgiving', month=11, day=1, offset=pd.DateOffset(weekday=TH(4))),
-        Holiday('Christmas', month=12, day=25, observance=nearest_workday)
-    ]
+ """NYSE Stock Market Holiday Calendar"""
+ rules = [
+ Holiday('New Year\'s Day', month=1, day=1, observance=nearest_workday),
+ Holiday('Martin Luther King Jr. Day', month=1, day=1, offset=pd.DateOffset(weekday=MO(3))),
+ Holiday('Presidents Day', month=2, day=1, offset=pd.DateOffset(weekday=MO(3))),
+ GoodFriday, # Unique to stock market!
+ Holiday('Memorial Day', month=5, day=31, offset=pd.DateOffset(weekday=MO(-1))),
+ Holiday('Juneteenth', month=6, day=19, observance=nearest_workday),
+ Holiday('Independence Day', month=7, day=4, observance=nearest_workday),
+ Holiday('Labor Day', month=9, day=1, offset=pd.DateOffset(weekday=MO(1))),
+ Holiday('Thanksgiving', month=11, day=1, offset=pd.DateOffset(weekday=TH(4))),
+ Holiday('Christmas', month=12, day=25, observance=nearest_workday)
+ ]
 
 # Use custom calendar
 cal = NYSECalendar()
@@ -270,13 +270,13 @@ nyse_holidays = cal.holidays(start='2023-01-01', end='2025-12-31')
 
 # Count trading days
 df['Trading_Days'] = np.busday_count(
-    df['Buy_Date'].values.astype('datetime64[D]'),
-    df['Sell_Date'].values.astype('datetime64[D]'),
-    holidays=nyse_holidays.values.astype('datetime64[D]')
+ df['Buy_Date'].values.astype('datetime64[D]'),
+ df['Sell_Date'].values.astype('datetime64[D]'),
+ holidays=nyse_holidays.values.astype('datetime64[D]')
 )
 ```
 
-**Now 100% accurate for NYSE/NASDAQ!** 🎯
+**Now 100% accurate for NYSE/NASDAQ!** -
 
 ---
 
@@ -293,10 +293,10 @@ df['Trading_Days'] = np.busday_count(
 
 **Data:**
 ```
-Security  Buy_Date    Sell_Date   Cost_Basis  Proceeds
-AAPL      2023-01-15  2024-03-20  10,000      12,500
-MSFT      2023-06-10  2024-08-25  15,000      18,200
-GOOGL     2024-02-05  2024-11-15  8,000       9,100
+Security Buy_Date Sell_Date Cost_Basis Proceeds
+AAPL 2023-01-15 2024-03-20 10,000 12,500
+MSFT 2023-06-10 2024-08-25 15,000 18,200
+GOOGL 2024-02-05 2024-11-15 8,000 9,100
 ```
 
 ---
@@ -316,23 +316,23 @@ df['Sell_Date'] = pd.to_datetime(df['Sell_Date'])
 # Get holidays
 cal = USFederalHolidayCalendar()
 holidays = cal.holidays(
-    start=df['Buy_Date'].min(),
-    end=df['Sell_Date'].max()
+ start=df['Buy_Date'].min(),
+ end=df['Sell_Date'].max()
 )
 
 # Count trading days
 df['Trading_Days'] = np.busday_count(
-    df['Buy_Date'].values.astype('datetime64[D]'),
-    df['Sell_Date'].values.astype('datetime64[D]'),
-    holidays=holidays.values.astype('datetime64[D]')
+ df['Buy_Date'].values.astype('datetime64[D]'),
+ df['Sell_Date'].values.astype('datetime64[D]'),
+ holidays=holidays.values.astype('datetime64[D]')
 )
 
 # Calculate holding period in years
-df['Holding_Period_Years'] = df['Trading_Days'] / 252  # ~252 trading days/year
+df['Holding_Period_Years'] = df['Trading_Days'] / 252 # ~252 trading days/year
 
 # Classify as short-term or long-term
 df['Capital_Gain_Type'] = df['Holding_Period_Years'].apply(
-    lambda x: 'Long-Term' if x > 1 else 'Short-Term'
+ lambda x: 'Long-Term' if x > 1 else 'Short-Term'
 )
 
 # Calculate gains
@@ -343,13 +343,13 @@ print(df[['Security', 'Trading_Days', 'Holding_Period_Years', 'Capital_Gain_Type
 
 **Output:**
 ```
-  Security  Trading_Days  Holding_Period_Years Capital_Gain_Type    Gain
-0  AAPL           289              1.15          Long-Term      2,500
-1  MSFT           320              1.27          Long-Term      3,200
-2  GOOGL          198              0.79          Short-Term     1,100
+ Security Trading_Days Holding_Period_Years Capital_Gain_Type Gain
+0 AAPL 289 1.15 Long-Term 2,500
+1 MSFT 320 1.27 Long-Term 3,200
+2 GOOGL 198 0.79 Short-Term 1,100
 ```
 
-**Perfect for tax reporting!** 📄
+**Perfect for tax reporting!** 
 
 ---
 
@@ -364,11 +364,11 @@ import pandas as pd
 
 # Simple business day count (weekdays only, no holidays)
 df['Business_Days_Simple'] = df.apply(
-    lambda row: len(pd.bdate_range(
-        start=row['Invoice_Date'],
-        end=row['Payment_Date']
-    )),
-    axis=1
+ lambda row: len(pd.bdate_range(
+ start=row['Invoice_Date'],
+ end=row['Payment_Date']
+ )),
+ axis=1
 )
 
 # Business days with federal holidays excluded
@@ -379,9 +379,9 @@ cal = USFederalHolidayCalendar()
 holidays = cal.holidays(start=df['Invoice_Date'].min(), end=df['Payment_Date'].max())
 
 df['Business_Days_WithHolidays'] = np.busday_count(
-    df['Invoice_Date'].values.astype('datetime64[D]'),
-    df['Payment_Date'].values.astype('datetime64[D]'),
-    holidays=holidays.values.astype('datetime64[D]')
+ df['Invoice_Date'].values.astype('datetime64[D]'),
+ df['Payment_Date'].values.astype('datetime64[D]'),
+ holidays=holidays.values.astype('datetime64[D]')
 )
 
 print(df[['Invoice_Date', 'Payment_Date', 'Business_Days_Simple', 'Business_Days_WithHolidays']])
@@ -403,12 +403,12 @@ uk_holidays = uk_cal.holidays(start='2024-01-01', end='2024-12-31')
 from pandas.tseries.holiday import Holiday, AbstractHolidayCalendar
 
 class JapanStockMarketCalendar(AbstractHolidayCalendar):
-    rules = [
-        Holiday('New Year\'s Day', month=1, day=1),
-        Holiday('Coming of Age Day', month=1, day=1, offset=pd.DateOffset(weekday=MO(2))),
-        Holiday('National Foundation Day', month=2, day=11),
-        # ... add all Japanese holidays
-    ]
+ rules = [
+ Holiday('New Year\'s Day', month=1, day=1),
+ Holiday('Coming of Age Day', month=1, day=1, offset=pd.DateOffset(weekday=MO(2))),
+ Holiday('National Foundation Day', month=2, day=11),
+ # ... add all Japanese holidays
+ ]
 ```
 
 ---
@@ -424,11 +424,11 @@ class JapanStockMarketCalendar(AbstractHolidayCalendar):
 
 # numpy.busday_count() is EXCLUSIVE of end date
 trading_days = np.busday_count('2024-01-02', '2024-01-05')
-print(trading_days)  # 3 (excludes Jan 5)
+print(trading_days) # 3 (excludes Jan 5)
 
 # To include end date, add 1 day
 trading_days_inclusive = np.busday_count('2024-01-02', '2024-01-06')
-print(trading_days_inclusive)  # 4 (includes Jan 5)
+print(trading_days_inclusive) # 4 (includes Jan 5)
 ```
 
 ---
@@ -439,13 +439,13 @@ print(trading_days_inclusive)  # 4 (includes Jan 5)
 # numpy.busday_count() requires 'datetime64[D]' format
 
 # WRONG:
-trading_days = np.busday_count(df['Buy_Date'], df['Sell_Date'])  # ❌ Error
+trading_days = np.busday_count(df['Buy_Date'], df['Sell_Date']) # Error
 
 # RIGHT:
 trading_days = np.busday_count(
-    df['Buy_Date'].values.astype('datetime64[D]'),
-    df['Sell_Date'].values.astype('datetime64[D]')
-)  # ✅ Works
+ df['Buy_Date'].values.astype('datetime64[D]'),
+ df['Sell_Date'].values.astype('datetime64[D]')
+) # Works
 ```
 
 ---
@@ -461,16 +461,16 @@ trading_days = np.busday_count(
 ## The Bottom Line
 
 **Excel:**
-- ❌ Manual holiday list
-- ❌ Error-prone
-- ❌ Requires yearly maintenance
-- ❌ Different for each market
+- Manual holiday list
+- Error-prone
+- Requires yearly maintenance
+- Different for each market
 
 **Python:**
-- ✅ Built-in holiday calendars
-- ✅ Accurate
-- ✅ Zero maintenance
-- ✅ Easy to customize
+- Built-in holiday calendars
+- Accurate
+- Zero maintenance
+- Easy to customize
 
 **Time Saved:** Hours → Seconds
 
@@ -488,15 +488,15 @@ cal = USFederalHolidayCalendar()
 holidays = cal.holidays(start='2024-01-01', end='2024-12-31')
 
 trading_days = np.busday_count(
-    '2024-01-15',
-    '2024-03-20',
-    holidays=holidays.values.astype('datetime64[D]')
+ '2024-01-15',
+ '2024-03-20',
+ holidays=holidays.values.astype('datetime64[D]')
 )
 
 print(trading_days)
 ```
 
-**That's it. You're done.** 🎉
+**That's it. You're done.** 
 
 ---
 
@@ -508,11 +508,11 @@ Need help with international market calendars? Drop a comment!
 
 ---
 
-## Join the Discussion on Discord! 💬
+## Join the Discussion on Discord! -
 
 Working with international markets? Need custom calendars? **Join our Discord!**
 
-👉 **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
+ **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
 
 ---
 

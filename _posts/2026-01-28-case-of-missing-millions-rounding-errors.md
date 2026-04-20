@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "🔍 The Case of the Missing Millions: Tracking Down Rounding Errors"
+layout: post
+title: "The Case of the Missing Millions: Tracking Down Rounding Errors"
 subtitle: "When your balance sheet doesn't balance by $2.47 million (true story)"
 tags: [python, pandas, rounding, debugging, accounting, data-quality]
 comments: true
@@ -9,15 +9,15 @@ author: PANDAUDIT Team
 
 ## The 4:37 PM Email That Ruined My Friday
 
-**From:** CFO  
-**To:** Accounting Team  
-**Subject:** URGENT: Balance Sheet Doesn't Balance  
-**Priority:** HIGH  
+**From:** CFO 
+**To:** Accounting Team 
+**Subject:** URGENT: Balance Sheet Doesn't Balance 
+**Priority:** HIGH 
 
 **Message:**
 > "Balance sheet is off by $2,471,853.62. Need this resolved before Monday's board meeting. All hands on deck."
 
-**My Weekend Plans:** *Gone.* 👋
+**My Weekend Plans:** *Gone.* 
 
 ---
 
@@ -33,13 +33,13 @@ author: PANDAUDIT Team
 
 **Step 3:** Check trial balance totals
 
-*Debits = Credits. Trial balance is fine.* 🤔
+*Debits = Credits. Trial balance is fine.* 
 
 **Step 4:** Compare to source systems
 
 *Source systems also balance.*
 
-**Step 5:** Panic. 😨
+**Step 5:** Panic. 
 
 ---
 
@@ -82,7 +82,7 @@ I start checking EVERY account:
 **But here's the problem:** 
 - **Assets rounded:** $1,405,458,372
 - **Liabilities + Equity rounded:** $1,407,930,226
-- **Difference:** $2,471,854 🚨
+- **Difference:** $2,471,854 
 
 **Bingo.** Found it.
 
@@ -93,7 +93,7 @@ I start checking EVERY account:
 Someone had "cleaned up" the balance sheet by rounding all values to whole dollars:
 
 ```excel
-=ROUND(A2, 0)  # Round to 0 decimal places
+=ROUND(A2, 0) # Round to 0 decimal places
 ```
 
 **Seems harmless, right?**
@@ -105,7 +105,7 @@ When you have:
 - **Half round up, half round down**
 - **Rounding errors DON'T CANCEL OUT** (because debits and credits are in different accounts)
 
-Result: **$2.47 million discrepancy** 💥
+Result: **$2.47 million discrepancy** 
 
 ---
 
@@ -122,7 +122,7 @@ Liability 1: $400,123.45
 Equity: $201,246.23
 
 Total Assets: $601,369.68
-Total Liab + Equity: $601,369.68  ✅ Balances!
+Total Liab + Equity: $601,369.68 Balances!
 ```
 
 **After Rounding to Dollars:**
@@ -136,10 +136,10 @@ Equity: $201,246 (-$0.23)
 Total Assets: $601,370 (off by +$0.32)
 Total Liab + Equity: $601,369 (off by -$0.68)
 
-Difference: $1  ❌ Doesn't balance!
+Difference: $1 Doesn't balance!
 ```
 
-**Now multiply this by 2,847 accounts...** 😱
+**Now multiply this by 2,847 accounts...** 
 
 ---
 
@@ -226,10 +226,10 @@ print(f"Total Liab + Equity: ${(total_liabilities + total_equity):,.2f}")
 
 # Balance check (using FULL precision)
 difference = total_assets - (total_liabilities + total_equity)
-if abs(difference) < 0.01:  # Allow for floating point errors
-    print("✅ Balance sheet balances!")
+if abs(difference) < 0.01: # Allow for floating point errors
+ print(" Balance sheet balances!")
 else:
-    print(f"❌ Difference: ${difference:,.2f}")
+ print(f" Difference: ${difference:,.2f}")
 ```
 
 **Key Principle:** Calculations use full precision. Rounding is ONLY for display.
@@ -243,10 +243,10 @@ else:
 ```python
 # WRONG: Round each account individually
 df['Rounded_Amount'] = df['Amount'].round(0)
-total = df['Rounded_Amount'].sum()  # ❌ Rounding errors accumulate
+total = df['Rounded_Amount'].sum() # Rounding errors accumulate
 
 # RIGHT: Sum first, THEN round the total
-total = df['Amount'].sum().round(0)  # ✅ One rounding operation
+total = df['Amount'].sum().round(0) # One rounding operation
 ```
 
 ---
@@ -281,7 +281,7 @@ import numpy as np
 df['Standard_Round'] = df['Amount'].round(0)
 
 # Banker's rounding (unbiased)
-df['Bankers_Round'] = np.round(df['Amount'])  # NumPy uses banker's rounding by default!
+df['Bankers_Round'] = np.round(df['Amount']) # NumPy uses banker's rounding by default!
 ```
 
 ---
@@ -299,7 +299,7 @@ df['Bankers_Round'] = np.round(df['Amount'])  # NumPy uses banker's rounding by 
 - Fund D: 14.678%
 - Fund E: 11.740%
 
-**Total:** 100.000% ✅
+**Total:** 100.000% 
 
 **Task:** Allocate the $1M across funds (must be whole dollars for transfer)
 
@@ -322,37 +322,37 @@ Total: $1,000,000
 **WRONG.** Check the math:
 
 ```
-234,560 + 182,340 + 318,920 + 146,780 + 117,400 = $1,000,000 ✅
+234,560 + 182,340 + 318,920 + 146,780 + 117,400 = $1,000,000 
 ```
 
-**Wait, it worked?** 🤔
+**Wait, it worked?** 
 
 **Let me try with different percentages...**
 
 ```excel
-Fund A: 20.001%  → ROUND(1000000 * 20.001%, 0) = $200,010
-Fund B: 20.002%  → ROUND(1000000 * 20.002%, 0) = $200,020
-Fund C: 20.003%  → ROUND(1000000 * 20.003%, 0) = $200,030
-Fund D: 20.004%  → ROUND(1000000 * 20.004%, 0) = $200,040
-Fund E: 19.990%  → ROUND(1000000 * 19.990%, 0) = $199,900
+Fund A: 20.001% → ROUND(1000000 * 20.001%, 0) = $200,010
+Fund B: 20.002% → ROUND(1000000 * 20.002%, 0) = $200,020
+Fund C: 20.003% → ROUND(1000000 * 20.003%, 0) = $200,030
+Fund D: 20.004% → ROUND(1000000 * 20.004%, 0) = $200,040
+Fund E: 19.990% → ROUND(1000000 * 19.990%, 0) = $199,900
 
-Total Pct: 100.000%  ✅
-Total Allocated: $1,000,000  ✅
+Total Pct: 100.000% 
+Total Allocated: $1,000,000 
 ```
 
-**Still works!** 🎉
+**Still works!** 
 
 **One more try...**
 
 ```excel
-Fund A: 20.001%  → $200,010
-Fund B: 20.001%  → $200,010
-Fund C: 20.001%  → $200,010
-Fund D: 20.001%  → $200,010
-Fund E: 19.996%  → $199,960
+Fund A: 20.001% → $200,010
+Fund B: 20.001% → $200,010
+Fund C: 20.001% → $200,010
+Fund D: 20.001% → $200,010
+Fund E: 19.996% → $199,960
 
-Total Pct: 100.000%  ✅
-Total Allocated: $1,000,000  ✅
+Total Pct: 100.000% 
+Total Allocated: $1,000,000 
 ```
 
 **Perfect!**
@@ -360,32 +360,32 @@ Total Allocated: $1,000,000  ✅
 **Wait... let me try ONE more:**
 
 ```excel
-Fund A: 33.333%  → ROUND(1000000 * 33.333%, 0) = $333,330
-Fund B: 33.333%  → ROUND(1000000 * 33.333%, 0) = $333,330
-Fund C: 33.334%  → ROUND(1000000 * 33.334%, 0) = $333,340
+Fund A: 33.333% → ROUND(1000000 * 33.333%, 0) = $333,330
+Fund B: 33.333% → ROUND(1000000 * 33.333%, 0) = $333,330
+Fund C: 33.334% → ROUND(1000000 * 33.334%, 0) = $333,340
 
-Total Pct: 100.000%  ✅
-Total Allocated: $1,000,000  ✅
+Total Pct: 100.000% 
+Total Allocated: $1,000,000 
 ```
 
-**STILL WORKS!** 🚀
+**STILL WORKS!** 
 
 **Okay, last one (I promise):**
 
 ```excel
-Fund A: 14.286%  → ROUND(1000000 * 14.286%, 0) = $142,860
-Fund B: 14.286%  → ROUND(1000000 * 14.286%, 0) = $142,860
-Fund C: 14.286%  → ROUND(1000000 * 14.286%, 0) = $142,860
-Fund D: 14.286%  → ROUND(1000000 * 14.286%, 0) = $142,860
-Fund E: 14.286%  → ROUND(1000000 * 14.286%, 0) = $142,860
-Fund F: 14.286%  → ROUND(1000000 * 14.286%, 0) = $142,860
-Fund G: 14.284%  → ROUND(1000000 * 14.284%, 0) = $142,840
+Fund A: 14.286% → ROUND(1000000 * 14.286%, 0) = $142,860
+Fund B: 14.286% → ROUND(1000000 * 14.286%, 0) = $142,860
+Fund C: 14.286% → ROUND(1000000 * 14.286%, 0) = $142,860
+Fund D: 14.286% → ROUND(1000000 * 14.286%, 0) = $142,860
+Fund E: 14.286% → ROUND(1000000 * 14.286%, 0) = $142,860
+Fund F: 14.286% → ROUND(1000000 * 14.286%, 0) = $142,860
+Fund G: 14.284% → ROUND(1000000 * 14.284%, 0) = $142,840
 
-Total Pct: 100.000%  ✅
-Total Allocated: $999,*860*  ❌ OFF BY $140!
+Total Pct: 100.000% 
+Total Allocated: $999,*860* OFF BY $140!
 ```
 
-**THERE IT IS!** 🚨
+**THERE IT IS!** 
 
 **The rounding trap revealed itself!**
 
@@ -399,15 +399,15 @@ import numpy as np
 
 # Portfolio allocation
 funds = pd.DataFrame({
-    'Fund': ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
-    'Percentage': [14.286, 14.286, 14.286, 14.286, 14.286, 14.286, 14.284]
+ 'Fund': ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+ 'Percentage': [14.286, 14.286, 14.286, 14.286, 14.286, 14.286, 14.284]
 })
 
 total_portfolio = 1_000_000
 
 # Method 1: WRONG (round each fund individually)
 funds['Amount_Wrong'] = (funds['Percentage'] / 100 * total_portfolio).round(0)
-print(f"Total (wrong method): ${funds['Amount_Wrong'].sum():,.0f}")  # $999,860 ❌
+print(f"Total (wrong method): ${funds['Amount_Wrong'].sum():,.0f}") # $999,860 
 
 # Method 2: RIGHT (controlled rounding)
 # Step 1: Calculate precise amounts
@@ -427,10 +427,10 @@ funds_sorted = funds.sort_values('Fraction', ascending=False)
 # Add $1 to top funds until remainder is gone
 funds['Amount_Final'] = funds['Amount_Floor']
 for i in range(int(remainder)):
-    idx = funds_sorted.index[i]
-    funds.loc[idx, 'Amount_Final'] += 1
+ idx = funds_sorted.index[i]
+ funds.loc[idx, 'Amount_Final'] += 1
 
-print(f"Total (correct method): ${funds['Amount_Final'].sum():,.0f}")  # $1,000,000 ✅
+print(f"Total (correct method): ${funds['Amount_Final'].sum():,.0f}") # $1,000,000 
 
 print("\nFinal allocation:")
 print(funds[['Fund', 'Percentage', 'Amount_Final']])
@@ -442,17 +442,17 @@ Total (wrong method): $999,860
 Total (correct method): $1,000,000
 
 Final allocation:
-  Fund  Percentage  Amount_Final
-0    A      14.286      142,861
-1    B      14.286      142,861
-2    C      14.286      142,861
-3    D      14.286      142,861
-4    E      14.286      142,861
-5    F      14.286      142,861
-6    G      14.284      142,834
+ Fund Percentage Amount_Final
+0 A 14.286 142,861
+1 B 14.286 142,861
+2 C 14.286 142,861
+3 D 14.286 142,861
+4 E 14.286 142,861
+5 F 14.286 142,861
+6 G 14.284 142,834
 ```
 
-**Perfect!** Each fund gets its fair share, total = exactly $1,000,000. ✅
+**Perfect!** Each fund gets its fair share, total = exactly $1,000,000. 
 
 ---
 
@@ -487,14 +487,14 @@ print(f"Liab + Equity: ${total_liab_equity_precise:,.2f}")
 print(f"Difference: ${difference_precise:,.2f}")
 
 if abs(difference_precise) < 0.01:
-    print("✅ Balance sheet balances!")
-    
-    # NOW round for display (but keep precise values for calculations)
-    print(f"\n=== FOR DISPLAY (rounded to dollars) ===")
-    print(f"Assets: ${total_assets_precise:,.0f}")
-    print(f"Liab + Equity: ${total_liab_equity_precise:,.0f}")
+ print(" Balance sheet balances!")
+ 
+ # NOW round for display (but keep precise values for calculations)
+ print(f"\n=== FOR DISPLAY (rounded to dollars) ===")
+ print(f"Assets: ${total_assets_precise:,.0f}")
+ print(f"Liab + Equity: ${total_liab_equity_precise:,.0f}")
 else:
-    print(f"❌ Balance sheet off by ${difference_precise:,.2f}")
+ print(f" Balance sheet off by ${difference_precise:,.2f}")
 ```
 
 **Result:**
@@ -502,22 +502,22 @@ else:
 Assets: $1,405,458,372.37
 Liab + Equity: $1,405,458,372.37
 Difference: $0.00
-✅ Balance sheet balances!
+ Balance sheet balances!
 
 === FOR DISPLAY (rounded to dollars) ===
 Assets: $1,405,458,372
 Liab + Equity: $1,405,458,372
 ```
 
-**Perfect!** 🎉
+**Perfect!** 
 
 ---
 
 ## The Monday Morning Email
 
-**From:** Me  
-**To:** CFO, Accounting Team  
-**Subject:** Balance Sheet Issue Resolved  
+**From:** Me 
+**To:** CFO, Accounting Team 
+**Subject:** Balance Sheet Issue Resolved 
 
 **Message:**
 > "Found the issue: intermediate rounding in Excel formulas. Removed all rounding from calculations. Balance sheet now balances perfectly.
@@ -528,7 +528,7 @@ Liab + Equity: $1,405,458,372
 
 **CFO's Response:** "Great work. Let's talk about automating more of our close process."
 
-**My Weekend:** *Salvaged.* 🎉
+**My Weekend:** *Salvaged.* 
 
 ---
 
@@ -572,7 +572,7 @@ Over thousands of accounts:
 - Round only for display
 - Use Python for control
 
-**Your balance sheet will thank you.** 😊
+**Your balance sheet will thank you.** 
 
 ---
 
@@ -584,11 +584,11 @@ Have your own rounding horror story? Share it in the comments!
 
 ---
 
-## Join the Discussion on Discord! 💬
+## Join the Discussion on Discord! -
 
 Ever had a balance sheet that wouldn't balance? **Join our Discord community** to share stories and solutions!
 
-👉 **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
+ **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
 
 ---
 

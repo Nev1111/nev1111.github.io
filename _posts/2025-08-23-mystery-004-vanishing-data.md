@@ -47,10 +47,10 @@ import numpy as np
 
 # Sample data with missing values (represented as NaN)
 df = pd.DataFrame({
-    'Customer_ID': [1001, 1002, np.nan, 1004, 1005, 1006],
-    'Customer_Name': ['ABC Corp', 'XYZ Ltd', 'DEF Inc', np.nan, 'GHI Co', 'JKL Corp'],
-    'Amount': [15000, np.nan, 8500, 12000, np.nan, 22000],
-    'Date': ['2023-01-15', '2023-01-16', np.nan, '2023-01-18', '2023-01-19', '2023-01-20']
+ 'Customer_ID': [1001, 1002, np.nan, 1004, 1005, 1006],
+ 'Customer_Name': ['ABC Corp', 'XYZ Ltd', 'DEF Inc', np.nan, 'GHI Co', 'JKL Corp'],
+ 'Amount': [15000, np.nan, 8500, 12000, np.nan, 22000],
+ 'Date': ['2023-01-15', '2023-01-16', np.nan, '2023-01-18', '2023-01-19', '2023-01-20']
 })
 
 print("Original Dataset:")
@@ -93,11 +93,11 @@ print()
 
 # Step 5: Create a data quality report
 quality_report = pd.DataFrame({
-    'Column': df.columns,
-    'Total_Values': len(df),
-    'Missing_Count': df.isna().sum().values,
-    'Missing_Percent': (df.isna().sum().values / len(df) * 100).round(1),
-    'Complete_Count': df.notna().sum().values
+ 'Column': df.columns,
+ 'Total_Values': len(df),
+ 'Missing_Count': df.isna().sum().values,
+ 'Missing_Percent': (df.isna().sum().values / len(df) * 100).round(1),
+ 'Complete_Count': df.notna().sum().values
 })
 
 print("Data Quality Report:")

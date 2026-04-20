@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "📊 Age Grouping & Binning for Actuarial Reports"
+layout: post
+title: "Age Grouping & Binning for Actuarial Reports"
 subtitle: "Create age brackets (5-year increments, <25, 90+) for pension, insurance, and HR reports. Math meets elegance."
 tags: [python, pandas, age-grouping, binning, actuarial, demographics, HR-analytics]
 comments: true
@@ -22,7 +22,7 @@ You need to create a demographic report showing member distribution:
 In Excel, this requires:
 - Massive nested IF statement, OR
 - VLOOKUP to a range table, OR
-- Manual categorization (🤦)
+- Manual categorization ()
 
 In Python, it's **one line of elegant math**.
 
@@ -32,20 +32,20 @@ In Python, it's **one line of elegant math**.
 
 ### Common Use Cases:
 
-1. **Pension & Actuarial:**  
-   - Demographic distribution of active members
-   - Benefit payment analysis by age cohort
-   - Retirement projections
+1. **Pension & Actuarial:** 
+ - Demographic distribution of active members
+ - Benefit payment analysis by age cohort
+ - Retirement projections
 
-2. **HR & Benefits:**  
-   - Healthcare cost analysis by age group
-   - Compensation equity analysis
-   - Succession planning
+2. **HR & Benefits:** 
+ - Healthcare cost analysis by age group
+ - Compensation equity analysis
+ - Succession planning
 
-3. **Insurance:**  
-   - Premium calculations
-   - Risk assessment
-   - Claims analysis
+3. **Insurance:** 
+ - Premium calculations
+ - Risk assessment
+ - Claims analysis
 
 ---
 
@@ -59,9 +59,9 @@ import numpy as np
 
 # Sample data
 df = pd.DataFrame({
-    'Member_ID': ['001', '002', '003', '004', '005'],
-    'Name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'],
-    'Age': [27, 34, 42, 58, 73]
+ 'Member_ID': ['001', '002', '003', '004', '005'],
+ 'Name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'],
+ 'Age': [27, 34, 42, 58, 73]
 })
 
 # Create age groups (5-year increments)
@@ -72,12 +72,12 @@ print(df[['Name', 'Age', 'Age_Group']])
 
 **Output:**
 ```
-      Name  Age  Age_Group
-0    Alice   27         25
-1      Bob   34         30
-2  Charlie   42         40
-3    Diana   58         55
-4      Eve   73         70
+ Name Age Age_Group
+0 Alice 27 25
+1 Bob 34 30
+2 Charlie 42 40
+3 Diana 58 55
+4 Eve 73 70
 ```
 
 **How It Works:**
@@ -95,7 +95,7 @@ print(df[['Name', 'Age', 'Age_Group']])
 # Define age brackets
 bins = [0, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 150]
 labels = ['<25', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', 
-          '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90+']
+ '55-59', '60-64', '65-69', '70-74', '75-79', '80-84', '85-89', '90+']
 
 df['Age_Bracket'] = pd.cut(df['Age'], bins=bins, labels=labels, right=False)
 
@@ -104,12 +104,12 @@ print(df[['Name', 'Age', 'Age_Bracket']])
 
 **Output:**
 ```
-      Name  Age Age_Bracket
-0    Alice   27       25-29
-1      Bob   34       30-34
-2  Charlie   42       40-44
-3    Diana   58       55-59
-4      Eve   73       70-74
+ Name Age Age_Bracket
+0 Alice 27 25-29
+1 Bob 34 30-34
+2 Charlie 42 40-44
+3 Diana 58 55-59
+4 Eve 73 70-74
 ```
 
 **Parameters Explained:**
@@ -125,20 +125,20 @@ print(df[['Name', 'Age', 'Age_Bracket']])
 
 ```python
 def categorize_age(age):
-    """
-    Categorize age per actuarial reporting standards
-    - Ages ≤ 25: '<= 25'
-    - Ages 26-89: 5-year brackets
-    - Ages ≥ 90: '90+'
-    """
-    if age <= 25:
-        return '≤25'
-    elif age >= 90:
-        return '90+'
-    else:
-        # Round down to nearest 5
-        base = (age // 5) * 5
-        return f"{base}-{base+4}"
+ """
+ Categorize age per actuarial reporting standards
+ - Ages ≤ 25: '<= 25'
+ - Ages 26-89: 5-year brackets
+ - Ages ≥ 90: '90+'
+ """
+ if age <= 25:
+ return '≤25'
+ elif age >= 90:
+ return '90+'
+ else:
+ # Round down to nearest 5
+ base = (age // 5) * 5
+ return f"{base}-{base+4}"
 
 # Apply to dataframe
 df['Age_Category'] = df['Age'].apply(categorize_age)
@@ -148,12 +148,12 @@ print(df[['Name', 'Age', 'Age_Category']])
 
 **Output:**
 ```
-      Name  Age Age_Category
-0    Alice   27        25-29
-1      Bob   34        30-34
-2  Charlie   42        40-44
-3    Diana   58        55-59
-4      Eve   73        70-74
+ Name Age Age_Category
+0 Alice 27 25-29
+1 Bob 34 30-34
+2 Charlie 42 40-44
+3 Diana 58 55-59
+4 Eve 73 70-74
 ```
 
 ---
@@ -180,16 +180,16 @@ members.loc[members['Age'] >= 90, 'Age_Group'] = '90+'
 
 # Aggregate by age group
 age_distribution = members.groupby('Age_Group').agg({
-    'Member_ID': 'count',
-    'Current_Salary': 'mean',
-    'Years_of_Service': 'mean'
+ 'Member_ID': 'count',
+ 'Current_Salary': 'mean',
+ 'Years_of_Service': 'mean'
 }).reset_index()
 
 age_distribution.columns = ['Age_Group', 'Member_Count', 'Avg_Salary', 'Avg_Service_Years']
 
 # Calculate percentages
 age_distribution['Percent_of_Total'] = (
-    age_distribution['Member_Count'] / age_distribution['Member_Count'].sum() * 100
+ age_distribution['Member_Count'] / age_distribution['Member_Count'].sum() * 100
 ).round(1)
 
 print("\nAge Distribution Report:")
@@ -201,12 +201,12 @@ age_distribution.to_excel('Age_Distribution_Report.xlsx', index=False)
 
 **Output:**
 ```
-  Age_Group  Member_Count  Avg_Salary  Avg_Service_Years  Percent_of_Total
-0       <25            45    42,500.00               2.1               3.6
-1        25           123    48,750.00               5.3               9.8
-2        30           189    55,200.00               8.7              15.1
-3        35           234    62,400.00              12.4              18.7
-4        40           201    68,100.00              15.8              16.0
+ Age_Group Member_Count Avg_Salary Avg_Service_Years Percent_of_Total
+0 <25 45 42,500.00 2.1 3.6
+1 25 123 48,750.00 5.3 9.8
+2 30 189 55,200.00 8.7 15.1
+3 35 234 62,400.00 12.4 18.7
+4 40 201 68,100.00 15.8 16.0
 ...
 ```
 
@@ -225,8 +225,8 @@ payments['Age_Group'] = (np.floor(payments['Age'] / 5) * 5).astype(int)
 
 # Aggregate by age group
 benefit_summary = payments.groupby('Age_Group').agg({
-    'Member_ID': 'nunique',  # Unique members
-    'Benefit_Amount': ['sum', 'mean', 'median']
+ 'Member_ID': 'nunique', # Unique members
+ 'Benefit_Amount': ['sum', 'mean', 'median']
 }).reset_index()
 
 # Flatten multi-level columns
@@ -245,11 +245,11 @@ print(benefit_summary)
 ```python
 # Pivot: Age groups vs. Gender
 age_gender_pivot = members.pivot_table(
-    index='Age_Group',
-    columns='Gender',
-    values='Member_ID',
-    aggfunc='count',
-    fill_value=0
+ index='Age_Group',
+ columns='Gender',
+ values='Member_ID',
+ aggfunc='count',
+ fill_value=0
 )
 
 age_gender_pivot['Total'] = age_gender_pivot.sum(axis=1)
@@ -260,11 +260,11 @@ print(age_gender_pivot)
 
 **Output:**
 ```
-Age_Group  Female  Male  Total
-<25            23    22     45
-25             65    58    123
-30            102    87    189
-35            125   109    234
+Age_Group Female Male Total
+<25 23 22 45
+25 65 58 123
+30 102 87 189
+35 125 109 234
 ...
 ```
 
@@ -285,7 +285,7 @@ plt.ylabel('Number of Members')
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig('age_distribution.png')
-print("📊 Chart saved as age_distribution.png")
+print(" Chart saved as age_distribution.png")
 ```
 
 ---
@@ -296,20 +296,20 @@ print("📊 Chart saved as age_distribution.png")
 
 ```python
 def create_age_bins(df, bin_width=10):
-    """Create age groups with custom bin width"""
-    
-    min_age = df['Age'].min()
-    max_age = df['Age'].max()
-    
-    # Generate bins
-    bins = list(range(0, int(max_age) + bin_width, bin_width))
-    
-    # Generate labels
-    labels = [f"{b}-{b+bin_width-1}" for b in bins[:-1]]
-    
-    df['Age_Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=False)
-    
-    return df
+ """Create age groups with custom bin width"""
+ 
+ min_age = df['Age'].min()
+ max_age = df['Age'].max()
+ 
+ # Generate bins
+ bins = list(range(0, int(max_age) + bin_width, bin_width))
+ 
+ # Generate labels
+ labels = [f"{b}-{b+bin_width-1}" for b in bins[:-1]]
+ 
+ df['Age_Group'] = pd.cut(df['Age'], bins=bins, labels=labels, right=False)
+ 
+ return df
 
 # Use 10-year groups
 members_10yr = create_age_bins(members, bin_width=10)
@@ -325,23 +325,23 @@ print(members_10yr.groupby('Age_Group')['Member_ID'].count())
 
 ```excel
 =IF(A2<=25,"≤25",
-  IF(A2<30,"25-29",
-    IF(A2<35,"30-34",
-      IF(A2<40,"35-39",
-        IF(A2<45,"40-44",
-          IF(A2<50,"45-49",
-            IF(A2<55,"50-54",
-              IF(A2<60,"55-59",
-                IF(A2<65,"60-64",
-                  IF(A2<70,"65-69",
-                    IF(A2<75,"70-74",
-                      IF(A2<80,"75-79",
-                        IF(A2<85,"80-84",
-                          IF(A2<90,"85-89","90+"))))))))))))))
+ IF(A2<30,"25-29",
+ IF(A2<35,"30-34",
+ IF(A2<40,"35-39",
+ IF(A2<45,"40-44",
+ IF(A2<50,"45-49",
+ IF(A2<55,"50-54",
+ IF(A2<60,"55-59",
+ IF(A2<65,"60-64",
+ IF(A2<70,"65-69",
+ IF(A2<75,"70-74",
+ IF(A2<80,"75-79",
+ IF(A2<85,"80-84",
+ IF(A2<90,"85-89","90+"))))))))))))))
 ```
 
-**Line count:** 1 formula, ~400 characters  
-**Maintainability:** Nightmare 🔥  
+**Line count:** 1 formula, ~400 characters 
+**Maintainability:** Nightmare 
 **Performance:** Slow on 10,000+ rows
 
 ### Python Mathematical Approach:
@@ -350,8 +350,8 @@ print(members_10yr.groupby('Age_Group')['Member_ID'].count())
 df['Age_Group'] = (np.floor(df['Age'] / 5) * 5).astype(int)
 ```
 
-**Line count:** 1 line  
-**Maintainability:** Simple ✨  
+**Line count:** 1 line 
+**Maintainability:** Simple 
 **Performance:** Instant on 100,000+ rows
 
 ---
@@ -375,8 +375,8 @@ import numpy as np
 
 # Create sample data
 members = pd.DataFrame({
-    'Name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'],
-    'Age': [23, 27, 34, 42, 67]
+ 'Name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'],
+ 'Age': [23, 27, 34, 42, 67]
 })
 
 # Method 1: Mathematical
@@ -385,7 +385,7 @@ members['Age_Group_Math'] = (np.floor(members['Age'] / 5) * 5).astype(int)
 # Method 2: pd.cut()
 bins = [0, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 150]
 labels = ['<25', '25-29', '30-34', '35-39', '40-44', '45-49', 
-          '50-54', '55-59', '60-64', '65-69', '70+']
+ '50-54', '55-59', '60-64', '65-69', '70+']
 members['Age_Group_Cut'] = pd.cut(members['Age'], bins=bins, labels=labels, right=False)
 
 print(members)
@@ -399,11 +399,11 @@ print(members['Age_Group_Cut'].value_counts().sort_index())
 
 ## Benefits
 
-✅ **Professional:** Actuarial-standard age groups  
-✅ **Efficient:** One line vs. 400-character formula  
-✅ **Flexible:** Easy to change bin size  
-✅ **Scalable:** Handle 100,000+ records instantly  
-✅ **Auditable:** Clear logic, no nested IFs
+ **Professional:** Actuarial-standard age groups 
+ **Efficient:** One line vs. 400-character formula 
+ **Flexible:** Easy to change bin size 
+ **Scalable:** Handle 100,000+ records instantly 
+ **Auditable:** Clear logic, no nested IFs
 
 ---
 

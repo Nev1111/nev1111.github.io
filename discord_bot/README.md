@@ -2,9 +2,9 @@
 
 A comprehensive Discord bot for the PANDAUDIT community featuring moderation tools, community engagement features, and automated blog post notifications.
 
-## 🌟 Features
+## Features
 
-### 🛡️ Moderation Commands
+### Moderation Commands
 - `!kick @user [reason]` - Kick a user from the server
 - `!ban @user [reason]` - Ban a user from the server
 - `!mute @user [duration] [reason]` - Temporarily mute a user (e.g., 10m, 1h, 1d)
@@ -13,7 +13,7 @@ A comprehensive Discord bot for the PANDAUDIT community featuring moderation too
 - `!warn @user [reason]` - Issue a warning to a user
 - `!warnings @user` - View all warnings for a user
 
-### 💬 General Commands
+### - General Commands
 - `!help [command]` - Show all commands or help for a specific command
 - `!about` - Learn about PANDAUDIT and its mission
 - `!latest` - Get a link to the latest blog post
@@ -21,14 +21,14 @@ A comprehensive Discord bot for the PANDAUDIT community featuring moderation too
 - `!invite` - Get the pandaudit.com website link
 - `!stats` - Show server statistics
 
-### 🎉 Community Features
+### Community Features
 - **Welcome Messages** - Automatically greets new members with helpful information
-- **Auto-Reactions** - Adds reactions (👍 💬 🔖) to posts in #blog-updates
+- **Auto-Reactions** - Adds reactions ( - ) to posts in #blog-updates
 - **Rich Embeds** - Beautiful, informative message formatting
 - **Comprehensive Logging** - Tracks all moderation actions
 - **Error Handling** - User-friendly error messages
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -38,27 +38,27 @@ A comprehensive Discord bot for the PANDAUDIT community featuring moderation too
 ### Installation
 
 1. **Clone or navigate to the repository:**
-   ```bash
-   cd discord_bot
-   ```
+ ```bash
+ cd discord_bot
+ ```
 
 2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+ ```bash
+ pip install -r requirements.txt
+ ```
 
 3. **Configure environment variables:**
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your DISCORD_BOT_TOKEN
-   ```
+ ```bash
+ cp .env.example .env
+ # Edit .env and add your DISCORD_BOT_TOKEN
+ ```
 
 4. **Run the bot:**
-   ```bash
-   python bot.py
-   ```
+ ```bash
+ python bot.py
+ ```
 
-## 🔧 Setup Guide
+## Setup Guide
 
 ### Step 1: Create Discord Bot Application
 
@@ -68,8 +68,8 @@ A comprehensive Discord bot for the PANDAUDIT community featuring moderation too
 4. Navigate to the **Bot** tab (left sidebar)
 5. Click **Add Bot** → **Yes, do it!**
 6. **Important**: Under "Privileged Gateway Intents", enable:
-   - ✅ Server Members Intent
-   - ✅ Message Content Intent
+ - Server Members Intent
+ - Message Content Intent
 7. Click **Reset Token** and copy your bot token
 8. Save this token securely - you'll need it for the `.env` file
 
@@ -93,8 +93,8 @@ Your bot needs these permissions:
 
 1. In Discord Developer Portal, go to **OAuth2** → **URL Generator**
 2. Select scopes:
-   - ✅ `bot`
-   - ✅ `applications.commands` (for future slash commands)
+ - `bot`
+ - `applications.commands` (for future slash commands)
 3. Select permissions (or use integer `1099511689222`)
 4. Copy the generated URL and open it in your browser
 5. Select your server and click **Authorize**
@@ -102,27 +102,27 @@ Your bot needs these permissions:
 ### Step 4: Configure and Run
 
 1. **Create `.env` file:**
-   ```bash
-   cp .env.example .env
-   nano .env  # or use your preferred editor
-   ```
+ ```bash
+ cp .env.example .env
+ nano .env # or use your preferred editor
+ ```
 
 2. **Add your bot token:**
-   ```env
-   DISCORD_BOT_TOKEN=MTQ1OTIxNTk1ODg3ODA2MDYzNQ.GHa50Q.9Ryxa4qyhiF9bmhQCJts7i5Rryv6jLSwtghBGM
-   ```
+ ```env
+ DISCORD_BOT_TOKEN=MTQ1OTIxNTk1ODg3ODA2MDYzNQ.GHa50Q.9Ryxa4qyhiF9bmhQCJts7i5Rryv6jLSwtghBGM
+ ```
 
 3. **Run the bot:**
-   ```bash
-   python bot.py
-   ```
+ ```bash
+ python bot.py
+ ```
 
 4. **Verify it's working:**
-   - Check the console for "Bot is ready!" message
-   - In Discord, type `!ping` - the bot should respond
-   - Try `!help` to see all commands
+ - Check the console for "Bot is ready!" message
+ - In Discord, type `!ping` - the bot should respond
+ - Try `!help` to see all commands
 
-## ☁️ Hosting Options
+## Hosting Options
 
 ### Option 1: Replit (Easiest - Free)
 
@@ -152,20 +152,20 @@ Your bot needs these permissions:
 1. Create account at [Heroku](https://heroku.com)
 2. Install Heroku CLI
 3. Create `Procfile`:
-   ```
-   worker: python bot.py
-   ```
+ ```
+ worker: python bot.py
+ ```
 4. Create `runtime.txt`:
-   ```
-   python-3.11.0
-   ```
+ ```
+ python-3.11.0
+ ```
 5. Deploy:
-   ```bash
-   heroku create pandaudit-bot
-   heroku config:set DISCORD_BOT_TOKEN=your_token
-   git push heroku main
-   heroku ps:scale worker=1
-   ```
+ ```bash
+ heroku create pandaudit-bot
+ heroku config:set DISCORD_BOT_TOKEN=your_token
+ git push heroku main
+ heroku ps:scale worker=1
+ ```
 
 **Pros**: Reliable, popular, good documentation
 **Cons**: Requires credit card, free tier limited
@@ -175,44 +175,44 @@ Your bot needs these permissions:
 Use any VPS provider (DigitalOcean, Linode, AWS, etc.):
 
 1. **Setup server:**
-   ```bash
-   apt update && apt upgrade -y
-   apt install python3 python3-pip git -y
-   ```
+ ```bash
+ apt update && apt upgrade -y
+ apt install python3 python3-pip git -y
+ ```
 
 2. **Clone and setup:**
-   ```bash
-   git clone https://github.com/nev1111/nev1111.github.io.git
-   cd nev1111.github.io/discord_bot
-   pip3 install -r requirements.txt
-   ```
+ ```bash
+ git clone https://github.com/nev1111/nev1111.github.io.git
+ cd nev1111.github.io/discord_bot
+ pip3 install -r requirements.txt
+ ```
 
 3. **Create systemd service** (`/etc/systemd/system/pandaudit-bot.service`):
-   ```ini
-   [Unit]
-   Description=PANDAUDIT Discord Bot
-   After=network.target
+ ```ini
+ [Unit]
+ Description=PANDAUDIT Discord Bot
+ After=network.target
 
-   [Service]
-   Type=simple
-   User=ubuntu
-   WorkingDirectory=/home/ubuntu/nev1111.github.io/discord_bot
-   Environment="DISCORD_BOT_TOKEN=your_token_here"
-   ExecStart=/usr/bin/python3 bot.py
-   Restart=always
-   RestartSec=10
+ [Service]
+ Type=simple
+ User=ubuntu
+ WorkingDirectory=/home/ubuntu/nev1111.github.io/discord_bot
+ Environment="DISCORD_BOT_TOKEN=your_token_here"
+ ExecStart=/usr/bin/python3 bot.py
+ Restart=always
+ RestartSec=10
 
-   [Install]
-   WantedBy=multi-user.target
-   ```
+ [Install]
+ WantedBy=multi-user.target
+ ```
 
 4. **Start service:**
-   ```bash
-   systemctl daemon-reload
-   systemctl enable pandaudit-bot
-   systemctl start pandaudit-bot
-   systemctl status pandaudit-bot
-   ```
+ ```bash
+ systemctl daemon-reload
+ systemctl enable pandaudit-bot
+ systemctl start pandaudit-bot
+ systemctl status pandaudit-bot
+ ```
 
 **Pros**: Full control, always online, can host other services
 **Cons**: Costs $5-10/month, requires maintenance
@@ -229,7 +229,7 @@ python bot.py
 **Pros**: Free, immediate testing
 **Cons**: Bot offline when computer is off
 
-## 📝 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -254,7 +254,7 @@ Edit `config.py` to customize:
 - Auto-reaction settings
 - Website URLs
 
-## 🔐 Security Best Practices
+## Security Best Practices
 
 1. **Never commit `.env` file** - It's already in `.gitignore`
 2. **Keep bot token secret** - Regenerate if exposed
@@ -263,13 +263,13 @@ Edit `config.py` to customize:
 5. **Limit permissions** - Only grant necessary permissions
 6. **Monitor logs** - Check `bot.log` regularly
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Bot doesn't start
 
 **Check 1: Token is correct**
 ```bash
-cat .env  # Verify token is set correctly
+cat .env # Verify token is set correctly
 ```
 
 **Check 2: Dependencies installed**
@@ -299,7 +299,7 @@ pip install -r requirements.txt --upgrade
 
 **Check error messages:**
 ```bash
-tail -f bot.log  # View real-time logs
+tail -f bot.log # View real-time logs
 ```
 
 **Common issues:**
@@ -326,7 +326,7 @@ tail -f bot.log  # View real-time logs
 - Check logs in dashboard
 - Verify dyno/service is running
 
-## 📊 Monitoring
+## Monitoring
 
 ### View Logs
 
@@ -360,7 +360,7 @@ journalctl -u pandaudit-bot -f
 systemctl restart pandaudit-bot
 ```
 
-## 🔄 Updates
+## Updates
 
 ### Update Bot Code
 
@@ -368,7 +368,7 @@ systemctl restart pandaudit-bot
 cd /path/to/discord_bot
 git pull origin master
 pip install -r requirements.txt --upgrade
-python bot.py  # or restart service
+python bot.py # or restart service
 ```
 
 ### Update discord.py
@@ -377,7 +377,7 @@ python bot.py  # or restart service
 pip install discord.py --upgrade
 ```
 
-## 📚 Resources
+## Resources
 
 ### Official Documentation
 - [discord.py Documentation](https://discordpy.readthedocs.io/)
@@ -420,19 +420,19 @@ A: Use a database (SQLite, PostgreSQL, etc.). See commented code in `bot.py` for
 **Q: Can the bot create forum threads automatically?**
 A: Yes! You'll need to implement thread creation logic. See [Thread documentation](https://discordpy.readthedocs.io/en/stable/api.html#discord.Thread)
 
-## 📄 License
+## License
 
 This bot is part of the PANDAUDIT project. Feel free to modify and adapt it for your community!
 
-## 🙏 Credits
+## Credits
 
 Built with:
 - [discord.py](https://github.com/Rapptz/discord.py) - Discord API wrapper
 - Python 3.8+
-- Love for data analytics and automation ❤️
+- Love for data analytics and automation 
 
 ---
 
-**Happy botting! 🤖**
+**Happy botting! **
 
 For more information, visit [pandaudit.com](https://pandaudit.com)

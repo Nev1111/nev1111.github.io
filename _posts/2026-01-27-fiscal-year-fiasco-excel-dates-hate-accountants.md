@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "📅 The Fiscal Year Fiasco: Why Excel Dates Hate Accountants"
+layout: post
+title: "The Fiscal Year Fiasco: Why Excel Dates Hate Accountants"
 subtitle: "Q1 starts in July? Q4 ends in June? Excel is judging you right now."
 tags: [python, pandas, fiscal-year, dates, accounting, government]
 comments: true
@@ -9,12 +9,12 @@ author: PANDAUDIT Team
 
 ## The Email That Broke Me
 
-**From:** CFO  
-**To:** Me  
-**Subject:** Q2 Numbers Look Wrong  
+**From:** CFO 
+**To:** Me 
+**Subject:** Q2 Numbers Look Wrong 
 **Message:** "Why does Q2 show January-March? Our fiscal year starts in July."
 
-**My Internal Monologue:** *Because Excel thinks January is Q1 like a NORMAL PERSON.* 😫
+**My Internal Monologue:** *Because Excel thinks January is Q1 like a NORMAL PERSON.* 
 
 **My Actual Response:** "I'll fix it right away."
 
@@ -39,7 +39,7 @@ Excel's `QUARTER()` function assumes:
 
 **Translation:** Excel assumes you're "normal." 
 
-If you're not? Good luck. 😅
+If you're not? Good luck. 
 
 ---
 
@@ -56,10 +56,10 @@ If you're not? Good luck. 😅
 - If month < July: Add 6 months, then calculate
 
 **Problems:**
-- 🤯 Unreadable
-- 🐛 Error-prone
-- 🐢 Slow to write
-- 😵 Impossible to audit 6 months later
+- Unreadable
+- Error-prone
+- Slow to write
+- Impossible to audit 6 months later
 
 **Maintenance:** "What does this formula do again?" *¯\\_(ツ)_/¯*
 
@@ -70,27 +70,27 @@ If you're not? Good luck. 😅
 ```
 | Month | Fiscal_Quarter |
 |-------|----------------|
-| 1     | Q3             |
-| 2     | Q3             |
-| 3     | Q3             |
-| 4     | Q4             |
-| 5     | Q4             |
-| 6     | Q4             |
-| 7     | Q1             |
-| 8     | Q1             |
-| 9     | Q1             |
-| 10    | Q2             |
-| 11    | Q2             |
-| 12    | Q2             |
+| 1 | Q3 |
+| 2 | Q3 |
+| 3 | Q3 |
+| 4 | Q4 |
+| 5 | Q4 |
+| 6 | Q4 |
+| 7 | Q1 |
+| 8 | Q1 |
+| 9 | Q1 |
+| 10 | Q2 |
+| 11 | Q2 |
+| 12 | Q2 |
 ```
 
 Then: `=VLOOKUP(MONTH(A2), Lookup_Table, 2, FALSE)`
 
 **Problems:**
-- 📊 Extra worksheet/table required
-- 🔗 Another thing that can break
-- 📄 Needs documentation
-- 🌎 Different fiscal years = different lookup tables
+- Extra worksheet/table required
+- Another thing that can break
+- Needs documentation
+- Different fiscal years = different lookup tables
 
 **Scalability:** "We need to support 5 different fiscal calendars..." *cries in Excel*
 
@@ -107,15 +107,15 @@ Power Query can handle custom fiscal years!
 
 ```m
 = Date.QuarterOfYear(
-    Date.AddMonths([Date], -6)
-  )
+ Date.AddMonths([Date], -6)
+ )
 ```
 
 **Problems:**
-- 🎭 Power Query learning curve
-- 🔒 Locked in Excel (can't easily share logic)
-- 🐛 M language debugging = nightmare
-- 🔄 Refresh delays on large datasets
+- Power Query learning curve
+- Locked in Excel (can't easily share logic)
+- M language debugging = nightmare
+- Refresh delays on large datasets
 
 **Collaboration:** "Can you send me the Power Query code?" *sends 500-line M script*
 
@@ -129,11 +129,11 @@ It's not just quarters. It's **everything:**
 
 **Calendar Year:** Easy
 - Date: January 15, 2025
-- Year: 2025 ✅
+- Year: 2025 
 
 **Fiscal Year (July 1 year-end):** Confusing
 - Date: January 15, 2025
-- Fiscal Year: 2025 or 2024? 🤔
+- Fiscal Year: 2025 or 2024? 
 
 **Answer:** FY 2025 (because it's July 2024 - June 2025)
 
@@ -143,7 +143,7 @@ It's not just quarters. It's **everything:**
 **And if the date was July 15, 2025:**
 - Fiscal Year: FY 2026
 
-**My Brain:** 🤯
+**My Brain:** 
 
 ---
 
@@ -155,7 +155,7 @@ It's not just quarters. It's **everything:**
 - Q3 = January, February, March
 - Q4 = April, May, June
 
-**Excel:** "January is Q1. Fight me." 🥊
+**Excel:** "January is Q1. Fight me." 
 
 ---
 
@@ -171,7 +171,7 @@ It's not just quarters. It's **everything:**
 - Q2 FY2025 = Oct-Dec 2024
 - Q2 FY2024 = Oct-Dec 2023
 
-**Result:** Your comparison is completely wrong. 🚨
+**Result:** Your comparison is completely wrong. 
 
 ---
 
@@ -187,19 +187,19 @@ df['Date'] = pd.to_datetime(df['Date'])
 # Calculate fiscal quarter (July 1 year-end)
 df['Fiscal_Quarter'] = pd.PeriodIndex(df['Date'], freq='Q-JUN').strftime('Q%q')
 
-# Done. 🎉
+# Done. 
 ```
 
 **Result:**
 ```
-Date            Fiscal_Quarter
-2025-01-15      Q3
-2025-04-20      Q4
-2025-07-10      Q1
-2025-10-05      Q2
+Date Fiscal_Quarter
+2025-01-15 Q3
+2025-04-20 Q4
+2025-07-10 Q1
+2025-10-05 Q2
 ```
 
-**Perfect!** ✅
+**Perfect!** 
 
 ---
 
@@ -232,7 +232,7 @@ df['Fiscal_Quarter'] = pd.PeriodIndex(df['Date'], freq='Q-SEP').strftime('Q%q')
 df['Fiscal_Quarter'] = pd.PeriodIndex(df['Date'], freq='Q-FEB').strftime('Q%q')
 ```
 
-**One parameter change. That's it.** 🚀
+**One parameter change. That's it.** 
 
 ---
 
@@ -245,11 +245,11 @@ df['Fiscal_Year'] = df['Date'].dt.to_period('A-JUN').dt.year
 
 **Examples:**
 ```python
-Date            Fiscal_Year
-2025-01-15      2025  # In FY 2025 (Jul 2024 - Jun 2025)
-2025-06-30      2025  # Last day of FY 2025
-2025-07-01      2026  # First day of FY 2026
-2024-12-15      2025  # Also in FY 2025
+Date Fiscal_Year
+2025-01-15 2025 # In FY 2025 (Jul 2024 - Jun 2025)
+2025-06-30 2025 # Last day of FY 2025
+2025-07-01 2026 # First day of FY 2026
+2024-12-15 2025 # Also in FY 2025
 ```
 
 ---
@@ -262,15 +262,15 @@ Date            Fiscal_Year
 
 **Data:**
 ```
-Date        Expense_Type    Amount
-2024-07-15  Payroll         125000
-2024-08-20  Supplies        15000
-2024-10-05  Payroll         125000
-2024-11-12  Equipment       45000
-2025-01-10  Payroll         125000
-2025-02-14  Travel          8000
-2025-04-18  Payroll         125000
-2025-05-22  Consulting      25000
+Date Expense_Type Amount
+2024-07-15 Payroll 125000
+2024-08-20 Supplies 15000
+2024-10-05 Payroll 125000
+2024-11-12 Equipment 45000
+2025-01-10 Payroll 125000
+2025-02-14 Travel 8000
+2025-04-18 Payroll 125000
+2025-05-22 Consulting 25000
 ```
 
 **Goal:** Sum expenses by fiscal quarter
@@ -294,7 +294,7 @@ Date        Expense_Type    Amount
 
 **Time:** 15 minutes
 
-**Errors:** "Wait, why is October showing as Q2? It should be Q2... oh wait, I messed up the formula." 🤦
+**Errors:** "Wait, why is October showing as Q2? It should be Q2... oh wait, I messed up the formula." 
 
 ---
 
@@ -319,15 +319,15 @@ print(summary)
 
 **Output:**
 ```
-Fiscal_Year  Fiscal_Quarter  Expense_Type
-2025         Q1              Payroll         125000
-                             Supplies         15000
-             Q2              Equipment        45000
-                             Payroll         125000
-             Q3              Payroll         125000
-                             Travel            8000
-             Q4              Consulting       25000
-                             Payroll         125000
+Fiscal_Year Fiscal_Quarter Expense_Type
+2025 Q1 Payroll 125000
+ Supplies 15000
+ Q2 Equipment 45000
+ Payroll 125000
+ Q3 Payroll 125000
+ Travel 8000
+ Q4 Consulting 25000
+ Payroll 125000
 ```
 
 **Time:** 30 seconds
@@ -357,7 +357,7 @@ current_fy = pd.Period(datetime.now(), freq='A-JUN').year
 
 # Filter to current fiscal year
 df_fy = df[
-    df['Date'].dt.to_period('A-JUN').dt.year == current_fy
+ df['Date'].dt.to_period('A-JUN').dt.year == current_fy
 ].copy()
 
 # Calculate fiscal quarter
@@ -375,10 +375,10 @@ print(f"\nTotal FY {current_fy} to date: ${df_fy['Amount'].sum():,.2f}")
 ```
 Expenses for FY 2025:
 Fiscal_Quarter
-Q1    140000
-Q2    170000
-Q3    133000
-Q4     25000  # Partial (not complete yet)
+Q1 140000
+Q2 170000
+Q3 133000
+Q4 25000 # Partial (not complete yet)
 
 Total FY 2025 to date: $468,000.00
 ```
@@ -397,12 +397,12 @@ df['Fiscal_Month'] = ((df['Date'].dt.month - 7) % 12) + 1
 
 **Result:**
 ```
-Date            Calendar_Month    Fiscal_Month
-2024-07-15      7 (July)          1
-2024-08-20      8 (August)        2
-2024-12-05      12 (December)     6
-2025-01-10      1 (January)       7
-2025-06-20      6 (June)          12
+Date Calendar_Month Fiscal_Month
+2024-07-15 7 (July) 1
+2024-08-20 8 (August) 2
+2024-12-05 12 (December) 6
+2025-01-10 1 (January) 7
+2025-06-20 6 (June) 12
 ```
 
 **Perfect for:**
@@ -432,7 +432,7 @@ My director walked by my desk:
 
 **Director:** "You're getting a raise."
 
-*(Okay, that last part didn't happen, but a guy can dream!)* 😂
+*(Okay, that last part didn't happen, but a guy can dream!)* 
 
 ---
 
@@ -477,18 +477,18 @@ df['Fiscal_Year'] = df['Date'].dt.to_period('A-JAN').dt.year
 ## The Bottom Line
 
 **Excel:**
-- ❌ Complex nested formulas
-- ❌ Lookup tables
-- ❌ Power Query learning curve
-- ❌ Error-prone
-- ❌ Hard to maintain
+- Complex nested formulas
+- Lookup tables
+- Power Query learning curve
+- Error-prone
+- Hard to maintain
 
 **Python:**
-- ✅ One line of code
-- ✅ Works for ANY fiscal year
-- ✅ Easy to read
-- ✅ Zero maintenance
-- ✅ Portable (works across organizations)
+- One line of code
+- Works for ANY fiscal year
+- Easy to read
+- Zero maintenance
+- Portable (works across organizations)
 
 ---
 
@@ -500,7 +500,7 @@ Next time you need fiscal quarters:
 df['Fiscal_Quarter'] = pd.PeriodIndex(df['Date'], freq='Q-JUN').strftime('Q%q')
 ```
 
-**That's it. You're done.** 🎉
+**That's it. You're done.** 
 
 No more Excel gymnastics. No more nested IFs. No more lookup tables.
 
@@ -512,15 +512,15 @@ Just one line that **actually works**.
 
 Want the complete working example with sample data? [Download from GitHub](https://github.com/nev1111/blog-code-examples)
 
-Have a fiscal year horror story? Share it in the comments! Let's commiserate together. 😅
+Have a fiscal year horror story? Share it in the comments! Let's commiserate together. 
 
 ---
 
-## Join the Discussion on Discord! 💬
+## Join the Discussion on Discord! -
 
 Stuck with a weird fiscal calendar? Need help with date calculations? **Join our Discord community!**
 
-👉 **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
+ **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
 
 ---
 

@@ -16,8 +16,8 @@ This workflow transforms real accounting challenges into story-driven learning e
 - **How**: Quick bullet point in `mystery-ideas.md`
 - **Format**: `- [ ] Brief description + key challenge`
 - **Examples**: 
-  - `- [ ] Subledger off by $0.17 - took 2 hours to find rounding difference`
-  - `- [ ] Regex nightmare extracting data from 50 legacy CSV files`
+ - `- [ ] Subledger off by $0.17 - took 2 hours to find rounding difference`
+ - `- [ ] Regex nightmare extracting data from 50 legacy CSV files`
 
 #### Weekly Batch Processing (30 minutes)
 - **When**: Weekly scheduled session (recommend Friday afternoon)
@@ -30,28 +30,28 @@ This workflow transforms real accounting challenges into story-driven learning e
 
 #### Story Framework
 1. **Opening** (2-3 paragraphs)
-   - Set the scene: normal workday, routine task
-   - Introduce the problem: something doesn't add up
+ - Set the scene: normal workday, routine task
+ - Introduce the problem: something doesn't add up
 
 2. **Investigation** (3-4 paragraphs)
-   - Walk through manual checking process
-   - Show growing confusion or frustration
-   - Include dead ends and false leads
+ - Walk through manual checking process
+ - Show growing confusion or frustration
+ - Include dead ends and false leads
 
 3. **Character Commentary** (throughout story)
-   - **Masha**: Practical frustration, pattern recognition
-   - **Panda**: Alternative perspectives, gentle guidance
-   - **Format**: Markdown blockquotes with character names
+ - **Masha**: Practical frustration, pattern recognition
+ - **Panda**: Alternative perspectives, gentle guidance
+ - **Format**: Markdown blockquotes with character names
 
 4. **Resolution** (2-3 paragraphs)
-   - The breakthrough moment
-   - How the real solution was discovered
-   - Satisfaction of problem solved
+ - The breakthrough moment
+ - How the real solution was discovered
+ - Satisfaction of problem solved
 
 5. **Technical Solution** (separate section)
-   - Complete Python/pandas code
-   - Clear comments explaining approach
-   - Directly solves the story problem
+ - Complete Python/pandas code
+ - Clear comments explaining approach
+ - Directly solves the story problem
 
 ### PHASE 3: JEKYLL TEMPLATE (Mystery Series)
 *Consistent professional format*
@@ -77,9 +77,9 @@ Example: `2025-08-23-mystery-001-disappearing-dollars.md`
 
 ### Minutes 6-15: Outline Development
 - For each selected scenario:
-  - Identify story beats (problem → investigation → resolution)
-  - Plan character commentary moments
-  - Note technical solution approach
+ - Identify story beats (problem → investigation → resolution)
+ - Plan character commentary moments
+ - Note technical solution approach
 
 ### Minutes 16-25: First Mystery Draft
 - Choose one outline to develop
@@ -169,7 +169,7 @@ Example: `2025-08-23-mystery-001-disappearing-dollars.md`
 
 ### Seasonal Content Planning
 - **Month-end**: Reconciliation mysteries
-- **Year-end**: Complex reporting scenarios  
+- **Year-end**: Complex reporting scenarios 
 - **Audit season**: Fraud detection themes
 - **Budget season**: Variance analysis mysteries
 

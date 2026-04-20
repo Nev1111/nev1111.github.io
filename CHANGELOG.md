@@ -72,7 +72,7 @@ One of the major changes in this version is that a lot of time was spent on reth
 ## v4.1.0 (2020-08-08)
 
 - Added Open Graph `site_name` meta field to pages automatically
-- Added `text-col` config setting  for main text color (#694)
+- Added `text-col` config setting for main text color (#694)
 - Added `keywords` config setting to set the meta keywords on all pages (for SEO purposes) (#691)
 - Added `mobile-theme-col` config setting to allow a mobile theme colour (#692)
 - Added `site-css` config setting in the config file to provide CSS files that are used on all pages in the site (#695)

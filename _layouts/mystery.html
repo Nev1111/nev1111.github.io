@@ -3,55 +3,55 @@ layout: post
 ---
 
 <article class="mystery-post">
-  <header class="mystery-header">
-    <h1>{{ page.title }}</h1>
-    
-    <div class="mystery-meta">
-      <span class="mystery-number">Mystery #{{ page.mystery_number }}</span>
-      <span class="difficulty">{{ page.difficulty_level | capitalize }}</span>
-      <span class="estimated-time">{{ page.estimated_time }}</span>
-    </div>
-    
-    <div class="mystery-details">
-      {% if page.skills_covered %}
-      <div class="skills-covered">
-        <strong>Skills:</strong>
-        {% for skill in page.skills_covered %}
-          <span class="skill-tag">{{ skill }}</span>{% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-      </div>
-      {% endif %}
-      
-      {% if page.character_focus %}
-      <div class="character-focus">
-        <strong>Characters:</strong> {{ page.character_focus | capitalize }}
-      </div>
-      {% endif %}
-    </div>
-  </header>
+ <header class="mystery-header">
+ <h1>{{ page.title }}</h1>
+ 
+ <div class="mystery-meta">
+ <span class="mystery-number">Mystery #{{ page.mystery_number }}</span>
+ <span class="difficulty">{{ page.difficulty_level | capitalize }}</span>
+ <span class="estimated-time">{{ page.estimated_time }}</span>
+ </div>
+ 
+ <div class="mystery-details">
+ {% if page.skills_covered %}
+ <div class="skills-covered">
+ <strong>Skills:</strong>
+ {% for skill in page.skills_covered %}
+ <span class="skill-tag">{{ skill }}</span>{% unless forloop.last %}, {% endunless %}
+ {% endfor %}
+ </div>
+ {% endif %}
+ 
+ {% if page.character_focus %}
+ <div class="character-focus">
+ <strong>Characters:</strong> {{ page.character_focus | capitalize }}
+ </div>
+ {% endif %}
+ </div>
+ </header>
 
-  <div class="mystery-content">
-    {{ content }}
-  </div>
+ <div class="mystery-content">
+ {{ content }}
+ </div>
 
-  <footer class="mystery-footer">
-    <div class="mystery-navigation">
-      {% if page.previous_mystery %}
-      <a href="{{ page.previous_mystery }}" class="previous-mystery">← Previous Mystery</a>
-      {% endif %}
-      
-      {% if page.next_mystery %}
-      <a href="{{ page.next_mystery }}" class="next-mystery">Next Mystery →</a>
-      {% endif %}
-    </div>
-    
-    <div class="mystery-tags">
-      {% if page.tags %}
-      <strong>Tags:</strong>
-      {% for tag in page.tags %}
-        <span class="tag">{{ tag }}</span>{% unless forloop.last %}, {% endunless %}
-      {% endfor %}
-      {% endif %}
-    </div>
-  </footer>
+ <footer class="mystery-footer">
+ <div class="mystery-navigation">
+ {% if page.previous_mystery %}
+ <a href="{{ page.previous_mystery }}" class="previous-mystery">← Previous Mystery</a>
+ {% endif %}
+ 
+ {% if page.next_mystery %}
+ <a href="{{ page.next_mystery }}" class="next-mystery">Next Mystery →</a>
+ {% endif %}
+ </div>
+ 
+ <div class="mystery-tags">
+ {% if page.tags %}
+ <strong>Tags:</strong>
+ {% for tag in page.tags %}
+ <span class="tag">{{ tag }}</span>{% unless forloop.last %}, {% endunless %}
+ {% endfor %}
+ {% endif %}
+ </div>
+ </footer>
 </article>

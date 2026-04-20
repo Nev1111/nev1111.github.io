@@ -47,23 +47,23 @@ from datetime import datetime
 
 # Customer master file
 customers = pd.DataFrame({
-    'ID': [101, 102, 103],
-    'Name': ['Alice Johnson', 'Bob Smith', 'Carol Davis']
+ 'ID': [101, 102, 103],
+ 'Name': ['Alice Johnson', 'Bob Smith', 'Carol Davis']
 })
 
 # Historical address changes (multiple addresses per customer over time)
 address_history = pd.DataFrame({
-    'ID': [101, 101, 101, 102, 102, 103, 103],
-    'Address': [
-        '123 Oak Street', '456 Pine Avenue', '789 Maple Drive',
-        '321 Elm Road', '654 Cedar Lane', 
-        '987 Birch Way', '147 Spruce Court'
-    ],
-    'Effective_Date': [
-        '2023-01-01', '2023-06-15', '2023-09-10',
-        '2023-03-20', '2023-11-05',
-        '2023-02-14', '2023-08-30'
-    ]
+ 'ID': [101, 101, 101, 102, 102, 103, 103],
+ 'Address': [
+ '123 Oak Street', '456 Pine Avenue', '789 Maple Drive',
+ '321 Elm Road', '654 Cedar Lane', 
+ '987 Birch Way', '147 Spruce Court'
+ ],
+ 'Effective_Date': [
+ '2023-01-01', '2023-06-15', '2023-09-10',
+ '2023-03-20', '2023-11-05',
+ '2023-02-14', '2023-08-30'
+ ]
 })
 
 print("Customer Master File:")
@@ -95,11 +95,11 @@ print()
 # Step 5: Use merge_asof to find the most recent address for each customer
 # that was effective on or before the cutoff date
 result = pd.merge_asof(
-    customers_with_date.sort_values('ID'),  # Left dataframe (sorted by key)
-    address_history,                         # Right dataframe (already sorted)
-    left_on='Cutoff_Date',                  # Date column in left dataframe
-    right_on='Effective_Date',              # Date column in right dataframe  
-    by='ID'                                 # Match on customer ID
+ customers_with_date.sort_values('ID'), # Left dataframe (sorted by key)
+ address_history, # Right dataframe (already sorted)
+ left_on='Cutoff_Date', # Date column in left dataframe
+ right_on='Effective_Date', # Date column in right dataframe 
+ by='ID' # Match on customer ID
 )
 
 print("Final Result - Customer addresses as of December 31, 2023:")
@@ -111,21 +111,21 @@ cutoff_dates = ['2023-05-01', '2023-08-01', '2023-12-31']
 
 print("Address lookup for different cutoff dates:")
 for date_str in cutoff_dates:
-    cutoff = pd.to_datetime(date_str)
-    customers_temp = customers.copy()
-    customers_temp['Cutoff_Date'] = cutoff
-    
-    temp_result = pd.merge_asof(
-        customers_temp.sort_values('ID'),
-        address_history,
-        left_on='Cutoff_Date',
-        right_on='Effective_Date',
-        by='ID'
-    )
-    
-    print(f"\nAs of {date_str}:")
-    for _, row in temp_result.iterrows():
-        print(f"  {row['Name']}: {row['Address']} (effective {row['Effective_Date'].strftime('%Y-%m-%d')})")
+ cutoff = pd.to_datetime(date_str)
+ customers_temp = customers.copy()
+ customers_temp['Cutoff_Date'] = cutoff
+ 
+ temp_result = pd.merge_asof(
+ customers_temp.sort_values('ID'),
+ address_history,
+ left_on='Cutoff_Date',
+ right_on='Effective_Date',
+ by='ID'
+ )
+ 
+ print(f"\nAs of {date_str}:")
+ for _, row in temp_result.iterrows():
+ print(f" {row['Name']}: {row['Address']} (effective {row['Effective_Date'].strftime('%Y-%m-%d')})")
 ```
 
 ## Key Learning Points

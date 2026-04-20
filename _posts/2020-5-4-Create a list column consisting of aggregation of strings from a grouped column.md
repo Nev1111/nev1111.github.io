@@ -1,5 +1,5 @@
 ---
-layout: primer_post
+layout: post
 title: Unique list of items contained in a dataframe column
 subtitle: Create a new column in the dataframe that contains a list of unique items from the 'source' column.
 thumbnail-img: /assets/img/PandAudit background transparent.png
@@ -9,8 +9,8 @@ tags: [pandas, unique ID,dataframe,assign]
 ```python
 import pandas as pd
 df=pd.DataFrame({'state':['NY','CA','CT','NJ','NY','FL','FL','CA'],\
-                 'source':['source_a','source_a','source_a','source_b','source_b','source_b',\
-                 'source_d','source_c']})
+ 'source':['source_a','source_a','source_a','source_b','source_b','source_b',\
+ 'source_d','source_c']})
 df
 ```
 
@@ -27,53 +27,53 @@ df_grouped
 
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+ .dataframe tbody tr th:only-of-type {
+ vertical-align: middle;
+ }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+ .dataframe tbody tr th {
+ vertical-align: top;
+ }
 
-    .dataframe thead th {
-        text-align: right;
-    }
+ .dataframe thead th {
+ text-align: right;
+ }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>state</th>
-      <th>source</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>CA</td>
-      <td>[source_a, source_c]</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>CT</td>
-      <td>[source_a]</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>FL</td>
-      <td>[source_b, source_d]</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>NJ</td>
-      <td>[source_b]</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>NY</td>
-      <td>[source_a, source_b]</td>
-    </tr>
-  </tbody>
+ <thead>
+ <tr style="text-align: right;">
+ <th></th>
+ <th>state</th>
+ <th>source</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>0</td>
+ <td>CA</td>
+ <td>[source_a, source_c]</td>
+ </tr>
+ <tr>
+ <td>1</td>
+ <td>CT</td>
+ <td>[source_a]</td>
+ </tr>
+ <tr>
+ <td>2</td>
+ <td>FL</td>
+ <td>[source_b, source_d]</td>
+ </tr>
+ <tr>
+ <td>3</td>
+ <td>NJ</td>
+ <td>[source_b]</td>
+ </tr>
+ <tr>
+ <td>4</td>
+ <td>NY</td>
+ <td>[source_a, source_b]</td>
+ </tr>
+ </tbody>
 </table>
 </div>
 
@@ -92,77 +92,77 @@ result
 
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+ .dataframe tbody tr th:only-of-type {
+ vertical-align: middle;
+ }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+ .dataframe tbody tr th {
+ vertical-align: top;
+ }
 
-    .dataframe thead th {
-        text-align: right;
-    }
+ .dataframe thead th {
+ text-align: right;
+ }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>state</th>
-      <th>source_x</th>
-      <th>source_y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>NY</td>
-      <td>source_a</td>
-      <td>[source_a, source_b]</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>CA</td>
-      <td>source_a</td>
-      <td>[source_a, source_c]</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>CT</td>
-      <td>source_a</td>
-      <td>[source_a]</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>NJ</td>
-      <td>source_b</td>
-      <td>[source_b]</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>NY</td>
-      <td>source_b</td>
-      <td>[source_a, source_b]</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>FL</td>
-      <td>source_b</td>
-      <td>[source_b, source_d]</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>FL</td>
-      <td>source_d</td>
-      <td>[source_b, source_d]</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>CA</td>
-      <td>source_c</td>
-      <td>[source_a, source_c]</td>
-    </tr>
-  </tbody>
+ <thead>
+ <tr style="text-align: right;">
+ <th></th>
+ <th>state</th>
+ <th>source_x</th>
+ <th>source_y</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>0</td>
+ <td>NY</td>
+ <td>source_a</td>
+ <td>[source_a, source_b]</td>
+ </tr>
+ <tr>
+ <td>1</td>
+ <td>CA</td>
+ <td>source_a</td>
+ <td>[source_a, source_c]</td>
+ </tr>
+ <tr>
+ <td>2</td>
+ <td>CT</td>
+ <td>source_a</td>
+ <td>[source_a]</td>
+ </tr>
+ <tr>
+ <td>3</td>
+ <td>NJ</td>
+ <td>source_b</td>
+ <td>[source_b]</td>
+ </tr>
+ <tr>
+ <td>4</td>
+ <td>NY</td>
+ <td>source_b</td>
+ <td>[source_a, source_b]</td>
+ </tr>
+ <tr>
+ <td>5</td>
+ <td>FL</td>
+ <td>source_b</td>
+ <td>[source_b, source_d]</td>
+ </tr>
+ <tr>
+ <td>6</td>
+ <td>FL</td>
+ <td>source_d</td>
+ <td>[source_b, source_d]</td>
+ </tr>
+ <tr>
+ <td>7</td>
+ <td>CA</td>
+ <td>source_c</td>
+ <td>[source_a, source_c]</td>
+ </tr>
+ </tbody>
 </table>
 </div>
 
@@ -181,77 +181,77 @@ result
 
 <div>
 <style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+ .dataframe tbody tr th:only-of-type {
+ vertical-align: middle;
+ }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+ .dataframe tbody tr th {
+ vertical-align: top;
+ }
 
-    .dataframe thead th {
-        text-align: right;
-    }
+ .dataframe thead th {
+ text-align: right;
+ }
 </style>
 <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>state</th>
-      <th>source_original</th>
-      <th>unique_list</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>NY</td>
-      <td>source_a</td>
-      <td>[source_a, source_b]</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>CA</td>
-      <td>source_a</td>
-      <td>[source_a, source_c]</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>CT</td>
-      <td>source_a</td>
-      <td>[source_a]</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>NJ</td>
-      <td>source_b</td>
-      <td>[source_b]</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>NY</td>
-      <td>source_b</td>
-      <td>[source_a, source_b]</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>FL</td>
-      <td>source_b</td>
-      <td>[source_b, source_d]</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>FL</td>
-      <td>source_d</td>
-      <td>[source_b, source_d]</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>CA</td>
-      <td>source_c</td>
-      <td>[source_a, source_c]</td>
-    </tr>
-  </tbody>
+ <thead>
+ <tr style="text-align: right;">
+ <th></th>
+ <th>state</th>
+ <th>source_original</th>
+ <th>unique_list</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>0</td>
+ <td>NY</td>
+ <td>source_a</td>
+ <td>[source_a, source_b]</td>
+ </tr>
+ <tr>
+ <td>1</td>
+ <td>CA</td>
+ <td>source_a</td>
+ <td>[source_a, source_c]</td>
+ </tr>
+ <tr>
+ <td>2</td>
+ <td>CT</td>
+ <td>source_a</td>
+ <td>[source_a]</td>
+ </tr>
+ <tr>
+ <td>3</td>
+ <td>NJ</td>
+ <td>source_b</td>
+ <td>[source_b]</td>
+ </tr>
+ <tr>
+ <td>4</td>
+ <td>NY</td>
+ <td>source_b</td>
+ <td>[source_a, source_b]</td>
+ </tr>
+ <tr>
+ <td>5</td>
+ <td>FL</td>
+ <td>source_b</td>
+ <td>[source_b, source_d]</td>
+ </tr>
+ <tr>
+ <td>6</td>
+ <td>FL</td>
+ <td>source_d</td>
+ <td>[source_b, source_d]</td>
+ </tr>
+ <tr>
+ <td>7</td>
+ <td>CA</td>
+ <td>source_c</td>
+ <td>[source_a, source_c]</td>
+ </tr>
+ </tbody>
 </table>
 </div>
 

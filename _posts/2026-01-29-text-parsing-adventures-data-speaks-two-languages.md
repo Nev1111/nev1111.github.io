@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "📝 When Your Data Speaks Two Languages: Text Parsing Adventures"
+layout: post
+title: "When Your Data Speaks Two Languages: Text Parsing Adventures"
 subtitle: "Your legacy system exports gibberish. Here's how to make sense of it."
 tags: [python, pandas, regex, text-parsing, legacy-systems, data-extraction]
 comments: true
@@ -16,25 +16,25 @@ TRIAL BALANCE REPORT - ALL FUNDS
 RUN DATE: 12/31/2024
 PAGE 1 OF 47
 
-1234567-12-123456    CASH - OPERATING FUND                   
-  Beginning Balance                                   1,234,567.89
-  12/01/2024    GJ 001234    Monthly deposit          125,000.00
-  12/05/2024    AP 005678    Vendor payment            15,234.56 CR
-  12/15/2024    GJ 001289    Adjustment                   500.00 CR
-  Ending Balance                                      1,344,833.33
+1234567-12-123456 CASH - OPERATING FUND 
+ Beginning Balance 1,234,567.89
+ 12/01/2024 GJ 001234 Monthly deposit 125,000.00
+ 12/05/2024 AP 005678 Vendor payment 15,234.56 CR
+ 12/15/2024 GJ 001289 Adjustment 500.00 CR
+ Ending Balance 1,344,833.33
 
-2345678-15-234567    INVESTMENTS - BOND FUND
-  Beginning Balance                                  45,234,567.12
-  12/10/2024    AI 002345    Interest income          234,567.89
-  12/20/2024    GJ 001456    Transfer to operating     50,000.00 CR
-  Ending Balance                                     45,419,135.01
+2345678-15-234567 INVESTMENTS - BOND FUND
+ Beginning Balance 45,234,567.12
+ 12/10/2024 AI 002345 Interest income 234,567.89
+ 12/20/2024 GJ 001456 Transfer to operating 50,000.00 CR
+ Ending Balance 45,419,135.01
 
 ...
 ```
 
 **My Task:** Extract this into a clean dataset.
 
-**Excel's Reaction:** "LOL, good luck!" 😂
+**Excel's Reaction:** "LOL, good luck!" 
 
 ---
 
@@ -47,19 +47,19 @@ PAGE 1 OF 47
 - **Detail lines:** Date, reference, description, amount
 - **Page headers:** Report title, run date, page numbers
 
-**All in ONE column of text!** 🤯
+**All in ONE column of text!** 
 
 ---
 
 ### Problem #2: No Delimiters
 
-**CSV:** Comma-separated ✅  
-**TSV:** Tab-separated ✅  
-**This:** *Space-separated... sometimes?* ❌
+**CSV:** Comma-separated 
+**TSV:** Tab-separated 
+**This:** *Space-separated... sometimes?* 
 
 ```
-1234567-12-123456    CASH - OPERATING FUND
-  12/01/2024    GJ 001234    Monthly deposit          125,000.00
+1234567-12-123456 CASH - OPERATING FUND
+ 12/01/2024 GJ 001234 Monthly deposit 125,000.00
 ```
 
 **Where does one field end and another begin?** *¯\\_(ツ)_/¯*
@@ -71,10 +71,10 @@ PAGE 1 OF 47
 **Account number appears ONCE**, but applies to all subsequent detail lines:
 
 ```
-1234567-12-123456    CASH - OPERATING FUND     <-- Header
-  12/01/2024    ...                             <-- Detail (belongs to account above)
-  12/05/2024    ...                             <-- Detail (belongs to account above)
-  12/15/2024    ...                             <-- Detail (belongs to account above)
+1234567-12-123456 CASH - OPERATING FUND <-- Header
+ 12/01/2024 ... <-- Detail (belongs to account above)
+ 12/05/2024 ... <-- Detail (belongs to account above)
+ 12/15/2024 ... <-- Detail (belongs to account above)
 ```
 
 **How do you "fill down" the account number in Python?**
@@ -84,7 +84,7 @@ PAGE 1 OF 47
 ### Problem #4: Credit Notation
 
 ```
-  15,234.56 CR
+ 15,234.56 CR
 ```
 
 **Means:** -15,234.56
@@ -101,7 +101,7 @@ Some lines have:
 - 10 spaces
 - **Variable spacing** depending on field length
 
-**Why?** Because Legacy Accounting System was designed for **fixed-width printing** on **dot matrix printers** in **1987**. 🖨️
+**Why?** Because Legacy Accounting System was designed for **fixed-width printing** on **dot matrix printers** in **1987**. ️
 
 ---
 
@@ -143,7 +143,7 @@ What you ACTUALLY do:
 
 **Errors:** 20-30 (you're human)
 
-**Sanity remaining:** 15% 🤪
+**Sanity remaining:** 15% 
 
 ---
 
@@ -176,14 +176,14 @@ df['Account_Num'] = df['Account_Num'].ffill()
 
 **Result:**
 ```
-raw                                              Account_Num
-1234567-12-123456    CASH - OPERATING FUND      1234567-12-123456
-  Beginning Balance                              1234567-12-123456  <-- Filled down!
-  12/01/2024    GJ 001234    Monthly deposit    1234567-12-123456  <-- Filled down!
-  12/05/2024    AP 005678    Vendor payment     1234567-12-123456  <-- Filled down!
+raw Account_Num
+1234567-12-123456 CASH - OPERATING FUND 1234567-12-123456
+ Beginning Balance 1234567-12-123456 <-- Filled down!
+ 12/01/2024 GJ 001234 Monthly deposit 1234567-12-123456 <-- Filled down!
+ 12/05/2024 AP 005678 Vendor payment 1234567-12-123456 <-- Filled down!
 ```
 
-**Magic!** ✨
+**Magic!** 
 
 ---
 
@@ -316,11 +316,11 @@ print(f"Extracted {len(detail_lines):,} transactions from {len(df)} lines")
 Extracted 15,847 transactions from 24,539 lines
 ```
 
-**Time:** 15 seconds ⚡
+**Time:** 15 seconds 
 
-**Errors:** Zero ✅
+**Errors:** Zero 
 
-**Coffee consumed:** 1 cup ☕ (for enjoyment, not desperation)
+**Coffee consumed:** 1 cup (for enjoyment, not desperation)
 
 ---
 
@@ -334,15 +334,15 @@ VENDOR PAYMENT DETAIL REPORT
 FOR PERIOD: 01/01/2024 - 12/31/2024
 
 Vendor: 12345 - ABC CONSTRUCTION INC
-  Invoice: INV-2024-001    Date: 01/15/2024    Amount: $125,000.00
-  Invoice: INV-2024-015    Date: 03/22/2024    Amount: $87,500.50
-  Invoice: INV-2024-028    Date: 06/10/2024    Amount: $45,200.00
-  Total Vendor: $257,700.50
+ Invoice: INV-2024-001 Date: 01/15/2024 Amount: $125,000.00
+ Invoice: INV-2024-015 Date: 03/22/2024 Amount: $87,500.50
+ Invoice: INV-2024-028 Date: 06/10/2024 Amount: $45,200.00
+ Total Vendor: $257,700.50
 
 Vendor: 67890 - XYZ CONSULTING LLC
-  Invoice: 2024-A-0045     Date: 02/14/2024    Amount: $15,000.00
-  Invoice: 2024-A-0089     Date: 05/30/2024    Amount: $22,500.00
-  Total Vendor: $37,500.00
+ Invoice: 2024-A-0045 Date: 02/14/2024 Amount: $15,000.00
+ Invoice: 2024-A-0089 Date: 05/30/2024 Amount: $22,500.00
+ Total Vendor: $37,500.00
 
 GRAND TOTAL: $295,200.50
 ```
@@ -385,15 +385,15 @@ print(invoices)
 
 **Output:**
 ```
-  Vendor_Num Vendor_Name                Invoice_Num  Invoice_Date  Invoice_Amount
-0     12345  ABC CONSTRUCTION INC      INV-2024-001    2024-01-15      125000.00
-1     12345  ABC CONSTRUCTION INC      INV-2024-015    2024-03-22       87500.50
-2     12345  ABC CONSTRUCTION INC      INV-2024-028    2024-06-10       45200.00
-3     67890  XYZ CONSULTING LLC        2024-A-0045     2024-02-14       15000.00
-4     67890  XYZ CONSULTING LLC        2024-A-0089     2024-05-30       22500.00
+ Vendor_Num Vendor_Name Invoice_Num Invoice_Date Invoice_Amount
+0 12345 ABC CONSTRUCTION INC INV-2024-001 2024-01-15 125000.00
+1 12345 ABC CONSTRUCTION INC INV-2024-015 2024-03-22 87500.50
+2 12345 ABC CONSTRUCTION INC INV-2024-028 2024-06-10 45200.00
+3 67890 XYZ CONSULTING LLC 2024-A-0045 2024-02-14 15000.00
+4 67890 XYZ CONSULTING LLC 2024-A-0089 2024-05-30 22500.00
 ```
 
-**Perfect!** 🎉
+**Perfect!** 
 
 ---
 
@@ -505,29 +505,29 @@ import re
 # Test pattern
 pattern = r'(\d{7}\-\d{2}\-\d{6})'
 test_strings = [
-    '1234567-12-123456    CASH ACCOUNT',
-    'No account number here',
-    '  Beginning Balance',
-    '9876543-01-987654    INVESTMENT ACCOUNT'
+ '1234567-12-123456 CASH ACCOUNT',
+ 'No account number here',
+ ' Beginning Balance',
+ '9876543-01-987654 INVESTMENT ACCOUNT'
 ]
 
 for s in test_strings:
-    match = re.search(pattern, s)
-    if match:
-        print(f"MATCH: {match.group(1)}")
-    else:
-        print(f"NO MATCH: {s}")
+ match = re.search(pattern, s)
+ if match:
+ print(f"MATCH: {match.group(1)}")
+ else:
+ print(f"NO MATCH: {s}")
 ```
 
 **Output:**
 ```
 MATCH: 1234567-12-123456
 NO MATCH: No account number here
-NO MATCH:   Beginning Balance
+NO MATCH: Beginning Balance
 MATCH: 9876543-01-987654
 ```
 
-**Perfect!** Regex is working as expected. ✅
+**Perfect!** Regex is working as expected. 
 
 ---
 
@@ -557,7 +557,7 @@ MATCH: 9876543-01-987654
 
 **One month later:** We reclaimed 80 hours/month of manual data entry
 
-**My career:** Never the same. 🚀
+**My career:** Never the same. 
 
 ---
 
@@ -569,11 +569,11 @@ MATCH: 9876543-01-987654
 
 ```python
 # BAD: Greedy match
-pattern = r'Invoice: (.*)    Date:'
-# Matches: "INV-001    Date: 01/15/2024    Amount: $1,000    Date:" (too much!)
+pattern = r'Invoice: (.*) Date:'
+# Matches: "INV-001 Date: 01/15/2024 Amount: $1,000 Date:" (too much!)
 
 # GOOD: Non-greedy match
-pattern = r'Invoice: (.*?)    Date:'
+pattern = r'Invoice: (.*?) Date:'
 # Matches: "INV-001" (stops at first "Date:")
 ```
 
@@ -583,10 +583,10 @@ pattern = r'Invoice: (.*?)    Date:'
 
 ```python
 # BAD: Dot matches ANY character
-pattern = r'\d.\d'  # Matches "1X2", "1 2", "1.2"
+pattern = r'\d.\d' # Matches "1X2", "1 2", "1.2"
 
 # GOOD: Escaped dot matches literal period
-pattern = r'\d\.\d'  # Matches only "1.2"
+pattern = r'\d\.\d' # Matches only "1.2"
 ```
 
 ---
@@ -596,11 +596,11 @@ pattern = r'\d\.\d'  # Matches only "1.2"
 ```python
 # BAD: Crashes if pattern not found
 df['Amount'] = df['text'].str.extract(r'(\$[\d,]+\.\d{2})')
-df['Amount'] = df['Amount'].astype(float)  # ❌ ERROR on NaN values
+df['Amount'] = df['Amount'].astype(float) # ERROR on NaN values
 
 # GOOD: Handle missing gracefully
 df['Amount'] = df['text'].str.extract(r'(\$[\d,]+\.\d{2})')
-df['Amount'] = pd.to_numeric(df['Amount'], errors='coerce')  # ✅ NaN for missing
+df['Amount'] = pd.to_numeric(df['Amount'], errors='coerce') # NaN for missing
 ```
 
 ---
@@ -615,7 +615,7 @@ Your job: Translate it into clean data.
 
 **Python + Regex:** Automated, fast, accurate
 
-**Your Choice.** 🚀
+**Your Choice.** 
 
 ---
 
@@ -627,11 +627,11 @@ Have a legacy system horror story? Share it in the comments!
 
 ---
 
-## Join the Discussion on Discord! 💬
+## Join the Discussion on Discord! -
 
 Stuck parsing a gnarly text file? **Join our Discord** and get help from the community!
 
-👉 **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
+ **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
 
 ---
 

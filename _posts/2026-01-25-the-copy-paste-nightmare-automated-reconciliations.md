@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "🔥 The Copy-Paste Nightmare: How I Automated 500 Monthly Reconciliations"
+layout: post
+title: "The Copy-Paste Nightmare: How I Automated 500 Monthly Reconciliations"
 subtitle: "From 40 hours of soul-crushing tedium to 30 seconds of automation glory"
 tags: [python, pandas, automation, reconciliation, accounting, excel-to-python]
 comments: true
@@ -23,7 +23,7 @@ I was on my **seventeenth** reconciliation spreadsheet. My eyes were crossing. M
 7. Create VLOOKUP formulas
 8. Find differences
 9. Research discrepancies
-10. **Repeat 499 more times** 😱
+10. **Repeat 499 more times** 
 
 **Time required:** 40 hours per month (an entire work week!)
 
@@ -84,7 +84,7 @@ tb = pd.read_table('trial_balance.txt', header=None, names=['raw'])
 
 # Extract account numbers and balances
 tb[['Account', 'Description', 'Balance']] = tb['raw'].str.extract(
-    r'(\d{6})\s+(.{30})\s+([\d,]+\.\d{2}(?:\s+CR)?)'
+ r'(\d{6})\s+(.{30})\s+([\d,]+\.\d{2}(?:\s+CR)?)'
 )
 
 # Handle credit notation
@@ -98,11 +98,11 @@ custodian = custodian.rename(columns={'Acct_Number': 'Account', 'Market_Value': 
 
 # Step 3: Reconcile with ONE LINE
 reconciliation = pd.merge(
-    tb[['Account', 'Description', 'Balance']],
-    custodian[['Account', 'Custodian_Balance']],
-    on='Account',
-    how='outer',  # Keep accounts from both sources
-    indicator=True  # Flag where each account came from
+ tb[['Account', 'Description', 'Balance']],
+ custodian[['Account', 'Custodian_Balance']],
+ on='Account',
+ how='outer', # Keep accounts from both sources
+ indicator=True # Flag where each account came from
 )
 
 # Calculate differences
@@ -121,7 +121,7 @@ print(f"Material differences: {reconciliation['Material'].sum()}")
 print(f"Total difference: ${reconciliation['Difference'].sum():,.2f}")
 ```
 
-**Time: 30 seconds** ⚡
+**Time: 30 seconds** 
 
 ---
 
@@ -129,19 +129,19 @@ print(f"Total difference: ${reconciliation['Difference'].sum():,.2f}")
 
 ### Before Python:
 - ⏰ **Time:** 40 hours/month
-- 😰 **Stress Level:** Through the roof
-- 🐛 **Errors:** 5-10 per month (copy-paste mistakes)
-- 📊 **Accounts Reconciled:** 500 (painfully)
-- 🌙 **Late Nights:** Every month-end
-- 💸 **Cost:** $2,000/month in overtime
+- **Stress Level:** Through the roof
+- **Errors:** 5-10 per month (copy-paste mistakes)
+- **Accounts Reconciled:** 500 (painfully)
+- **Late Nights:** Every month-end
+- **Cost:** $2,000/month in overtime
 
 ### After Python:
 - ⏰ **Time:** 30 seconds + 2 hours research (only material items)
-- 😊 **Stress Level:** Manageable
-- ✅ **Errors:** Zero (automated = consistent)
-- 📊 **Accounts Reconciled:** 500 (automatically)
-- 🏠 **Late Nights:** Haven't had one in 6 months
-- 💰 **Cost:** $0 overtime
+- **Stress Level:** Manageable
+- **Errors:** Zero (automated = consistent)
+- **Accounts Reconciled:** 500 (automatically)
+- **Late Nights:** Haven't had one in 6 months
+- **Cost:** $0 overtime
 
 **Annual Savings:** 456 hours = $24,000 in labor costs
 
@@ -211,8 +211,8 @@ That's when I knew Python had changed my career forever.
 **Solution:**
 ```python
 # Standardize before merging
-tb['Account'] = tb['Account'].str.lstrip('0')  # Remove leading zeros
-custodian['Account'] = custodian['Account'].astype(str).str.zfill(6)  # Add leading zeros
+tb['Account'] = tb['Account'].str.lstrip('0') # Remove leading zeros
+custodian['Account'] = custodian['Account'].astype(str).str.zfill(6) # Add leading zeros
 ```
 
 ### Issue #2: Fuzzy Matching
@@ -225,8 +225,8 @@ from fuzzywuzzy import fuzz
 
 # Calculate similarity score
 df['similarity'] = df.apply(
-    lambda row: fuzz.ratio(row['Description_TB'], row['Description_Custodian']),
-    axis=1
+ lambda row: fuzz.ratio(row['Description_TB'], row['Description_Custodian']),
+ axis=1
 )
 
 # Flag potential matches
@@ -241,16 +241,16 @@ df['Potential_Match'] = df['similarity'] > 85
 ```python
 # Read all custodian files at once
 custodian_files = [
-    'custodian_A.xlsx',
-    'custodian_B.xlsx',
-    'custodian_C.xlsx',
-    'custodian_D.xlsx',
-    'custodian_E.xlsx'
+ 'custodian_A.xlsx',
+ 'custodian_B.xlsx',
+ 'custodian_C.xlsx',
+ 'custodian_D.xlsx',
+ 'custodian_E.xlsx'
 ]
 
 all_custodian = pd.concat([
-    pd.read_excel(f, sheet_name='Holdings').assign(Custodian=f.split('_')[1].split('.')[0])
-    for f in custodian_files
+ pd.read_excel(f, sheet_name='Holdings').assign(Custodian=f.split('_')[1].split('.')[0])
+ for f in custodian_files
 ])
 
 # Now reconcile against combined custodian data
@@ -263,11 +263,11 @@ reconciliation = pd.merge(tb, all_custodian, on='Account', how='outer')
 
 You don't need to automate 500 reconciliations on day one.
 
-**Week 1:** Automate reading one file  
-**Week 2:** Add the merge logic  
-**Week 3:** Handle credit/debit notation  
-**Week 4:** Add difference calculations  
-**Week 5:** Export results  
+**Week 1:** Automate reading one file 
+**Week 2:** Add the merge logic 
+**Week 3:** Handle credit/debit notation 
+**Week 4:** Add difference calculations 
+**Week 5:** Export results 
 
 By week 5, you'll have your first automated reconciliation.
 
@@ -305,17 +305,17 @@ Want the complete working script? [Download it from our GitHub](https://github.c
 
 Have questions? Drop a comment below. Seriously—I read every one.
 
-**Your reconciliation nightmare can end tonight.** 🚀
+**Your reconciliation nightmare can end tonight.** 
 
 ---
 
-## Join the Discussion on Discord! 💬
+## Join the Discussion on Discord! -
 
 Have questions about automating reconciliations? Want to share your own automation success story? **Join our community on Discord!**
 
 We're building a community of finance professionals who are tired of Excel hell and ready to level up with Python.
 
-👉 **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
+ **[Join PANDAUDIT Discord Server](https://discord.gg/your-invite-link)**
 
 ---
 

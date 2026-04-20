@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "🎯 Replace Nested IF Statements with Python Functions"
+layout: post
+title: "Replace Nested IF Statements with Python Functions"
 subtitle: "Excel formula hell: =IF(A2=11,'Fund_A',IF(A2=12,'Fund_B',IF(A2=13... ENOUGH!"
 tags: [python, pandas, excel, functions, mapping, business-logic, automation]
 comments: true
@@ -13,16 +13,16 @@ You need to classify fund codes. Your Excel formula looks like this:
 
 ```excel
 =IF(A2=11,"Fund_A",
-  IF(A2=12,"Fund_B",
-    IF(A2=13,"Fund_C",
-      IF(A2=14,"Fund_D",
-        IF(A2=15,"Fund_E",
-          IF(A2=16,"Fund_F",
-            IF(A2=17,"Fund_G",
-              IF(A2=18,"Fund_H","Unknown"))))))))
+ IF(A2=12,"Fund_B",
+ IF(A2=13,"Fund_C",
+ IF(A2=14,"Fund_D",
+ IF(A2=15,"Fund_E",
+ IF(A2=16,"Fund_F",
+ IF(A2=17,"Fund_G",
+ IF(A2=18,"Fund_H","Unknown"))))))))
 ```
 
-**Count the parentheses.** I dare you. 😵
+**Count the parentheses.** I dare you. 
 
 Now imagine:
 - Your boss adds 3 new fund codes
@@ -36,17 +36,17 @@ Sound familiar? Let's end this madness.
 
 ## Why Nested IFs Are Terrible
 
-### 🐛 Problem 1: Unreadable
+### Problem 1: Unreadable
 ```excel
 =IF(A2=11,"Fund_A",IF(A2=12,"Fund_B",IF(A2=13,"Fund_C",IF(A2=14,"Fund_D",IF(A2=15,"Fund_E",IF(A2=16,"Fund_F",IF(A2=17,"Fund_G",IF(A2=18,"Fund_H","Unknown"))))))))
 ```
 
 Try to read that in 6 months. Try to debug it. Try to explain it to a coworker.
 
-### 💥 Problem 2: Fragile
+### Problem 2: Fragile
 One typo = broken formula. One extra/missing parenthesis = hours of debugging.
 
-### 🐢 Problem 3: Slow to Update
+### Problem 3: Slow to Update
 Add a new fund code? You have to:
 1. Find all workbooks with this formula
 2. Edit each formula carefully
@@ -54,7 +54,7 @@ Add a new fund code? You have to:
 4. Copy formula down entire columns
 5. Pray you didn't miss any
 
-### 📊 Problem 4: Excel Limits
+### Problem 4: Excel Limits
 **Excel allows max 64 nested IFs.** What if you have 65+ categories? You're stuck.
 
 ---
@@ -67,18 +67,18 @@ Here's the **elegant, professional approach**:
 import pandas as pd
 
 def classify_fund(code):
-    """Map fund codes to fund names - clean and maintainable"""
-    funds = {
-        11: 'Fund_A',
-        12: 'Fund_B', 
-        13: 'Fund_C',
-        14: 'Fund_D',
-        15: 'Fund_E',
-        16: 'Fund_F',
-        17: 'Fund_G',
-        18: 'Fund_H'
-    }
-    return funds.get(code, 'Unknown')  # Return 'Unknown' if code not found
+ """Map fund codes to fund names - clean and maintainable"""
+ funds = {
+ 11: 'Fund_A',
+ 12: 'Fund_B', 
+ 13: 'Fund_C',
+ 14: 'Fund_D',
+ 15: 'Fund_E',
+ 16: 'Fund_F',
+ 17: 'Fund_G',
+ 18: 'Fund_H'
+ }
+ return funds.get(code, 'Unknown') # Return 'Unknown' if code not found
 
 # Apply to entire column instantly
 df['Fund_Name'] = df['Fund_Code'].apply(classify_fund)
@@ -94,9 +94,9 @@ Let me break this down:
 #### 1️⃣ **The Dictionary (Lookup Table)**
 ```python
 funds = {
-    11: 'Fund_A',
-    12: 'Fund_B',
-    # ...
+ 11: 'Fund_A',
+ 12: 'Fund_B',
+ # ...
 }
 ```
 
@@ -131,9 +131,9 @@ import pandas as pd
 
 # Sample data
 data = {
-    'Account': ['1200-11-001', '1300-12-002', '1400-13-003', '1500-99-004'],
-    'Fund_Code': [11, 12, 13, 99],
-    'Amount': [5000, 3000, 2000, 1000]
+ 'Account': ['1200-11-001', '1300-12-002', '1400-13-003', '1500-99-004'],
+ 'Fund_Code': [11, 12, 13, 99],
+ 'Amount': [5000, 3000, 2000, 1000]
 }
 
 df = pd.DataFrame(data)
@@ -143,18 +143,18 @@ print(df)
 
 # Classification function
 def classify_fund(code):
-    """Map fund codes to fund names"""
-    funds = {
-        11: 'Fund_A',
-        12: 'Fund_B',
-        13: 'Fund_C',
-        14: 'Fund_D',
-        15: 'Fund_E',
-        16: 'Fund_F',
-        17: 'Fund_G',
-        18: 'Fund_H'
-    }
-    return funds.get(code, 'Unknown')
+ """Map fund codes to fund names"""
+ funds = {
+ 11: 'Fund_A',
+ 12: 'Fund_B',
+ 13: 'Fund_C',
+ 14: 'Fund_D',
+ 15: 'Fund_E',
+ 16: 'Fund_F',
+ 17: 'Fund_G',
+ 18: 'Fund_H'
+ }
+ return funds.get(code, 'Unknown')
 
 # Apply classification
 df['Fund_Name'] = df['Fund_Code'].apply(classify_fund)
@@ -170,29 +170,29 @@ print(df.groupby('Fund_Name')['Amount'].sum())
 **Output:**
 ```
 BEFORE:
-        Account  Fund_Code  Amount
-0  1200-11-001         11    5000
-1  1300-12-002         12    3000
-2  1400-13-003         13    2000
-3  1500-99-004         99    1000
+ Account Fund_Code Amount
+0 1200-11-001 11 5000
+1 1300-12-002 12 3000
+2 1400-13-003 13 2000
+3 1500-99-004 99 1000
 
 AFTER:
-        Account  Fund_Code  Amount Fund_Name
-0  1200-11-001         11    5000    Fund_A
-1  1300-12-002         12    3000    Fund_B
-2  1400-13-003         13    2000    Fund_C
-3  1500-99-004         99    1000   Unknown
+ Account Fund_Code Amount Fund_Name
+0 1200-11-001 11 5000 Fund_A
+1 1300-12-002 12 3000 Fund_B
+2 1400-13-003 13 2000 Fund_C
+3 1500-99-004 99 1000 Unknown
 
 SUMMARY:
 Fund_Name
-Fund_A     5000
-Fund_B     3000
-Fund_C     2000
-Unknown    1000
+Fund_A 5000
+Fund_B 3000
+Fund_C 2000
+Unknown 1000
 Name: Amount, dtype: int64
 ```
 
-Beautiful! 🎉
+Beautiful! 
 
 ---
 
@@ -202,46 +202,46 @@ What if your classification needs multiple conditions? Still easy:
 
 ```python
 def classify_account(row):
-    """
-    Classify accounts based on multiple conditions:
-    - Account number range
-    - Fund code  
-    - Amount threshold
-    """
-    account_num = int(row['Account'][:4])  # First 4 digits
-    fund_code = row['Fund_Code']
-    amount = row['Amount']
-    
-    # Revenue accounts (1000-1999)
-    if 1000 <= account_num < 2000:
-        if amount > 10000:
-            return 'Major Revenue'
-        else:
-            return 'Minor Revenue'
-    
-    # Expense accounts (2000-2999)
-    elif 2000 <= account_num < 3000:
-        if fund_code in [11, 12, 13]:
-            return 'Operating Expense'
-        else:
-            return 'Capital Expense'
-    
-    # Asset accounts (3000-3999)
-    elif 3000 <= account_num < 4000:
-        return 'Asset'
-    
-    # Liability accounts (4000-4999)
-    elif 4000 <= account_num < 5000:
-        return 'Liability'
-    
-    else:
-        return 'Other'
+ """
+ Classify accounts based on multiple conditions:
+ - Account number range
+ - Fund code 
+ - Amount threshold
+ """
+ account_num = int(row['Account'][:4]) # First 4 digits
+ fund_code = row['Fund_Code']
+ amount = row['Amount']
+ 
+ # Revenue accounts (1000-1999)
+ if 1000 <= account_num < 2000:
+ if amount > 10000:
+ return 'Major Revenue'
+ else:
+ return 'Minor Revenue'
+ 
+ # Expense accounts (2000-2999)
+ elif 2000 <= account_num < 3000:
+ if fund_code in [11, 12, 13]:
+ return 'Operating Expense'
+ else:
+ return 'Capital Expense'
+ 
+ # Asset accounts (3000-3999)
+ elif 3000 <= account_num < 4000:
+ return 'Asset'
+ 
+ # Liability accounts (4000-4999)
+ elif 4000 <= account_num < 5000:
+ return 'Liability'
+ 
+ else:
+ return 'Other'
 
 # Apply to entire dataframe
 df['Category'] = df.apply(classify_account, axis=1)
 ```
 
-**Try doing THAT with nested IFs in Excel!** 😅
+**Try doing THAT with nested IFs in Excel!** 
 
 ---
 
@@ -262,7 +262,7 @@ fund_dict = dict(zip(mapping['Fund_Code'], mapping['Fund_Name']))
 
 # Classification function (now uses the loaded mapping)
 def classify_fund(code):
-    return fund_dict.get(code, 'Unknown')
+ return fund_dict.get(code, 'Unknown')
 
 # Apply
 df['Fund_Name'] = df['Fund_Code'].apply(classify_fund)
@@ -272,10 +272,10 @@ df['Fund_Name'] = df['Fund_Code'].apply(classify_fund)
 ```
 | Fund_Code | Fund_Name |
 |-----------|----------|
-| 11        | Fund_A   |
-| 12        | Fund_B   |
-| 13        | Fund_C   |
-| ..        | ..       |
+| 11 | Fund_A |
+| 12 | Fund_B |
+| 13 | Fund_C |
+| .. | .. |
 ```
 
 Now when your boss adds a new fund code, just update the Excel file. **No code changes needed!**
@@ -289,18 +289,18 @@ Now when your boss adds a new fund code, just update the Excel file. **No code c
 **Excel:**
 ```excel
 =IF(A2=11,"Fund_A",IF(A2=12,"Fund_B",IF(A2=13,"Fund_C",IF(A2=14,"Fund_D",IF(A2=15,"Fund_E",IF(A2=16,"Fund_F",IF(A2=17,"Fund_G",IF(A2=18,"Fund_H",IF(A2=19,"Fund_I","Unknown")))))))))
-         ↑ Find the right spot, add another IF, count all parentheses, pray
+ ↑ Find the right spot, add another IF, count all parentheses, pray
 ```
 
 **Python:**
 ```python
 funds = {
-    11: 'Fund_A',
-    12: 'Fund_B',
-    13: 'Fund_C',
-    # ...
-    18: 'Fund_H',
-    19: 'Fund_I'  # ← Add one line. Done.
+ 11: 'Fund_A',
+ 12: 'Fund_B',
+ 13: 'Fund_C',
+ # ...
+ 18: 'Fund_H',
+ 19: 'Fund_I' # ← Add one line. Done.
 }
 ```
 
@@ -314,8 +314,8 @@ funds = {
 
 ### Maintainability:
 
-**Excel:** 😱 Good luck  
-**Python:** 😊 Clear and obvious
+**Excel:** Good luck 
+**Python:** Clear and obvious
 
 ---
 
@@ -325,31 +325,31 @@ Need nested classifications? Easy:
 
 ```python
 def get_budget_category(account_num):
-    """Classify accounts into budget categories and subcategories"""
-    
-    categories = {
-        # Format: (start, end): (category, subcategory)
-        (1000, 1099): ('Revenue', 'Tax Revenue'),
-        (1100, 1199): ('Revenue', 'Investment Income'),
-        (1200, 1299): ('Revenue', 'Other Revenue'),
-        (2000, 2099): ('Expense', 'Personnel'),
-        (2100, 2199): ('Expense', 'Operations'),
-        (2200, 2299): ('Expense', 'Capital'),
-        (3000, 3999): ('Asset', 'Current Assets'),
-        (4000, 4999): ('Liability', 'Current Liabilities'),
-    }
-    
-    account_num = int(account_num[:4])  # First 4 digits
-    
-    for (start, end), (cat, subcat) in categories.items():
-        if start <= account_num <= end:
-            return cat, subcat
-    
-    return 'Unknown', 'Unknown'
+ """Classify accounts into budget categories and subcategories"""
+ 
+ categories = {
+ # Format: (start, end): (category, subcategory)
+ (1000, 1099): ('Revenue', 'Tax Revenue'),
+ (1100, 1199): ('Revenue', 'Investment Income'),
+ (1200, 1299): ('Revenue', 'Other Revenue'),
+ (2000, 2099): ('Expense', 'Personnel'),
+ (2100, 2199): ('Expense', 'Operations'),
+ (2200, 2299): ('Expense', 'Capital'),
+ (3000, 3999): ('Asset', 'Current Assets'),
+ (4000, 4999): ('Liability', 'Current Liabilities'),
+ }
+ 
+ account_num = int(account_num[:4]) # First 4 digits
+ 
+ for (start, end), (cat, subcat) in categories.items():
+ if start <= account_num <= end:
+ return cat, subcat
+ 
+ return 'Unknown', 'Unknown'
 
 # Apply and split into two columns
 df[['Category', 'Subcategory']] = df['Account'].apply(
-    lambda x: pd.Series(get_budget_category(x))
+ lambda x: pd.Series(get_budget_category(x))
 )
 
 print(df[['Account', 'Category', 'Subcategory']])
@@ -357,11 +357,11 @@ print(df[['Account', 'Category', 'Subcategory']])
 
 **Output:**
 ```
-     Account  Category       Subcategory
-0  1050-001   Revenue       Tax Revenue
-1  1150-002   Revenue  Investment Income
-2  2050-003   Expense         Personnel
-3  3050-004     Asset    Current Assets
+ Account Category Subcategory
+0 1050-001 Revenue Tax Revenue
+1 1150-002 Revenue Investment Income
+2 2050-003 Expense Personnel
+3 3050-004 Asset Current Assets
 ```
 
 ---
@@ -378,13 +378,13 @@ df = pd.read_excel('your_data.xlsx')
 
 # Define your classification
 def classify(code):
-    mapping = {
-        'A': 'Category 1',
-        'B': 'Category 2',
-        'C': 'Category 3',
-        # Add your categories
-    }
-    return mapping.get(code, 'Unknown')
+ mapping = {
+ 'A': 'Category 1',
+ 'B': 'Category 2',
+ 'C': 'Category 3',
+ # Add your categories
+ }
+ return mapping.get(code, 'Unknown')
 
 # Apply it
 df['Category'] = df['Code'].apply(classify)
@@ -399,19 +399,19 @@ Done! No nested IFs. No headaches.
 
 ## The Bottom Line
 
-✅ **What You Get:**
+ **What You Get:**
 - Replace 8-level nested IFs with 10 lines of clean code
 - Add new categories in seconds
 - Handle unlimited classifications (not limited to 64)
 - Code that's actually readable
 - Professional, maintainable solution
 
-✅ **Time Saved:**
+ **Time Saved:**
 - **Writing formula:** 10 min → 3 min
 - **Updating formula:** 5 min → 10 seconds
 - **Debugging formula:** 15 min → 1 min
 
-✅ **Sanity Points:**
+ **Sanity Points:**
 - **Excel:** -100 (nested IF trauma)
 - **Python:** +100 (elegant solution)
 
@@ -428,10 +428,10 @@ Now that you can classify data elegantly, check out:
 
 ## Your Turn!
 
-**💬 What's the worst nested IF formula you've seen?**  
-Share in the comments—let's see who has the most parentheses! 🏆
+**- What's the worst nested IF formula you've seen?** 
+Share in the comments—let's see who has the most parentheses! 
 
-**🤔 Need help converting your specific formula?**  
+** Need help converting your specific formula?** 
 Post it below (remove sensitive data) and I'll help you translate it to Python!
 
 ---

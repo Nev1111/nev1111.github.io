@@ -1,6 +1,6 @@
 ---
-layout: primer_post
-title: "🧹 String Cleaning & Normalization: Tame Your Messy Data"
+layout: post
+title: "String Cleaning & Normalization: Tame Your Messy Data"
 subtitle: "CUSIPs with missing zeros? Account numbers with inconsistent formatting? Python makes data cleaning effortless."
 tags: [python, pandas, data-cleaning, string-manipulation, normalization, accounting]
 comments: true
@@ -50,7 +50,7 @@ import pandas as df
 
 # Sample messy CUSIP data
 df = pd.DataFrame({
-    'CUSIP': ['AB1234', '1234567', 'AB12345C', '912828XY9']
+ 'CUSIP': ['AB1234', '1234567', 'AB12345C', '912828XY9']
 })
 
 # Ensure all CUSIPs are exactly 9 characters with leading zeros
@@ -61,18 +61,18 @@ print(df)
 
 **Output:**
 ```
-     CUSIP  CUSIP_clean
-0   AB1234    00AB1234
-1  1234567   001234567
-2 AB12345C   0AB12345C
-3 912828XY9  912828XY9
+ CUSIP CUSIP_clean
+0 AB1234 00AB1234
+1 1234567 001234567
+2 AB12345C 0AB12345C
+3 912828XY9 912828XY9
 ```
 
 ### Why `.zfill()` is Beautiful:
-- ✅ Pads with leading zeros to desired length
-- ✅ Never truncates if already correct length
-- ✅ Works on numbers and alphanumeric strings
-- ✅ One line vs. complex Excel formula
+- Pads with leading zeros to desired length
+- Never truncates if already correct length
+- Works on numbers and alphanumeric strings
+- One line vs. complex Excel formula
 
 ---
 
@@ -87,13 +87,13 @@ Sometimes you need to *remove* leading zeros for reporting (showing `"1234"` ins
 df['Account_num'] = df['Account_num'].str.lstrip('0')
 
 # Before: "0001234-01-000500"
-# After:  "1234-01-000500"
+# After: "1234-01-000500"
 ```
 
 **Why `.lstrip()` is Perfect:**
-- ✅ Removes only **leading** zeros
-- ✅ Preserves trailing zeros (`"1200"` stays `"1200"`, not `"12"`)
-- ✅ Handles edge case of `"0000"` → `"0"` (never returns empty string)
+- Removes only **leading** zeros
+- Preserves trailing zeros (`"1200"` stays `"1200"`, not `"12"`)
+- Handles edge case of `"0000"` → `"0"` (never returns empty string)
 
 ---
 
@@ -108,14 +108,14 @@ Government account structures often use hyphens: `"0001200-01-000500"`
 ### The Excel Nightmare:
 ```excel
 =CONCATENATE(
-  VALUE(LEFT(A2, FIND("-", A2)-1)),
-  "-",
-  VALUE(MID(A2, FIND("-", A2)+1, FIND("-", A2, FIND("-", A2)+1)-FIND("-", A2)-1)),
-  "-",
-  VALUE(RIGHT(A2, LEN(A2)-FIND("-", A2, FIND("-", A2)+1)))
+ VALUE(LEFT(A2, FIND("-", A2)-1)),
+ "-",
+ VALUE(MID(A2, FIND("-", A2)+1, FIND("-", A2, FIND("-", A2)+1)-FIND("-", A2)-1)),
+ "-",
+ VALUE(RIGHT(A2, LEN(A2)-FIND("-", A2, FIND("-", A2)+1)))
 )
 ```
-🤯 **40+ characters of nested functions!**
+ **40+ characters of nested functions!**
 
 ### The Python Elegance:
 ```python
@@ -123,7 +123,7 @@ Government account structures often use hyphens: `"0001200-01-000500"`
 df['Account_clean'] = df['Account'].str.replace(r'(?<=-)0+', '', regex=True)
 
 # Before: "0001200-01-000500"
-# After:  "0001200-1-500"
+# After: "0001200-1-500"
 
 # If you also want to remove leading zeros:
 df['Account_clean'] = df['Account_clean'].str.lstrip('0')
@@ -147,7 +147,7 @@ df['Account_clean'] = df['Account_clean'].str.lstrip('0')
 df['Symbol'] = df['Symbol'].str.upper()
 
 # Before: ['aapl', 'MSFT', 'Googl']
-# After:  ['AAPL', 'MSFT', 'GOOGL']
+# After: ['AAPL', 'MSFT', 'GOOGL']
 ```
 
 ### Proper Case for Names
@@ -157,7 +157,7 @@ df['Symbol'] = df['Symbol'].str.upper()
 df['Member_Name'] = df['Member_Name'].str.title()
 
 # Before: "JOHN SMITH", "mary johnson"
-# After:  "John Smith", "Mary Johnson"
+# After: "John Smith", "Mary Johnson"
 ```
 
 ---
@@ -175,8 +175,8 @@ df['Account_desc'] = df['Account_desc'].str.strip()
 # Replace multiple spaces with single space
 df['Account_desc'] = df['Account_desc'].str.replace(r'\s+', ' ', regex=True)
 
-# Before: "  Pension   Fund    Account  "
-# After:  "Pension Fund Account"
+# Before: " Pension Fund Account "
+# After: "Pension Fund Account"
 ```
 
 ---
@@ -203,10 +203,10 @@ valid_cusips = df['CUSIP'].str.match(r'^[A-Z0-9]{9}$')
 invalid_count = (~valid_cusips).sum()
 
 if invalid_count > 0:
-    print(f"⚠️  Warning: {invalid_count} invalid CUSIPs found!")
-    print(df[~valid_cusips][['CUSIP']])
+ print(f"Warning: Warning: {invalid_count} invalid CUSIPs found!")
+ print(df[~valid_cusips][['CUSIP']])
 else:
-    print(f"✅ All {len(df)} CUSIPs are valid!")
+ print(f" All {len(df)} CUSIPs are valid!")
 
 # Step 5: Export clean data
 df.to_excel('holdings_clean.xlsx', index=False)
@@ -218,35 +218,35 @@ df.to_excel('holdings_clean.xlsx', index=False)
 
 ```python
 def clean_identifier(series, length=9, remove_leading_zeros=False):
-    """
-    Clean and standardize identifier strings
-    
-    Args:
-        series: pandas Series to clean
-        length: desired length (pads with zeros if needed)
-        remove_leading_zeros: if True, removes leading zeros instead of adding
-    
-    Returns:
-        Cleaned pandas Series
-    """
-    # Convert to string
-    cleaned = series.astype(str)
-    
-    # Remove whitespace
-    cleaned = cleaned.str.strip()
-    
-    # Uppercase
-    cleaned = cleaned.str.upper()
-    
-    # Pad or strip zeros
-    if remove_leading_zeros:
-        cleaned = cleaned.str.lstrip('0')
-        # Handle edge case: don't let "0000" become empty
-        cleaned = cleaned.replace('', '0')
-    else:
-        cleaned = cleaned.str.zfill(length)
-    
-    return cleaned
+ """
+ Clean and standardize identifier strings
+ 
+ Args:
+ series: pandas Series to clean
+ length: desired length (pads with zeros if needed)
+ remove_leading_zeros: if True, removes leading zeros instead of adding
+ 
+ Returns:
+ Cleaned pandas Series
+ """
+ # Convert to string
+ cleaned = series.astype(str)
+ 
+ # Remove whitespace
+ cleaned = cleaned.str.strip()
+ 
+ # Uppercase
+ cleaned = cleaned.str.upper()
+ 
+ # Pad or strip zeros
+ if remove_leading_zeros:
+ cleaned = cleaned.str.lstrip('0')
+ # Handle edge case: don't let "0000" become empty
+ cleaned = cleaned.replace('', '0')
+ else:
+ cleaned = cleaned.str.zfill(length)
+ 
+ return cleaned
 
 # Usage:
 df['CUSIP_clean'] = clean_identifier(df['CUSIP'], length=9)
@@ -281,18 +281,18 @@ df['Account_clean'] = clean_identifier(df['Account_num'], remove_leading_zeros=T
 
 ## The Bottom Line
 
-✅ **What You Get:**
+ **What You Get:**
 - Consistent data formats across all sources
 - Reliable joins and merges (no more "can't find match" errors)
 - Professional-looking reports
 - Reusable functions for data quality
 
-✅ **Time Saved:**
+ **Time Saved:**
 - **Per cleanup task**: 30 minutes → 1 minute
 - **Per year** (weekly cleanups): ~25 hours saved
 - **Error reduction**: ~90% fewer merge failures
 
-✅ **Bonus:**
+ **Bonus:**
 - Impress auditors with data quality controls
 - Catch invalid formats automatically
 - Document your cleaning process in code
@@ -311,9 +311,9 @@ pip install pandas
 import pandas as pd
 
 messy_data = pd.DataFrame({
-    'CUSIP': ['AB1234', '1234567', 'AB12345C'],
-    'Account': ['0001200-01-000500', '0098765-02-001234'],
-    'Name': ['  JOHN SMITH  ', 'mary JOHNSON']
+ 'CUSIP': ['AB1234', '1234567', 'AB12345C'],
+ 'Account': ['0001200-01-000500', '0098765-02-001234'],
+ 'Name': [' JOHN SMITH ', 'mary JOHNSON']
 })
 
 print("BEFORE:")
