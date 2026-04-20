@@ -15,6 +15,10 @@ title: PANDAUDIT
 # Your name to show in the footer
 author: Nev
 
+# Site URL settings
+url: "https://pandaudit.com"
+baseurl: ""
+
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
@@ -256,6 +260,7 @@ defaults:
   -
     scope:
       path: "" # any file that's not a post will be a "page" layout by default
+      type: "pages"
     values:
       layout: "page"
 
