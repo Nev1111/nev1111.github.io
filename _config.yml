@@ -24,24 +24,18 @@ baseurl: ""
 ###############################################
 
 navbar-links:
- Home: ""
+ Start Here: ""
+ Excel to Python: "excel-to-python"
+ Recipes: "recipes"
  Blog: "blog"
- Cheatsheet: "cheatsheet"
- MAST Prep: "https://pandaudit.com/mast/"
- Learn:
- - Mystery Series: "mysteries"
- - Success Stories: "stories"
+ Cheat Sheet: "cheatsheet"
  Community: "community"
  About: "aboutme"
- Resources:
+ More:
+ - Archive: "archive"
+ - MAST Prep: "https://pandaudit.com/mast/"
  - pandas Documentation: "https://pandas.pydata.org/docs/"
- - Python for Finance: "https://www.python.org/about/success/finance/"
- - Kaggle Learn: "https://www.kaggle.com/learn"
- - Real Python: "https://realpython.com/"
  - Automate the Boring Stuff: "https://automatetheboringstuff.com/"
- - Journal of Accountancy: "https://www.journalofaccountancy.com/"
- - Visual Capitalist: "https://money.visualcapitalist.com"
- - Finviz: "https://www.finviz.com"
 
 ################
 # --- Logo --- #
@@ -145,8 +139,8 @@ footer-img: "/assets/img/pbgimage.png"
 #mobile-theme-col: "#0085A1"
 
 # For any extra visual customization, you can include additional CSS files in every page on your site. List any custom CSS files here
-#site-css:
-# - "/assets/css/custom-styles.css"
+site-css:
+- "/assets/css/pandaudit.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
 #site-js:

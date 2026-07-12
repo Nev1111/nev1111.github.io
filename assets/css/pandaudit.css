@@ -181,6 +181,79 @@ a:hover {
   transition: box-shadow 0.2s ease;
 }
 
+/* PANDAUDIT business landing components */
+.pandaudit-hero {
+  padding: 2rem;
+  margin: 1rem 0 2rem;
+  border: 1px solid #dfe2e5;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 55%, #f1f8ff 100%);
+}
+
+.pandaudit-hero h1 {
+  margin-top: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.pandaudit-kicker {
+  color: var(--pandaudit-hover);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+.pandaudit-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.pandaudit-card {
+  border: 1px solid #dfe2e5;
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.pandaudit-card h3 {
+  margin-top: 0;
+}
+
+.pandaudit-button {
+  display: inline-block;
+  margin: 0.35rem 0.5rem 0.35rem 0;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: var(--pandaudit-primary);
+  color: #ffffff !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.pandaudit-button:hover {
+  background: var(--pandaudit-hover);
+  color: #ffffff !important;
+}
+
+.pandaudit-button-secondary {
+  background: #ffffff;
+  color: var(--pandaudit-primary) !important;
+  border: 1px solid #c8e1ff;
+}
+
+.pandaudit-button-secondary:hover {
+  color: #ffffff !important;
+}
+
+.pandaudit-recipe-list h3 {
+  margin-top: 1.75rem;
+}
+
 /* Tag links styling */
 a.Label:hover {
   text-decoration: none;
