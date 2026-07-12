@@ -1,17 +1,26 @@
 ---
-layout: page
+layout: landing
 title: PANDAUDIT
 subtitle: Python workflows for accountants who are tired of spreadsheet busywork
 ---
 
 <div class="pandaudit-hero">
-  <p class="pandaudit-kicker">Excel skills are still valuable. Repetitive Excel work is optional.</p>
-  <h1>Turn everyday accounting work into reusable Python workflows.</h1>
-  <p>PANDAUDIT helps accountants, auditors, and finance professionals move from manual spreadsheet routines to practical pandas automation — using examples from reconciliations, reporting, legacy exports, fiscal calendars, and month-end cleanup.</p>
-  <p>
-    <a class="pandaudit-button" href="{{ '/excel-to-python/' | relative_url }}">Start the Excel → Python path</a>
-    <a class="pandaudit-button pandaudit-button-secondary" href="https://discord.gg/hDQKM6ar" target="_blank" rel="noopener">Ask a question in Discord</a>
-  </p>
+  <div class="pandaudit-hero-inner">
+    <div>
+      <p class="pandaudit-kicker">Excel skills are still valuable. Repetitive Excel work is optional.</p>
+      <h1>Turn everyday accounting work into reusable Python workflows.</h1>
+      <p>PANDAUDIT helps accountants, auditors, and finance professionals move from manual spreadsheet routines to practical pandas automation — using examples from reconciliations, reporting, legacy exports, fiscal calendars, and month-end cleanup.</p>
+      <p>
+        <a class="pandaudit-button" href="{{ '/excel-to-python/' | relative_url }}">Start the Excel → Python path</a>
+        <a class="pandaudit-button pandaudit-button-secondary" href="https://discord.gg/hDQKM6ar" target="_blank" rel="noopener">Ask a question in Discord</a>
+      </p>
+    </div>
+    <div class="pandaudit-hero-panel" aria-label="Excel to Python examples">
+      <div><span>Excel habit</span><strong>VLOOKUP chains</strong></div>
+      <div><span>Python workflow</span><strong><code>merge</code> + exception report</strong></div>
+      <div><span>Accounting result</span><strong>Traceable reconciliations</strong></div>
+    </div>
+  </div>
 </div>
 
 ## If your day looks like this, you are in the right place

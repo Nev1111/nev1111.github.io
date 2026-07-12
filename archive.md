@@ -1,15 +1,14 @@
 ---
 layout: page
 title: Archive
-subtitle: Older experiments, personal projects, and secondary resources
+subtitle: Older secondary resources and temporary personal projects
 permalink: /archive/
 ---
 
-PANDAUDIT's main focus is now practical Python workflows for accountants moving beyond repetitive Excel work. This archive preserves older experiments and secondary resources without making them the primary business path.
+PANDAUDIT's main focus is practical Python workflows for accountants moving beyond repetitive Excel work. This archive keeps secondary resources out of the main business path.
 
-## Learning experiments
+## Case studies
 
-- [Masha and Panda Mysteries]({{ '/mysteries/' | relative_url }}) — accounting-themed data stories and exercises. Some examples may be rewritten later as direct recipes.
 - [Success Stories]({{ '/stories/' | relative_url }}) — early case-study style examples.
 
 ## Temporary / personal projects

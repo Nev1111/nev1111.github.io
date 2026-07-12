@@ -87,7 +87,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to:
 ├── index.md # Homepage
 ├── aboutme.md # About page
 ├── cheatsheet.md # Python cheat sheet
-└── stories.md # Mystery stories
+└── stories.md # Case studies and success stories
 ```
 
 ---

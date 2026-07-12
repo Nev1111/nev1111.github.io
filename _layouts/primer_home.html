@@ -86,7 +86,7 @@ layout: primer_base
  <div class="col-12 col-lg-10 mx-auto">
  <h2 class="f1-light mb-4">Latest Posts</h2>
  <div class="d-flex flex-column gap-4">
- {% assign sorted_posts = site.posts | where_exp: "post", "post.layout != 'mystery'" | sort: 'date' | reverse %}
+ {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
  {% for post in sorted_posts limit:10 %}
  <div class="Box">
  <div class="Box-body p-4">

@@ -277,9 +277,6 @@ exclude:
  - docs/
  - CONTRIBUTING.md
  - MARKETING_GUIDE.md
- - mystery-template-guide.md
- - mystery-ideas.md
- - content-creation-workflow.md
  - 2022-12-29-Macola-tb-with-account-classifiacaions.md
 
 plugins:

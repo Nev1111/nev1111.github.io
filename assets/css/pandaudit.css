@@ -182,20 +182,102 @@ a:hover {
 }
 
 /* PANDAUDIT business landing components */
+.navbar-custom {
+  background: #0f172a !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link,
+.navbar-custom .navbar-nav .dropdown-toggle {
+  color: #f8fafc !important;
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.pandaudit-landing {
+  background: #f8fafc;
+}
+
+.pandaudit-landing > *:not(.pandaudit-hero) {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .pandaudit-hero {
-  padding: 2rem;
-  margin: 1rem 0 2rem;
-  border: 1px solid #dfe2e5;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 55%, #f1f8ff 100%);
+  padding: 7rem 1.5rem 4rem;
+  margin: 0 0 2.5rem;
+  border: 0;
+  border-radius: 0;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 30%), linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f766e 100%);
+  color: #ffffff;
+}
+
+.pandaudit-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  gap: 2rem;
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 .pandaudit-hero h1 {
   margin-top: 0;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
 }
+
+.pandaudit-hero p {
+  color: #dbeafe;
+  font-size: 1.1rem;
+}
+
+.pandaudit-hero-panel {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.55);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.pandaudit-hero-panel div {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pandaudit-hero-panel div:last-child {
+  border-bottom: 0;
+}
+
+.pandaudit-hero-panel span {
+  display: block;
+  color: #67e8f9;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pandaudit-hero-panel strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 800px) {
+  .pandaudit-hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .pandaudit-kicker {
   color: var(--pandaudit-hover);

@@ -456,7 +456,7 @@ Final allocation:
 
 ---
 
-## Back to Our Balance Sheet Mystery
+## Back to Our Balance Sheet Example
 
 ### The Fix
 
