@@ -1,91 +1,72 @@
 ---
 layout: page
-title: Accounting Python Recipes
-subtitle: StackOverflow-style answers for accountants replacing Excel routines with pandas
+title: Accounting Analytics Recipes
+subtitle: StackOverflow-style answers for spreadsheet problems accountants see every week
 permalink: /recipes/
 ---
 
-This is the quick problem/solution index. Start with the accounting task you recognize, then jump to the relevant PANDAUDIT guide.
+This is the quick problem/solution index. Start with the accounting task you recognize, then use the suggested analytics concept to structure the work.
 
 ## Lookups, joins, and reconciliations
 
-<div class="pandaudit-recipe-list">
+### How do I replace a fragile lookup workbook?
 
-### How do I replace VLOOKUP in pandas?
-Use `merge` to join two tables by a shared key, then check for missing matches.
+Use a table-join mindset: identify the shared key, define what counts as a valid match, and create a separate exception list for anything unmatched.
 
-- [When VLOOKUP Fails You: Merge Functions]({% post_url 2026-01-26-when-vlookup-fails-you-merge-functions %})
-- [Merge Excel and SQL Databases Safely]({% post_url 2026-01-15-merge-excel-sql-databases-safely %})
+**Good for:** vendor master lookups, account classifications, department mappings, customer IDs.
 
 ### How do I find transactions in one report but not another?
-Use an outer merge with `indicator=True`, then filter anything not matched on both sides.
 
-- [The Copy-Paste Nightmare: Automated Reconciliations]({% post_url 2026-01-25-the-copy-paste-nightmare-automated-reconciliations %})
-- [Data Analytics Quick Reference]({{ '/cheatsheet/' | relative_url }}#reconciliation-techniques)
+Create three buckets: matched, source A only, and source B only. Then summarize the unmatched records by amount, account, vendor, and period.
+
+**Good for:** bank reconciliations, subledger-to-GL checks, payroll comparisons, payment files.
 
 ### How do I match records when dates are close but not exact?
-Use `merge_asof` for nearest-date matching.
 
-- [Performing More Complex Merges]({% post_url 2020-5-5-Performing more complex merges %})
-- [Streamline Data Analysis With Python's merge_asof Function]({% post_url 2023-7-2-Streamline-data-analysis-with-pythons's-merge_as_of-function %})
+Use nearest-match logic, but document the tolerance. For example: same customer, same amount, transaction date within three business days.
 
-</div>
+**Good for:** deposits, settlement files, investment activity, timing differences.
 
 ## Cleaning messy exports
 
 ### How do I clean negative numbers exported like `1,234.56-` or `1,234CR`?
-Normalize the text first, move the sign to the front, then convert to a number.
 
-- [Credit/Debit Notation Nightmare Solved]({% post_url 2026-01-10-credit-debit-notation-nightmare-solved %})
-- [Converting Numeric Negative Legacy Balances]({% post_url 2022-9-17-Converting-numeric-negative-legacy-balances %})
+Define one standard amount format, convert every export to that standard, then validate totals before and after cleanup.
 
 ### How do I extract dollar amounts from descriptions?
-Use string methods and regular expressions to pull numbers out of text.
 
-- [Text Parsing Adventures: Data Speaks Two Languages]({% post_url 2026-01-29-text-parsing-adventures-data-speaks-two-languages %})
-- [Extracting US Amount DataFrame]({% post_url 2022-9-18-Extracting-US-Amount-dataframe %})
+Treat the description as a data source. Identify the recurring text pattern, pull the amount into its own field, and review exceptions where no amount is found.
 
 ### How do I clean inconsistent account/vendor names?
-Standardize case, whitespace, punctuation, and known abbreviations before comparing.
 
-- [String Cleaning and Normalization in Python]({% post_url 2026-01-16-string-cleaning-normalization-python %})
-- [Master Data Mapping and Classifications]({% post_url 2026-01-17-master-data-mapping-classifications %})
+Standardize case, whitespace, punctuation, abbreviations, and known aliases before comparing records.
 
 ## Summaries and reporting
 
-### How do I replace a Pivot Table?
-Use `pivot_table` for spreadsheet-style summaries and `groupby` for programmatic summaries.
+### How do I replace a pivot table rebuild?
 
-- [Pivot Tables on Steroids]({% post_url 2026-01-12-pivot-tables-on-steroids-multi-level-analysis-in-one-line %})
-- [Groupby + Transform: The Excel Killer Feature]({% post_url 2026-01-14-groupby-+-transform-the-excel-killer-feature %})
+Define the rows, columns, values, and aggregation rule once. The repeatable concept is grouped summarization.
 
 ### How do I create monthly or fiscal-year summaries?
-Convert dates once, add a period/fiscal column, then group by it.
 
-- [Government Fiscal Year Calculations Made Easy]({% post_url 2026-01-13-government-fiscal-year-calculations-made-easy %})
-- [Fiscal Year Fiasco: Excel Dates Hate Accountants]({% post_url 2026-01-27-fiscal-year-fiasco-excel-dates-hate-accountants %})
+Create a reporting-period field first. Then summarize by that period instead of rebuilding date logic each month.
 
-### How do I export a clean Excel workbook with multiple tabs?
-Use `ExcelWriter` and write each output table to its own sheet.
+### How do I export a clean workpaper?
 
-- [End-to-End Workflow Example]({% post_url 2026-01-22-end-to-end-workflow-example %})
-- [Data Analytics Quick Reference]({{ '/cheatsheet/' | relative_url }}#data-export-for-reports)
+Separate the output into tabs: Summary, Exceptions, Detail, and Data Quality Notes.
 
 ## Quality checks and audit-style testing
 
 ### How do I find duplicates without losing the details?
-Use `duplicated(keep=False)` to show every row involved in duplicate groups.
 
-- [Handle Duplicates Like a Pro]({% post_url 2026-01-20-handle-duplicates-like-a-pro %})
+Flag every record involved in a duplicate group. Do not immediately remove duplicates until you understand why they exist.
 
 ### How do I spot unusual transactions?
-Start with round numbers, weekends, outliers, and missing master-data matches.
 
-- [Data Analytics Quick Reference]({{ '/cheatsheet/' | relative_url }}#anomaly-detection-patterns)
-- [The Case of Missing Millions: Rounding Errors]({% post_url 2026-01-28-case-of-missing-millions-rounding-errors %})
+Start with simple tests: round numbers, weekends, missing master-data matches, unusually large amounts, duplicate descriptions, and activity outside expected periods.
 
 ---
 
 ## Have a recipe request?
 
-Bring a sanitized version of your spreadsheet problem to the [PANDAUDIT Discord]({{ '/community/' | relative_url }}). The best new questions become future recipes.
+Bring a sanitized version of your spreadsheet problem to the [PANDAUDIT Discord]({{ '/community/' | relative_url }}). The best questions become future recipes.

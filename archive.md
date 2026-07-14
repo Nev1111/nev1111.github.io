@@ -5,7 +5,7 @@ subtitle: Older secondary resources and temporary personal projects
 permalink: /archive/
 ---
 
-PANDAUDIT's main focus is practical Python workflows for accountants moving beyond repetitive Excel work. This archive keeps secondary resources out of the main business path.
+PANDAUDIT's main focus is practical data analytics workflows for accountants moving beyond repetitive Excel work. This archive keeps secondary resources out of the main business path.
 
 ## Case studies
 

@@ -25,7 +25,7 @@ baseurl: ""
 
 navbar-links:
  Start Here: ""
- Excel to Python: "excel-to-python"
+ Excel to Analytics: "data-analytics"
  Recipes: "recipes"
  Blog: "blog"
  Cheat Sheet: "cheatsheet"
@@ -34,8 +34,8 @@ navbar-links:
  More:
  - Archive: "archive"
  - MAST Prep: "https://pandaudit.com/mast/"
- - pandas Documentation: "https://pandas.pydata.org/docs/"
- - Automate the Boring Stuff: "https://automatetheboringstuff.com/"
+ - Journal of Accountancy: "https://www.journalofaccountancy.com/"
+ - CFO Dive: "https://www.cfodive.com/"
 
 ################
 # --- Logo --- #
@@ -86,6 +86,7 @@ share-links-active:
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
 url-pretty: "www.pandaudit.com"
+remove-ads: true
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 100
@@ -277,6 +278,12 @@ exclude:
  - docs/
  - CONTRIBUTING.md
  - MARKETING_GUIDE.md
+ - DISCORD_SETUP.md
+ - DISCORD_BOT_SETUP.md
+ - DISCORD_SERVER_GUIDE.md
+ - discord_bot/
+ - archived_posts/
+ - assets/pdf/
  - 2022-12-29-Macola-tb-with-account-classifiacaions.md
 
 plugins:

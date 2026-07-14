@@ -1,111 +1,41 @@
-<footer class="footer py-6 mt-6" 
- style="background-color: #EAEAEA; 
- {% if site.footer-img %}background-image: url('{{ site.footer-img | relative_url }}'); 
- background-size: cover; background-position: center;{% endif %}">
+<footer class="footer py-6 mt-6">
  <div class="container-xl p-responsive">
  <div class="col-12 col-lg-10 mx-auto">
  <div class="d-flex flex-wrap flex-justify-between">
- <!-- About Section -->
  <div class="col-12 col-md-6 col-lg-4 mb-4">
- <h3 class="f4 mb-3" style="color: #404040;">{{ site.title }}</h3>
- <p class="text-small" style="color: #777777;">
- Data Analytics & Automation for Finance & Accounting. 
- Real-world solutions for modern accounting professionals.
+ <h3 class="f4 mb-3">{{ site.title }}</h3>
+ <p class="text-small">
+ Practical data analytics and automation concepts for finance and accounting professionals.
  </p>
  </div>
  
- <!-- Quick Links -->
  <div class="col-12 col-md-6 col-lg-4 mb-4">
- <h3 class="f4 mb-3" style="color: #404040;">Quick Links</h3>
+ <h3 class="f4 mb-3">Quick Links</h3>
  <ul class="list-style-none">
- <li class="mb-2">
- <a href="{{ site.baseurl }}/blog" style="color: #404040; text-decoration: none;">
- <i class="fas fa-chevron-right mr-1" style="font-size: 0.7em;"></i>
- Insights
- </a>
- </li>
- <li class="mb-2">
- <a href="{{ site.baseurl }}/excel-to-python" style="color: #404040; text-decoration: none;">
- <i class="fas fa-chevron-right mr-1" style="font-size: 0.7em;"></i>
- Excel to Python
- </a>
- </li>
- <li class="mb-2">
- <a href="{{ site.baseurl }}/cheatsheet" style="color: #404040; text-decoration: none;">
- <i class="fas fa-chevron-right mr-1" style="font-size: 0.7em;"></i>
- Quick Reference
- </a>
- </li>
- <li class="mb-2">
- <a href="{{ site.baseurl }}/stories" style="color: #404040; text-decoration: none;">
- <i class="fas fa-chevron-right mr-1" style="font-size: 0.7em;"></i>
- Success Stories
- </a>
- </li>
+ <li class="mb-2"><a href="{{ site.baseurl }}/blog">Insights</a></li>
+ <li class="mb-2"><a href="{{ site.baseurl }}/data-analytics">Data Analytics</a></li>
+ <li class="mb-2"><a href="{{ site.baseurl }}/cheatsheet">Quick Reference</a></li>
+ <li class="mb-2"><a href="{{ site.baseurl }}/recipes">Recipes</a></li>
  </ul>
  </div>
  
- <!-- Resources & Community -->
  <div class="col-12 col-md-6 col-lg-4 mb-4">
- <h3 class="f4 mb-3" style="color: #404040;">Resources & Community</h3>
+ <h3 class="f4 mb-3">Resources & Community</h3>
  <ul class="list-style-none">
- <li class="mb-2">
- <a href="https://discord.gg/{{ site.social-network-links.discord }}" 
- target="_blank" 
- rel="noopener noreferrer" 
- style="color: #5865F2; text-decoration: none;">
- <i class="fab fa-discord mr-1"></i>
- Join Discord Community
- </a>
- </li>
- <li class="mb-2">
- <a href="https://pandas.pydata.org/docs/" 
- target="_blank" 
- style="color: #404040; text-decoration: none;">
- <i class="fas fa-external-link-alt mr-1" style="font-size: 0.8em;"></i>
- Pandas Documentation
- </a>
- </li>
- <li class="mb-2">
- <a href="https://realpython.com/" 
- target="_blank" 
- style="color: #404040; text-decoration: none;">
- <i class="fas fa-external-link-alt mr-1" style="font-size: 0.8em;"></i>
- Real Python
- </a>
- </li>
- <li class="mb-2">
- <a href="https://www.kaggle.com/learn" 
- target="_blank" 
- style="color: #404040; text-decoration: none;">
- <i class="fas fa-external-link-alt mr-1" style="font-size: 0.8em;"></i>
- Kaggle Learn
- </a>
- </li>
+ <li class="mb-2"><a href="https://discord.gg/{{ site.social-network-links.discord }}" target="_blank" rel="noopener noreferrer">Join Discord Community</a></li>
+ <li class="mb-2"><a href="https://www.journalofaccountancy.com/" target="_blank" rel="noopener noreferrer">Journal of Accountancy</a></li>
+ <li class="mb-2"><a href="https://www.cfodive.com/" target="_blank" rel="noopener noreferrer">CFO Dive</a></li>
  </ul>
  </div>
  </div>
  
- <!-- Footer Bottom -->
  <div class="border-top pt-4 mt-4 text-center">
- <p class="text-small" style="color: #777777;">
- {% if site.author %}
- © {{ 'now' | date: '%Y' }} {{ site.author }} | 
- {% endif %}
- {% if site.url-pretty %}
- <a href="https://{{ site.url-pretty }}" style="color: #404040;">{{ site.url-pretty }}</a> | 
- {% endif %}
- {% if site.social-network-links.email %}
- <a href="mailto:{{ site.social-network-links.email }}" style="color: #404040;">
- <i class="fas fa-envelope"></i>
- </a>
- {% endif %}
+ <p class="text-small">
+ {% if site.author %}© {{ 'now' | date: '%Y' }} {{ site.author }} | {% endif %}
+ {% if site.url-pretty %}<a href="https://{{ site.url-pretty }}">{{ site.url-pretty }}</a> | {% endif %}
+ {% if site.social-network-links.email %}<a href="mailto:{{ site.social-network-links.email }}">Email</a>{% endif %}
  </p>
- <p class="text-small mt-2" style="color: #777777;">
- Built with <i class="fas fa-heart" style="color: #e74c3c;"></i> using 
- <a href="https://jekyllrb.com" target="_blank" style="color: #404040;">Jekyll</a> and 
- <a href="https://primer.style/" target="_blank" style="color: #404040;">Primer CSS</a>
- </p>
+ <p class="text-small mt-2">Built with <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.</p>
  </div>
  </div>
  </div>

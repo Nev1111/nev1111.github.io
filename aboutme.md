@@ -27,7 +27,7 @@ Real-world examples of how data analytics solves common accounting challenges - 
 Practical approaches to automating repetitive tasks, transforming manual workflows, and increasing efficiency without sacrificing accuracy.
 
 **Modern Tools & Techniques**
-Exploring analytics platforms, programming languages (Python, SQL), and automation tools that make a measurable difference in your work.
+Exploring analytics platforms, programming languages (data analytics, SQL), and automation tools that make a measurable difference in your work.
 
 **Career Development**
 Building relevant skills, staying competitive, and positioning yourself for success as the profession evolves.
