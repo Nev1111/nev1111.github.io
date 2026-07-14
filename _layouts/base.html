@@ -24,15 +24,18 @@ common-js:
 <!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
 {% include head.html %}
 
-<body>
+<body class="pandaudit-chart-theme">
 
  {% include gtm_body.html %}
 
- {% include nav.html %}
+ <div class="chart pandaudit-site-shell">
+   {% include pandaudit_sidebar.html %}
+   <div class="page pandaudit-page">
+     {{ content }}
+     {% include footer.html %}
+   </div>
+ </div>
 
- {{ content }}
-
- {% include footer.html %}
 
  {% include footer-scripts.html %}
 

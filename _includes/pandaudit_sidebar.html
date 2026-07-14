@@ -1,0 +1,31 @@
+<aside class="plot pandaudit-plot" aria-label="PANDAUDIT navigation">
+  <a class="plot-flag" href="{{ '/' | relative_url }}">
+    <span class="plot-flag-eyebrow">finance field guide</span>
+    <span class="plot-flag-title">PANDAUDIT</span>
+  </a>
+
+  <nav class="route" aria-label="Site route">
+    <ol>
+      <li class="waypoint{% if page.url == '/' %} here{% endif %}"><a href="{{ '/' | relative_url }}"><span class="wp-index">1</span><span class="wp-name">Start Here</span></a></li>
+      <li class="waypoint{% if page.url contains '/data-analytics' %} here{% endif %}"><a href="{{ '/data-analytics/' | relative_url }}"><span class="wp-index">2</span><span class="wp-name">Analytics Map</span></a></li>
+      <li class="waypoint{% if page.url contains '/recipes' %} here{% endif %}"><a href="{{ '/recipes/' | relative_url }}"><span class="wp-index">3</span><span class="wp-name">Problem Recipes</span></a></li>
+      <li class="waypoint{% if page.url contains '/blog' or page.layout == 'post' %} here{% endif %}"><a href="{{ '/blog/' | relative_url }}"><span class="wp-index">4</span><span class="wp-name">Field Notes</span></a></li>
+      <li class="waypoint{% if page.url contains '/cheatsheet' %} here{% endif %}"><a href="{{ '/cheatsheet/' | relative_url }}"><span class="wp-index">5</span><span class="wp-name">Quick Reference</span></a></li>
+      <li class="waypoint{% if page.url contains '/community' %} here{% endif %}"><a href="{{ '/community/' | relative_url }}"><span class="wp-index">6</span><span class="wp-name">Community</span></a></li>
+      <li class="waypoint{% if page.url contains '/advertise' %} here{% endif %}"><a href="{{ '/advertise/' | relative_url }}"><span class="wp-index">7</span><span class="wp-name">Growth Lab</span></a></li>
+      <li class="waypoint{% if page.url contains '/aboutme' %} here{% endif %}"><a href="{{ '/aboutme/' | relative_url }}"><span class="wp-index">8</span><span class="wp-name">About</span></a></li>
+    </ol>
+  </nav>
+
+  <section class="timer pandaudit-sprint" aria-label="Workflow sprint prompt">
+    <span class="timer-label">workflow sprint</span>
+    <span class="timer-clock">25:00</span>
+    <p>Pick one messy finance task. Define the source, the rule, the exception, and the review output.</p>
+    <div class="timer-run">
+      <a class="sprint-button" href="{{ '/community/' | relative_url }}">Ask Discord</a>
+      <a class="sprint-button sprint-button-light" href="{{ '/recipes/' | relative_url }}">Find Recipe</a>
+    </div>
+  </section>
+
+  <p class="plot-note">Fun, practical data analytics for finance, accounting, audit, FP&A, and operations teams.</p>
+</aside>

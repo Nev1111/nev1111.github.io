@@ -3,11 +3,12 @@ layout: base
 comments: true
 ---
 
-{% include header.html type="post" %}
-
-<div class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
- <div class="row">
- <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+<div class="pandaudit-document pandaudit-post-wrap">
+ <header class="home-hero pandaudit-doc-header">
+  <p class="eyebrow">field note · {{ page.date | date: "%B %d, %Y" }}</p>
+  <h1>{{ page.title | strip_html }}</h1>
+  {% if page.subtitle %}<p class="doc-subtitle">{{ page.subtitle | strip_html }}</p>{% endif %}
+ </header>
 
  {% if page.gh-repo %}
  {% assign gh_split = page.gh-repo | split:'/' %}
@@ -120,6 +121,4 @@ comments: true
  {% endif %}
  </ul>
  {% include comments.html %}
- </div>
- </div>
 </div>

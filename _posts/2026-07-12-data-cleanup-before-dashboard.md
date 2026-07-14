@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Before the Dashboard: The Accounting Data Cleanup Checklist"
+title: "Before the Dashboard: The Finance Data Cleanup Checklist"
 subtitle: "Most analytics problems start before the chart"
-tags: [data-cleanup, accounting, analytics, controls]
+tags: [data-cleanup, finance, analytics, controls]
 ---
 
-A dashboard is only as useful as the data behind it. Before building reports, accountants should run a short cleanup checklist.
+A dashboard is only as useful as the data behind it. Before building reports, finance teams should run a short cleanup checklist.
 
 ## The checklist
 

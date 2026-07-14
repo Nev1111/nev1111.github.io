@@ -1,10 +1,20 @@
 ---
 layout: home
-title: Industry Insights
-subtitle: Practical data analytics, data analysis, and automation guides for accounting professionals
+title: Field Notes
+subtitle: Short, useful, finance-friendly analytics lessons with a little personality
 permalink: /blog/
+eyebrow: blog + practical missions
 ---
 
-Explore practical tutorials and field notes for accountants, auditors, and finance teams replacing repetitive Excel work with data analytics workflows.
+The blog is PANDAUDIT's field notebook: quick lessons, mini-challenges, and workflow stories for people across finance — accounting, audit, FP&A, operations, billing, revenue, treasury, and anyone else wrestling with business data.
 
-Start with the [Excel to Analytics learning path]({{ '/data-analytics/' | relative_url }}) if you are new, or jump into the latest posts below.
+## Blog missions
+
+<div class="pandaudit-card-grid fun-grid">
+  <div class="pandaudit-card"><h3>Spreadsheet Rescue</h3><p>Take one recurring workbook headache and turn it into a cleaner route.</p></div>
+  <div class="pandaudit-card"><h3>Exception Hunt</h3><p>Find the rows that actually need review instead of staring at all of them.</p></div>
+  <div class="pandaudit-card"><h3>Control Total Checkpoint</h3><p>Prove the workflow ties back before trusting the output.</p></div>
+  <div class="pandaudit-card"><h3>Boss Level Workpaper</h3><p>Package the result so another person can review it quickly.</p></div>
+</div>
+
+Start with the [Analytics Map]({{ '/data-analytics/' | relative_url }}) or jump into the latest field notes below.

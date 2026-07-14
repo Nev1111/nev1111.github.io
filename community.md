@@ -1,73 +1,43 @@
 ---
 layout: page
-title: Community
-subtitle: Ask practical accounting analytics questions with people solving the same spreadsheet problems
+title: Community Workshop
+subtitle: Bring the finance data problem you actually have
 permalink: /community/
+eyebrow: discord + spreadsheet rescue
 ---
 
-PANDAUDIT is building a practical community for accountants, auditors, and finance professionals who want to turn recurring spreadsheet work into better data workflows.
+PANDAUDIT is building a fun, practical workshop for finance people who want better workflows without the jargon.
 
-The website is the searchable knowledge base. Discord is where the messy, real-world questions happen.
+The site is the field guide. Discord is the workshop table.
 
-<p>
-  <a href="https://discord.gg/hDQKM6ar" class="pandaudit-button" target="_blank" rel="noopener">Join the PANDAUDIT Discord</a>
-</p>
+<p><a href="https://discord.gg/hDQKM6ar" class="pandaudit-button" target="_blank" rel="noopener">Join the PANDAUDIT Discord</a></p>
 
-## What to ask
+## Good questions to bring
 
-Bring questions like:
+- “I get this export every month. What should I check first?”
+- “These two reports never agree. How should I bucket the exceptions?”
+- “This dashboard breaks because the source file is messy. What cleanup rules do I need?”
+- “How do I document the review so my manager trusts it?”
+- “What would a repeatable version of this workbook look like?”
 
-- “How do I replace this lookup chain?”
-- “How do I reconcile these two reports?”
-- “How do I clean this old system export?”
-- “How do I automate this monthly spreadsheet review?”
-- “How do I turn this pivot table into a repeatable process?”
-- “How do I export a clean workpaper when I am done?”
+Please remove confidential information before sharing examples.
 
-Please remove client names, account numbers, SSNs, bank details, or other confidential information before sharing examples.
+## Channels to use
 
-## Recommended Discord channels
+<div class="legs" markdown="1">
 
-The community should be organized around jobs to be done, not abstract tooling categories:
+[**Spreadsheet Rescue**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">Messy files, recurring manual work, export cleanup</span>](https://discord.gg/hDQKM6ar)
 
-### Start here
+[**Reconciliation Room**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Matches, breaks, timing differences, exception reports</span>](https://discord.gg/hDQKM6ar)
 
-- `#welcome` — what PANDAUDIT is and how to participate
-- `#rules` — privacy, confidentiality, and respectful help
-- `#introductions` — role, industry, spreadsheet pain point, learning goal
+[**Dashboard Ingredients**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Data quality before reporting and visualization</span>](https://discord.gg/hDQKM6ar)
 
-### Ask questions
+[**Boss Level Workpapers**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Review-ready summaries, detail, controls, notes</span>](https://discord.gg/hDQKM6ar)
 
-- `#spreadsheet-workflows` — translate manual spreadsheet tasks into repeatable workflows
-- `#data-cleanup` — messy exports, text cleanup, date cleanup
-- `#reconciliations` — matching, differences, exception reports
-- `#audit-analytics` — sampling, population testing, unusual transactions
-- `#reporting-controls` — tie-outs, review tabs, and control totals
+</div>
 
-### Learn together
+## Weekly challenge
 
-- `#weekly-challenge` — one practical accounting analytics prompt per week
-- `#resources` — useful articles, tools, and examples
-- `#show-your-work` — share wins, cleaned-up workflows, and before/after examples
+> What is one finance task you repeated this week that felt like it should have a map?
 
-### Community
-
-- `#general` — accounting tech, automation, analytics, career discussion
-- `#wins` — saved-time stories and small victories
-- `#job-and-career-talk` — analytics skills, resumes, interviews, and career pivots
-
-## Weekly prompt idea
-
-Every week, post one question:
-
-> What is one spreadsheet task you repeated this week that felt like it should be standardized?
-
-The best answers can become future PANDAUDIT recipes or blog posts.
-
-## Community promise
-
-This is not a place to make people feel bad for using Excel. Excel is part of the job. PANDAUDIT is for learning when a task has become repeatable enough that it deserves a better workflow.
-
----
-
-Questions or partnership ideas? Email [hello@pandaudit.com](mailto:hello@pandaudit.com).
+The best community questions can become future recipes, field notes, and quick-reference cards.

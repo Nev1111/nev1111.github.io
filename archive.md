@@ -1,19 +1,16 @@
 ---
 layout: page
 title: Archive
-subtitle: Older secondary resources and temporary personal projects
+subtitle: Older resources kept out of the main field-guide route
 permalink: /archive/
+eyebrow: back catalog
 ---
 
-PANDAUDIT's main focus is practical data analytics workflows for accountants moving beyond repetitive Excel work. This archive keeps secondary resources out of the main business path.
+PANDAUDIT's main path is now the finance analytics field guide. Older experiments and internal notes are kept outside the main route so the public experience stays focused.
 
 ## Case studies
 
 - [Success Stories]({{ '/stories/' | relative_url }}) — early case-study style examples.
-
-## Temporary / personal projects
-
-- [MAST Prep](https://pandaudit.com/mast/) — temporary education resource kept separate from the PANDAUDIT business focus.
 
 ## Community and operations docs
 

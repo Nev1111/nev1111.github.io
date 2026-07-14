@@ -1,72 +1,88 @@
 ---
 layout: page
-title: Data Analytics for Accountants
-subtitle: Practical concepts for turning spreadsheet work into repeatable analysis
+title: Analytics Map
+subtitle: A practical route from messy finance files to reviewable workflows
 permalink: /data-analytics/
+eyebrow: plot your course
 ---
 
-Most accountants do not need to start with programming language details. They need a practical way to think about messy reports, reconciliations, exceptions, and repeatable monthly work.
+Most people in finance do not need abstract theory first. They need a map for recurring spreadsheet work: what comes in, what rule is applied, what exceptions appear, and what output is reviewable.
 
-Use this page as the PANDAUDIT learning path.
+## The route, in seven waypoints
 
-## 1. Start with the business question
+<div class="legs" markdown="1">
 
-Before choosing any tool, define the accounting question clearly:
+[**Ask the finance question**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">What decision, control, or review are we supporting?</span>](#ask-the-finance-question)
 
-- What source files are involved?
-- Which columns identify a transaction, vendor, customer, account, or period?
-- What counts as a match, exception, duplicate, or outlier?
-- What output would make the review easier?
+[**Inventory the sources**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Exports, ledgers, billing files, forecasts, workbooks</span>](#inventory-the-sources)
 
-## 2. Turn spreadsheet habits into repeatable patterns
+[**Clean the fields**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Dates, amounts, IDs, names, blanks, duplicates</span>](#clean-the-fields)
 
-| Spreadsheet habit | Analytics concept | Better output |
-|---|---|---|
-| VLOOKUP chains | Table joins and match validation | matched records plus an exception list |
-| Pivot tables | grouped summaries | reusable reporting logic |
-| SUMIFS / COUNTIFS | conditional aggregation | controlled totals by account, period, or department |
-| manual filters | rule-based exception testing | review list with criteria documented |
-| copy/paste cleanup | repeatable transformation steps | same process every month |
+[**Match and classify**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Lookup rules, mappings, segments, exception logic</span>](#match-and-classify)
 
-## 3. Clean the data before analyzing it
+[**Summarize for review**{: .leg-name} **05**{: .leg-no} <span class="leg-desc">Grouped totals, trends, reconciled balances</span>](#summarize-for-review)
 
-Common accounting data problems:
+[**Surface exceptions**{: .leg-name} **06**{: .leg-no} <span class="leg-desc">The rows a person actually needs to inspect</span>](#surface-exceptions)
 
-- negative amounts exported as trailing signs or credit labels
-- blank rows and repeated report headers
-- account numbers formatted differently across systems
+[**Package the workpaper**{: .leg-name} **07**{: .leg-no} <span class="leg-desc">Summary, detail, controls, notes, and next action</span>](#package-the-workpaper)
+
+</div>
+
+## Ask the finance question
+
+Start with the decision, not the tool:
+
+- Are two reports supposed to agree?
+- Which transactions need review?
+- What changed from last month?
+- Which customers, vendors, accounts, or products are driving the movement?
+- What would the reviewer need to sign off confidently?
+
+## Inventory the sources
+
+Write down the source files before touching the data:
+
+- file name
+- report date
+- system of origin
+- row count
+- control total
+- owner or reviewer
+
+## Clean the fields
+
+Common finance data problems:
+
 - dates stored as text
-- vendor/customer names with inconsistent spelling
-- dollar amounts embedded inside descriptions
+- amounts with trailing signs or credit/debit labels
+- blank IDs
+- duplicate records
+- inconsistent naming
+- headers repeated inside exported reports
 
-Good analytics work starts by making these rules explicit.
+## Match and classify
 
-## 4. Reconcile with an exception-first mindset
+This is where messy files start becoming useful. Define the matching key, the classification rule, and what counts as an exception.
 
-The goal of reconciliation is not just to prove totals match. The goal is to quickly isolate what needs human judgment.
+## Summarize for review
 
-A strong reconciliation workflow produces:
+Group the data by the dimensions that matter: period, account, department, product, vendor, customer, region, project, or scenario.
 
-1. matched items
-2. unmatched items from source A
-3. unmatched items from source B
-4. amount/date differences
-5. summary totals that tie back to the source files
-6. a short explanation of the matching rule used
+## Surface exceptions
 
-## 5. Build review-ready workpapers
+The best workflow does not bury reviewers in data. It creates a focused list of items that need judgment.
 
-A useful analytics workflow should end in something an accountant can review:
+## Package the workpaper
 
-- Summary tab
-- Exceptions tab
-- Detail tab
+A good output is easy to review:
+
+- Summary
+- Exceptions
+- Detail
 - Data-quality notes
-- Source-file list
-- Control totals
+- Source control totals
+- Next action
 
-The output should make review easier, not create another black box.
+## Need help plotting a route?
 
-## 6. Join the community
-
-If you have a recurring spreadsheet task, bring a sanitized version to the [PANDAUDIT Discord]({{ '/community/' | relative_url }}). Describe the columns, the manual steps, and the decision you are trying to make. The community can help translate it into a repeatable analytics workflow.
+Bring a sanitized example to the [PANDAUDIT Discord]({{ '/community/' | relative_url }}). Describe the source, the rule, the exception, and the output you wish you had.

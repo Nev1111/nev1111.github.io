@@ -30,12 +30,8 @@ navbar-links:
  Blog: "blog"
  Cheat Sheet: "cheatsheet"
  Community: "community"
+ Growth Lab: "advertise"
  About: "aboutme"
- More:
- - Archive: "archive"
- - MAST Prep: "https://pandaudit.com/mast/"
- - Journal of Accountancy: "https://www.journalofaccountancy.com/"
- - CFO Dive: "https://www.cfodive.com/"
 
 ################
 # --- Logo --- #

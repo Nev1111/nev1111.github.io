@@ -2,11 +2,14 @@
 layout: base
 ---
 
-{% include header.html type="page" %}
-
-<div class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}" role="main">
- <div class="row">
- <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+<div role="main" class="pandaudit-document">
+ {% if page.title %}
+ <header class="home-hero pandaudit-doc-header">
+  <p class="eyebrow">{{ page.eyebrow | default: 'finance analytics field guide' }}</p>
+  <h1>{{ page.title | strip_html }}</h1>
+  {% if page.subtitle %}<p class="doc-subtitle">{{ page.subtitle | strip_html }}</p>{% endif %}
+ </header>
+ {% endif %}
  {% if page.before-content %}
  <div class="before-content">
  {% for file in page.before-content %}
@@ -25,6 +28,4 @@ layout: base
  {% endif %}
 
  {% include comments.html %}
- </div>
- </div>
 </div>

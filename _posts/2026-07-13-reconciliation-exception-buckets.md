@@ -2,7 +2,7 @@
 layout: post
 title: "A Better Reconciliation Workflow Starts With Exception Buckets"
 subtitle: "Matched, source-only, target-only, and review-needed"
-tags: [reconciliation, accounting, analytics, workpapers]
+tags: [reconciliation, finance, analytics, workpapers]
 ---
 
 A reconciliation should not just tell you whether two totals agree. It should tell you what needs review.
