@@ -26,6 +26,8 @@ Most people in finance do not need abstract theory first. They need a map for re
 
 [**Package the workpaper**{: .leg-name} **07**{: .leg-no} <span class="leg-desc">Summary, detail, controls, notes, and next action</span>](#package-the-workpaper)
 
+[**Hand the route to an agent**{: .leg-name} **08**{: .leg-no} <span class="leg-desc">Turn the repeatable route into a SKILL.md an AI can run</span>]({{ '/ai/' | relative_url }})
+
 </div>
 
 ## Ask the finance question

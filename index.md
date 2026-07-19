@@ -5,12 +5,12 @@ subtitle: Fun, practical data analytics for the finance field
 ---
 
 <div class="home-hero pandaudit-hero mast-inspired-hero">
-  <p class="eyebrow">FINANCE FIELD GUIDE · SPREADSHEET RESCUE · ANALYTICS QUESTS</p>
+  <p class="eyebrow">FINANCE FIELD GUIDE · AI SKILLS · ANALYTICS QUESTS</p>
   <h1>Turn messy finance work into clear data adventures.</h1>
-  <p>PANDAUDIT is a field guide for finance people who live in exports, reconciliations, workpapers, forecasts, billing files, audit samples, close packages, and dashboards — and want the work to feel smarter, cleaner, and a little more fun.</p>
+  <p>PANDAUDIT is a field guide for finance people who live in exports, reconciliations, workpapers, forecasts, billing files, audit samples, close packages, and dashboards — and want the work to feel smarter, cleaner, and a little more fun. Every technique here is now also a <strong>skill</strong>: a markdown document your AI agent can run while you review like a boss.</p>
   <p>
-    <a class="pandaudit-button" href="{{ '/data-analytics/' | relative_url }}">Plot your analytics course</a>
-    <a class="pandaudit-button pandaudit-button-secondary" href="{{ '/advertise/' | relative_url }}">See growth ideas</a>
+    <a class="pandaudit-button" href="{{ '/skills/' | relative_url }}">Browse the Skills Library</a>
+    <a class="pandaudit-button pandaudit-button-secondary" href="{{ '/data-analytics/' | relative_url }}">Plot your analytics course</a>
   </p>
 </div>
 
@@ -20,11 +20,13 @@ subtitle: Fun, practical data analytics for the finance field
 
 [**Analytics Map**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">Learn the concepts behind cleaner finance workflows</span>]({{ '/data-analytics/' | relative_url }})
 
-[**Problem Recipes**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Lookup chains, recon breaks, messy exports, control totals</span>]({{ '/recipes/' | relative_url }})
+[**Skills Library**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Agent-ready SKILL.md files for cleaning, matching, and summarizing</span>]({{ '/skills/' | relative_url }})
 
-[**Field Notes Blog**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Short, practical posts that make finance data less painful</span>]({{ '/blog/' | relative_url }})
+[**AI Field Kit**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Knowledge bases, agents, and RAG — in finance language</span>]({{ '/ai/' | relative_url }})
 
-[**Discord Workshop**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Bring a sanitized spreadsheet problem and get unstuck</span>]({{ '/community/' | relative_url }})
+[**Field Notes Blog**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Short, practical posts that make finance data less painful</span>]({{ '/blog/' | relative_url }})
+
+[**Discord Workshop**{: .leg-name} **05**{: .leg-no} <span class="leg-desc">Bring a sanitized spreadsheet problem and get unstuck</span>]({{ '/community/' | relative_url }})
 
 </div>
 

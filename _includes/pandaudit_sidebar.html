@@ -8,22 +8,24 @@
     <ol>
       <li class="waypoint{% if page.url == '/' %} here{% endif %}"><a href="{{ '/' | relative_url }}"><span class="wp-index">1</span><span class="wp-name">Start Here</span></a></li>
       <li class="waypoint{% if page.url contains '/data-analytics' %} here{% endif %}"><a href="{{ '/data-analytics/' | relative_url }}"><span class="wp-index">2</span><span class="wp-name">Analytics Map</span></a></li>
-      <li class="waypoint{% if page.url contains '/recipes' %} here{% endif %}"><a href="{{ '/recipes/' | relative_url }}"><span class="wp-index">3</span><span class="wp-name">Problem Recipes</span></a></li>
-      <li class="waypoint{% if page.url contains '/blog' or page.layout == 'post' %} here{% endif %}"><a href="{{ '/blog/' | relative_url }}"><span class="wp-index">4</span><span class="wp-name">Field Notes</span></a></li>
-      <li class="waypoint{% if page.url contains '/cheatsheet' %} here{% endif %}"><a href="{{ '/cheatsheet/' | relative_url }}"><span class="wp-index">5</span><span class="wp-name">Quick Reference</span></a></li>
-      <li class="waypoint{% if page.url contains '/community' %} here{% endif %}"><a href="{{ '/community/' | relative_url }}"><span class="wp-index">6</span><span class="wp-name">Community</span></a></li>
-      <li class="waypoint{% if page.url contains '/advertise' %} here{% endif %}"><a href="{{ '/advertise/' | relative_url }}"><span class="wp-index">7</span><span class="wp-name">Growth Lab</span></a></li>
-      <li class="waypoint{% if page.url contains '/aboutme' %} here{% endif %}"><a href="{{ '/aboutme/' | relative_url }}"><span class="wp-index">8</span><span class="wp-name">About</span></a></li>
+      <li class="waypoint{% if page.url contains '/skills' %} here{% endif %}"><a href="{{ '/skills/' | relative_url }}"><span class="wp-index">3</span><span class="wp-name">Skills Library</span></a></li>
+      <li class="waypoint{% if page.url contains '/ai' %} here{% endif %}"><a href="{{ '/ai/' | relative_url }}"><span class="wp-index">4</span><span class="wp-name">AI Field Kit</span></a></li>
+      <li class="waypoint{% if page.url contains '/recipes' %} here{% endif %}"><a href="{{ '/recipes/' | relative_url }}"><span class="wp-index">5</span><span class="wp-name">Problem Recipes</span></a></li>
+      <li class="waypoint{% if page.url contains '/blog' or page.layout == 'post' %} here{% endif %}"><a href="{{ '/blog/' | relative_url }}"><span class="wp-index">6</span><span class="wp-name">Field Notes</span></a></li>
+      <li class="waypoint{% if page.url contains '/cheatsheet' %} here{% endif %}"><a href="{{ '/cheatsheet/' | relative_url }}"><span class="wp-index">7</span><span class="wp-name">Quick Reference</span></a></li>
+      <li class="waypoint{% if page.url contains '/community' %} here{% endif %}"><a href="{{ '/community/' | relative_url }}"><span class="wp-index">8</span><span class="wp-name">Community</span></a></li>
+      <li class="waypoint{% if page.url contains '/advertise' %} here{% endif %}"><a href="{{ '/advertise/' | relative_url }}"><span class="wp-index">9</span><span class="wp-name">Growth Lab</span></a></li>
+      <li class="waypoint{% if page.url contains '/aboutme' %} here{% endif %}"><a href="{{ '/aboutme/' | relative_url }}"><span class="wp-index">10</span><span class="wp-name">About</span></a></li>
     </ol>
   </nav>
 
-  <section class="timer pandaudit-sprint" aria-label="Workflow sprint prompt">
-    <span class="timer-label">workflow sprint</span>
-    <span class="timer-clock">25:00</span>
-    <p>Pick one messy finance task. Define the source, the rule, the exception, and the review output.</p>
+  <section id="sprint-box" class="timer pandaudit-sprint" aria-label="Workflow sprint timer">
+    <span id="sprint-label" class="timer-label">workflow sprint</span>
+    <span id="sprint-clock" class="timer-clock" role="timer" aria-live="off">25:00</span>
+    <p id="sprint-mission">Pick one messy finance task. Define the source, the rule, the exception, and the review output.</p>
     <div class="timer-run">
       <a class="sprint-button" href="{{ '/community/' | relative_url }}">Ask Discord</a>
-      <a class="sprint-button sprint-button-light" href="{{ '/recipes/' | relative_url }}">Find Recipe</a>
+      <a class="sprint-button sprint-button-light" href="{{ '/skills/' | relative_url }}">Find Skill</a>
     </div>
   </section>
 

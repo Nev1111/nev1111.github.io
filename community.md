@@ -34,10 +34,20 @@ Please remove confidential information before sharing examples.
 
 [**Boss Level Workpapers**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Review-ready summaries, detail, controls, notes</span>](https://discord.gg/hDQKM6ar)
 
+[**Skill Swap**{: .leg-name} **05**{: .leg-no} <span class="leg-desc">Share your SKILL.md files and improve the Skills Library</span>](https://discord.gg/hDQKM6ar)
+
+[**Agent Test Kitchen**{: .leg-name} **06**{: .leg-no} <span class="leg-desc">Show what your AI agent did with a skill — wins and disasters</span>](https://discord.gg/hDQKM6ar)
+
 </div>
 
 ## Weekly challenge
 
-> What is one finance task you repeated this week that felt like it should have a map?
+> What is one finance task you repeated this week that felt like it should have a map — or a skill your AI agent could run?
 
-The best community questions can become future recipes, field notes, and quick-reference cards.
+The best community questions become future [recipes]({{ '/recipes/' | relative_url }}), [skills]({{ '/skills/' | relative_url }}), and field notes.
+
+## New here?
+
+- Finished a [workflow sprint]({{ '/' | relative_url }})? Post what you got done.
+- Built or broke something with a skill from the [Skills Library]({{ '/skills/' | relative_url }})? Skill Swap wants the details.
+- New to agents and knowledge bases? Skim the [AI Field Kit]({{ '/ai/' | relative_url }}) first, then ask anything.

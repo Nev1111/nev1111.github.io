@@ -5,7 +5,7 @@ subtitle: StackOverflow-style answers for spreadsheet problems accountants see e
 permalink: /recipes/
 ---
 
-This is the quick problem/solution index. Start with the accounting task you recognize, then use the suggested analytics concept to structure the work.
+This is the quick problem/solution index. Start with the accounting task you recognize, then use the suggested analytics concept to structure the work. Where a recipe has a matching agent-ready skill in the [Skills Library]({{ '/skills/' | relative_url }}), it's linked below the answer.
 
 ## Lookups, joins, and reconciliations
 
@@ -15,11 +15,15 @@ Use a table-join mindset: identify the shared key, define what counts as a valid
 
 **Good for:** vendor master lookups, account classifications, department mappings, customer IDs.
 
+**Skill:** [master-data-mapping]({{ '/skills/master-data-mapping/' | relative_url }})
+
 ### How do I find transactions in one report but not another?
 
 Create three buckets: matched, source A only, and source B only. Then summarize the unmatched records by amount, account, vendor, and period.
 
 **Good for:** bank reconciliations, subledger-to-GL checks, payroll comparisons, payment files.
+
+**Skill:** [safe-excel-sql-merges]({{ '/skills/safe-excel-sql-merges/' | relative_url }})
 
 ### How do I match records when dates are close but not exact?
 
@@ -27,11 +31,15 @@ Use nearest-match logic, but document the tolerance. For example: same customer,
 
 **Good for:** deposits, settlement files, investment activity, timing differences.
 
+**Skill:** [tolerance-date-matching]({{ '/skills/tolerance-date-matching/' | relative_url }})
+
 ## Cleaning messy exports
 
 ### How do I clean negative numbers exported like `1,234.56-` or `1,234CR`?
 
 Define one standard amount format, convert every export to that standard, then validate totals before and after cleanup.
+
+**Skill:** [clean-credit-debit-amounts]({{ '/skills/clean-credit-debit-amounts/' | relative_url }})
 
 ### How do I extract dollar amounts from descriptions?
 
@@ -40,6 +48,8 @@ Treat the description as a data source. Identify the recurring text pattern, pul
 ### How do I clean inconsistent account/vendor names?
 
 Standardize case, whitespace, punctuation, abbreviations, and known aliases before comparing records.
+
+**Skill:** [normalize-vendor-names]({{ '/skills/normalize-vendor-names/' | relative_url }})
 
 ## Summaries and reporting
 
@@ -51,6 +61,8 @@ Define the rows, columns, values, and aggregation rule once. The repeatable conc
 
 Create a reporting-period field first. Then summarize by that period instead of rebuilding date logic each month.
 
+**Skill:** [fiscal-period-calculations]({{ '/skills/fiscal-period-calculations/' | relative_url }})
+
 ### How do I export a clean workpaper?
 
 Separate the output into tabs: Summary, Exceptions, Detail, and Data Quality Notes.
@@ -60,6 +72,8 @@ Separate the output into tabs: Summary, Exceptions, Detail, and Data Quality Not
 ### How do I find duplicates without losing the details?
 
 Flag every record involved in a duplicate group. Do not immediately remove duplicates until you understand why they exist.
+
+**Skill:** [flag-duplicate-transactions]({{ '/skills/flag-duplicate-transactions/' | relative_url }})
 
 ### How do I spot unusual transactions?
 

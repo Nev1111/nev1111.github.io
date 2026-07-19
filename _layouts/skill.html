@@ -1,0 +1,30 @@
+---
+layout: base
+---
+
+<div role="main" class="pandaudit-document">
+ <header class="home-hero pandaudit-doc-header">
+  <p class="eyebrow">agent skill · {{ page.category | default: 'analytics' }}{% if page.tools %} · {{ page.tools }}{% endif %}</p>
+  <h1>{{ page.title | default: page.name | strip_html }}</h1>
+  {% if page.description %}<p class="doc-subtitle">{{ page.description | strip_html }}</p>{% endif %}
+ </header>
+
+ {{ content }}
+
+ <div class="pandaudit-card-grid fun-grid skill-footer-grid">
+  <div class="pandaudit-card">
+   <h3>Give it to your agent</h3>
+   <p>This page is a ready-to-use skill document. Save the <a href="https://raw.githubusercontent.com/Nev1111/nev1111.github.io/master/{{ page.path }}" target="_blank" rel="noopener">raw markdown</a> as <code>SKILL.md</code> in your AI agent's skills folder (for Claude Code: <code>.claude/skills/{{ page.name | default: page.slug }}/SKILL.md</code>).</p>
+  </div>
+  <div class="pandaudit-card">
+   <h3>Ran it? Improved it?</h3>
+   <p>Share the result — or the mess it made — in the <a href="https://discord.gg/{{ site.social-network-links.discord }}" target="_blank" rel="noopener">PANDAUDIT Discord</a> Skill Swap channel. The best fixes become updates to this skill.</p>
+  </div>
+ </div>
+
+ <div class="timer-run skill-share-row">
+  <a class="sprint-button" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener">Share on LinkedIn</a>
+  <a class="sprint-button sprint-button-light" href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener">Share on X</a>
+  <a class="sprint-button sprint-button-light" href="{{ '/skills/' | relative_url }}">All Skills</a>
+ </div>
+</div>

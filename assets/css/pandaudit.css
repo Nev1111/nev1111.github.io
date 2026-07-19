@@ -405,3 +405,15 @@ footer a { color: var(--glass-deep) !important; }
   .pandaudit-page { padding: 2rem 1.25rem 3rem; max-width: none; }
   .legs .leg-desc { display: none; }
 }
+
+/* Sprint timer states (visual language unchanged; reuses existing palette) */
+#sprint-clock { cursor: pointer; user-select: none; }
+.pandaudit-sprint.sprint-running .timer-clock { color: var(--glass); }
+.pandaudit-sprint.sprint-running .timer-label { color: var(--glass-deep); }
+.pandaudit-sprint.sprint-done .timer-clock {
+  color: var(--buoy);
+  animation: sprint-complete-flash 1s ease-in-out 3;
+}
+@keyframes sprint-complete-flash {
+  50% { opacity: 0.25; }
+}

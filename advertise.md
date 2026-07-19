@@ -39,15 +39,22 @@ Not accountants alone. The best audience is anyone who touches messy business da
 
 ### LinkedIn
 
+The engine of the AI-era plan is simple: **one skill = one LinkedIn post.** Every skill
+published to the [Skills Library]({{ '/skills/' | relative_url }}) becomes a post with the
+same three beats — the recurring finance task, the skill that handles it, and the control
+total that proves it worked. Every skill page has a Share on LinkedIn button; use it.
+
 Post short before/after examples:
 
-> “The spreadsheet problem: three exports, no shared naming convention, and a deadline. The analytics concept: standardize fields, match by rule, produce exceptions.”
+> “The spreadsheet problem: three exports, no shared naming convention, and a deadline. The analytics concept: standardize fields, match by rule, produce exceptions. The new part: it's now a SKILL.md my AI agent runs — and here's the control total.”
 
 Best formats:
 
 - carousel: messy export → cleanup checklist → exception report
+- “I handed this task to an AI agent” walkthrough with the skill file shown
 - one-minute screen recording
 - poll: “Which month-end task wastes the most time?”
+- poll: “Would you let an AI agent prep this reconciliation?”
 - weekly “field note” thread
 
 ### Discord and communities
@@ -58,6 +65,8 @@ Use Discord as the workshop, not just a chat room:
 - “what would you check first?” puzzle
 - anonymized workflow teardown
 - office-hours thread for finance data problems
+- Skill Swap drops: announce each new skill and ask who will test it
+- Agent Test Kitchen show-and-tell: what the agent nailed, what it fumbled
 
 ### Search and evergreen content
 
@@ -86,9 +95,17 @@ Look for people who already teach Excel, finance careers, FP&A, audit, or small-
 | Day | Post idea | CTA |
 |---|---|---|
 | Monday | One finance workflow problem | Join Discord |
-| Wednesday | One quick reference/checklist | Save the page |
+| Wednesday | One skill from the library, shown working | Grab the SKILL.md |
 | Friday | One field note or “boss level” challenge | Share your version |
+
+## Cross-posting checklist (per new skill)
+
+1. Publish the skill to the [Skills Library]({{ '/skills/' | relative_url }}).
+2. Post it in Discord Skill Swap with a “who will test this?” prompt.
+3. Share on LinkedIn using the one-skill-one-post format above.
+4. Reply to your own post with the control-total proof screenshot.
+5. Fold the best community feedback back into the skill file.
 
 ## The core pitch
 
-> PANDAUDIT helps finance people turn messy recurring spreadsheet work into reviewable data analytics workflows — without making the work feel boring.
+> PANDAUDIT helps finance people turn messy recurring spreadsheet work into reviewable data analytics workflows — and now into skills their AI agents can run — without making the work feel boring.
