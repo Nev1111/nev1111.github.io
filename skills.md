@@ -74,9 +74,9 @@ the raw markdown to your AI agent and review its output like any other preparer'
 ## How to hand a skill to an AI agent
 
 1. **Pick the skill** that matches your task, and read its validation section first.
-2. **Save the raw markdown** as `SKILL.md` in your agent's skills folder.
+2. **Save the raw markdown** as `SKILL.md` in your agent's skills folder — or paste it into a chat AI as the procedure to follow.
 3. **Point the agent at your file** and name the skill: *"Use the clean-credit-debit-amounts skill on this export."*
 4. **Review like a preparer's work**: check the control totals, then the exception list, then spot-check detail.
 5. **Improve and share**: post what broke in the [Discord]({{ '/community/' | relative_url }}) Skill Swap channel.
 
-New to skills, agents, and knowledge bases? Start with the [AI Field Kit]({{ '/ai/' | relative_url }}).
+Each step above is walked through click-by-click in the [Agent Tutorials]({{ '/tutorials/' | relative_url }}) — including using skills without a terminal, and organizing them into an Obsidian-style [knowledge vault]({{ '/tutorials/' | relative_url }}#tutorial-3-build-your-finance-knowledge-vault-the-obsidian-way). New to the concepts? Start with the [AI Field Kit]({{ '/ai/' | relative_url }}).

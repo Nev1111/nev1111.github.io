@@ -78,9 +78,18 @@ mapping tables, close checklists, policy memos, prior-period workpapers — orga
 AI can search it and cite it. The finance teams getting real value from AI are not the
 ones with the fanciest model; they are the ones whose knowledge is written down.
 
+If you've heard of [Obsidian](https://obsidian.md), you already know the shape: a
+**vault** — one folder of plain `.md` files that link to each other with
+`[[wiki-links]]`. No database, no vendor lock-in, readable in any editor, versionable in
+git. That vault *is* a knowledge base, and it's the ideal one for AI: agents can search
+it, follow the links, and cite the exact note an answer came from. Skills are simply the
+executable notes in the vault — procedures instead of prose.
+
 Start embarrassingly small: one folder of markdown files. Your account-classification
 rules. Your recurring reconciliation procedures. Your fiscal-calendar definitions. Each
-document you write becomes something both new hires *and* agents can use.
+document you write becomes something both new hires *and* agents can use. The
+[knowledge-vault tutorial]({{ '/tutorials/' | relative_url }}#tutorial-3-build-your-finance-knowledge-vault-the-obsidian-way)
+walks through the whole setup in five steps.
 
 ## RAG & citations
 
@@ -107,5 +116,5 @@ reviewer of a very fast preparer:
 
 - Browse the [Skills Library]({{ '/skills/' | relative_url }}) and hand one to an agent this week.
 - Read the [Analytics Map]({{ '/data-analytics/' | relative_url }}) — it is the thinking behind every skill.
-- Start a 25-minute sprint (the sidebar clock is real — click it) and draft your first `SKILL.md`.
+- Follow the [Agent Tutorials]({{ '/tutorials/' | relative_url }}) and run your first skill this week.
 - Compare notes in the [PANDAUDIT Discord]({{ '/community/' | relative_url }}) — Skill Swap channel.

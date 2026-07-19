@@ -5,12 +5,12 @@ subtitle: Fun, practical data analytics for the finance field
 ---
 
 <div class="home-hero pandaudit-hero mast-inspired-hero">
-  <p class="eyebrow">FINANCE FIELD GUIDE · AI SKILLS · ANALYTICS QUESTS</p>
-  <h1>Turn messy finance work into clear data adventures.</h1>
-  <p>PANDAUDIT is a field guide for finance people who live in exports, reconciliations, workpapers, forecasts, billing files, audit samples, close packages, and dashboards — and want the work to feel smarter, cleaner, and a little more fun. Every technique here is now also a <strong>skill</strong>: a markdown document your AI agent can run while you review like a boss.</p>
+  <p class="eyebrow">AI SKILLS · AGENTS · KNOWLEDGE VAULTS · FINANCE ANALYTICS</p>
+  <h1>Give your finance work to an AI agent. Review it like a boss.</h1>
+  <p>PANDAUDIT turns the recurring work of finance — exports, reconciliations, workpapers, close packages — into <strong>skills</strong>: markdown procedures an AI agent can run, with control totals that prove the output ties. Read them, run them, or delegate them. The analytics thinking is still here; now it executes.</p>
   <p>
     <a class="pandaudit-button" href="{{ '/skills/' | relative_url }}">Browse the Skills Library</a>
-    <a class="pandaudit-button pandaudit-button-secondary" href="{{ '/data-analytics/' | relative_url }}">Plot your analytics course</a>
+    <a class="pandaudit-button pandaudit-button-secondary" href="{{ '/tutorials/' | relative_url }}">Start with a tutorial</a>
   </p>
 </div>
 
@@ -18,15 +18,15 @@ subtitle: Fun, practical data analytics for the finance field
 
 <div class="legs pandaudit-route-cards" markdown="1">
 
-[**Analytics Map**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">Learn the concepts behind cleaner finance workflows</span>]({{ '/data-analytics/' | relative_url }})
+[**Skills Library**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">Agent-ready SKILL.md files for cleaning, matching, and summarizing</span>]({{ '/skills/' | relative_url }})
 
-[**Skills Library**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Agent-ready SKILL.md files for cleaning, matching, and summarizing</span>]({{ '/skills/' | relative_url }})
+[**Agent Tutorials**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Run your first skill, build a knowledge vault, review like a pro</span>]({{ '/tutorials/' | relative_url }})
 
-[**AI Field Kit**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Knowledge bases, agents, and RAG — in finance language</span>]({{ '/ai/' | relative_url }})
+[**AI Field Kit**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Skills, agents, knowledge bases, and RAG — in finance language</span>]({{ '/ai/' | relative_url }})
 
-[**Field Notes Blog**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Short, practical posts that make finance data less painful</span>]({{ '/blog/' | relative_url }})
+[**Analytics Map**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">The thinking behind every skill: source, rule, exception, review</span>]({{ '/data-analytics/' | relative_url }})
 
-[**Discord Workshop**{: .leg-name} **05**{: .leg-no} <span class="leg-desc">Bring a sanitized spreadsheet problem and get unstuck</span>]({{ '/community/' | relative_url }})
+[**Discord Workshop**{: .leg-name} **05**{: .leg-no} <span class="leg-desc">Skill Swap, Agent Test Kitchen, and spreadsheet rescue</span>]({{ '/community/' | relative_url }})
 
 </div>
 
@@ -46,6 +46,7 @@ subtitle: Fun, practical data analytics for the finance field
 3. **Define the rule.** Match, group, clean, classify, summarize, or test.
 4. **Separate exceptions.** Make the review list obvious.
 5. **Make it repeatable.** If it happens every month, it deserves a route.
+6. **Write it as a skill.** If it's repeatable, an agent can run it — and you review the control totals.
 
 ## Latest field notes
 

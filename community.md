@@ -48,6 +48,6 @@ The best community questions become future [recipes]({{ '/recipes/' | relative_u
 
 ## New here?
 
-- Finished a [workflow sprint]({{ '/' | relative_url }})? Post what you got done.
+- Followed a [tutorial]({{ '/tutorials/' | relative_url }}) and ran your first skill? Post how it went.
 - Built or broke something with a skill from the [Skills Library]({{ '/skills/' | relative_url }})? Skill Swap wants the details.
 - New to agents and knowledge bases? Skim the [AI Field Kit]({{ '/ai/' | relative_url }}) first, then ask anything.

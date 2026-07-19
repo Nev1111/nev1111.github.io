@@ -176,3 +176,23 @@ clock, prompt text, two buttons) but becomes a working tool:
 - Newsletter, analytics/tracking, and paid promotion.
 - Converting the remaining long-tail archived posts into skills (do incrementally,
   one LinkedIn post per new skill).
+
+---
+
+## Amendment A (2026-07-19): AI-first refocus
+
+Owner feedback after launch:
+
+1. **Remove the sprint clock entirely** (supersedes FR-1). The countdown widget has no
+   purpose for the audience. Replace the sidebar block with an "Agent Kit" card (same
+   card styling, no clock) linking to the Skills Library and the new tutorials. Delete
+   `assets/js/sprint-timer.js`, the timer states in CSS, and the sprint launch post;
+   sweep all "sprint" references from pages.
+2. **Push the AI emphasis further** (extends FR-3/FR-6):
+   - New `/tutorials/` page — step-by-step walkthroughs: run a skill with Claude Code;
+     use a skill in a chat AI; build a finance knowledge vault (Obsidian-style, `.md`
+     notes + `[[links]]`); review agent output like a workpaper.
+   - `/ai/` gains an explicit knowledge-bank comparison to Obsidian: a vault of plain
+     markdown files IS a personal knowledge base; skills are the executable subset.
+   - Homepage hero and route cards lead with skills + agents; nav gains Tutorials.
+   - Replacement launch post: building a finance knowledge vault.

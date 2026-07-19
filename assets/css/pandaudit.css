@@ -190,7 +190,7 @@ body.pandaudit-chart-theme {
   margin: 0.25rem 0 0.35rem;
   font-variant-numeric: tabular-nums;
 }
-.pandaudit-sprint p,
+.pandaudit-agent-kit p,
 .plot-note {
   font-size: 0.75rem;
   line-height: 1.5;
@@ -404,16 +404,4 @@ footer a { color: var(--glass-deep) !important; }
   .route ol::before { display: none; }
   .pandaudit-page { padding: 2rem 1.25rem 3rem; max-width: none; }
   .legs .leg-desc { display: none; }
-}
-
-/* Sprint timer states (visual language unchanged; reuses existing palette) */
-#sprint-clock { cursor: pointer; user-select: none; }
-.pandaudit-sprint.sprint-running .timer-clock { color: var(--glass); }
-.pandaudit-sprint.sprint-running .timer-label { color: var(--glass-deep); }
-.pandaudit-sprint.sprint-done .timer-clock {
-  color: var(--buoy);
-  animation: sprint-complete-flash 1s ease-in-out 3;
-}
-@keyframes sprint-complete-flash {
-  50% { opacity: 0.25; }
 }

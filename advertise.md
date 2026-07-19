@@ -29,7 +29,7 @@ Not accountants alone. The best audience is anyone who touches messy business da
 
 [**Finance field notes**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Short posts from real reporting, close, audit, and ops workflows.</span>]({{ '/blog/' | relative_url }})
 
-[**The 25-minute cleanup challenge**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">One small data cleanup win every week.</span>]({{ '/cheatsheet/' | relative_url }})
+[**Hand it to an agent**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">“Watch an AI agent run this month-end task — with control totals.”</span>]({{ '/tutorials/' | relative_url }})
 
 [**Before/after workpapers**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Show messy input, clean output, and the review logic.</span>]({{ '/recipes/' | relative_url }})
 
