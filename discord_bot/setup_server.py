@@ -30,13 +30,17 @@ S = requests.Session()
 S.headers.update({"Authorization": f"Bot {TOKEN}", "Content-Type": "application/json"})
 
 
-def call(method, path, **kwargs):
+def call(method, path, fatal=True, **kwargs):
     r = S.request(method, f"{API}{path}", **kwargs)
     if r.status_code == 429:
         time.sleep(float(r.json().get("retry_after", 2)) + 0.5)
         r = S.request(method, f"{API}{path}", **kwargs)
     if not r.ok:
-        sys.exit(f"{method} {path} -> {r.status_code}: {r.text[:300]}")
+        msg = f"{method} {path} -> {r.status_code}: {r.text[:300]}"
+        if fatal:
+            sys.exit(msg)
+        print(f"  warning (continuing): {msg}")
+        return None
     return r.json() if r.text else {}
 
 
@@ -125,7 +129,8 @@ def main():
             payload = {"name": name, "type": 0, "topic": topic, "parent_id": cat["id"]}
             if readonly:
                 payload["permission_overwrites"] = [
-                    {"id": GUILD_ID, "type": 0, "deny": "2048"}  # @everyone: no send
+                    {"id": GUILD_ID, "type": 0, "deny": "2048"},   # @everyone: no send
+                    {"id": me["id"], "type": 1, "allow": "11264"},  # the bot: view + send + manage msgs
                 ]
             if not ch:
                 ch = call("POST", f"/guilds/{GUILD_ID}/channels", json=payload)
@@ -137,8 +142,11 @@ def main():
             seed = WELCOME if name == "welcome" else SEEDS.get(name)
             if seed and not ch.get("last_message_id"):
                 msg = call("POST", f"/channels/{ch['id']}/messages", json={"content": seed})
-                call("PUT", f"/channels/{ch['id']}/pins/{msg['id']}")
-                print(f"    seeded + pinned message in #{name}")
+                if msg and call("PUT", f"/channels/{ch['id']}/messages/pins/{msg['id']}",
+                                fatal=False) is not None:
+                    print(f"    seeded + pinned message in #{name}")
+                elif msg:
+                    print(f"    seeded #{name} (pin skipped)")
             time.sleep(0.4)
 
     widget_channel = next((c["id"] for c in call("GET", f"/guilds/{GUILD_ID}/channels")
