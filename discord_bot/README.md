@@ -109,7 +109,7 @@ Your bot needs these permissions:
 
 2. **Add your bot token:**
  ```env
- DISCORD_BOT_TOKEN=MTQ1OTIxNTk1ODg3ODA2MDYzNQ.GHa50Q.9Ryxa4qyhiF9bmhQCJts7i5Rryv6jLSwtghBGM
+ DISCORD_BOT_TOKEN=your-bot-token-here-never-commit-real-tokens
  ```
 
 3. **Run the bot:**

@@ -430,7 +430,7 @@ Quick summary:
 1. **Get Bot Token**:
  - Discord Developer Portal → Create Application → Bot tab
  - Copy bot token
- - Token already configured: `MTQ1OTIxNTk1ODg3ODA2MDYzNQ.GHa50Q.9Ryxa4qyhiF9bmhQCJts7i5Rryv6jLSwtghBGM`
+ - Token already configured: `your-bot-token-here-never-commit-real-tokens`
 
 2. **Choose Hosting**:
  - **Railway** (recommended): Free tier, auto-deploy from GitHub

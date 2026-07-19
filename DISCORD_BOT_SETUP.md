@@ -237,7 +237,7 @@ Successfully installed discord.py-2.3.2 python-dotenv-1.0.0 ...
 3. **Add your bot token**
  ```env
  # Required: Your Discord Bot Token
- DISCORD_BOT_TOKEN=MTQ1OTIxNTk1ODg3ODA2MDYzNQ.GHa50Q.9Ryxa4qyhiF9bmhQCJts7i5Rryv6jLSwtghBGM
+ DISCORD_BOT_TOKEN=your-bot-token-here-never-commit-real-tokens
  
  # Optional: Customize bot behavior
  BOT_PREFIX=!
