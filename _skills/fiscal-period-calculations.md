@@ -8,7 +8,7 @@ tools: pandas
 
 ## When to use this skill
 
-- Your organization's fiscal year does not match the calendar year — federal government (Oct 1 to Sep 30), many school districts and pensions (Jul 1 to Jun 30), UK/Japan (Apr 1 to Mar 31).
+- Your organization's fiscal year does not match the calendar year — federal government (Oct 1 to Sep 30), many state and local governments (Jul 1 to Jun 30), UK/Japan (Apr 1 to Mar 31).
 - You are about to summarize transactions "by quarter" or "by fiscal year" and the raw file only has a transaction date.
 - You inherited a workbook full of nested IF formulas that translate months into fiscal quarters, and you want one calculation you can trust and reuse.
 

@@ -54,7 +54,7 @@ import pandas as pd
 df = pd.DataFrame({
  'Member_ID': ['001', '001', '002', '003', '003', '003'],
  'Name': ['Alice', 'Alice', 'Bob', 'Charlie', 'Charlie', 'Charlie'],
- 'Account_Type': ['Pension', 'TDA', 'Pension', 'Pension', 'TDA', '401k']
+ 'Account_Type': ['Pension', 'IRA', 'Pension', 'Pension', 'IRA', '401k']
 })
 
 print("Original data:")
@@ -115,7 +115,7 @@ df_deduped = df_sorted.drop_duplicates(subset='Member_ID', keep='last')
 # Sample data: Some members have multiple accounts
 df = pd.DataFrame({
  'Member_ID': ['001', '001', '002', '003', '003', '003'],
- 'Account_Type': ['Pension', 'TDA', 'Pension', 'Pension', 'TDA', '401k'],
+ 'Account_Type': ['Pension', 'IRA', 'Pension', 'Pension', 'IRA', '401k'],
  'Balance': [50000, 10000, 30000, 40000, 5000, 15000]
 })
 
@@ -153,10 +153,10 @@ print(df)
 ```
  Member_ID Account_Type is_duplicate is_first_occurrence count_me
 0 001 Pension False True 1
-1 001 TDA True False 0
+1 001 IRA True False 0
 2 002 Pension False True 1
 3 003 Pension False True 1
-4 003 TDA True False 0
+4 003 IRA True False 0
 5 003 401k True False 0
 ```
 
@@ -405,7 +405,7 @@ import pandas as pd
 members = pd.DataFrame({
  'Member_ID': ['A001', 'A001', 'A002', 'A003', 'A003', 'A003'],
  'Name': ['Alice', 'Alice', 'Bob', 'Charlie', 'Charlie', 'Charlie'],
- 'Account': ['Pension', 'TDA', 'Pension', 'Pension', 'TDA', '401k'],
+ 'Account': ['Pension', 'IRA', 'Pension', 'Pension', 'IRA', '401k'],
  'Balance': [50000, 10000, 30000, 40000, 5000, 15000]
 })
 

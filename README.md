@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Discord](https://img.shields.io/discord/YOUR_DISCORD_ID?label=Discord&logo=discord)](https://discord.gg/hDQKM6ar)
 
-**Transform Excel nightmares into automated Python workflows.** Real-world examples from government pension fund accounting.
+**Transform Excel nightmares into automated Python workflows.** Real-world examples from finance and accounting work.
 
 ---
 
@@ -18,7 +18,7 @@ PANDAUDIT is a blog and community for **finance and accounting professionals** w
 
 #### Why PANDAUDIT is Different
 
-- **Real-World Focus** - Actual government pension fund code, not toy examples 
+- **Real-World Focus** - Actual production finance code, not toy examples 
 - **Accounting-First** - Written by accountants, for accountants 
 - **Immediate ROI** - Save hours this week, not after a 6-month course 
 - **Community Support** - Discord for help from fellow finance professionals

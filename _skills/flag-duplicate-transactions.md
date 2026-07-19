@@ -102,5 +102,5 @@ The review file — every member of every duplicate group — goes to a human. H
 - **Same key, different amounts** — same vendor + invoice number but $5,000 vs $5,500. Could be a keying error, a partial payment, or a corrected reissue; only a person (or the vendor) can say.
 - **Same key, different dates far apart** — a possible genuine duplicate payment (recovery opportunity) rather than a data glitch.
 - **Fully identical rows** — likely double-loaded files; confirm the load history before removing, and note which batch caused it so it doesn't recur.
-- **Legitimate-multiple patterns** — one member with Pension + TDA + 401(k) accounts is *not* a duplicate person; these should be aggregated or counted with `nunique()`, never deleted.
+- **Legitimate-multiple patterns** — one customer with checking + savings + retirement accounts is *not* a duplicate person; these should be aggregated or counted with `nunique()`, never deleted.
 - **Near-duplicates the exact match missed** — names or vendors differing by a typo (`"Jon Smith"` / `"John Smith"`); list high-similarity pairs separately for manual confirmation rather than merging automatically.

@@ -26,8 +26,9 @@ description: One line an agent uses to decide when this skill applies
 ## Exceptions to surface
 ```
 
-Use them three ways: **read** them like recipes, **run** the code yourself, or **hand**
-the raw markdown to your AI agent and review its output like any other preparer's work.
+Use them three ways: **read** them like recipes, **run** the code yourself, or — easiest —
+**copy the whole skill and paste it into Claude or ChatGPT** with your sanitized file, then
+review the output like any other preparer's work. No terminal required.
 
 ## Cleaning messy exports
 
@@ -77,6 +78,21 @@ the raw markdown to your AI agent and review its output like any other preparer'
 2. **Save the raw markdown** as `SKILL.md` in your agent's skills folder — or paste it into a chat AI as the procedure to follow.
 3. **Point the agent at your file** and name the skill: *"Use the clean-credit-debit-amounts skill on this export."*
 4. **Review like a preparer's work**: check the control totals, then the exception list, then spot-check detail.
-5. **Improve and share**: post what broke in the [Discord]({{ '/community/' | relative_url }}) Skill Swap channel.
+5. **Improve and share**: post what broke in the [Discord]({{ '/community/' | relative_url }}) #skills channel.
 
-Each step above is walked through click-by-click in the [Agent Tutorials]({{ '/tutorials/' | relative_url }}) — including using skills without a terminal, and organizing them into an Obsidian-style [knowledge vault]({{ '/tutorials/' | relative_url }}#tutorial-3-build-your-finance-knowledge-vault-the-obsidian-way). New to the concepts? Start with the [AI Field Kit]({{ '/ai/' | relative_url }}).
+Each step above is walked through click-by-click in the [Tutorials]({{ '/tutorials/' | relative_url }}) — including using skills without a terminal, and organizing them into an Obsidian-style [knowledge vault]({{ '/tutorials/' | relative_url }}#tutorial-3-build-your-finance-knowledge-vault-the-obsidian-way). New to the concepts? Start with the [AI Field Kit]({{ '/ai/' | relative_url }}).
+
+## Tried one? Tell me. Missing one? Ask.
+
+The library grows from real use. If you ran a skill, I want to know how it went — the tie-out,
+the exceptions, the weird thing the agent did. And if you have a manual process that deserves
+to become a skill, describe it and I'll build it.
+
+- Post results or requests in the [community]({{ '/community/' | relative_url }})
+- Or email [hello@pandaudit.com](mailto:hello@pandaudit.com)
+
+## More resources
+
+- [Recipes]({{ '/recipes/' | relative_url }}) — classic copy-paste code, no agent required
+- [Cheat sheet]({{ '/cheatsheet/' | relative_url }}) — quick pandas reference
+- [Analytics map]({{ '/data-analytics/' | relative_url }}) — the thinking behind every skill: source, rule, exception, review

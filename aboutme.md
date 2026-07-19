@@ -35,7 +35,7 @@ Then it turns that task into a route someone else can understand.
 
 ## Who's behind it
 
-PANDAUDIT is written by [Nevena Platchkova](https://www.linkedin.com/in/nevena-platchkova-4689b44a), a CPA and financial data analyst who has spent years turning messy government and pension-fund data into reviewable workflows — and now turns those workflows into skills AI agents can run.
+PANDAUDIT is written by [Nevena Platchkova](https://www.linkedin.com/in/nevena-platchkova-4689b44a), a CPA and financial data analyst who has spent years turning messy real-world financial data into reviewable workflows — and now turns those workflows into skills AI agents can run.
 
 ## Join in
 

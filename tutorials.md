@@ -117,10 +117,10 @@ The agent is a very fast preparer. You're the reviewer. Same discipline as ever:
 4. **Check the skill was actually followed.** The skill's Validation section is your review checklist — the agent should have reported each item.
 5. **Keep the trail.** Save the skill version, the agent's output, and your notes together. That bundle *is* the workpaper.
 
-Something break? That's genuinely useful — bring it to the [Discord]({{ '/community/' | relative_url }}) Agent Test Kitchen and the fix becomes an update to the skill for everyone.
+Something break? That's genuinely useful — bring it to the [Discord]({{ '/community/' | relative_url }}) #agents channel and the fix becomes an update to the skill for everyone.
 
 ## Where next
 
 - [Skills Library]({{ '/skills/' | relative_url }}) — pick your first skill
 - [AI Field Kit]({{ '/ai/' | relative_url }}) — the concepts behind all of this
-- [Discord]({{ '/community/' | relative_url }}) — Skill Swap and Agent Test Kitchen
+- [Discord]({{ '/community/' | relative_url }}) — share results in #skills and #agents

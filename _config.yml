@@ -25,12 +25,10 @@ baseurl: ""
 
 navbar-links:
  Start Here: ""
- Excel to Analytics: "data-analytics"
- Recipes: "recipes"
+ Skills: "skills"
+ Tutorials: "tutorials"
  Blog: "blog"
- Cheat Sheet: "cheatsheet"
  Community: "community"
- Growth Lab: "advertise"
  About: "aboutme"
 
 ################

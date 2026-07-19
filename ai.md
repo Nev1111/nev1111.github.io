@@ -117,4 +117,4 @@ reviewer of a very fast preparer:
 - Browse the [Skills Library]({{ '/skills/' | relative_url }}) and hand one to an agent this week.
 - Read the [Analytics Map]({{ '/data-analytics/' | relative_url }}) — it is the thinking behind every skill.
 - Follow the [Agent Tutorials]({{ '/tutorials/' | relative_url }}) and run your first skill this week.
-- Compare notes in the [PANDAUDIT Discord]({{ '/community/' | relative_url }}) — Skill Swap channel.
+- Compare notes in the [PANDAUDIT Discord]({{ '/community/' | relative_url }}) — the #skills channel.

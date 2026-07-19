@@ -47,63 +47,52 @@ def call(method, path, fatal=True, **kwargs):
 # --- the blueprint: mirrors the site's community page -----------------------
 
 STRUCTURE = [
-    ("📌 START HERE", [
-        ("welcome", "Read this first: what PANDAUDIT is and how this server works.", True),
-        ("introductions", "Who you are, what you do in finance, and the recurring task you'd most like to never do manually again.", False),
+    ("START HERE", [
+        ("welcome", "What this server is and where things go.", True),
+        ("introductions", "Say hi: what you do, and the recurring task you'd most like to stop doing by hand.", False),
     ]),
-    ("🛠️ THE WORKSHOP", [
-        ("spreadsheet-rescue", "Messy files, recurring manual work, export cleanup. Sanitize before sharing!", False),
-        ("reconciliation-room", "Matches, breaks, timing differences, exception reports.", False),
-        ("dashboard-ingredients", "Data quality before reporting and visualization.", False),
-        ("boss-level-workpapers", "Review-ready summaries, detail, controls, and notes.", False),
+    ("THE WORKSHOP", [
+        ("spreadsheets", "Messy files, recurring manual work, export cleanup. Remove confidential data before posting.", False),
+        ("reconciliations", "Matching, breaks, timing differences, exception reports.", False),
+        ("dashboards", "Data quality before reporting and visualization.", False),
+        ("workpapers", "Packaging work for review: summaries, detail, controls, notes.", False),
     ]),
-    ("🤖 AI LAB", [
-        ("skill-swap", f"Share your SKILL.md files and improve the Skills Library: {SITE}/skills/", False),
-        ("agent-test-kitchen", "Show what your AI agent did with a skill — wins AND disasters welcome.", False),
+    ("SKILLS & AGENTS", [
+        ("skills", f"Questions, results, and requests for the skills at {SITE}/skills/", False),
+        ("agents", "What happened when you handed a skill to an AI — wins and failures both.", False),
     ]),
-    ("☕ COMMUNITY", [
+    ("COMMUNITY", [
         ("general", "Everything else: careers, tools, finance life.", False),
-        ("wins", "Before/afters and small victories. Tied out on the first run? Post it.", False),
+        ("wins", "Small victories and before/afters.", False),
     ]),
 ]
 
-WELCOME = f"""**Welcome to the PANDAUDIT community!** 🐼
+WELCOME = f"""Welcome to PANDAUDIT.
 
-This is the workshop table for [pandaudit.com]({SITE}) — practical data analytics and AI skills for people in accounting, audit, and FP&A.
+This server is the workshop behind {SITE} — a place for people in accounting, audit, and FP&A to get help turning manual spreadsheet work into repeatable workflows, with or without an AI agent.
 
-**How it works**
-🛠️ **The Workshop** — bring the finance data problem you actually have. Messy exports to #spreadsheet-rescue, breaks to #reconciliation-room, pre-dashboard cleanup to #dashboard-ingredients, review packaging to #boss-level-workpapers.
-🤖 **AI Lab** — #skill-swap is for sharing and improving `SKILL.md` files from the [Skills Library]({SITE}/skills/); #agent-test-kitchen is show-and-tell for what your AI agent did with one.
-☕ **Community** — say hi in #introductions, celebrate in #wins.
+Where things go:
+#spreadsheets — messy files and export cleanup
+#reconciliations — matching, breaks, exception reports
+#dashboards — data quality before reporting
+#workpapers — packaging work for review
+#skills — questions, results, and requests for the skills at {SITE}/skills/
+#agents — what happened when you handed a skill to an AI
 
-**Three rules**
-1. **Sanitize everything.** No real names, accounts, or amounts from your employer.
-2. **Bring the control total.** "It looks right" is not a tie-out.
-3. **Be kind to beginners.** Everyone's first reconciliation was a disaster.
+House rules: remove confidential data before posting, show your control totals, and be patient with beginners.
 
-New to AI skills and agents? Start with the [tutorials]({SITE}/tutorials/)."""
+If you tried a skill, post how it went — good or bad. If you want a skill that doesn't exist yet, ask in #skills."""
 
 SEEDS = {
-    "skill-swap": f"""**What goes here** 📄
+    "skills": f"""A skill is a written procedure (a markdown file) that an AI agent can follow — inputs, steps, code, and the checks that prove the output ties. The library is at {SITE}/skills/
 
-A *skill* is a markdown procedure an AI agent can run — when to use it, inputs, steps, code, and the control totals that prove it worked. The library lives at {SITE}/skills/
+If you ran one: post what you asked for, what you got, and whether the totals tied.
+If one broke on your data: post the error. That's how the skills get better.
+If you want one that doesn't exist yet: describe the task and it can be built.""",
+    "agents": f"""Handed a skill to Claude, ChatGPT, or a coding agent? Post what happened — the prompt, the output, whether the totals tied, and anything odd it did along the way. Failures are as useful as wins.
 
-**Post format that works well:**
-1. The task ("monthly AP export cleanup")
-2. Your SKILL.md (file or gist link)
-3. What you'd like improved
-
-Ran a library skill and it broke on your data? That's gold — post the error and we'll fix the skill for everyone.""",
-    "agent-test-kitchen": f"""**Show your agent's work** 🧑‍🍳
-
-Handed a skill to Claude, ChatGPT, or a coding agent? Post the results — screenshots welcome:
-• what you asked for (the exact prompt)
-• what it produced
-• did the control totals tie?
-• the weirdest thing it did
-
-Disasters are more educational than wins. Never followed the tutorial? Start here: {SITE}/tutorials/""",
-    "introductions": "Tell us three things: what you do, the tool you live in (Excel? SAP? a haunted Access database?), and the one recurring task you'd pay to never do manually again. 👇",
+If you haven't tried yet, the walkthrough is at {SITE}/tutorials/""",
+    "introductions": "Say hi — what you do, what tools you work in, and the one recurring task you'd most like to stop doing by hand.",
 }
 
 

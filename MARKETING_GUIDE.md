@@ -60,7 +60,7 @@
 ### What Makes PANDAUDIT Unique?
 
 **1. Real-World Focus**
-- Not toy examples - actual government pension fund code
+- Not toy examples - actual production finance code
 - Solves *specific* accounting/finance problems
 - Shows the messy reality, not just clean datasets
 

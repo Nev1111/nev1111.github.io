@@ -35,17 +35,15 @@ Please remove confidential information before sharing examples.
 
 <div class="legs" markdown="1">
 
-[**Spreadsheet Rescue**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">Messy files, recurring manual work, export cleanup</span>](https://discord.gg/{{ site.social-network-links.discord }})
+[**#spreadsheets**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">Messy files, recurring manual work, export cleanup</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
-[**Reconciliation Room**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Matches, breaks, timing differences, exception reports</span>](https://discord.gg/{{ site.social-network-links.discord }})
+[**#reconciliations**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Matches, breaks, timing differences, exception reports</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
-[**Dashboard Ingredients**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Data quality before reporting and visualization</span>](https://discord.gg/{{ site.social-network-links.discord }})
+[**#workpapers**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Review-ready summaries, detail, controls, notes</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
-[**Boss Level Workpapers**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Review-ready summaries, detail, controls, notes</span>](https://discord.gg/{{ site.social-network-links.discord }})
+[**#skills**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Share results from running a skill, and request new ones</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
-[**Skill Swap**{: .leg-name} **05**{: .leg-no} <span class="leg-desc">Share your SKILL.md files and improve the Skills Library</span>](https://discord.gg/{{ site.social-network-links.discord }})
-
-[**Agent Test Kitchen**{: .leg-name} **06**{: .leg-no} <span class="leg-desc">Show what your AI agent did with a skill — wins and disasters</span>](https://discord.gg/{{ site.social-network-links.discord }})
+[**#agents**{: .leg-name} **05**{: .leg-no} <span class="leg-desc">Show what your AI agent did — wins and disasters both welcome</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
 </div>
 
@@ -57,6 +55,7 @@ The best community questions become future [recipes]({{ '/recipes/' | relative_u
 
 ## New here?
 
-- Followed a [tutorial]({{ '/tutorials/' | relative_url }}) and ran your first skill? Post how it went.
-- Built or broke something with a skill from the [Skills Library]({{ '/skills/' | relative_url }})? Skill Swap wants the details.
+- Followed a [tutorial]({{ '/tutorials/' | relative_url }}) and ran your first skill? Post how it went in #skills.
+- Built or broke something with a skill from the [Skills Library]({{ '/skills/' | relative_url }})? #agents wants the details.
+- Have a manual process that should become a skill? Describe it in #skills or email [hello@pandaudit.com](mailto:hello@pandaudit.com) and I'll build it.
 - New to agents and knowledge bases? Skim the [AI Field Kit]({{ '/ai/' | relative_url }}) first, then ask anything.
