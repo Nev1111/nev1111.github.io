@@ -1,34 +1,19 @@
 ---
 layout: page
 title: Skills Library
-subtitle: Every PANDAUDIT script, rewritten as a skill your AI agent can run
+subtitle: Ready-made instructions your AI assistant can run
 permalink: /skills/
-eyebrow: agent-ready markdown
+eyebrow: copy, paste, done
 ---
 
-In the AI era, a script you copy/paste is only half the asset. The other half is a
-**skill**: a markdown document that tells an AI agent *when* to use the technique, *what*
-inputs to expect, *how* to run it, and *which* control totals prove it worked.
+Each skill below is a ready-made set of instructions for one common finance task.
 
-Every skill below follows the same shape — the same shape used by agent frameworks like
-Claude Code's `.claude/skills/` folders:
+To try one: **open it, copy the whole page, and paste it into Claude or ChatGPT together
+with your file** (remove anything confidential first). The AI does the work; you review
+what comes back. Every skill ends with the checks that prove the output ties.
 
-```markdown
----
-name: skill-slug
-description: One line an agent uses to decide when this skill applies
----
-## When to use this skill
-## Inputs it expects
-## Steps
-## Code
-## Validation (control totals)
-## Exceptions to surface
-```
-
-Use them three ways: **read** them like recipes, **run** the code yourself, or — easiest —
-**copy the whole skill and paste it into Claude or ChatGPT** with your sanitized file, then
-review the output like any other preparer's work. No terminal required.
+Every skill has the same simple shape: when to use it, what it needs, the steps, and the
+checks. Read one like a recipe even if you never hand it to an AI.
 
 ## Cleaning messy exports
 
@@ -72,12 +57,12 @@ review the output like any other preparer's work. No terminal required.
 
 </div>
 
-## How to hand a skill to an AI agent
+## The five-step habit
 
-1. **Pick the skill** that matches your task, and read its validation section first.
-2. **Save the raw markdown** as `SKILL.md` in your agent's skills folder — or paste it into a chat AI as the procedure to follow.
-3. **Point the agent at your file** and name the skill: *"Use the clean-credit-debit-amounts skill on this export."*
-4. **Review like a preparer's work**: check the control totals, then the exception list, then spot-check detail.
+1. **Pick the skill** that matches your task, and glance at its checks first.
+2. **Copy the whole skill** and paste it into Claude or ChatGPT — or, if you use a coding agent, save it into its skills folder ([Tutorial 2]({{ '/tutorials/' | relative_url }}#tutorial-2-give-a-skill-to-an-ai-coding-agent) shows how).
+3. **Attach your file and name the skill**: *"Use the clean-credit-debit-amounts skill on this export."*
+4. **Review like a preparer's work**: the checks first, then the exception list, then spot-check detail.
 5. **Improve and share**: post what broke in the [Discord]({{ '/community/' | relative_url }}) #skills channel.
 
 Each step above is walked through click-by-click in the [Tutorials]({{ '/tutorials/' | relative_url }}) — including using skills without a terminal, and organizing them into an Obsidian-style [knowledge vault]({{ '/tutorials/' | relative_url }}#tutorial-3-build-your-finance-knowledge-vault-the-obsidian-way). New to the concepts? Start with the [AI Field Kit]({{ '/ai/' | relative_url }}).

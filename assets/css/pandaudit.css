@@ -272,6 +272,28 @@ body.pandaudit-chart-theme {
 }
 .pandaudit-hero .eyebrow { margin-bottom: 1.15rem; }
 
+/* Full-width splash page: no sidebar, one centered column */
+.pandaudit-splash-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+.splash-brand {
+  text-align: center;
+  padding-top: 2.75rem;
+}
+.pandaudit-splash-main {
+  width: 100%;
+  max-width: 50rem;
+}
+.pandaudit-splash-footer {
+  width: 100%;
+  max-width: 50rem;
+  margin-top: auto;
+}
+
 /* Splash landing: calmer, centered, more air */
 .pandaudit-splash {
   text-align: center;

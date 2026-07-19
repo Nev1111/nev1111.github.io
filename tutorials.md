@@ -6,29 +6,53 @@ permalink: /tutorials/
 eyebrow: hands-on walkthroughs
 ---
 
-Reading about AI is one thing. This page is the other thing: four walkthroughs that take
-you from zero to an agent running a PANDAUDIT skill on your own files — with you
-reviewing the output the way you'd review any preparer's work.
+Reading about AI is one thing. This page is the other thing: four walkthroughs, starting
+with the easiest possible way to try a skill — copy, paste, done.
 
 <div class="legs" markdown="1">
 
-[**Run your first skill**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">Hand a SKILL.md to an AI coding agent and review its work</span>](#tutorial-1-run-your-first-skill-with-an-ai-agent)
+[**Copy & paste a skill**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">The easy way: use Claude or ChatGPT — nothing to install</span>](#tutorial-1-copy-a-skill-into-claude-or-chatgpt)
 
-[**Skills in a chat AI**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">No terminal? Use skills in Claude or ChatGPT directly</span>](#tutorial-2-use-a-skill-in-a-chat-ai-no-terminal-required)
+[**Use a coding agent**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">For the technical crowd: hand skills to an AI that works on your computer</span>](#tutorial-2-give-a-skill-to-an-ai-coding-agent)
 
-[**Build a knowledge vault**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">An Obsidian-style .md vault that both you and your agent can use</span>](#tutorial-3-build-your-finance-knowledge-vault-the-obsidian-way)
+[**Build a knowledge vault**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">One folder of notes that both you and your AI can use</span>](#tutorial-3-build-your-finance-knowledge-vault-the-obsidian-way)
 
-[**Review agent output**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">The sign-off checklist: control totals, exceptions, spot-checks</span>](#tutorial-4-review-agent-output-like-a-workpaper)
+[**Review the output**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">The sign-off checklist: totals, exceptions, spot-checks</span>](#tutorial-4-review-agent-output-like-a-workpaper)
 
 </div>
 
-## Tutorial 1: Run your first skill with an AI agent
+## Tutorial 1: Copy a skill into Claude or ChatGPT
 
-**You need:** an AI coding agent (this walkthrough uses [Claude Code](https://claude.com/claude-code); the pattern is the same in others), Python with pandas, and one messy export you know well. Sanitize it first.
+The easiest way to try a skill. Nothing to install, nothing technical — if you can copy
+and paste, you can do this.
 
-**Step 1 — pick the skill.** Go to the [Skills Library]({{ '/skills/' | relative_url }}) and choose the one that matches a task you did this month. First-timers: [clean-credit-debit-amounts]({{ '/skills/clean-credit-debit-amounts/' | relative_url }}) is the classic.
+**Step 1 — pick a skill.** Go to the [Skills Library]({{ '/skills/' | relative_url }}) and choose one that matches a task you did this month. First-timers: [clean-credit-debit-amounts]({{ '/skills/clean-credit-debit-amounts/' | relative_url }}) is the classic.
 
-**Step 2 — install it.** Every skill page links to its raw markdown. Save it in your project like this:
+**Step 2 — copy the whole skill page** and paste it into a new chat in Claude or ChatGPT with this framing:
+
+> Here is a procedure document. Follow it exactly on the file I attach.
+> Report the checks at the end, and list anything unusual instead of
+> fixing it silently.
+
+**Step 3 — attach your file** and let it work. Remove confidential information first — names, account numbers, anything you wouldn't put in an email outside the office.
+
+**Step 4 — review the result.** Do the totals still match? What ended up on the exceptions list? [Tutorial 4](#tutorial-4-review-agent-output-like-a-workpaper) is the checklist.
+
+**Tip:** in claude.ai you can save skills to a Project, or in ChatGPT to a custom GPT, so every new chat already knows your procedures. That's a mini [knowledge vault](#tutorial-3-build-your-finance-knowledge-vault-the-obsidian-way) — which brings us to the real thing.
+
+Then come tell the [community]({{ '/community/' | relative_url }}) how it went — or which task you wish had a skill.
+
+## Tutorial 2: Give a skill to an AI coding agent
+
+The step up from Tutorial 1, for when you're comfortable with slightly more technical
+tools. A coding agent works directly on your computer: it reads your files, does the
+work, and shows you everything it did.
+
+**You need:** an AI coding agent (this walkthrough uses [Claude Code](https://claude.com/claude-code); the pattern is the same in others) and one messy export you know well. Remove confidential information first.
+
+**Step 1 — pick the skill,** same as Tutorial 1.
+
+**Step 2 — install it.** Every skill page links to its raw text. Save it in your project like this:
 
 ```text
 my-close-work/
@@ -50,27 +74,9 @@ PANDAUDIT skill leads with one.
 > The amount column is "Net Amt". Control total per the source system is $2,914,003.17.
 > Give me the cleaned file, the exception list, and the before/after totals.
 
-**Step 4 — watch what it does.** The agent will read the skill, write the pandas code, run it, and report back. Notice it follows the skill's own validation section — that's the point. The procedure you'd give a junior is now machine-runnable.
+**Step 4 — watch what it does.** The agent will read the skill, do the work, and report back. Notice it follows the skill's own checks — that's the point. The procedure you'd give a junior is now something a machine can run.
 
 **Step 5 — review.** Don't skip to "looks good." Use [Tutorial 4](#tutorial-4-review-agent-output-like-a-workpaper).
-
-## Tutorial 2: Use a skill in a chat AI (no terminal required)
-
-No coding agent? Skills still work as structured instructions in claude.ai, ChatGPT, or Copilot — anywhere you can paste text and attach a file.
-
-**Step 1 —** open the skill page and copy the whole raw markdown.
-
-**Step 2 —** start a new chat and paste it with this framing:
-
-> Here is a procedure document. Follow it exactly on the file I attach.
-> Report the validation section's control totals explicitly, and list every
-> exception row rather than fixing anything silently.
-
-**Step 3 —** attach your sanitized file and let it run (most chat AIs execute Python on attachments these days).
-
-**Step 4 —** if the chat can't run code, it will still produce the code and the checklist — paste the code into your own Python/Jupyter and run it yourself.
-
-**Tip:** in claude.ai you can add skills to a Project's knowledge, or in ChatGPT to a custom GPT's instructions, so every new chat already knows your procedures. That's a mini [knowledge vault](#tutorial-3-build-your-finance-knowledge-vault-the-obsidian-way) — which brings us to the real thing.
 
 ## Tutorial 3: Build your finance knowledge vault (the Obsidian way)
 
