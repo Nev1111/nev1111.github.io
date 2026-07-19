@@ -10,7 +10,16 @@ PANDAUDIT is building a fun, practical workshop for finance people who want bett
 
 The site is the field guide. Discord is the workshop table.
 
-<p><a href="https://discord.gg/hDQKM6ar" class="pandaudit-button" target="_blank" rel="noopener">Join the PANDAUDIT Discord</a></p>
+<p><a href="https://discord.gg/{{ site.social-network-links.discord }}" class="pandaudit-button" target="_blank" rel="noopener">Join the PANDAUDIT Discord</a></p>
+
+{% if site.discord-server-id != "" %}
+<div class="pandaudit-discord-widget">
+  <iframe src="https://discord.com/widget?id={{ site.discord-server-id }}&theme=light"
+          width="100%" height="420" frameborder="0" loading="lazy"
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+          title="PANDAUDIT Discord — who's online"></iframe>
+</div>
+{% endif %}
 
 ## Good questions to bring
 
@@ -26,17 +35,17 @@ Please remove confidential information before sharing examples.
 
 <div class="legs" markdown="1">
 
-[**Spreadsheet Rescue**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">Messy files, recurring manual work, export cleanup</span>](https://discord.gg/hDQKM6ar)
+[**Spreadsheet Rescue**{: .leg-name} **01**{: .leg-no} <span class="leg-desc">Messy files, recurring manual work, export cleanup</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
-[**Reconciliation Room**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Matches, breaks, timing differences, exception reports</span>](https://discord.gg/hDQKM6ar)
+[**Reconciliation Room**{: .leg-name} **02**{: .leg-no} <span class="leg-desc">Matches, breaks, timing differences, exception reports</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
-[**Dashboard Ingredients**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Data quality before reporting and visualization</span>](https://discord.gg/hDQKM6ar)
+[**Dashboard Ingredients**{: .leg-name} **03**{: .leg-no} <span class="leg-desc">Data quality before reporting and visualization</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
-[**Boss Level Workpapers**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Review-ready summaries, detail, controls, notes</span>](https://discord.gg/hDQKM6ar)
+[**Boss Level Workpapers**{: .leg-name} **04**{: .leg-no} <span class="leg-desc">Review-ready summaries, detail, controls, notes</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
-[**Skill Swap**{: .leg-name} **05**{: .leg-no} <span class="leg-desc">Share your SKILL.md files and improve the Skills Library</span>](https://discord.gg/hDQKM6ar)
+[**Skill Swap**{: .leg-name} **05**{: .leg-no} <span class="leg-desc">Share your SKILL.md files and improve the Skills Library</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
-[**Agent Test Kitchen**{: .leg-name} **06**{: .leg-no} <span class="leg-desc">Show what your AI agent did with a skill — wins and disasters</span>](https://discord.gg/hDQKM6ar)
+[**Agent Test Kitchen**{: .leg-name} **06**{: .leg-no} <span class="leg-desc">Show what your AI agent did with a skill — wins and disasters</span>](https://discord.gg/{{ site.social-network-links.discord }})
 
 </div>
 
