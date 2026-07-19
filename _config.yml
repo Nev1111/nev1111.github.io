@@ -57,7 +57,7 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
  email: "hello@pandaudit.com"
- discord: "hDQKM6ar"  # TODO: replace — this invite has expired; create a permanent invite (expiry: Never)
+ discord: "6WmytaGJam"  # permanent invite (no expiry)
  rss: true
  linkedin: nevena-platchkova-4689b44a
 # github: Neve1111
@@ -80,8 +80,8 @@ share-links-active:
  vk: false
 
 # Discord server widget (community page live member list).
-# Enable in Discord: Server Settings -> Widget -> Enable Server Widget, then paste the Server ID here.
-discord-server-id: ""
+# NOTE: also requires Server Settings -> Widget -> Enable Server Widget in Discord.
+discord-server-id: "1391419177792962752"
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
