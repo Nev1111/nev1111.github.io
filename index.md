@@ -20,4 +20,21 @@ subtitle: Let AI handle the repetitive parts of finance work
   <div class="pandaudit-card"><h3>3. Tell me how it went</h3><p>Share your result in the <a href="{{ '/community/' | relative_url }}">community</a> — or tell me which task you wish had a skill, and I'll build it.</p></div>
 </div>
 
+<div class="splash-context" markdown="1">
+
+## Why this works now
+
+The first wave of AI was prompting: type a clever request, hope for the best, start
+over tomorrow. That era is ending. The people getting real value from AI don't write
+better prompts — they give the AI better **context**: procedures, definitions, and rules
+written down where it can follow them every time. The new craft even has a name:
+*context engineering*.
+
+A **skill** is exactly that — your know-how written down once, in a simple text file
+(a `.md` file) the AI can read. Keep a folder of them and you've built something
+durable: a playbook that works the same every month, for you and for anyone you share
+it with. PANDAUDIT is that folder, already written for finance work.
+
+</div>
+
 <p class="splash-footnote">New to all this AI talk? The <a href="{{ '/ai/' | relative_url }}">AI Field Kit</a> explains it in plain finance language, no tech background needed.</p>

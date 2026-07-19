@@ -294,6 +294,20 @@ body.pandaudit-chart-theme {
   margin-top: auto;
 }
 
+.splash-context {
+  max-width: 38rem;
+  margin: 3rem auto 2.5rem;
+  text-align: center;
+}
+.splash-context h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+.splash-context p {
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
 /* Splash landing: calmer, centered, more air */
 .pandaudit-splash {
   text-align: center;
