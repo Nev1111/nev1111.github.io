@@ -8,7 +8,7 @@ eyebrow: hands-on walkthroughs
 
 Reading about AI is one thing. This page is the other thing: four walkthroughs that take
 you from zero to an agent running a PANDAUDIT skill on your own files — with you
-reviewing the output like the boss you are.
+reviewing the output the way you'd review any preparer's work.
 
 <div class="legs" markdown="1">
 

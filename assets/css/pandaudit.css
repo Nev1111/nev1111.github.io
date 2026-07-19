@@ -272,6 +272,29 @@ body.pandaudit-chart-theme {
 }
 .pandaudit-hero .eyebrow { margin-bottom: 1.15rem; }
 
+/* Splash landing: calmer, centered, more air */
+.pandaudit-splash {
+  text-align: center;
+  padding: 3.5rem 0 2rem;
+  margin-bottom: 3rem;
+}
+.pandaudit-splash .splash-lede {
+  max-width: 34rem;
+  margin: 0 auto 1.75rem;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+.pandaudit-splash .splash-actions { margin: 0; }
+.pandaudit-splash + .pandaudit-route-cards { margin-bottom: 2.5rem; }
+.splash-footnote {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
 .pandaudit-card {
   background: #fff;
   border: 1px solid var(--hairline);
