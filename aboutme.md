@@ -33,6 +33,10 @@ PANDAUDIT starts with the real task:
 
 Then it turns that task into a route someone else can understand.
 
+## Who's behind it
+
+PANDAUDIT is written by [Nevena Platchkova](https://www.linkedin.com/in/nevena-platchkova-4689b44a), a CPA and financial data analyst who has spent years turning messy government and pension-fund data into reviewable workflows — and now turns those workflows into skills AI agents can run.
+
 ## Join in
 
-Email [hello@pandaudit.com](mailto:hello@pandaudit.com) or join the [Discord workshop]({{ '/community/' | relative_url }}).
+Email [hello@pandaudit.com](mailto:hello@pandaudit.com), connect on [LinkedIn](https://www.linkedin.com/in/nevena-platchkova-4689b44a), or join the [Discord workshop]({{ '/community/' | relative_url }}).
